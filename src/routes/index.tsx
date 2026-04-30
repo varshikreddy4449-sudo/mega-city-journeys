@@ -366,16 +366,22 @@ function HomePage() {
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-dashed border-border bg-card/50 p-6 text-center"
+                className="rounded-2xl border border-dashed border-border bg-card/50 p-6 text-left"
                 data-placeholder="real-google-reviews"
               >
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-accent">
-                  <Star className="h-5 w-5" />
+                <div className="flex gap-1 mb-3" aria-label="5 star rating">
+                  {[0, 1, 2, 3, 4].map((s) => (
+                    <Star key={s} className="h-4 w-4 fill-accent text-accent" />
+                  ))}
                 </div>
-                <p className="mt-4 text-sm text-muted-foreground italic">
+                <p className="text-[15px] text-muted-foreground italic leading-relaxed">
                   Placeholder · Real customer review will appear here once added by the client
                   or connected to Google Business Profile.
                 </p>
+                <div className="mt-4">
+                  <p className="text-[15px] font-bold text-primary">Customer Name</p>
+                  <p className="text-xs text-muted-foreground opacity-65">Hyderabad · Family Trip</p>
+                </div>
               </div>
             ))}
           </div>
