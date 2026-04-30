@@ -27,21 +27,16 @@ const serviceLinks = [
 export function Footer() {
   return (
     <footer className="bg-warm-gradient text-primary-foreground pb-24 lg:pb-0">
-      <div className="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 md:px-6" style={{ paddingTop: 60, paddingBottom: 60 }}>
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-10" style={{ columnGap: 40 }}>
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-3 mb-4">
               <img
                 src={logo}
                 alt="Mega City Tours & Travells logo"
-                className="h-12 w-12 object-contain rounded-lg bg-white p-1"
+                className="object-contain rounded-lg bg-white p-1.5"
+                style={{ width: 120, height: "auto" }}
               />
-              <div className="leading-tight">
-                <div className="font-display text-lg font-bold">Mega City</div>
-                <div className="text-[11px] uppercase tracking-wider text-brand-cream/70">
-                  Tours & Travells
-                </div>
-              </div>
             </div>
             <p className="text-sm text-brand-cream/80 leading-relaxed">
               Hyderabad-based travel partner for group travel, per KM trips, local tours, and
