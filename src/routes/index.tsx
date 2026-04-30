@@ -384,8 +384,35 @@ function HomePage() {
             title="Vehicles for every group size"
             subtitle="Owned, well-maintained vehicles from 4-seater cars to 50-seater buses — with experienced drivers included."
           />
+          {/* VEHICLE CATEGORY TABS */}
+          <div className="mb-8 flex flex-wrap justify-center gap-2">
+            {vehicleTabs.map((tab) => {
+              const isActive = activeTab === tab;
+              return (
+                <button
+                  key={tab}
+                  type="button"
+                  onClick={() => setActiveTab(tab)}
+                  aria-pressed={isActive}
+                  className={
+                    "rounded-full px-5 py-2 text-sm font-semibold transition-colors border " +
+                    (isActive
+                      ? "bg-primary text-primary-foreground border-primary shadow-card"
+                      : "bg-transparent text-primary border-primary/40 hover:bg-primary/5")
+                  }
+                >
+                  {tab}
+                </button>
+              );
+            })}
+          </div>
+          {filteredVehicles.length === 0 ? (
+            <p className="text-center text-muted-foreground py-10">
+              No vehicles in this category right now. View All to see our full fleet.
+            </p>
+          ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {vehicles.map((v) => (
+            {filteredVehicles.map((v) => (
               <div key={v.slug} className="overflow-hidden rounded-2xl bg-card border border-border/60" style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
                 <div className="flex items-center justify-center" style={{ background: "#F5F0E8", height: 180 }}>
                   <img src={v.image} alt={v.name} loading="lazy" className="max-h-[180px] w-full object-contain object-center" style={{ height: 180 }} />
