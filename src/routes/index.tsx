@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, Phone, MapPin, Users, Star, Shield, Wrench, CheckCircle2, Bus, UserCheck, Sparkles, Wallet, Route as RouteIcon, Settings2, MessagesSquare, Building2 } from "lucide-react";
+import { useState } from "react";
+import { MessageCircle, Phone, MapPin, Users, Star, Shield, Wrench, CheckCircle2, Bus, UserCheck, Sparkles, Wallet, Route as RouteIcon, Settings2, MessagesSquare, Building2, Briefcase, Map as MapIcon } from "lucide-react";
 import heroImg from "@/assets/hero-travel.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { services } from "@/data/services";
@@ -60,7 +61,28 @@ const tripTypes = [
   { title: "Local Hyderabad Trips", img: destHyd },
 ];
 
+const vehicleCategoryMap: Record<string, "Hatchback" | "Sedan" | "SUV" | "Mini Bus" | "Large Bus"> = {
+  "breeza": "SUV",
+  "innova-crysta": "SUV",
+  "fortuner": "SUV",
+  "tempo-traveller": "Mini Bus",
+  "urbania": "Mini Bus",
+  "bus-22": "Mini Bus",
+  "bus-28": "Large Bus",
+  "bus-40": "Large Bus",
+  "bus-50": "Large Bus",
+};
+
+const vehicleTabs = ["All", "Hatchback", "Sedan", "SUV", "Mini Bus", "Large Bus"] as const;
+type VehicleTab = (typeof vehicleTabs)[number];
+
 function HomePage() {
+  const [activeTab, setActiveTab] = useState<VehicleTab>("All");
+  const filteredVehicles =
+    activeTab === "All"
+      ? vehicles
+      : vehicles.filter((v) => vehicleCategoryMap[v.slug] === activeTab);
+
   return (
     <>
       <LocalBusinessSchema />
@@ -89,6 +111,24 @@ function HomePage() {
               Comfortable travel for families, schools, colleges, companies, weddings, pilgrimage
               groups, and outstation journeys across Telangana and nearby states.
             </p>
+            {/* HERO STATS */}
+            <dl className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl">
+              {[
+                { num: "500+", label: "Groups Served" },
+                { num: "12+", label: "Years in Business" },
+                { num: "30+", label: "Owned Vehicles" },
+                { num: "365", label: "Days Available" },
+              ].map((s) => (
+                <div key={s.label}>
+                  <dt className="font-display font-bold leading-none text-brand-cream text-[36px] md:text-[44px]">
+                    {s.num}
+                  </dt>
+                  <dd className="mt-2 text-xs md:text-sm font-medium text-brand-cream/80 uppercase tracking-wide">
+                    {s.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href={whatsappLink()}
@@ -136,6 +176,58 @@ function HomePage() {
                 </div>
                 <h3 className="font-display text-lg font-semibold text-primary">{c.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES CATEGORIES */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <SectionHeader
+            eyebrow="Service Categories"
+            title="Choose the type of travel you need"
+            subtitle="Three core ways we help groups travel comfortably from Hyderabad — pick the one that fits your trip."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Group Tours",
+                desc: "Planned trips to popular destinations with vehicle, driver, and route arranged for your group.",
+                icon: MapIcon,
+                msg: "Hi Mega City Tours & Travells, I would like to enquire about a Group Tour.",
+              },
+              {
+                title: "Per KM Travel",
+                desc: "Point-to-point group transport priced per kilometre — ideal for outstation and one-way trips.",
+                icon: RouteIcon,
+                msg: "Hi Mega City Tours & Travells, I would like to enquire about Per KM Travel.",
+              },
+              {
+                title: "Corporate Bookings",
+                desc: "Office outings, offsites, conferences, and corporate group travel handled end-to-end.",
+                icon: Briefcase,
+                msg: "Hi Mega City Tours & Travells, I would like to enquire about a Corporate Booking.",
+              },
+            ].map((c) => (
+              <div
+                key={c.title}
+                className="rounded-2xl bg-card border border-border/60 p-7 shadow-card flex flex-col"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-warm-gradient text-primary-foreground mb-5">
+                  <c.icon className="h-6 w-6" />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-primary">{c.title}</h3>
+                <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">{c.desc}</p>
+                <a
+                  href={whatsappLink(c.msg)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-warm-gradient text-primary-foreground py-3 px-5 text-sm font-semibold shadow-card hover:shadow-glow transition-shadow"
+                >
+                  <MessageCircle className="h-4 w-4" /> Enquire on WhatsApp
+                </a>
               </div>
             ))}
           </div>
@@ -292,8 +384,35 @@ function HomePage() {
             title="Vehicles for every group size"
             subtitle="Owned, well-maintained vehicles from 4-seater cars to 50-seater buses — with experienced drivers included."
           />
+          {/* VEHICLE CATEGORY TABS */}
+          <div className="mb-8 flex flex-wrap justify-center gap-2">
+            {vehicleTabs.map((tab) => {
+              const isActive = activeTab === tab;
+              return (
+                <button
+                  key={tab}
+                  type="button"
+                  onClick={() => setActiveTab(tab)}
+                  aria-pressed={isActive}
+                  className={
+                    "rounded-full px-5 py-2 text-sm font-semibold transition-colors border " +
+                    (isActive
+                      ? "bg-primary text-primary-foreground border-primary shadow-card"
+                      : "bg-transparent text-primary border-primary/40 hover:bg-primary/5")
+                  }
+                >
+                  {tab}
+                </button>
+              );
+            })}
+          </div>
+          {filteredVehicles.length === 0 ? (
+            <p className="text-center text-muted-foreground py-10">
+              No vehicles in this category right now. View All to see our full fleet.
+            </p>
+          ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {vehicles.map((v) => (
+            {filteredVehicles.map((v) => (
               <div key={v.slug} className="overflow-hidden rounded-2xl bg-card border border-border/60" style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
                 <div className="flex items-center justify-center" style={{ background: "#F5F0E8", height: 180 }}>
                   <img src={v.image} alt={v.name} loading="lazy" className="max-h-[180px] w-full object-contain object-center" style={{ height: 180 }} />
@@ -321,6 +440,7 @@ function HomePage() {
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
 
