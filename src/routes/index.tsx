@@ -61,7 +61,28 @@ const tripTypes = [
   { title: "Local Hyderabad Trips", img: destHyd },
 ];
 
+const vehicleCategoryMap: Record<string, "Hatchback" | "Sedan" | "SUV" | "Mini Bus" | "Large Bus"> = {
+  "breeza": "SUV",
+  "innova-crysta": "SUV",
+  "fortuner": "SUV",
+  "tempo-traveller": "Mini Bus",
+  "urbania": "Mini Bus",
+  "bus-22": "Mini Bus",
+  "bus-28": "Large Bus",
+  "bus-40": "Large Bus",
+  "bus-50": "Large Bus",
+};
+
+const vehicleTabs = ["All", "Hatchback", "Sedan", "SUV", "Mini Bus", "Large Bus"] as const;
+type VehicleTab = (typeof vehicleTabs)[number];
+
 function HomePage() {
+  const [activeTab, setActiveTab] = useState<VehicleTab>("All");
+  const filteredVehicles =
+    activeTab === "All"
+      ? vehicles
+      : vehicles.filter((v) => vehicleCategoryMap[v.slug] === activeTab);
+
   return (
     <>
       <LocalBusinessSchema />
