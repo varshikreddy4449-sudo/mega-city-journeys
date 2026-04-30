@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { whatsappLink, site } from "@/data/site";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.jpg";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -37,9 +38,11 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
         <Link to="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-warm-gradient text-primary-foreground font-display text-lg font-bold shadow-card">
-            M
-          </div>
+          <img
+            src={logo}
+            alt="Mega City Tours & Travells logo"
+            className="h-11 w-11 md:h-12 md:w-12 object-contain rounded-lg bg-white p-1 shadow-card"
+          />
           <div className="leading-tight">
             <div className="font-display text-base font-bold text-primary md:text-lg">
               Mega City
