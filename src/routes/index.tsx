@@ -145,13 +145,14 @@ function HomePage() {
                 <Phone className="h-5 w-5" /> Call {site.phones[0]}
               </a>
             </div>
-            <div className="mt-10 flex flex-wrap gap-2">
-              {trustBadges.map((b) => (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Hyderabad Based", "Professional Drivers", "Group Travel Experts"].map((b) => (
                 <span
                   key={b}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-brand-cream/10 backdrop-blur px-3 py-1.5 text-xs font-medium text-brand-cream border border-brand-cream/20"
+                  className="inline-flex items-center gap-2 rounded-full border border-brand-tan/70 bg-brand-cream/5 backdrop-blur px-3 py-1.5 text-brand-cream"
+                  style={{ fontSize: "12px" }}
                 >
-                  <CheckCircle2 className="h-3.5 w-3.5 text-brand-tan" />
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-tan" />
                   {b}
                 </span>
               ))}
