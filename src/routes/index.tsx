@@ -214,19 +214,25 @@ function HomePage() {
             eyebrow="How It Works"
             title="Book your trip in 4 easy steps"
           />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 relative">
+          <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {/* Dashed connecting line — desktop only */}
+            <div
+              aria-hidden
+              className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] border-t-2 border-dashed pointer-events-none"
+              style={{ borderColor: "color-mix(in oklab, var(--brand-rust) 35%, transparent)" }}
+            />
             {[
-              ["Share Trip Details", "Tell us your pickup, destination, travel date, group size, and vehicle preference."],
-              ["Get Vehicle Options", "We suggest the right vehicle based on your group size, route, and budget."],
-              ["Confirm Booking", "Finalize route, timing, vehicle, and advance payment if required."],
-              ["Start Travel", "Our driver reaches on time and you enjoy a comfortable trip."],
+              ["Share Trip Details", "Send pickup, destination, date, group size."],
+              ["Get Vehicle Options", "We suggest the right vehicle and route."],
+              ["Confirm Booking", "Lock route, timing, vehicle, advance payment."],
+              ["Start Travel", "Driver arrives on time — enjoy the trip."],
             ].map(([title, desc], i) => (
-              <div key={title} className="relative rounded-2xl bg-card p-6 shadow-card border border-border/60">
-                <div className="absolute -top-4 left-6 flex h-10 w-10 items-center justify-center rounded-full bg-rust-gradient text-primary-foreground font-display font-bold shadow-soft">
+              <div key={title} className="relative rounded-2xl bg-card p-6 shadow-card border border-border/60 text-center lg:text-left">
+                <span className="block font-display text-4xl font-bold text-accent leading-none">
                   {i + 1}
-                </div>
-                <h3 className="mt-4 font-display text-lg font-semibold text-primary">{title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                </span>
+                <h3 className="mt-3 font-display text-lg font-semibold text-primary">{title}</h3>
+                <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
