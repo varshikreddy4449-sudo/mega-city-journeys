@@ -46,12 +46,13 @@ export function Footer() {
 
           <div>
             <h4 className="text-primary-foreground font-display text-base mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {quickLinks.map(([to, label]) => (
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-sm text-brand-cream/80 hover:text-primary-foreground transition-colors"
+                    className="text-[14px] text-brand-cream/85 hover:text-primary-foreground transition-colors"
+                    style={{ lineHeight: "2em" }}
                   >
                     {label}
                   </Link>
@@ -62,12 +63,13 @@ export function Footer() {
 
           <div>
             <h4 className="text-primary-foreground font-display text-base mb-4">Services</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {serviceLinks.map(([href, label]) => (
                 <li key={href}>
                   <a
                     href={href}
-                    className="text-sm text-brand-cream/80 hover:text-primary-foreground transition-colors"
+                    className="text-[14px] text-brand-cream/85 hover:text-primary-foreground transition-colors"
+                    style={{ lineHeight: "2em" }}
                   >
                     {label}
                   </a>
