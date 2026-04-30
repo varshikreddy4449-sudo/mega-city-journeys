@@ -80,7 +80,7 @@ export function Footer() {
 
           <div>
             <h4 className="text-primary-foreground font-display text-base mb-4">Contact</h4>
-            <ul className="space-y-3 text-sm text-brand-cream/85">
+            <ul className="space-y-3 text-[14px] text-brand-cream/90" style={{ lineHeight: "1.7" }}>
               <li className="flex gap-2">
                 <Phone className="h-4 w-4 mt-0.5 shrink-0" />
                 <div>
