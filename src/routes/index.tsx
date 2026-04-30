@@ -161,6 +161,58 @@ function HomePage() {
         </div>
       </section>
 
+      {/* SERVICES CATEGORIES */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <SectionHeader
+            eyebrow="Service Categories"
+            title="Choose the type of travel you need"
+            subtitle="Three core ways we help groups travel comfortably from Hyderabad — pick the one that fits your trip."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Group Tours",
+                desc: "Planned trips to popular destinations with vehicle, driver, and route arranged for your group.",
+                icon: MapIcon,
+                msg: "Hi Mega City Tours & Travells, I would like to enquire about a Group Tour.",
+              },
+              {
+                title: "Per KM Travel",
+                desc: "Point-to-point group transport priced per kilometre — ideal for outstation and one-way trips.",
+                icon: RouteIcon,
+                msg: "Hi Mega City Tours & Travells, I would like to enquire about Per KM Travel.",
+              },
+              {
+                title: "Corporate Bookings",
+                desc: "Office outings, offsites, conferences, and corporate group travel handled end-to-end.",
+                icon: Briefcase,
+                msg: "Hi Mega City Tours & Travells, I would like to enquire about a Corporate Booking.",
+              },
+            ].map((c) => (
+              <div
+                key={c.title}
+                className="rounded-2xl bg-card border border-border/60 p-7 shadow-card flex flex-col"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-warm-gradient text-primary-foreground mb-5">
+                  <c.icon className="h-6 w-6" />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-primary">{c.title}</h3>
+                <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">{c.desc}</p>
+                <a
+                  href={whatsappLink(c.msg)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-warm-gradient text-primary-foreground py-3 px-5 text-sm font-semibold shadow-card hover:shadow-glow transition-shadow"
+                >
+                  <MessageCircle className="h-4 w-4" /> Enquire on WhatsApp
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES OVERVIEW */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
