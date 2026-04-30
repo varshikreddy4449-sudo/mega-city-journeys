@@ -508,31 +508,67 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-warm-gradient text-primary-foreground">
+      <section className="py-16 md:py-24 text-white" style={{ backgroundColor: "#001F3F" }}>
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeader
-            light
-            eyebrow="Why Mega City"
-            title="Why choose Mega City Tours & Travells?"
-            subtitle="A Hyderabad-based travel team focused on safe, comfortable, and budget-friendly group travel."
-          />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { text: "Hyderabad-based travel company", icon: Building2 },
-              { text: "Owned fleet from 4 to 50 seats", icon: Bus },
-              { text: "Drivers included with all vehicles", icon: UserCheck },
-              { text: "20–30 years experienced drivers", icon: Shield },
-              { text: "Clean and well-maintained interiors", icon: Sparkles },
-              { text: "Budget-friendly travel options", icon: Wallet },
-              { text: "Local and outstation support", icon: RouteIcon },
-              { text: "Flexible custom packages", icon: Settings2 },
-              { text: "Easy phone & WhatsApp communication", icon: MessagesSquare },
-            ].map((p) => (
-              <div key={p.text} className="rounded-xl bg-white/[0.12] backdrop-blur p-5 border border-white/20">
-                <p.icon className="h-6 w-6 text-brand-tan mb-3" />
-                <p className="text-[15px] font-medium leading-relaxed text-white">{p.text}</p>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <span className="inline-block rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-tan">
+                Why Mega City
+              </span>
+              <h2 className="mt-4 font-display text-3xl md:text-5xl font-bold text-white text-balance">
+                Trusted travel — every trip, every time
+              </h2>
+              <p className="mt-4 text-[15px] text-white/75 max-w-xl leading-relaxed">
+                A Hyderabad-based travel team focused on safe, comfortable, and budget-friendly group travel.
+              </p>
+              <ul className="mt-8 space-y-6">
+                {[
+                  { title: "Verified Professional Drivers", sub: "All drivers background checked and uniformed." },
+                  { title: "Modern Air-Conditioned Fleet", sub: "Sanitised before every trip." },
+                  { title: "No Hidden Tolls or Fees", sub: "Transparent pricing for every journey." },
+                ].map((p) => (
+                  <li key={p.title} className="flex items-start gap-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-tan text-[#001F3F]">
+                      <CheckCircle2 className="h-5 w-5" strokeWidth={2.5} />
+                    </span>
+                    <div>
+                      <h3 className="font-display text-lg font-bold text-white leading-tight">{p.title}</h3>
+                      <p className="mt-1 text-[14px] text-white/70 leading-relaxed">{p.sub}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <div
+                className="relative w-full max-w-sm rounded-3xl border border-white/15 bg-white/[0.06] backdrop-blur p-10 text-center"
+                style={{ boxShadow: "0 20px 60px -20px rgba(0,0,0,0.5)" }}
+              >
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-brand-tan text-[#001F3F]">
+                  <BadgeCheck className="h-10 w-10" strokeWidth={2.2} />
+                </div>
+                <p className="mt-6 font-display text-2xl font-bold tracking-wide text-white uppercase">
+                  Professional Service
+                </p>
+                <p className="mt-3 text-[13px] uppercase tracking-[0.2em] text-brand-tan font-semibold">
+                  Since 2012
+                </p>
+                <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+                  <div>
+                    <div className="font-display text-2xl font-bold text-white">500+</div>
+                    <div className="text-[11px] text-white/60 uppercase tracking-wide mt-1">Groups</div>
+                  </div>
+                  <div>
+                    <div className="font-display text-2xl font-bold text-white">12+</div>
+                    <div className="text-[11px] text-white/60 uppercase tracking-wide mt-1">Years</div>
+                  </div>
+                  <div>
+                    <div className="font-display text-2xl font-bold text-white">30+</div>
+                    <div className="text-[11px] text-white/60 uppercase tracking-wide mt-1">Vehicles</div>
+                  </div>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
