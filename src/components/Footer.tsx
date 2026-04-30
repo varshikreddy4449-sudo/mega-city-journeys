@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 import { site, whatsappLink } from "@/data/site";
+import logo from "@/assets/logo.jpg";
 
 const quickLinks = [
   ["/", "Home"],
@@ -30,9 +31,11 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-cream/15 backdrop-blur font-display text-lg font-bold">
-                M
-              </div>
+              <img
+                src={logo}
+                alt="Mega City Tours & Travells logo"
+                className="h-12 w-12 object-contain rounded-lg bg-white p-1"
+              />
               <div className="leading-tight">
                 <div className="font-display text-lg font-bold">Mega City</div>
                 <div className="text-[11px] uppercase tracking-wider text-brand-cream/70">
