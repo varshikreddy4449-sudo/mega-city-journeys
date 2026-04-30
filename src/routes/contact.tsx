@@ -4,6 +4,7 @@ import { z } from "zod";
 import { Phone, MessageCircle, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
+import { CTASection } from "@/components/CTASection";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
