@@ -26,7 +26,10 @@ const serviceLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-warm-gradient text-primary-foreground pb-24 lg:pb-0">
+    <footer
+      className="text-white pb-24 lg:pb-0"
+      style={{ backgroundColor: "#000613" }}
+    >
       <div className="mx-auto max-w-7xl px-4 md:px-6" style={{ paddingTop: 60, paddingBottom: 60 }}>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-10" style={{ columnGap: 40 }}>
           <div>
@@ -38,21 +41,37 @@ export function Footer() {
                 style={{ width: 120, height: "auto" }}
               />
             </div>
-            <p className="text-sm text-brand-cream/80 leading-relaxed">
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
               Hyderabad-based travel partner for group travel, per KM trips, local tours, and
               outstation journeys across Telangana and nearby states.
             </p>
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-white"
+              style={{
+                backgroundColor: "#25D366",
+                borderRadius: "8px",
+                padding: "12px 22px",
+              }}
+            >
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp Us
+            </a>
           </div>
 
           <div>
-            <h4 className="text-primary-foreground font-display text-base mb-4">Quick Links</h4>
+            <h4 className="font-display text-base mb-4 font-bold" style={{ color: "#FFFFFF" }}>
+              Quick Links
+            </h4>
             <ul className="space-y-1">
               {quickLinks.map(([to, label]) => (
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-[14px] text-brand-cream/85 hover:text-primary-foreground transition-colors"
-                    style={{ lineHeight: "2em" }}
+                    className="text-[14px] transition-colors hover:[color:#FF9832]"
+                    style={{ color: "rgba(255,255,255,0.65)", lineHeight: "2em" }}
                   >
                     {label}
                   </Link>
@@ -62,14 +81,16 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-primary-foreground font-display text-base mb-4">Services</h4>
+            <h4 className="font-display text-base mb-4 font-bold" style={{ color: "#FFFFFF" }}>
+              Services
+            </h4>
             <ul className="space-y-1">
               {serviceLinks.map(([href, label]) => (
                 <li key={href}>
                   <a
                     href={href}
-                    className="text-[14px] text-brand-cream/85 hover:text-primary-foreground transition-colors"
-                    style={{ lineHeight: "2em" }}
+                    className="text-[14px] transition-colors hover:[color:#FF9832]"
+                    style={{ color: "rgba(255,255,255,0.65)", lineHeight: "2em" }}
                   >
                     {label}
                   </a>
@@ -79,38 +100,46 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-primary-foreground font-display text-base mb-4">Contact</h4>
-            <ul className="space-y-3 text-[14px] text-brand-cream/90" style={{ lineHeight: "1.7" }}>
+            <h4 className="font-display text-base mb-4 font-bold" style={{ color: "#FFFFFF" }}>
+              Contact
+            </h4>
+            <ul className="space-y-3 text-[14px]" style={{ color: "rgba(255,255,255,0.75)", lineHeight: "1.7" }}>
               <li className="flex gap-2">
-                <Phone className="h-4 w-4 mt-0.5 shrink-0" />
+                <Phone className="h-4 w-4 mt-0.5 shrink-0" style={{ color: "#FF9832" }} />
                 <div>
                   <a href={`tel:+91${site.phones[0]}`} className="block hover:underline">{site.phones[0]}</a>
                   <a href={`tel:+91${site.phones[1]}`} className="block hover:underline">{site.phones[1]}</a>
                 </div>
               </li>
               <li className="flex gap-2">
-                <MessageCircle className="h-4 w-4 mt-0.5 shrink-0" />
+                <MessageCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: "#FF9832" }} />
                 <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hover:underline">
                   WhatsApp: {site.whatsapp}
                 </a>
               </li>
               <li className="flex gap-2">
-                <Mail className="h-4 w-4 mt-0.5 shrink-0" />
+                <Mail className="h-4 w-4 mt-0.5 shrink-0" style={{ color: "#FF9832" }} />
                 <a href={`mailto:${site.email}`} className="hover:underline break-all">{site.email}</a>
               </li>
               <li className="flex gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0" style={{ color: "#FF9832" }} />
                 <span>{site.address}</span>
               </li>
               <li className="flex gap-2">
-                <Clock className="h-4 w-4 mt-0.5 shrink-0" />
+                <Clock className="h-4 w-4 mt-0.5 shrink-0" style={{ color: "#FF9832" }} />
                 <span>Open daily, {site.hours}</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-brand-cream/15 pt-6 flex flex-col md:flex-row gap-2 md:items-center md:justify-between text-xs text-brand-cream/70">
+        <div
+          className="mt-12 pt-6 flex flex-col md:flex-row gap-2 md:items-center md:justify-between text-xs"
+          style={{
+            borderTop: "1px solid rgba(255,255,255,0.1)",
+            color: "rgba(255,255,255,0.4)",
+          }}
+        >
           <p>© {new Date().getFullYear()} Mega City Tours & Travells. All rights reserved.</p>
           <p>
             Website by DAV Dev Studio ·{" "}

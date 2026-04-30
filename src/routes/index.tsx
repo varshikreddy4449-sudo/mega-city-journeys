@@ -134,13 +134,15 @@ function HomePage() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-rust-gradient text-primary-foreground shadow-glow hover:scale-[1.02] transition-transform px-10 py-4 text-base font-bold min-w-[200px]"
+                className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02] min-w-[200px]"
+                style={{ backgroundColor: "#001F3F", borderRadius: "8px", padding: "16px 40px" }}
               >
                 <MessageCircle className="h-5 w-5" /> Get Quote on WhatsApp
               </a>
               <a
                 href={`tel:+91${site.phones[0]}`}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-cream text-brand-brown shadow-soft hover:scale-[1.02] transition-transform px-9 py-[15px] text-base font-semibold min-w-[180px]"
+                className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02] min-w-[180px]"
+                style={{ backgroundColor: "#FF9832", borderRadius: "8px", padding: "16px 36px" }}
               >
                 <Phone className="h-5 w-5" /> Call {site.phones[0]}
               </a>
@@ -149,10 +151,18 @@ function HomePage() {
               {["Hyderabad Based", "Professional Drivers", "Group Travel Experts"].map((b) => (
                 <span
                   key={b}
-                  className="inline-flex items-center gap-2 rounded-full border border-brand-tan/70 bg-brand-cream/5 backdrop-blur px-3 py-1.5 text-brand-cream"
-                  style={{ fontSize: "12px" }}
+                  className="inline-flex items-center gap-2 text-white"
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.15)",
+                    border: "1px solid rgba(255,255,255,0.3)",
+                    borderRadius: "100px",
+                    padding: "6px 14px",
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    letterSpacing: "0.05em",
+                  }}
                 >
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-tan" />
+                  <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#FF9832" }} />
                   {b}
                 </span>
               ))}
