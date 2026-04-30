@@ -31,10 +31,13 @@ export function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-card"
-          : "bg-background/80 backdrop-blur",
+        scrolled ? "bg-white" : "bg-transparent",
       )}
+      style={
+        scrolled
+          ? { boxShadow: "0px 2px 8px rgba(0,31,63,0.08)" }
+          : undefined
+      }
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
         <Link to="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
@@ -44,10 +47,13 @@ export function Header() {
             className="h-11 w-11 md:h-12 md:w-12 object-contain rounded-lg bg-white p-1 shadow-card"
           />
           <div className="leading-tight">
-            <div className="font-display text-base font-bold text-primary md:text-lg">
+            <div className="font-display text-base font-bold md:text-lg" style={{ color: "#001F3F" }}>
               Mega City
             </div>
-            <div className="text-[10px] uppercase tracking-wider text-muted-foreground md:text-xs">
+            <div
+              className="text-[10px] uppercase tracking-wider md:text-xs"
+              style={{ color: scrolled ? "#74777F" : "rgba(255,255,255,0.85)" }}
+            >
               Tours & Travells
             </div>
           </div>
@@ -58,8 +64,9 @@ export function Header() {
             <Link
               key={item.to}
               to={item.to}
-              className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-primary"
-              activeProps={{ className: "text-accent font-semibold" }}
+              className="rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary"
+              style={{ color: scrolled ? "#1A1C1E" : "#FFFFFF" }}
+              activeProps={{ style: { color: "#FF9832", fontWeight: 600 } }}
               activeOptions={{ exact: item.to === "/" }}
             >
               {item.label}
@@ -72,7 +79,12 @@ export function Header() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-rust-gradient px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
+            style={{
+              backgroundColor: "#001F3F",
+              borderRadius: "8px",
+              padding: "14px 32px",
+            }}
           >
             <MessageCircle className="h-4 w-4" />
             Get Quote on WhatsApp
@@ -81,7 +93,8 @@ export function Header() {
 
         <button
           aria-label="Toggle menu"
-          className="rounded-md p-2 text-primary lg:hidden"
+          className="rounded-md p-2 lg:hidden"
+          style={{ color: scrolled ? "#001F3F" : "#FFFFFF" }}
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -89,15 +102,16 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div className="border-t border-border bg-white lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-4 py-3">
             {navItems.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-base font-medium text-foreground/90 hover:bg-secondary"
-                activeProps={{ className: "text-accent font-semibold bg-secondary" }}
+                className="rounded-md px-3 py-3 text-base font-medium hover:bg-secondary"
+                style={{ color: "#1A1C1E" }}
+                activeProps={{ style: { color: "#FF9832", fontWeight: 600, backgroundColor: "#F4F3F6" } }}
                 activeOptions={{ exact: item.to === "/" }}
               >
                 {item.label}
@@ -107,14 +121,21 @@ export function Header() {
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-rust-gradient px-5 py-3 text-base font-semibold text-primary-foreground shadow-glow"
+              className="mt-3 inline-flex items-center justify-center gap-2 text-base font-bold text-white"
+              style={{ backgroundColor: "#001F3F", borderRadius: "8px", padding: "14px 32px" }}
             >
               <MessageCircle className="h-5 w-5" />
               Get Quote on WhatsApp
             </a>
             <a
               href={`tel:+91${site.phones[0]}`}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-base font-semibold text-primary"
+              className="mt-2 inline-flex items-center justify-center gap-2 text-base font-bold"
+              style={{
+                border: "2px solid #001F3F",
+                color: "#001F3F",
+                borderRadius: "8px",
+                padding: "12px 28px",
+              }}
             >
               Call {site.phones[0]}
             </a>
