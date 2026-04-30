@@ -268,6 +268,43 @@ function HomePage() {
         </div>
       </section>
 
+      {/* TRIP CATEGORY CARDS */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <SectionHeader
+            eyebrow="Trip Categories"
+            title="Trips Designed for Every Group"
+            subtitle="From families and students to corporate teams and pilgrims — pick the trip type that fits your group."
+          />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: Home, title: "Family Trips", desc: "Comfortable getaways planned around your family's pace and pickup needs.", to: "/packages" },
+              { icon: Bus, title: "School & College Trips", desc: "Safe, on-time bus transport for picnics, excursions, and study tours.", to: "/services" },
+              { icon: Briefcase, title: "Corporate Outings", desc: "Reliable group transport for offsites, conferences, and team outings.", to: "/services" },
+              { icon: Landmark, title: "Pilgrimage Tours", desc: "Temple yatras to Srisailam, Yadadri, Tirupati and more with experienced drivers.", to: "/packages" },
+            ].map((c) => (
+              <div
+                key={c.title}
+                className="rounded-2xl bg-white border border-border/60 p-7 text-center flex flex-col items-center"
+                style={{ boxShadow: "0 4px 20px -8px rgba(74,44,32,0.18)" }}
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent mb-4">
+                  <c.icon className="h-7 w-7" />
+                </div>
+                <h3 className="font-display text-lg font-bold text-primary">{c.title}</h3>
+                <p className="mt-2 text-[14px] text-muted-foreground leading-relaxed">{c.desc}</p>
+                <Link
+                  to={c.to}
+                  className="mt-5 inline-flex items-center text-sm font-semibold text-accent hover:underline"
+                >
+                  Learn More →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TRIP TYPES */}
       <section className="py-16 md:py-24 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
