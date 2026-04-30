@@ -13,6 +13,7 @@ export type Vehicle = {
   image: string;
   bestFor: string;
   ac: string;
+  startingPrice: string;
 };
 
 export const vehicles: Vehicle[] = [
@@ -24,6 +25,7 @@ export const vehicles: Vehicle[] = [
     image: brezza,
     bestFor: "Small families, airport transfers, city trips",
     ac: "AC",
+    startingPrice: "₹14/km",
   },
   {
     slug: "innova-crysta",
@@ -33,6 +35,7 @@ export const vehicles: Vehicle[] = [
     image: innova,
     bestFor: "Family trips, outstation comfort travel",
     ac: "AC",
+    startingPrice: "₹18/km",
   },
   {
     slug: "fortuner",
@@ -42,6 +45,7 @@ export const vehicles: Vehicle[] = [
     image: fortuner,
     bestFor: "Premium family / corporate outstation travel",
     ac: "AC",
+    startingPrice: "₹26/km",
   },
   {
     slug: "tempo-traveller",
@@ -51,6 +55,7 @@ export const vehicles: Vehicle[] = [
     image: tempo,
     bestFor: "Small groups, weekend trips, pilgrimage",
     ac: "AC / Non-AC",
+    startingPrice: "₹22/km",
   },
   {
     slug: "urbania",
@@ -60,6 +65,7 @@ export const vehicles: Vehicle[] = [
     image: urbania,
     bestFor: "Premium small-group outstation travel",
     ac: "AC",
+    startingPrice: "₹30/km",
   },
   {
     slug: "bus-22",
@@ -69,6 +75,7 @@ export const vehicles: Vehicle[] = [
     image: bus,
     bestFor: "Mid-size groups, school events, corporate",
     ac: "AC / Non-AC",
+    startingPrice: "₹35/km",
   },
   {
     slug: "bus-28",
@@ -78,6 +85,7 @@ export const vehicles: Vehicle[] = [
     image: bus,
     bestFor: "Larger groups, weddings, school trips",
     ac: "AC / Non-AC",
+    startingPrice: "₹40/km",
   },
   {
     slug: "bus-40",
@@ -87,6 +95,7 @@ export const vehicles: Vehicle[] = [
     image: bus,
     bestFor: "Big groups, school excursions, pilgrimages",
     ac: "AC / Non-AC",
+    startingPrice: "₹48/km",
   },
   {
     slug: "bus-50",
@@ -96,5 +105,6 @@ export const vehicles: Vehicle[] = [
     image: bus,
     bestFor: "Large group travel, weddings, conferences",
     ac: "AC / Non-AC",
+    startingPrice: "₹55/km",
   },
 ];

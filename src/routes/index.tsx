@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { MessageCircle, Phone, MapPin, Users, Star, Shield, Wrench, CheckCircle2, Bus, UserCheck, Sparkles, Wallet, Route as RouteIcon, Settings2, MessagesSquare, Building2, Briefcase, Map as MapIcon } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Users, Star, Shield, Wrench, CheckCircle2, Bus, UserCheck, Sparkles, Wallet, Route as RouteIcon, Settings2, MessagesSquare, Building2, Briefcase, Map as MapIcon, Home, GraduationCap, Landmark, BadgeCheck } from "lucide-react";
 import heroImg from "@/assets/hero-travel.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { services } from "@/data/services";
@@ -145,13 +145,14 @@ function HomePage() {
                 <Phone className="h-5 w-5" /> Call {site.phones[0]}
               </a>
             </div>
-            <div className="mt-10 flex flex-wrap gap-2">
-              {trustBadges.map((b) => (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Hyderabad Based", "Professional Drivers", "Group Travel Experts"].map((b) => (
                 <span
                   key={b}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-brand-cream/10 backdrop-blur px-3 py-1.5 text-xs font-medium text-brand-cream border border-brand-cream/20"
+                  className="inline-flex items-center gap-2 rounded-full border border-brand-tan/70 bg-brand-cream/5 backdrop-blur px-3 py-1.5 text-brand-cream"
+                  style={{ fontSize: "12px" }}
                 >
-                  <CheckCircle2 className="h-3.5 w-3.5 text-brand-tan" />
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-tan" />
                   {b}
                 </span>
               ))}
@@ -261,6 +262,43 @@ function HomePage() {
                 >
                   Enquire Now →
                 </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TRIP CATEGORY CARDS */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <SectionHeader
+            eyebrow="Trip Categories"
+            title="Trips Designed for Every Group"
+            subtitle="From families and students to corporate teams and pilgrims — pick the trip type that fits your group."
+          />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: Home, title: "Family Trips", desc: "Comfortable getaways planned around your family's pace and pickup needs.", to: "/packages" },
+              { icon: Bus, title: "School & College Trips", desc: "Safe, on-time bus transport for picnics, excursions, and study tours.", to: "/services" },
+              { icon: Briefcase, title: "Corporate Outings", desc: "Reliable group transport for offsites, conferences, and team outings.", to: "/services" },
+              { icon: Landmark, title: "Pilgrimage Tours", desc: "Temple yatras to Srisailam, Yadadri, Tirupati and more with experienced drivers.", to: "/packages" },
+            ].map((c) => (
+              <div
+                key={c.title}
+                className="rounded-2xl bg-white border border-border/60 p-7 text-center flex flex-col items-center"
+                style={{ boxShadow: "0 4px 20px -8px rgba(74,44,32,0.18)" }}
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent mb-4">
+                  <c.icon className="h-7 w-7" />
+                </div>
+                <h3 className="font-display text-lg font-bold text-primary">{c.title}</h3>
+                <p className="mt-2 text-[14px] text-muted-foreground leading-relaxed">{c.desc}</p>
+                <Link
+                  to={c.to}
+                  className="mt-5 inline-flex items-center text-sm font-semibold text-accent hover:underline"
+                >
+                  Learn More →
+                </Link>
               </div>
             ))}
           </div>
@@ -413,11 +451,20 @@ function HomePage() {
           ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {filteredVehicles.map((v) => (
-              <div key={v.slug} className="overflow-hidden rounded-2xl bg-card border border-border/60" style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
-                <div className="flex items-center justify-center" style={{ background: "#F5F0E8", height: 180 }}>
-                  <img src={v.image} alt={v.name} loading="lazy" className="max-h-[180px] w-full object-contain object-center" style={{ height: 180 }} />
+              <div
+                key={v.slug}
+                className="overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col"
+                style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}
+              >
+                <div className="flex items-center justify-center bg-white" style={{ height: 180 }}>
+                  <img
+                    src={v.image}
+                    alt={v.name}
+                    loading="lazy"
+                    className="h-full w-full object-contain object-center p-3"
+                  />
                 </div>
-                <div className="p-5">
+                <div className="p-5 flex flex-col flex-1">
                   <div className="flex items-baseline justify-between gap-3">
                     <h3 className="font-display text-lg font-semibold text-primary">{v.name}</h3>
                     <span className="text-sm font-semibold text-accent">{v.seats} Seater</span>
@@ -428,13 +475,17 @@ function HomePage() {
                     <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">{v.count} available</span>
                     <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">Driver included</span>
                   </div>
+                  <div className="mt-4 flex items-baseline gap-1">
+                    <span className="text-xs text-muted-foreground">Starting</span>
+                    <span className="font-display text-xl font-bold text-primary">{v.startingPrice}</span>
+                  </div>
                   <a
-                    href={whatsappLink(`Hi Mega City Tours & Travells, I would like to enquire about the ${v.name} (${v.seats} seater).`)}
+                    href={whatsappLink(`Hi Mega City Tours & Travells, I would like to book the ${v.name} (${v.seats} seater).`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center justify-center w-full rounded-full border border-border bg-background py-2.5 text-sm font-semibold text-primary hover:bg-secondary transition-colors"
+                    className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-full bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold shadow-card hover:shadow-glow transition-shadow"
                   >
-                    Enquire Vehicle
+                    <MessageCircle className="h-4 w-4" /> Book
                   </a>
                 </div>
               </div>
@@ -470,31 +521,67 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-warm-gradient text-primary-foreground">
+      <section className="py-16 md:py-24 text-white" style={{ backgroundColor: "#001F3F" }}>
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeader
-            light
-            eyebrow="Why Mega City"
-            title="Why choose Mega City Tours & Travells?"
-            subtitle="A Hyderabad-based travel team focused on safe, comfortable, and budget-friendly group travel."
-          />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { text: "Hyderabad-based travel company", icon: Building2 },
-              { text: "Owned fleet from 4 to 50 seats", icon: Bus },
-              { text: "Drivers included with all vehicles", icon: UserCheck },
-              { text: "20–30 years experienced drivers", icon: Shield },
-              { text: "Clean and well-maintained interiors", icon: Sparkles },
-              { text: "Budget-friendly travel options", icon: Wallet },
-              { text: "Local and outstation support", icon: RouteIcon },
-              { text: "Flexible custom packages", icon: Settings2 },
-              { text: "Easy phone & WhatsApp communication", icon: MessagesSquare },
-            ].map((p) => (
-              <div key={p.text} className="rounded-xl bg-white/[0.12] backdrop-blur p-5 border border-white/20">
-                <p.icon className="h-6 w-6 text-brand-tan mb-3" />
-                <p className="text-[15px] font-medium leading-relaxed text-white">{p.text}</p>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <span className="inline-block rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-tan">
+                Why Mega City
+              </span>
+              <h2 className="mt-4 font-display text-3xl md:text-5xl font-bold text-white text-balance">
+                Trusted travel — every trip, every time
+              </h2>
+              <p className="mt-4 text-[15px] text-white/75 max-w-xl leading-relaxed">
+                A Hyderabad-based travel team focused on safe, comfortable, and budget-friendly group travel.
+              </p>
+              <ul className="mt-8 space-y-6">
+                {[
+                  { title: "Verified Professional Drivers", sub: "All drivers background checked and uniformed." },
+                  { title: "Modern Air-Conditioned Fleet", sub: "Sanitised before every trip." },
+                  { title: "No Hidden Tolls or Fees", sub: "Transparent pricing for every journey." },
+                ].map((p) => (
+                  <li key={p.title} className="flex items-start gap-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-tan text-[#001F3F]">
+                      <CheckCircle2 className="h-5 w-5" strokeWidth={2.5} />
+                    </span>
+                    <div>
+                      <h3 className="font-display text-lg font-bold text-white leading-tight">{p.title}</h3>
+                      <p className="mt-1 text-[14px] text-white/70 leading-relaxed">{p.sub}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <div
+                className="relative w-full max-w-sm rounded-3xl border border-white/15 bg-white/[0.06] backdrop-blur p-10 text-center"
+                style={{ boxShadow: "0 20px 60px -20px rgba(0,0,0,0.5)" }}
+              >
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-brand-tan text-[#001F3F]">
+                  <BadgeCheck className="h-10 w-10" strokeWidth={2.2} />
+                </div>
+                <p className="mt-6 font-display text-2xl font-bold tracking-wide text-white uppercase">
+                  Professional Service
+                </p>
+                <p className="mt-3 text-[13px] uppercase tracking-[0.2em] text-brand-tan font-semibold">
+                  Since 2012
+                </p>
+                <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+                  <div>
+                    <div className="font-display text-2xl font-bold text-white">500+</div>
+                    <div className="text-[11px] text-white/60 uppercase tracking-wide mt-1">Groups</div>
+                  </div>
+                  <div>
+                    <div className="font-display text-2xl font-bold text-white">12+</div>
+                    <div className="text-[11px] text-white/60 uppercase tracking-wide mt-1">Years</div>
+                  </div>
+                  <div>
+                    <div className="font-display text-2xl font-bold text-white">30+</div>
+                    <div className="text-[11px] text-white/60 uppercase tracking-wide mt-1">Vehicles</div>
+                  </div>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
