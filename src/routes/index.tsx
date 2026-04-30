@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, Phone, MapPin, Users, Star, Shield, Wrench, CheckCircle2 } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Users, Star, Shield, Wrench, CheckCircle2, Bus, UserCheck, Sparkles, Wallet, Route as RouteIcon, Settings2, MessagesSquare, Building2 } from "lucide-react";
 import heroImg from "@/assets/hero-travel.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { services } from "@/data/services";
@@ -94,13 +94,13 @@ function HomePage() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-rust-gradient px-7 py-3.5 font-semibold text-primary-foreground shadow-glow hover:scale-[1.02] transition-transform"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-rust-gradient text-primary-foreground shadow-glow hover:scale-[1.02] transition-transform px-10 py-4 text-base font-bold min-w-[200px]"
               >
                 <MessageCircle className="h-5 w-5" /> Get Quote on WhatsApp
               </a>
               <a
                 href={`tel:+91${site.phones[0]}`}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-cream text-brand-brown px-7 py-3.5 font-semibold shadow-soft hover:scale-[1.02] transition-transform"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-cream text-brand-brown shadow-soft hover:scale-[1.02] transition-transform px-9 py-[15px] text-base font-semibold min-w-[180px]"
               >
                 <Phone className="h-5 w-5" /> Call {site.phones[0]}
               </a>
@@ -214,19 +214,25 @@ function HomePage() {
             eyebrow="How It Works"
             title="Book your trip in 4 easy steps"
           />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 relative">
+          <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {/* Dashed connecting line — desktop only */}
+            <div
+              aria-hidden
+              className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] border-t-2 border-dashed pointer-events-none"
+              style={{ borderColor: "color-mix(in oklab, var(--brand-rust) 35%, transparent)" }}
+            />
             {[
-              ["Share Trip Details", "Tell us your pickup, destination, travel date, group size, and vehicle preference."],
-              ["Get Vehicle Options", "We suggest the right vehicle based on your group size, route, and budget."],
-              ["Confirm Booking", "Finalize route, timing, vehicle, and advance payment if required."],
-              ["Start Travel", "Our driver reaches on time and you enjoy a comfortable trip."],
+              ["Share Trip Details", "Send pickup, destination, date, group size."],
+              ["Get Vehicle Options", "We suggest the right vehicle and route."],
+              ["Confirm Booking", "Lock route, timing, vehicle, advance payment."],
+              ["Start Travel", "Driver arrives on time — enjoy the trip."],
             ].map(([title, desc], i) => (
-              <div key={title} className="relative rounded-2xl bg-card p-6 shadow-card border border-border/60">
-                <div className="absolute -top-4 left-6 flex h-10 w-10 items-center justify-center rounded-full bg-rust-gradient text-primary-foreground font-display font-bold shadow-soft">
+              <div key={title} className="relative rounded-2xl bg-card p-6 shadow-card border border-border/60 text-center lg:text-left">
+                <span className="block font-display text-4xl font-bold text-accent leading-none">
                   {i + 1}
-                </div>
-                <h3 className="mt-4 font-display text-lg font-semibold text-primary">{title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                </span>
+                <h3 className="mt-3 font-display text-lg font-semibold text-primary">{title}</h3>
+                <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -288,9 +294,9 @@ function HomePage() {
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {vehicles.map((v) => (
-              <div key={v.slug} className="overflow-hidden rounded-2xl bg-card border border-border/60 shadow-card">
-                <div className="aspect-[16/10] overflow-hidden bg-muted">
-                  <img src={v.image} alt={v.name} loading="lazy" className="h-full w-full object-cover" />
+              <div key={v.slug} className="overflow-hidden rounded-2xl bg-card border border-border/60" style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
+                <div className="flex items-center justify-center" style={{ background: "#F5F0E8", height: 180 }}>
+                  <img src={v.image} alt={v.name} loading="lazy" className="max-h-[180px] w-full object-contain object-center" style={{ height: 180 }} />
                 </div>
                 <div className="p-5">
                   <div className="flex items-baseline justify-between gap-3">
@@ -318,7 +324,32 @@ function HomePage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
+      {/* STATS BAR */}
+      <section className="py-12 md:py-16 bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { num: "30+", label: "Owned Vehicles" },
+              { num: "20+", label: "Years on the Road" },
+              { num: "4–50", label: "Seater Options" },
+              { num: "365", label: "Days Available" },
+            ].map((s) => (
+              <div
+                key={s.label}
+                className="text-center pt-4 border-t-[3px] border-accent text-accent"
+              >
+                <div className="font-display font-bold leading-none text-[36px] md:text-[48px]">
+                  {s.num}
+                </div>
+                <div className="mt-2 text-sm font-medium text-foreground/80">
+                  {s.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24 bg-warm-gradient text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
@@ -329,19 +360,19 @@ function HomePage() {
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              "Hyderabad-based travel company",
-              "Owned fleet from 4 to 50 seats",
-              "Drivers included with all vehicles",
-              "20–30 years experienced drivers",
-              "Clean and well-maintained interiors",
-              "Budget-friendly travel options",
-              "Local and outstation support",
-              "Flexible custom packages",
-              "Easy phone & WhatsApp communication",
+              { text: "Hyderabad-based travel company", icon: Building2 },
+              { text: "Owned fleet from 4 to 50 seats", icon: Bus },
+              { text: "Drivers included with all vehicles", icon: UserCheck },
+              { text: "20–30 years experienced drivers", icon: Shield },
+              { text: "Clean and well-maintained interiors", icon: Sparkles },
+              { text: "Budget-friendly travel options", icon: Wallet },
+              { text: "Local and outstation support", icon: RouteIcon },
+              { text: "Flexible custom packages", icon: Settings2 },
+              { text: "Easy phone & WhatsApp communication", icon: MessagesSquare },
             ].map((p) => (
-              <div key={p} className="flex items-start gap-3 rounded-xl bg-brand-cream/10 backdrop-blur p-4 border border-brand-cream/15">
-                <CheckCircle2 className="h-5 w-5 text-brand-tan shrink-0 mt-0.5" />
-                <span className="text-sm md:text-base text-brand-cream/95">{p}</span>
+              <div key={p.text} className="rounded-xl bg-white/[0.12] backdrop-blur p-5 border border-white/20">
+                <p.icon className="h-6 w-6 text-brand-tan mb-3" />
+                <p className="text-[15px] font-medium leading-relaxed text-white">{p.text}</p>
               </div>
             ))}
           </div>
@@ -360,16 +391,22 @@ function HomePage() {
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-dashed border-border bg-card/50 p-6 text-center"
+                className="rounded-2xl border border-dashed border-border bg-card/50 p-6 text-left"
                 data-placeholder="real-google-reviews"
               >
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-accent">
-                  <Star className="h-5 w-5" />
+                <div className="flex gap-1 mb-3" aria-label="5 star rating">
+                  {[0, 1, 2, 3, 4].map((s) => (
+                    <Star key={s} className="h-4 w-4 fill-accent text-accent" />
+                  ))}
                 </div>
-                <p className="mt-4 text-sm text-muted-foreground italic">
+                <p className="text-[15px] text-muted-foreground italic leading-relaxed">
                   Placeholder · Real customer review will appear here once added by the client
                   or connected to Google Business Profile.
                 </p>
+                <div className="mt-4">
+                  <p className="text-[15px] font-bold text-primary">Customer Name</p>
+                  <p className="text-xs text-muted-foreground opacity-65">Hyderabad · Family Trip</p>
+                </div>
               </div>
             ))}
           </div>

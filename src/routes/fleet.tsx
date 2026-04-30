@@ -61,9 +61,9 @@ function FleetPage() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {vehicles.map((v) => (
-              <div key={v.slug} className="overflow-hidden rounded-2xl bg-card border border-border/60 shadow-card">
-                <div className="aspect-[16/10] overflow-hidden bg-muted">
-                  <img src={v.image} alt={v.name} loading="lazy" className="h-full w-full object-cover" />
+              <div key={v.slug} className="overflow-hidden rounded-2xl bg-card border border-border/60" style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
+                <div className="flex items-center justify-center" style={{ background: "#F5F0E8", height: 180 }}>
+                  <img src={v.image} alt={v.name} loading="lazy" className="max-h-[180px] w-full object-contain object-center" style={{ height: 180 }} />
                 </div>
                 <div className="p-5">
                   <div className="flex items-baseline justify-between gap-3">
