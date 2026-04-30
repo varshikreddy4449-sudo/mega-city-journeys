@@ -440,6 +440,7 @@ function HomePage() {
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
 
