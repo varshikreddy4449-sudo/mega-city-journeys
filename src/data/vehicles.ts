@@ -13,6 +13,7 @@ export type Vehicle = {
   image: string;
   bestFor: string;
   ac: string;
+  startingPrice: string;
 };
 
 export const vehicles: Vehicle[] = [
