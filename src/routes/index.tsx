@@ -90,6 +90,24 @@ function HomePage() {
               Comfortable travel for families, schools, colleges, companies, weddings, pilgrimage
               groups, and outstation journeys across Telangana and nearby states.
             </p>
+            {/* HERO STATS */}
+            <dl className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl">
+              {[
+                { num: "500+", label: "Groups Served" },
+                { num: "12+", label: "Years in Business" },
+                { num: "30+", label: "Owned Vehicles" },
+                { num: "365", label: "Days Available" },
+              ].map((s) => (
+                <div key={s.label}>
+                  <dt className="font-display font-bold leading-none text-brand-cream text-[36px] md:text-[44px]">
+                    {s.num}
+                  </dt>
+                  <dd className="mt-2 text-xs md:text-sm font-medium text-brand-cream/80 uppercase tracking-wide">
+                    {s.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href={whatsappLink()}
