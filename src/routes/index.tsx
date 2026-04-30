@@ -94,13 +94,13 @@ function HomePage() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-rust-gradient px-7 py-3.5 font-semibold text-primary-foreground shadow-glow hover:scale-[1.02] transition-transform"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-rust-gradient text-primary-foreground shadow-glow hover:scale-[1.02] transition-transform px-10 py-4 text-base font-bold min-w-[200px]"
               >
                 <MessageCircle className="h-5 w-5" /> Get Quote on WhatsApp
               </a>
               <a
                 href={`tel:+91${site.phones[0]}`}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-cream text-brand-brown px-7 py-3.5 font-semibold shadow-soft hover:scale-[1.02] transition-transform"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-cream text-brand-brown shadow-soft hover:scale-[1.02] transition-transform px-9 py-[15px] text-base font-semibold min-w-[180px]"
               >
                 <Phone className="h-5 w-5" /> Call {site.phones[0]}
               </a>
