@@ -5,18 +5,19 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Mountain Earth design system for Mega City Tours & Travells
- * Primary dark brown #4A2C20, rust orange #A0522D, soft tan #D9B08C,
- * muted sage #8FA68F, warm cream #F4F1EA
+ * Heritage & Horizon design system for Mega City Tours & Travells
+ * Primary deep navy #001F3F, vibrant saffron accent #FF9832,
+ * Page bg #FAF9FC, surfaces #FFFFFF, alt #F4F3F6, footer #000613
  */
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 16px;
+  --radius-3xl: 16px;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -37,72 +38,87 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
+
+  /* Brand alias tokens — kept for compatibility but mapped to new palette */
   --color-brand-cream: var(--brand-cream);
   --color-brand-tan: var(--brand-tan);
   --color-brand-rust: var(--brand-rust);
   --color-brand-brown: var(--brand-brown);
   --color-brand-sage: var(--brand-sage);
+
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
-  --font-display: "Fraunces", "Playfair Display", Georgia, serif;
+
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --shadow-card: 0 4px 20px -8px color-mix(in oklab, var(--brand-brown) 25%, transparent);
-  --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--brand-brown) 30%, transparent);
-  --shadow-glow: 0 12px 40px -10px color-mix(in oklab, var(--brand-rust) 45%, transparent);
+
+  --shadow-card: 0px 4px 12px rgba(0, 31, 63, 0.06);
+  --shadow-soft: 0px 8px 24px rgba(0, 31, 63, 0.12);
+  --shadow-glow: 0px 8px 24px rgba(255, 152, 50, 0.35);
 }
 
 :root {
-  --radius: 0.875rem;
+  --radius: 0.75rem; /* 12px cards */
 
-  /* Mountain Earth palette in oklch */
-  --brand-brown: oklch(0.30 0.05 40);     /* #4A2C20 */
-  --brand-rust: oklch(0.55 0.13 45);      /* #A0522D */
-  --brand-tan: oklch(0.78 0.06 65);       /* #D9B08C */
-  --brand-sage: oklch(0.70 0.04 145);     /* #8FA68F */
-  --brand-cream: oklch(0.96 0.012 80);    /* #F4F1EA */
+  /* Heritage & Horizon palette */
+  --background: #FAF9FC;
+  --foreground: #1A1C1E;
 
-  --background: var(--brand-cream);
-  --foreground: var(--brand-brown);
-  --card: oklch(0.99 0.005 80);
-  --card-foreground: var(--brand-brown);
-  --popover: oklch(0.99 0.005 80);
-  --popover-foreground: var(--brand-brown);
-  --primary: var(--brand-brown);
-  --primary-foreground: var(--brand-cream);
-  --secondary: oklch(0.92 0.025 70);
-  --secondary-foreground: var(--brand-brown);
-  --muted: oklch(0.93 0.018 70);
-  --muted-foreground: oklch(0.45 0.04 40);
-  --accent: var(--brand-rust);
-  --accent-foreground: var(--brand-cream);
-  --destructive: oklch(0.55 0.20 25);
-  --destructive-foreground: oklch(0.98 0.005 80);
-  --border: oklch(0.86 0.02 70);
-  --input: oklch(0.90 0.02 70);
-  --ring: var(--brand-rust);
+  --card: #FFFFFF;
+  --card-foreground: #1A1C1E;
 
-  --whatsapp: oklch(0.62 0.16 145);
-  --whatsapp-foreground: oklch(0.99 0.005 145);
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1C1E;
+
+  --primary: #001F3F;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #F4F3F6;
+  --secondary-foreground: #001F3F;
+
+  --muted: #F4F3F6;
+  --muted-foreground: #43474E;
+
+  --accent: #FF9832;
+  --accent-foreground: #FFFFFF;
+
+  --destructive: #D92D20;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E9E7EB;
+  --input: #C4C6CF;
+  --ring: #FF9832;
+
+  --whatsapp: #25D366;
+  --whatsapp-foreground: #FFFFFF;
+
+  /* Brand alias tokens — map legacy classes onto the new palette
+     so existing markup using bg-brand-cream, text-brand-tan, etc. just works. */
+  --brand-brown: #001F3F;       /* legacy "brown" -> deep navy */
+  --brand-rust: #FF9832;        /* legacy "rust" -> saffron */
+  --brand-tan: #FF9832;         /* legacy "tan"  -> saffron */
+  --brand-sage: #43474E;        /* legacy "sage" -> dark grey */
+  --brand-cream: #FFFFFF;       /* legacy "cream" -> white */
 }
 
 .dark {
-  --background: oklch(0.20 0.025 40);
-  --foreground: var(--brand-cream);
-  --card: oklch(0.25 0.03 40);
-  --card-foreground: var(--brand-cream);
-  --popover: oklch(0.25 0.03 40);
-  --popover-foreground: var(--brand-cream);
-  --primary: var(--brand-tan);
-  --primary-foreground: var(--brand-brown);
-  --secondary: oklch(0.30 0.03 40);
-  --secondary-foreground: var(--brand-cream);
-  --muted: oklch(0.30 0.03 40);
-  --muted-foreground: oklch(0.75 0.02 70);
-  --accent: var(--brand-rust);
-  --accent-foreground: var(--brand-cream);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: var(--brand-rust);
+  --background: #000613;
+  --foreground: #FFFFFF;
+  --card: #001F3F;
+  --card-foreground: #FFFFFF;
+  --popover: #001F3F;
+  --popover-foreground: #FFFFFF;
+  --primary: #FF9832;
+  --primary-foreground: #001F3F;
+  --secondary: #0A2A4A;
+  --secondary-foreground: #FFFFFF;
+  --muted: #0A2A4A;
+  --muted-foreground: rgba(255, 255, 255, 0.7);
+  --accent: #FF9832;
+  --accent-foreground: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #FF9832;
 }
 
 @layer base {
@@ -118,32 +134,37 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--color-primary);
   }
 }
 
 @layer utilities {
+  /* Hero overlay — deep navy near-black wash over hero image */
   .bg-hero-overlay {
     background: linear-gradient(
       135deg,
-      color-mix(in oklab, var(--brand-brown) 88%, transparent) 0%,
-      color-mix(in oklab, var(--brand-brown) 60%, transparent) 60%,
-      color-mix(in oklab, var(--brand-rust) 35%, transparent) 100%
+      rgba(0, 6, 19, 0.65) 0%,
+      rgba(0, 31, 63, 0.55) 60%,
+      rgba(0, 31, 63, 0.45) 100%
     );
   }
+  /* Legacy gradient utilities — remapped to the new navy palette
+     so existing components using bg-warm-gradient / bg-rust-gradient
+     adopt the new theme automatically. */
   .bg-warm-gradient {
-    background: linear-gradient(135deg, var(--brand-brown), color-mix(in oklab, var(--brand-rust) 80%, var(--brand-brown)));
+    background: linear-gradient(135deg, #001F3F 0%, #002B5A 100%);
   }
   .bg-rust-gradient {
-    background: linear-gradient(135deg, var(--brand-rust), color-mix(in oklab, var(--brand-rust) 70%, var(--brand-brown)));
+    background: linear-gradient(135deg, #FF9832 0%, #F0832A 100%);
   }
   .text-balance { text-wrap: balance; }
   .shadow-card { box-shadow: var(--shadow-card); }
