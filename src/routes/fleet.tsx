@@ -61,11 +61,20 @@ function FleetPage() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {vehicles.map((v) => (
-              <div key={v.slug} className="overflow-hidden rounded-2xl bg-card border border-border/60" style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
-                <div className="flex items-center justify-center" style={{ background: "#F5F0E8", height: 180 }}>
-                  <img src={v.image} alt={v.name} loading="lazy" className="max-h-[180px] w-full object-contain object-center" style={{ height: 180 }} />
+              <div
+                key={v.slug}
+                className="overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col"
+                style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}
+              >
+                <div className="flex items-center justify-center bg-white" style={{ height: 180 }}>
+                  <img
+                    src={v.image}
+                    alt={v.name}
+                    loading="lazy"
+                    className="h-full w-full object-contain object-center p-3"
+                  />
                 </div>
-                <div className="p-5">
+                <div className="p-5 flex flex-col flex-1">
                   <div className="flex items-baseline justify-between gap-3">
                     <h3 className="font-display text-xl font-semibold text-primary">{v.name}</h3>
                     <span className="text-sm font-bold text-accent">{v.seats} Seater</span>
@@ -76,13 +85,17 @@ function FleetPage() {
                     <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">{v.count} vehicles</div>
                     <div className="col-span-2 rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">Driver included</div>
                   </div>
+                  <div className="mt-4 flex items-baseline gap-1">
+                    <span className="text-xs text-muted-foreground">Starting</span>
+                    <span className="font-display text-xl font-bold text-primary">{v.startingPrice}</span>
+                  </div>
                   <a
-                    href={whatsappLink(`Hi Mega City Tours & Travells, I would like to enquire about the ${v.name} (${v.seats} seater).`)}
+                    href={whatsappLink(`Hi Mega City Tours & Travells, I would like to book the ${v.name} (${v.seats} seater).`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-full bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold shadow-card"
                   >
-                    <MessageCircle className="h-4 w-4" /> Enquire Vehicle
+                    <MessageCircle className="h-4 w-4" /> Book
                   </a>
                 </div>
               </div>
