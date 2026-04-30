@@ -324,7 +324,32 @@ function HomePage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
+      {/* STATS BAR */}
+      <section className="py-12 md:py-16 bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { num: "30+", label: "Owned Vehicles" },
+              { num: "20+", label: "Years on the Road" },
+              { num: "4–50", label: "Seater Options" },
+              { num: "365", label: "Days Available" },
+            ].map((s) => (
+              <div
+                key={s.label}
+                className="text-center pt-4 border-t-[3px] border-accent text-accent"
+              >
+                <div className="font-display font-bold leading-none text-[36px] md:text-[48px]">
+                  {s.num}
+                </div>
+                <div className="mt-2 text-sm font-medium text-foreground/80">
+                  {s.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24 bg-warm-gradient text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
