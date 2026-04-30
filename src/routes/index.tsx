@@ -99,7 +99,7 @@ function HomePage() {
           />
           <div className="absolute inset-0 bg-hero-overlay" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 md:px-6 py-20 md:py-32 lg:py-40">
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-8 pb-14 md:pt-[90px] md:pb-20 lg:pt-[100px] lg:pb-24">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-cream/15 backdrop-blur px-3 py-1 text-xs font-semibold text-brand-cream uppercase tracking-wider">
               <MapPin className="h-3.5 w-3.5" /> Hyderabad's Trusted Travel Partner
