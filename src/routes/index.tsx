@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, Phone, MapPin, Users, Star, Shield, Wrench, CheckCircle2 } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Users, Star, Shield, Wrench, CheckCircle2, Bus, UserCheck, Sparkles, Wallet, Route as RouteIcon, Settings2, MessagesSquare, Building2 } from "lucide-react";
 import heroImg from "@/assets/hero-travel.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { services } from "@/data/services";
@@ -329,19 +329,19 @@ function HomePage() {
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              "Hyderabad-based travel company",
-              "Owned fleet from 4 to 50 seats",
-              "Drivers included with all vehicles",
-              "20–30 years experienced drivers",
-              "Clean and well-maintained interiors",
-              "Budget-friendly travel options",
-              "Local and outstation support",
-              "Flexible custom packages",
-              "Easy phone & WhatsApp communication",
+              { text: "Hyderabad-based travel company", icon: Building2 },
+              { text: "Owned fleet from 4 to 50 seats", icon: Bus },
+              { text: "Drivers included with all vehicles", icon: UserCheck },
+              { text: "20–30 years experienced drivers", icon: Shield },
+              { text: "Clean and well-maintained interiors", icon: Sparkles },
+              { text: "Budget-friendly travel options", icon: Wallet },
+              { text: "Local and outstation support", icon: RouteIcon },
+              { text: "Flexible custom packages", icon: Settings2 },
+              { text: "Easy phone & WhatsApp communication", icon: MessagesSquare },
             ].map((p) => (
-              <div key={p} className="flex items-start gap-3 rounded-xl bg-brand-cream/10 backdrop-blur p-4 border border-brand-cream/15">
-                <CheckCircle2 className="h-5 w-5 text-brand-tan shrink-0 mt-0.5" />
-                <span className="text-sm md:text-base text-brand-cream/95">{p}</span>
+              <div key={p.text} className="rounded-xl bg-white/[0.12] backdrop-blur p-5 border border-white/20">
+                <p.icon className="h-6 w-6 text-brand-tan mb-3" />
+                <p className="text-[15px] font-medium leading-relaxed text-white">{p.text}</p>
               </div>
             ))}
           </div>
