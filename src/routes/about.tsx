@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { CTASection } from "@/components/CTASection";
 import { site, whatsappLink } from "@/data/site";
 import heroImg from "@/assets/hero-travel.jpg";
+import brandedBus from "@/assets/megacity-branded-bus.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
