@@ -20,7 +20,8 @@ import {
   Compass,
   Route as RouteIcon,
 } from "lucide-react";
-import heroImg from "@/assets/hero-travel.jpg";
+import heroImg from "@/assets/megacity-fleet.jpg";
+import fleetImg from "@/assets/megacity-fleet.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { faqs } from "@/data/faqs";
@@ -100,12 +101,21 @@ function HomePage() {
         <div className="absolute inset-0">
           <img
             src={heroImg}
-            alt="Mega City Tours & Travells fleet at Charminar Hyderabad"
-            className="h-full w-full object-cover"
+            alt="Mega City Tours and Travells owned fleet in Hyderabad."
+            className="h-full w-full object-cover object-center"
+            style={{ objectPosition: "center 70%" }}
             width={1600}
             height={1100}
           />
-          <div className="absolute inset-0 bg-hero-overlay" />
+          {/* Warm Mountain Earth overlay — stronger on left where text sits */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(42,26,20,0.85) 0%, rgba(74,44,32,0.72) 45%, rgba(74,44,32,0.45) 75%, rgba(74,44,32,0.35) 100%)",
+            }}
+          />
+          <div className="absolute inset-0 lg:hidden" style={{ background: "rgba(42,26,20,0.45)" }} />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-12 md:pt-[90px] md:pb-20 lg:pt-[100px] lg:pb-24">
           <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
@@ -234,22 +244,43 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SHORT BUSINESS INTRO */}
+      {/* OWNED FLEET TRUST SECTION */}
       <section className="py-14 md:py-20 bg-secondary/40">
-        <div className="mx-auto max-w-4xl px-4 md:px-6 text-center">
-          <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4">
-            About Mega City
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary text-balance">
-            Hyderabad-based travel specialists for groups of every size
-          </h2>
-          <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Owned and operated by M Kondal Reddy from {site.city}, Mega City Tours & Travells
-            runs an in-house fleet of 33+ vehicles — from 4-seater Brezza to 50-seater buses —
-            with drivers carrying 20–30 years of experience. Local sightseeing, outstation
-            journeys, pilgrimage yatras, school excursions, corporate travel — all handled with
-            one team you can call any time of the year.
-          </p>
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div className="relative overflow-hidden rounded-2xl shadow-soft border border-border/60" style={{ aspectRatio: "4 / 3" }}>
+              <img
+                src={fleetImg}
+                alt="Mega City Tours and Travells owned fleet in Hyderabad."
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: "center 65%" }}
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4">
+                About Mega City
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-primary text-balance">
+                Owned Fleet for Every Group Size
+              </h2>
+              <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+                Owned and operated by M Kondal Reddy from {site.city}, Mega City Tours & Travells
+                runs an in-house fleet of 33+ vehicles — from 4-seater Brezza to 50-seater buses —
+                with drivers carrying 20–30 years of experience. Local sightseeing, outstation
+                journeys, pilgrimage yatras, school excursions, corporate travel — all handled
+                with one team you can call any time of the year.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["33+ Owned Vehicles", "4–50 Seaters", "20–30 yr Drivers", "365 Days Available"].map((b) => (
+                  <span key={b} className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/5 px-3 py-1.5 text-xs font-semibold text-primary">
+                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
+                    {b}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

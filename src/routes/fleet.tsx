@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { CTASection } from "@/components/CTASection";
 import { vehicles } from "@/data/vehicles";
 import { whatsappLink } from "@/data/site";
+import fleetHero from "@/assets/megacity-fleet.jpg";
 
 export const Route = createFileRoute("/fleet")({
   head: () => ({
@@ -33,8 +34,23 @@ const features = [
 function FleetPage() {
   return (
     <>
-      <section className="bg-warm-gradient text-primary-foreground py-16 md:py-24">
-        <div className="mx-auto max-w-5xl px-4 md:px-6 text-center">
+      <section className="relative overflow-hidden text-primary-foreground">
+        <div className="absolute inset-0">
+          <img
+            src={fleetHero}
+            alt="Mega City Tours and Travells owned fleet in Hyderabad."
+            className="h-full w-full object-cover"
+            style={{ objectPosition: "center 65%" }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(42,26,20,0.82) 0%, rgba(74,44,32,0.70) 60%, rgba(160,82,45,0.55) 100%)",
+            }}
+          />
+        </div>
+        <div className="relative mx-auto max-w-5xl px-4 md:px-6 py-16 md:py-24 text-center">
           <span className="inline-block rounded-full bg-brand-cream/15 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider">
             Our Fleet
           </span>
