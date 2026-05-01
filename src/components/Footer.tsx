@@ -26,12 +26,12 @@ const serviceLinks = [
 
 export function Footer() {
   return (
-    <footer
-      className="text-white pb-24 lg:pb-0"
-      style={{ backgroundColor: "#000613" }}
-    >
+    <footer className="text-white pb-24 lg:pb-0" style={{ backgroundColor: "#000613" }}>
       <div className="mx-auto max-w-7xl px-4 md:px-6" style={{ paddingTop: 60, paddingBottom: 60 }}>
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-10" style={{ columnGap: 40 }}>
+        <div
+          className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-10"
+          style={{ columnGap: 40 }}
+        >
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img
@@ -103,23 +103,37 @@ export function Footer() {
             <h4 className="font-display text-base mb-4 font-bold" style={{ color: "#FFFFFF" }}>
               Contact
             </h4>
-            <ul className="space-y-3 text-[14px]" style={{ color: "rgba(255,255,255,0.75)", lineHeight: "1.7" }}>
+            <ul
+              className="space-y-3 text-[14px]"
+              style={{ color: "rgba(255,255,255,0.75)", lineHeight: "1.7" }}
+            >
               <li className="flex gap-2">
                 <Phone className="h-4 w-4 mt-0.5 shrink-0" style={{ color: "#FF9832" }} />
                 <div>
-                  <a href={`tel:+91${site.phones[0]}`} className="block hover:underline">{site.phones[0]}</a>
-                  <a href={`tel:+91${site.phones[1]}`} className="block hover:underline">{site.phones[1]}</a>
+                  <a href={`tel:+91${site.phones[0]}`} className="block hover:underline">
+                    {site.phones[0]}
+                  </a>
+                  <a href={`tel:+91${site.phones[1]}`} className="block hover:underline">
+                    {site.phones[1]}
+                  </a>
                 </div>
               </li>
               <li className="flex gap-2">
                 <MessageCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: "#FF9832" }} />
-                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
                   WhatsApp: {site.whatsapp}
                 </a>
               </li>
               <li className="flex gap-2">
                 <Mail className="h-4 w-4 mt-0.5 shrink-0" style={{ color: "#FF9832" }} />
-                <a href={`mailto:${site.email}`} className="hover:underline break-all">{site.email}</a>
+                <a href={`mailto:${site.email}`} className="hover:underline break-all">
+                  {site.email}
+                </a>
               </li>
               <li className="flex gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" style={{ color: "#FF9832" }} />
@@ -143,8 +157,13 @@ export function Footer() {
           <p>© {new Date().getFullYear()} Mega City Tours & Travells. All rights reserved.</p>
           <p>
             Website by DAV Dev Studio ·{" "}
-            <Link to="/privacy" className="hover:underline">Privacy</Link> ·{" "}
-            <Link to="/terms" className="hover:underline">Terms</Link>
+            <Link to="/privacy" className="hover:underline">
+              Privacy
+            </Link>{" "}
+            ·{" "}
+            <Link to="/terms" className="hover:underline">
+              Terms
+            </Link>
           </p>
         </div>
       </div>

@@ -4,12 +4,12 @@ import { site, whatsappLink } from "@/data/site";
 export function CTASection({
   title = "Planning a Group Trip?",
   text = "Share your destination, travel date, pickup location, group size, and vehicle preference. Our team will help you choose the right travel option.",
-}: { title?: string; text?: string }) {
+}: {
+  title?: string;
+  text?: string;
+}) {
   return (
-    <section
-      className="relative overflow-hidden"
-      style={{ backgroundColor: "#FF9832" }}
-    >
+    <section className="relative overflow-hidden" style={{ backgroundColor: "#FF9832" }}>
       <div className="relative mx-auto max-w-5xl px-4 py-16 md:px-6 md:py-24 text-center">
         <h2
           className="font-display font-bold text-balance"

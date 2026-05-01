@@ -18,14 +18,18 @@ export function LocalBusinessSchema() {
     email: site.email,
     url: site.url,
     openingHours: "Mo-Su 09:00-21:00",
-    areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh", "Karnataka", "Tamil Nadu", "Maharashtra"],
+    areaServed: [
+      "Hyderabad",
+      "Telangana",
+      "Andhra Pradesh",
+      "Karnataka",
+      "Tamil Nadu",
+      "Maharashtra",
+    ],
     priceRange: "₹₹",
     sameAs: [],
   };
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
   );
 }

@@ -34,9 +34,7 @@ export function Header() {
         "backdrop-blur-md backdrop-saturate-150",
       )}
       style={{
-        backgroundColor: scrolled
-          ? "rgba(244, 241, 234, 0.78)"
-          : "rgba(244, 241, 234, 0.45)",
+        backgroundColor: scrolled ? "rgba(244, 241, 234, 0.78)" : "rgba(244, 241, 234, 0.45)",
         borderBottom: scrolled
           ? "1px solid rgba(74, 44, 32, 0.12)"
           : "1px solid rgba(255, 255, 255, 0.25)",
@@ -51,7 +49,10 @@ export function Header() {
             className="h-11 w-11 md:h-12 md:w-12 object-contain rounded-lg bg-white p-1 shadow-card"
           />
           <div className="leading-tight">
-            <div className="font-display text-base font-bold md:text-lg" style={{ color: "#4A2C20" }}>
+            <div
+              className="font-display text-base font-bold md:text-lg"
+              style={{ color: "#4A2C20" }}
+            >
               Mega City
             </div>
             <div
@@ -116,7 +117,9 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className="rounded-md px-3 py-3 text-base font-medium hover:bg-secondary"
                 style={{ color: "#4A2C20" }}
-                activeProps={{ style: { color: "#A0522D", fontWeight: 700, backgroundColor: "#EDE6D8" } }}
+                activeProps={{
+                  style: { color: "#A0522D", fontWeight: 700, backgroundColor: "#EDE6D8" },
+                }}
                 activeOptions={{ exact: item.to === "/" }}
               >
                 {item.label}
