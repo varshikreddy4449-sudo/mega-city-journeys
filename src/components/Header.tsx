@@ -107,7 +107,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-white lg:hidden">
+        <div className="border-t border-border bg-white/90 backdrop-blur-md lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-4 py-3">
             {navItems.map((item) => (
               <Link
@@ -115,8 +115,8 @@ export function Header() {
                 to={item.to}
                 onClick={() => setOpen(false)}
                 className="rounded-md px-3 py-3 text-base font-medium hover:bg-secondary"
-                style={{ color: "#1A1C1E" }}
-                activeProps={{ style: { color: "#FF9832", fontWeight: 600, backgroundColor: "#F4F3F6" } }}
+                style={{ color: "#4A2C20" }}
+                activeProps={{ style: { color: "#A0522D", fontWeight: 700, backgroundColor: "#EDE6D8" } }}
                 activeOptions={{ exact: item.to === "/" }}
               >
                 {item.label}
@@ -127,7 +127,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 inline-flex items-center justify-center gap-2 text-base font-bold text-white"
-              style={{ backgroundColor: "#001F3F", borderRadius: "8px", padding: "14px 32px" }}
+              style={{ backgroundColor: "#A0522D", borderRadius: "8px", padding: "14px 32px" }}
             >
               <MessageCircle className="h-5 w-5" />
               Get Quote on WhatsApp
@@ -136,8 +136,8 @@ export function Header() {
               href={`tel:+91${site.phones[0]}`}
               className="mt-2 inline-flex items-center justify-center gap-2 text-base font-bold"
               style={{
-                border: "2px solid #001F3F",
-                color: "#001F3F",
+                border: "2px solid #4A2C20",
+                color: "#4A2C20",
                 borderRadius: "8px",
                 padding: "12px 28px",
               }}
