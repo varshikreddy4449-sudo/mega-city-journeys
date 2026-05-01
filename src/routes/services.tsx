@@ -8,6 +8,10 @@ import {
   Calculator,
   Receipt,
   ClipboardList,
+  Users,
+  Route as RouteIcon,
+  MapPin,
+  GraduationCap,
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { services } from "@/data/services";
@@ -93,80 +97,124 @@ function ServicesPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-warm-gradient text-primary-foreground">
-        {/* Subtle route pattern */}
+      <section
+        className="relative overflow-hidden text-brand-cream"
+        style={{
+          background:
+            "linear-gradient(120deg, #4A2C20 0%, #4A2C20 55%, #6B3422 78%, #A0522D 100%)",
+        }}
+      >
+        {/* Sage glow accent */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full blur-3xl opacity-25"
+          style={{ background: "#8FA68F" }}
+        />
+        {/* Subtle dotted route pattern */}
         <svg
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.12]"
+          className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.10]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <pattern id="dots" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
-              <circle cx="1.2" cy="1.2" r="1.2" fill="#F4F1EA" />
+            <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+              <circle cx="1" cy="1" r="1" fill="#F4F1EA" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#dots)" />
         </svg>
         <svg
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full opacity-20"
+          className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.10]"
           viewBox="0 0 1200 400"
           preserveAspectRatio="none"
         >
           <path
-            d="M0,320 C200,260 350,360 520,280 C700,200 820,330 1000,240 C1120,180 1200,220 1200,220"
-            fill="none"
-            stroke="#D9B08C"
-            strokeWidth="2"
-            strokeDasharray="6 8"
-          />
-          <path
-            d="M0,120 C180,60 320,170 500,110 C680,50 860,180 1040,110 C1140,70 1200,110 1200,110"
+            d="M0,300 C220,240 380,340 560,260 C740,180 880,310 1080,220 C1160,190 1200,210 1200,210"
             fill="none"
             stroke="#D9B08C"
             strokeWidth="1.5"
-            strokeDasharray="4 10"
+            strokeDasharray="5 9"
           />
         </svg>
 
-        <div className="relative mx-auto max-w-6xl px-4 md:px-6 py-20 md:py-28 text-center">
-          <span className="inline-block rounded-full bg-brand-cream/15 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider">
-            Services
-          </span>
-          <h1 className="mt-4 font-display text-4xl md:text-6xl font-bold leading-tight text-balance">
-            Travel Services from Hyderabad
-          </h1>
-          <p className="mt-5 text-base md:text-lg text-brand-cream/85 max-w-2xl mx-auto leading-relaxed">
-            Comfortable vehicle arrangements for families, schools, colleges, companies, weddings,
-            pilgrimages, and outstation journeys.
-          </p>
-
-          <div className="mt-7 flex flex-wrap justify-center gap-2">
-            {heroPills.map((p) => (
-              <span
-                key={p}
-                className="rounded-full border border-brand-cream/25 bg-brand-cream/10 backdrop-blur px-3.5 py-1.5 text-xs md:text-sm font-medium text-brand-cream"
-              >
-                {p}
+        <div className="relative mx-auto max-w-6xl px-4 md:px-6 py-12 md:py-16 lg:py-20 min-h-[420px] md:min-h-[460px] flex items-center">
+          <div className="grid w-full gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+            {/* LEFT */}
+            <div>
+              <span className="inline-block rounded-full bg-brand-tan/20 text-brand-tan border border-brand-tan/30 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em]">
+                Services
               </span>
-            ))}
-          </div>
+              <h1 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-balance text-brand-cream">
+                Travel Services from Hyderabad
+              </h1>
+              <p className="mt-4 text-sm md:text-base text-brand-cream/85 max-w-xl leading-relaxed">
+                Comfortable vehicle arrangements for families, schools, colleges, companies,
+                weddings, pilgrimages, and outstation journeys from Hyderabad.
+              </p>
 
-          <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-semibold text-whatsapp-foreground shadow-glow"
-            >
-              <MessageCircle className="h-5 w-5" /> Get Quote on WhatsApp
-            </a>
-            <a
-              href={telLink()}
-              className="inline-flex items-center gap-2 rounded-full border-2 border-brand-cream/70 px-6 py-3 font-semibold text-brand-cream hover:bg-brand-cream/10 transition"
-            >
-              <Phone className="h-5 w-5" /> Call Now
-            </a>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {heroPills.map((p) => (
+                  <span
+                    key={p}
+                    className="rounded-full border border-brand-cream/25 bg-brand-cream/10 backdrop-blur px-3 py-1.5 text-xs font-medium text-brand-cream"
+                  >
+                    {p}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-semibold text-whatsapp-foreground shadow-glow"
+                >
+                  <MessageCircle className="h-5 w-5" /> Get Quote on WhatsApp
+                </a>
+                <a
+                  href={telLink()}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-cream/70 px-6 py-3 font-semibold text-brand-cream hover:bg-brand-cream/10 transition"
+                >
+                  <Phone className="h-5 w-5" /> Call Now
+                </a>
+              </div>
+            </div>
+
+            {/* RIGHT - Service summary card */}
+            <div className="hidden lg:block">
+              <div className="relative rounded-2xl border border-brand-cream/15 bg-brand-cream/[0.07] backdrop-blur-md p-6 shadow-soft">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-tan">
+                    Popular Services
+                  </div>
+                  <div className="text-xs text-brand-cream/70">Hyderabad based</div>
+                </div>
+                <ul className="space-y-2.5">
+                  {[
+                    { icon: Users, label: "Group Travel" },
+                    { icon: RouteIcon, label: "Per KM Trips" },
+                    { icon: MapPin, label: "Outstation Trips" },
+                    { icon: GraduationCap, label: "School & College Trips" },
+                  ].map(({ icon: Icon, label }) => (
+                    <li
+                      key={label}
+                      className="flex items-center gap-3 rounded-xl bg-brand-brown/40 border border-brand-cream/10 px-4 py-3"
+                    >
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-rust/90 text-brand-cream shrink-0">
+                        <Icon className="h-4.5 w-4.5" />
+                      </span>
+                      <span className="text-sm font-medium text-brand-cream">{label}</span>
+                      <ArrowRight className="ml-auto h-4 w-4 text-brand-tan" />
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 text-xs text-brand-cream/70">
+                  4 to 50 seater vehicles. Local and outstation.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
