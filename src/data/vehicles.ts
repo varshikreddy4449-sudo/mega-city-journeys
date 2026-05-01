@@ -93,9 +93,9 @@ export const vehicles: Vehicle[] = [
     seats: 40,
     count: 9,
     image: bus,
-    bestFor: "Big groups, school excursions, pilgrimages",
+    bestFor: "Large groups, weddings, school/college trips, corporate outings, and pilgrimages",
     ac: "AC / Non-AC",
-    startingPrice: "₹48/km",
+    startingPrice: "Ask for Price",
   },
   {
     slug: "bus-50",
@@ -103,8 +103,8 @@ export const vehicles: Vehicle[] = [
     seats: 50,
     count: 2,
     image: bus,
-    bestFor: "Large group travel, weddings, conferences",
+    bestFor: "Large groups, weddings, school/college trips, corporate outings, and pilgrimages",
     ac: "AC / Non-AC",
-    startingPrice: "₹55/km",
+    startingPrice: "Ask for Price",
   },
 ];
