@@ -6,6 +6,7 @@ import urbania from "@/assets/vehicle-urbania.jpg";
 import bus from "@/assets/vehicle-bus.jpg";
 import bus28 from "@/assets/vehicle-bus-28.jpg";
 import bus40 from "@/assets/vehicle-bus-40.jpg";
+import bus50 from "@/assets/vehicle-bus-50.jpg";
 
 export type Vehicle = {
   slug: string;
@@ -104,8 +105,8 @@ export const vehicles: Vehicle[] = [
     name: "Bus",
     seats: 50,
     count: 2,
-    image: bus,
-    bestFor: "Large groups, weddings, school/college trips, corporate outings, and pilgrimages",
+    image: bus50,
+    bestFor: "Large events, school/college trips, weddings, corporate outings, and big group movement",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
   },
