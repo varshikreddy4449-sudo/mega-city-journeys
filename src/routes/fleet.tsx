@@ -90,6 +90,8 @@ function FleetPage() {
                         ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells."
                         : v.slug === "urbania"
                         ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
+                        : v.slug === "innova-crysta"
+                        ? "Innova Crysta for family and outstation trips in Hyderabad."
                         : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
                     }
                     loading="lazy"
