@@ -4,6 +4,7 @@ import fortuner from "@/assets/vehicle-fortuner.jpg";
 import tempo from "@/assets/vehicle-tempo.jpg";
 import urbania from "@/assets/vehicle-urbania.jpg";
 import bus from "@/assets/vehicle-bus.jpg";
+import bus28 from "@/assets/vehicle-bus-28.jpg";
 
 export type Vehicle = {
   slug: string;
@@ -82,10 +83,10 @@ export const vehicles: Vehicle[] = [
     name: "Bus",
     seats: 28,
     count: 3,
-    image: bus,
-    bestFor: "Larger groups, weddings, school trips",
+    image: bus28,
+    bestFor: "Medium groups, school trips, family functions, and local/outstation travel",
     ac: "AC / Non-AC",
-    startingPrice: "₹40/km",
+    startingPrice: "Ask for Price",
   },
   {
     slug: "bus-40",
