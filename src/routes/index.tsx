@@ -1,25 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { MessageCircle, Phone, MapPin, Users, Star, Shield, Wrench, CheckCircle2, Bus, UserCheck, Sparkles, Wallet, Route as RouteIcon, Settings2, MessagesSquare, Building2, Briefcase, Map as MapIcon, Home, GraduationCap, Landmark, BadgeCheck } from "lucide-react";
+import {
+  MessageCircle,
+  Phone,
+  MapPin,
+  Users,
+  Shield,
+  Wrench,
+  CheckCircle2,
+  Bus,
+  Briefcase,
+  Map as MapIcon,
+  Home,
+  GraduationCap,
+  Landmark,
+  Heart,
+  PartyPopper,
+  Plane,
+  Compass,
+  Route as RouteIcon,
+} from "lucide-react";
 import heroImg from "@/assets/hero-travel.jpg";
 import { site, whatsappLink } from "@/data/site";
-import { services } from "@/data/services";
-import { packages } from "@/data/packages";
 import { vehicles } from "@/data/vehicles";
 import { faqs } from "@/data/faqs";
 import { SectionHeader } from "@/components/SectionHeader";
-import { CTASection } from "@/components/CTASection";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
-import tripFamily from "@/assets/trip-family.jpg";
-import tripSchool from "@/assets/trip-school.jpg";
-import tripCorp from "@/assets/trip-corporate.jpg";
-import tripWedding from "@/assets/trip-wedding.jpg";
-import destHyd from "@/assets/dest-hyderabad.jpg";
-import destSri from "@/assets/dest-srisailam.jpg";
-import destYad from "@/assets/dest-yadadri.jpg";
-import destNag from "@/assets/dest-nagarjuna.jpg";
+import { QuoteForm } from "@/components/QuoteForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,7 +36,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Mega City Tours & Travells offers group travel, per KM trips, local tours, outstation travel, corporate trips, school tours, pilgrimage travel, and vehicle bookings from Hyderabad across Telangana and nearby states.",
+          "Hyderabad's trusted travel partner — owned fleet of 33+ vehicles from 4 to 50 seats for family, school, corporate, wedding, pilgrimage, and outstation group travel.",
       },
       { property: "og:title", content: "Mega City Tours & Travells | Hyderabad" },
       {
@@ -41,48 +49,48 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const trustBadges = [
-  "Hyderabad Based",
-  "Owned Fleet",
-  "Experienced Drivers",
-  "Local & Outstation",
-  "4 to 50 Seater Vehicles",
-  "Easy WhatsApp Booking",
+const trustStats = [
+  { num: "33+", label: "Owned Vehicles" },
+  { num: "4–50", label: "Seater Options" },
+  { num: "20–30 yrs", label: "Experienced Drivers" },
+  { num: "365", label: "Days Available" },
 ];
 
-const tripTypes = [
-  { title: "Family Trips", img: tripFamily },
-  { title: "School & College Trips", img: tripSchool },
-  { title: "Corporate Outings", img: tripCorp },
-  { title: "Wedding Guest Transport", img: tripWedding },
-  { title: "Pilgrimage Trips", img: destSri },
-  { title: "Weekend Getaways", img: destNag },
-  { title: "Outstation Group Trips", img: destYad },
-  { title: "Local Hyderabad Trips", img: destHyd },
+const occasions = [
+  { icon: Home, title: "Family Trips" },
+  { icon: GraduationCap, title: "School & College Trips" },
+  { icon: Briefcase, title: "Corporate Outings" },
+  { icon: PartyPopper, title: "Wedding Guest Transport" },
+  { icon: Heart, title: "Pilgrimage Trips" },
+  { icon: Plane, title: "Outstation Trips" },
+  { icon: Compass, title: "Local Sightseeing" },
+  { icon: MapPin, title: "Airport Transfers" },
 ];
 
-const vehicleCategoryMap: Record<string, "Hatchback" | "Sedan" | "SUV" | "Mini Bus" | "Large Bus"> = {
-  "breeza": "SUV",
-  "innova-crysta": "SUV",
-  "fortuner": "SUV",
-  "tempo-traveller": "Mini Bus",
-  "urbania": "Mini Bus",
-  "bus-22": "Mini Bus",
-  "bus-28": "Large Bus",
-  "bus-40": "Large Bus",
-  "bus-50": "Large Bus",
-};
+const popularRoutes = [
+  { title: "Hyderabad Local Sightseeing", note: "Charminar, Golconda, Salar Jung, Birla Mandir", category: "Local" },
+  { title: "Srisailam", note: "One or two-day temple yatra", category: "Pilgrimage" },
+  { title: "Yadadri", note: "Same-day Lakshmi Narasimha darshan", category: "Pilgrimage" },
+  { title: "Warangal", note: "Thousand Pillar Temple, Warangal Fort", category: "Heritage" },
+  { title: "Vijayawada", note: "Outstation one-way or round trip", category: "Outstation" },
+  { title: "Nagarjuna Sagar", note: "Day trip to dam & Ethipothala Falls", category: "Weekend" },
+  { title: "Custom Telangana Tour", note: "Multi-day temples, forts, getaways", category: "Custom" },
+  { title: "School / College One-Day Trip", note: "22 / 28 / 40 / 50 seater buses", category: "Education" },
+  { title: "Corporate Group Outing", note: "Offsite logistics with AC vehicles", category: "Corporate" },
+];
 
-const vehicleTabs = ["All", "Hatchback", "Sedan", "SUV", "Mini Bus", "Large Bus"] as const;
-type VehicleTab = (typeof vehicleTabs)[number];
+const services = [
+  { icon: Users, title: "Group Travel", desc: "Comfortable transport for groups of 4 to 50 with experienced drivers." },
+  { icon: RouteIcon, title: "Per KM Travel", desc: "Transparent per-KM pricing for outstation trips, one-way or round-trip." },
+  { icon: MapIcon, title: "Local Trips", desc: "Hyderabad sightseeing, day rentals, and short city packages." },
+  { icon: Plane, title: "Outstation Trips", desc: "Telangana, Andhra, Karnataka, Maharashtra and beyond." },
+  { icon: Briefcase, title: "Corporate Travel", desc: "Offsites, conferences, training events, and team outings." },
+  { icon: GraduationCap, title: "School & College Trips", desc: "Safe, on-time bus transport for picnics and study tours." },
+  { icon: Heart, title: "Pilgrimage Tours", desc: "Srisailam, Yadadri, Tirupati, Shirdi and more temple journeys." },
+  { icon: PartyPopper, title: "Wedding & Event Transport", desc: "Guest transport for weddings, baraat, sangeet and events." },
+];
 
 function HomePage() {
-  const [activeTab, setActiveTab] = useState<VehicleTab>("All");
-  const filteredVehicles =
-    activeTab === "All"
-      ? vehicles
-      : vehicles.filter((v) => vehicleCategoryMap[v.slug] === activeTab);
-
   return (
     <>
       <LocalBusinessSchema />
@@ -99,89 +107,122 @@ function HomePage() {
           />
           <div className="absolute inset-0 bg-hero-overlay" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-8 pb-14 md:pt-[90px] md:pb-20 lg:pt-[100px] lg:pb-24">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-cream/15 backdrop-blur px-3 py-1 text-xs font-semibold text-brand-cream uppercase tracking-wider">
-              <MapPin className="h-3.5 w-3.5" /> Hyderabad's Trusted Travel Partner
-            </span>
-            <h1 className="mt-5 font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-brand-cream text-balance">
-              Reliable Group Travel & Per KM Trips from Hyderabad
-            </h1>
-            <p className="mt-5 text-base md:text-lg text-brand-cream/85 max-w-2xl leading-relaxed">
-              Comfortable travel for families, schools, colleges, companies, weddings, pilgrimage
-              groups, and outstation journeys across Telangana and nearby states.
-            </p>
-            {/* HERO STATS */}
-            <dl className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl">
-              {[
-                { num: "500+", label: "Groups Served" },
-                { num: "12+", label: "Years in Business" },
-                { num: "30+", label: "Owned Vehicles" },
-                { num: "365", label: "Days Available" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <dt className="font-display font-bold leading-none text-brand-cream text-[36px] md:text-[44px]">
-                    {s.num}
-                  </dt>
-                  <dd className="mt-2 text-xs md:text-sm font-medium text-brand-cream/80 uppercase tracking-wide">
-                    {s.label}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <a
-                href={whatsappLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02] min-w-[200px]"
-                style={{ backgroundColor: "#001F3F", borderRadius: "8px", padding: "16px 40px" }}
-              >
-                <MessageCircle className="h-5 w-5" /> Get Quote on WhatsApp
-              </a>
-              <a
-                href={`tel:+91${site.phones[0]}`}
-                className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02] min-w-[180px]"
-                style={{ backgroundColor: "#FF9832", borderRadius: "8px", padding: "16px 36px" }}
-              >
-                <Phone className="h-5 w-5" /> Call {site.phones[0]}
-              </a>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["Hyderabad Based", "Professional Drivers", "Group Travel Experts"].map((b) => (
-                <span
-                  key={b}
-                  className="inline-flex items-center gap-2 text-white"
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.15)",
-                    border: "1px solid rgba(255,255,255,0.3)",
-                    borderRadius: "100px",
-                    padding: "6px 14px",
-                    fontSize: "12px",
-                    fontWeight: 600,
-                    letterSpacing: "0.05em",
-                  }}
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-12 md:pt-[90px] md:pb-20 lg:pt-[100px] lg:pb-24">
+          <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
+            {/* Left: copy + CTAs */}
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-brand-cream/15 backdrop-blur px-3 py-1 text-xs font-semibold text-brand-cream uppercase tracking-wider">
+                <MapPin className="h-3.5 w-3.5" /> Hyderabad's Trusted Travel Partner
+              </span>
+              <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-brand-cream text-balance">
+                Reliable Group Travel & Per KM Trips from Hyderabad
+              </h1>
+              <p className="mt-5 text-base md:text-lg text-brand-cream/85 max-w-xl leading-relaxed">
+                Owned fleet from 4 to 50 seats with experienced drivers — for families, schools,
+                companies, weddings, pilgrimage groups, and outstation journeys across Telangana
+                and nearby states.
+              </p>
+
+              {/* CTAs — visible above the fold on mobile */}
+              <div className="mt-7 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02]"
+                  style={{ backgroundColor: "#25D366", borderRadius: "8px", padding: "16px 28px" }}
                 >
-                  <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#FF9832" }} />
-                  {b}
-                </span>
-              ))}
+                  <MessageCircle className="h-5 w-5" /> WhatsApp Us
+                </a>
+                <a
+                  href={`tel:+91${site.phones[0]}`}
+                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02]"
+                  style={{ backgroundColor: "#A0522D", borderRadius: "8px", padding: "16px 28px" }}
+                >
+                  <Phone className="h-5 w-5" /> Call {site.phones[0]}
+                </a>
+              </div>
+
+              {/* Trust badges */}
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["Hyderabad Based", "Owned Fleet", "Experienced Drivers"].map((b) => (
+                  <span
+                    key={b}
+                    className="inline-flex items-center gap-2 text-white"
+                    style={{
+                      backgroundColor: "rgba(255,255,255,0.12)",
+                      border: "1px solid rgba(217,176,140,0.45)",
+                      borderRadius: "100px",
+                      padding: "6px 14px",
+                      fontSize: "12px",
+                      fontWeight: 600,
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#D9B08C" }} />
+                    {b}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: hero quote form (desktop) — hidden on mobile to keep CTAs visible above fold */}
+            <div className="hidden lg:block">
+              <QuoteForm
+                variant="compact"
+                title="Get a Quick Quote"
+                subtitle="Share your trip details — we respond on WhatsApp."
+                ctaLabel="Get Quote"
+              />
             </div>
           </div>
         </div>
       </section>
 
+      {/* MOBILE QUOTE FORM — directly below hero */}
+      <section className="lg:hidden bg-secondary/40 py-10">
+        <div className="mx-auto max-w-md px-4">
+          <QuoteForm
+            variant="compact"
+            title="Get a Quick Quote"
+            subtitle="Share your trip details — we respond on WhatsApp."
+            ctaLabel="Get Quote"
+          />
+        </div>
+      </section>
+
+      {/* TRUST STATS */}
+      <section className="py-12 md:py-16 bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {trustStats.map((s) => (
+              <div
+                key={s.label}
+                className="text-center pt-4 border-t-[3px] border-accent"
+              >
+                <div className="font-display font-bold leading-none text-accent text-[32px] md:text-[44px]">
+                  {s.num}
+                </div>
+                <div className="mt-2 text-sm font-medium text-foreground/80">
+                  {s.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* QUICK TRUST CARDS */}
-      <section className="relative -mt-12 md:-mt-16 z-10">
+      <section className="py-14 md:py-16">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: Users, title: "Group Travel Specialists", desc: "Families, schools, colleges, companies, functions, and events." },
               { icon: Wrench, title: "Flexible Per KM Pricing", desc: "Outstation pricing based on distance, vehicle, route, and trip needs." },
               { icon: Shield, title: "Owned Vehicle Fleet", desc: "Cars, SUVs, tempo travellers, Urbania, and buses from 4 to 50 seats." },
-              { icon: MessageCircle, title: "Easy Booking Support", desc: "Share trip details over WhatsApp or call for quick vehicle options." },
+              { icon: MessageCircle, title: "Easy WhatsApp Booking", desc: "Share trip details over WhatsApp or call for quick vehicle options." },
             ].map((c) => (
-              <div key={c.title} className="rounded-2xl bg-card p-6 shadow-soft border border-border/60">
+              <div key={c.title} className="rounded-2xl bg-card p-6 shadow-card border border-border/60">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent mb-4">
                   <c.icon className="h-5 w-5" />
                 </div>
@@ -193,79 +234,46 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES CATEGORIES */}
-      <section className="py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeader
-            eyebrow="Service Categories"
-            title="Choose the type of travel you need"
-            subtitle="Three core ways we help groups travel comfortably from Hyderabad — pick the one that fits your trip."
-          />
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: "Group Tours",
-                desc: "Planned trips to popular destinations with vehicle, driver, and route arranged for your group.",
-                icon: MapIcon,
-                msg: "Hi Mega City Tours & Travells, I would like to enquire about a Group Tour.",
-              },
-              {
-                title: "Per KM Travel",
-                desc: "Point-to-point group transport priced per kilometre — ideal for outstation and one-way trips.",
-                icon: RouteIcon,
-                msg: "Hi Mega City Tours & Travells, I would like to enquire about Per KM Travel.",
-              },
-              {
-                title: "Corporate Bookings",
-                desc: "Office outings, offsites, conferences, and corporate group travel handled end-to-end.",
-                icon: Briefcase,
-                msg: "Hi Mega City Tours & Travells, I would like to enquire about a Corporate Booking.",
-              },
-            ].map((c) => (
-              <div
-                key={c.title}
-                className="rounded-2xl bg-card border border-border/60 p-7 shadow-card flex flex-col"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-warm-gradient text-primary-foreground mb-5">
-                  <c.icon className="h-6 w-6" />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-primary">{c.title}</h3>
-                <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">{c.desc}</p>
-                <a
-                  href={whatsappLink(c.msg)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-warm-gradient text-primary-foreground py-3 px-5 text-sm font-semibold shadow-card hover:shadow-glow transition-shadow"
-                >
-                  <MessageCircle className="h-4 w-4" /> Enquire on WhatsApp
-                </a>
-              </div>
-            ))}
-          </div>
+      {/* SHORT BUSINESS INTRO */}
+      <section className="py-14 md:py-20 bg-secondary/40">
+        <div className="mx-auto max-w-4xl px-4 md:px-6 text-center">
+          <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4">
+            About Mega City
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary text-balance">
+            Hyderabad-based travel specialists for groups of every size
+          </h2>
+          <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+            Owned and operated by M Kondal Reddy from {site.city}, Mega City Tours & Travells
+            runs an in-house fleet of 33+ vehicles — from 4-seater Brezza to 50-seater buses —
+            with drivers carrying 20–30 years of experience. Local sightseeing, outstation
+            journeys, pilgrimage yatras, school excursions, corporate travel — all handled with
+            one team you can call any time of the year.
+          </p>
         </div>
       </section>
 
-      {/* SERVICES OVERVIEW */}
-      <section className="py-16 md:py-24">
+      {/* SERVICES */}
+      <section className="py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Our Services"
             title="Travel built around your group and route"
-            subtitle="From short local trips to large group travel, we help you plan comfortable journeys based on destination, group size, and budget."
+            subtitle="From short local trips to large group travel — pick what fits your journey."
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {services.slice(0, 8).map((s) => (
+            {services.map((s) => (
               <div
-                key={s.slug}
+                key={s.title}
                 className="group rounded-2xl border border-border/60 bg-card p-6 shadow-card hover:shadow-soft transition-shadow"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warm-gradient text-primary-foreground mb-4 group-hover:scale-105 transition-transform">
                   <s.icon className="h-5 w-5" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-primary">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-3">{s.short}</p>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 <a
-                  href={whatsappLink(`Hi Mega City Tours & Travells, I would like to enquire about ${s.title}.`)}
+                  href={whatsappLink(`Hi Mega City, I would like to enquire about ${s.title}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center text-sm font-semibold text-accent hover:underline"
@@ -278,84 +286,167 @@ function HomePage() {
         </div>
       </section>
 
-      {/* TRIP CATEGORY CARDS */}
-      <section className="py-16 md:py-20 bg-background">
+      {/* VEHICLES FOR EVERY GROUP SIZE */}
+      <section className="py-14 md:py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
-            eyebrow="Trip Categories"
-            title="Trips Designed for Every Group"
-            subtitle="From families and students to corporate teams and pilgrims — pick the trip type that fits your group."
+            eyebrow="Our Fleet"
+            title="Vehicles for Every Group Size"
+            subtitle="Owned, well-maintained vehicles from 4 to 50 seats — drivers included."
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { icon: Home, title: "Family Trips", desc: "Comfortable getaways planned around your family's pace and pickup needs.", to: "/packages" },
-              { icon: Bus, title: "School & College Trips", desc: "Safe, on-time bus transport for picnics, excursions, and study tours.", to: "/services" },
-              { icon: Briefcase, title: "Corporate Outings", desc: "Reliable group transport for offsites, conferences, and team outings.", to: "/services" },
-              { icon: Landmark, title: "Pilgrimage Tours", desc: "Temple yatras to Srisailam, Yadadri, Tirupati and more with experienced drivers.", to: "/packages" },
-            ].map((c) => (
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {vehicles.map((v) => (
               <div
-                key={c.title}
-                className="rounded-2xl bg-white border border-border/60 p-7 text-center flex flex-col items-center"
-                style={{ boxShadow: "0 4px 20px -8px rgba(74,44,32,0.18)" }}
+                key={v.slug}
+                className="overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col shadow-card"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent mb-4">
-                  <c.icon className="h-7 w-7" />
+                <div className="flex items-center justify-center bg-secondary/30" style={{ height: 180 }}>
+                  <img
+                    src={v.image}
+                    alt={v.name}
+                    loading="lazy"
+                    className="h-full w-full object-contain object-center p-3"
+                  />
                 </div>
-                <h3 className="font-display text-lg font-bold text-primary">{c.title}</h3>
-                <p className="mt-2 text-[14px] text-muted-foreground leading-relaxed">{c.desc}</p>
-                <Link
-                  to={c.to}
-                  className="mt-5 inline-flex items-center text-sm font-semibold text-accent hover:underline"
-                >
-                  Learn More →
-                </Link>
+                <div className="p-5 flex flex-col flex-1">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="font-display text-lg font-semibold text-primary">{v.name}</h3>
+                    <span className="text-sm font-bold text-accent">{v.seats} Seater</span>
+                  </div>
+                  <p className="mt-1 text-sm text-muted-foreground">{v.bestFor}</p>
+                  <div className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">{v.ac}</span>
+                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">{v.count} available</span>
+                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">Driver included</span>
+                  </div>
+                  <div className="mt-4 mb-2 text-sm font-semibold text-primary">
+                    Price on Request
+                  </div>
+                  <a
+                    href={whatsappLink(`Hi Mega City, please share the price for the ${v.name} (${v.seats} seater).`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                  >
+                    <MessageCircle className="h-4 w-4" /> Ask for Price
+                  </a>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TRIP TYPES */}
-      <section className="py-16 md:py-24 bg-secondary/40">
+      {/* TRAVEL FOR EVERY OCCASION */}
+      <section className="py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
-            eyebrow="Trip Types"
-            title="Trips designed for every group"
-            subtitle="Whether it's a family weekend, a school excursion, or a corporate offsite — we have the right vehicle and driver for it."
+            eyebrow="Occasions"
+            title="Travel for Every Occasion"
+            subtitle="Whatever the trip, we have the right vehicle and driver for it."
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {tripTypes.map((t) => (
+            {occasions.map((o) => (
               <div
-                key={t.title}
-                className="group relative overflow-hidden rounded-2xl shadow-card aspect-[4/5]"
+                key={o.title}
+                className="rounded-2xl bg-card border border-border/60 p-6 text-center flex flex-col items-center shadow-card hover:shadow-soft transition-shadow"
               >
-                <img
-                  src={t.img}
-                  alt={t.title}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-brown/90 via-brand-brown/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5">
-                  <h3 className="font-display text-lg font-semibold text-brand-cream leading-tight">
-                    {t.title}
-                  </h3>
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent mb-4">
+                  <o.icon className="h-7 w-7" />
                 </div>
+                <h3 className="font-display text-base font-bold text-primary leading-tight">{o.title}</h3>
+                <a
+                  href={whatsappLink(`Hi Mega City, I would like to enquire about ${o.title}.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 text-xs font-semibold text-accent hover:underline"
+                >
+                  Enquire →
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="py-16 md:py-24">
+      {/* POPULAR ROUTES & PACKAGES */}
+      <section className="py-14 md:py-20 bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <SectionHeader
+            eyebrow="Popular Routes"
+            title="Popular Routes & Packages from Hyderabad"
+            subtitle="Pricing varies by route, vehicle, and group size. Share your details for a custom quote."
+          />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {popularRoutes.map((r) => (
+              <div
+                key={r.title}
+                className="rounded-2xl bg-card border border-border/60 p-6 shadow-card hover:shadow-soft transition-shadow flex flex-col"
+              >
+                <span className="self-start inline-block rounded-full bg-accent/10 text-accent px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide mb-3">
+                  {r.category}
+                </span>
+                <h3 className="font-display text-lg font-bold text-primary leading-tight">
+                  {r.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{r.note}</p>
+                <p className="mt-4 text-sm font-semibold text-primary">Price on Request</p>
+                <a
+                  href={whatsappLink(`Hi Mega City, please share the price for: ${r.title}.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                >
+                  <MessageCircle className="h-4 w-4" /> Ask for Price
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE MEGA CITY */}
+      <section className="py-16 md:py-24 text-white" style={{ backgroundColor: "#4A2C20" }}>
+        <div className="mx-auto max-w-5xl px-4 md:px-6">
+          <div className="text-center">
+            <span className="inline-block rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-tan">
+              Why Mega City
+            </span>
+            <h2 className="mt-4 font-display text-3xl md:text-5xl font-bold text-white text-balance">
+              Trusted travel — every trip, every time
+            </h2>
+          </div>
+          <ul className="mt-12 grid gap-6 md:grid-cols-2">
+            {[
+              { title: "Owned Fleet of 33+ Vehicles", sub: "From 4-seater Brezza to 50-seater buses — no third-party vehicles." },
+              { title: "Drivers with 20–30 Years Experience", sub: "Calm, courteous and route-aware drivers on every trip." },
+              { title: "AC & Non-AC, Local & Outstation", sub: "One team for city sightseeing, weekend getaways, and long trips." },
+              { title: "Available 24/7, 365 Days", sub: "Last-minute trips, early-morning pickups, late-night returns — covered." },
+              { title: "Transparent Per-KM Pricing", sub: "Tolls, parking, permits, and driver allowance always disclosed upfront." },
+              { title: "Easy WhatsApp Booking", sub: "Share trip details on WhatsApp — get vehicle options in minutes." },
+            ].map((p) => (
+              <li key={p.title} className="flex items-start gap-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-tan text-[#4A2C20]">
+                  <CheckCircle2 className="h-5 w-5" strokeWidth={2.5} />
+                </span>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-white leading-tight">{p.title}</h3>
+                  <p className="mt-1 text-[14px] text-white/75 leading-relaxed">{p.sub}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* HOW BOOKING WORKS */}
+      <section className="py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="How It Works"
             title="Book your trip in 4 easy steps"
           />
           <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {/* Dashed connecting line — desktop only */}
             <div
               aria-hidden
               className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] border-t-2 border-dashed pointer-events-none"
@@ -379,259 +470,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* POPULAR ROUTES */}
-      <section className="py-16 md:py-24 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeader
-            eyebrow="Popular Routes"
-            title="Popular routes & packages from Hyderabad"
-            subtitle="Pricing varies by route, vehicle, group size, dates, and inclusions. Share your trip details for a custom quote."
-          />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {packages.map((p) => (
-              <div
-                key={p.slug}
-                className="group overflow-hidden rounded-2xl bg-card border border-border/60 shadow-card hover:shadow-soft transition-shadow"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <span className="absolute top-3 left-3 rounded-full bg-brand-cream/90 backdrop-blur px-3 py-1 text-[11px] font-semibold text-brand-brown">
-                    {p.category}
-                  </span>
-                </div>
-                <div className="p-5">
-                  <h3 className="font-display text-lg font-semibold text-primary">{p.title}</h3>
-                  <p className="mt-1 text-xs text-muted-foreground"><strong>Best for:</strong> {p.bestFor}</p>
-                  <p className="mt-1 text-xs text-muted-foreground"><strong>Vehicles:</strong> {p.vehicles}</p>
-                  <p className="mt-3 text-sm text-foreground/80 leading-relaxed line-clamp-2">{p.description}</p>
-                  <a
-                    href={whatsappLink(`Hi Mega City Tours & Travells, I would like a quote for: ${p.title}.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center justify-center w-full rounded-full bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold shadow-card hover:shadow-glow transition-shadow"
-                  >
-                    Ask for Price
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FLEET PREVIEW */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeader
-            eyebrow="Our Fleet"
-            title="Vehicles for every group size"
-            subtitle="Owned, well-maintained vehicles from 4-seater cars to 50-seater buses — with experienced drivers included."
-          />
-          {/* VEHICLE CATEGORY TABS */}
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
-            {vehicleTabs.map((tab) => {
-              const isActive = activeTab === tab;
-              return (
-                <button
-                  key={tab}
-                  type="button"
-                  onClick={() => setActiveTab(tab)}
-                  aria-pressed={isActive}
-                  className={
-                    "rounded-full px-5 py-2 text-sm font-semibold transition-colors border " +
-                    (isActive
-                      ? "bg-primary text-primary-foreground border-primary shadow-card"
-                      : "bg-transparent text-primary border-primary/40 hover:bg-primary/5")
-                  }
-                >
-                  {tab}
-                </button>
-              );
-            })}
-          </div>
-          {filteredVehicles.length === 0 ? (
-            <p className="text-center text-muted-foreground py-10">
-              No vehicles in this category right now. View All to see our full fleet.
-            </p>
-          ) : (
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredVehicles.map((v) => (
-              <div
-                key={v.slug}
-                className="overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col"
-                style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}
-              >
-                <div className="flex items-center justify-center bg-white" style={{ height: 180 }}>
-                  <img
-                    src={v.image}
-                    alt={v.name}
-                    loading="lazy"
-                    className="h-full w-full object-contain object-center p-3"
-                  />
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="font-display text-lg font-semibold text-primary">{v.name}</h3>
-                    <span className="text-sm font-semibold text-accent">{v.seats} Seater</span>
-                  </div>
-                  <p className="mt-1 text-xs text-muted-foreground">{v.bestFor}</p>
-                  <div className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
-                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">{v.ac}</span>
-                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">{v.count} available</span>
-                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">Driver included</span>
-                  </div>
-                  <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-xs text-muted-foreground">Starting</span>
-                    <span className="font-display text-xl font-bold text-primary">{v.startingPrice}</span>
-                  </div>
-                  <a
-                    href={whatsappLink(`Hi Mega City Tours & Travells, I would like to book the ${v.name} (${v.seats} seater).`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-full bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold shadow-card hover:shadow-glow transition-shadow"
-                  >
-                    <MessageCircle className="h-4 w-4" /> Book
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-          )}
-        </div>
-      </section>
-
-      {/* STATS BAR */}
-      <section className="py-12 md:py-16 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { num: "30+", label: "Owned Vehicles" },
-              { num: "20+", label: "Years on the Road" },
-              { num: "4–50", label: "Seater Options" },
-              { num: "365", label: "Days Available" },
-            ].map((s) => (
-              <div
-                key={s.label}
-                className="text-center pt-4 border-t-[3px] border-accent text-accent"
-              >
-                <div className="font-display font-bold leading-none text-[36px] md:text-[48px]">
-                  {s.num}
-                </div>
-                <div className="mt-2 text-sm font-medium text-foreground/80">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 text-white" style={{ backgroundColor: "#001F3F" }}>
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div>
-              <span className="inline-block rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-tan">
-                Why Mega City
-              </span>
-              <h2 className="mt-4 font-display text-3xl md:text-5xl font-bold text-white text-balance">
-                Trusted travel — every trip, every time
-              </h2>
-              <p className="mt-4 text-[15px] text-white/75 max-w-xl leading-relaxed">
-                A Hyderabad-based travel team focused on safe, comfortable, and budget-friendly group travel.
-              </p>
-              <ul className="mt-8 space-y-6">
-                {[
-                  { title: "Verified Professional Drivers", sub: "All drivers background checked and uniformed." },
-                  { title: "Modern Air-Conditioned Fleet", sub: "Sanitised before every trip." },
-                  { title: "No Hidden Tolls or Fees", sub: "Transparent pricing for every journey." },
-                ].map((p) => (
-                  <li key={p.title} className="flex items-start gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-tan text-[#001F3F]">
-                      <CheckCircle2 className="h-5 w-5" strokeWidth={2.5} />
-                    </span>
-                    <div>
-                      <h3 className="font-display text-lg font-bold text-white leading-tight">{p.title}</h3>
-                      <p className="mt-1 text-[14px] text-white/70 leading-relaxed">{p.sub}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <div
-                className="relative w-full max-w-sm rounded-3xl border border-white/15 bg-white/[0.06] backdrop-blur p-10 text-center"
-                style={{ boxShadow: "0 20px 60px -20px rgba(0,0,0,0.5)" }}
-              >
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-brand-tan text-[#001F3F]">
-                  <BadgeCheck className="h-10 w-10" strokeWidth={2.2} />
-                </div>
-                <p className="mt-6 font-display text-2xl font-bold tracking-wide text-white uppercase">
-                  Professional Service
-                </p>
-                <p className="mt-3 text-[13px] uppercase tracking-[0.2em] text-brand-tan font-semibold">
-                  Since 2012
-                </p>
-                <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-                  <div>
-                    <div className="font-display text-2xl font-bold text-white">500+</div>
-                    <div className="text-[11px] text-white/60 uppercase tracking-wide mt-1">Groups</div>
-                  </div>
-                  <div>
-                    <div className="font-display text-2xl font-bold text-white">12+</div>
-                    <div className="text-[11px] text-white/60 uppercase tracking-wide mt-1">Years</div>
-                  </div>
-                  <div>
-                    <div className="font-display text-2xl font-bold text-white">30+</div>
-                    <div className="text-[11px] text-white/60 uppercase tracking-wide mt-1">Vehicles</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS PLACEHOLDER */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeader
-            eyebrow="Customer Reviews"
-            title="What our customers say"
-            subtitle="Real customer reviews will be added here once shared by the client or pulled from the Google Business Profile."
-          />
-          <div className="grid gap-5 md:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="rounded-2xl border border-dashed border-border bg-card/50 p-6 text-left"
-                data-placeholder="real-google-reviews"
-              >
-                <div className="flex gap-1 mb-3" aria-label="5 star rating">
-                  {[0, 1, 2, 3, 4].map((s) => (
-                    <Star key={s} className="h-4 w-4 fill-accent text-accent" />
-                  ))}
-                </div>
-                <p className="text-[15px] text-muted-foreground italic leading-relaxed">
-                  Placeholder · Real customer review will appear here once added by the client
-                  or connected to Google Business Profile.
-                </p>
-                <div className="mt-4">
-                  <p className="text-[15px] font-bold text-primary">Customer Name</p>
-                  <p className="text-xs text-muted-foreground opacity-65">Hyderabad · Family Trip</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ PREVIEW */}
-      <section className="py-16 md:py-24 bg-secondary/40">
+      {/* FAQs */}
+      <section className="py-14 md:py-20 bg-secondary/40">
         <div className="mx-auto max-w-4xl px-4 md:px-6">
           <SectionHeader
             eyebrow="FAQs"
@@ -649,7 +489,65 @@ function HomePage() {
         </div>
       </section>
 
-      <CTASection />
+      {/* FINAL QUOTE FORM */}
+      <section className="py-16 md:py-24" style={{ backgroundColor: "#F4F1EA" }}>
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+            <div>
+              <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4">
+                Get In Touch
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary text-balance leading-tight">
+                Get a Custom Trip Quote
+              </h2>
+              <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+                Tell us about your trip — pickup, destination, group size, and travel date.
+                Our team will respond with vehicle options and a clear quote.
+              </p>
+
+              <div className="mt-8 space-y-4">
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 rounded-xl bg-white border border-border p-4 hover:border-accent transition-colors"
+                >
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl text-white" style={{ backgroundColor: "#25D366" }}>
+                    <MessageCircle className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">WhatsApp</div>
+                    <div className="font-display text-lg font-bold text-primary">+91 {site.whatsapp}</div>
+                  </div>
+                </a>
+                <a
+                  href={`tel:+91${site.phones[0]}`}
+                  className="flex items-center gap-4 rounded-xl bg-white border border-border p-4 hover:border-accent transition-colors"
+                >
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl text-white" style={{ backgroundColor: "#A0522D" }}>
+                    <Phone className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Call Us</div>
+                    <div className="font-display text-lg font-bold text-primary">+91 {site.phones[0]}</div>
+                  </div>
+                </a>
+                <div className="flex items-center gap-4 rounded-xl bg-white border border-border p-4">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                    <MapPin className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Hours</div>
+                    <div className="font-display text-base font-semibold text-primary">{site.hours} · 365 days</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <QuoteForm variant="full" ctaLabel="Submit Enquiry" />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
