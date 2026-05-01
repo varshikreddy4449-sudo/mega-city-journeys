@@ -107,7 +107,8 @@ export const vehicles: Vehicle[] = [
     seats: 50,
     count: 2,
     image: bus50,
-    bestFor: "Large events, school/college trips, weddings, corporate outings, and big group movement",
+    bestFor:
+      "Large events, school/college trips, weddings, corporate outings, and big group movement",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
   },

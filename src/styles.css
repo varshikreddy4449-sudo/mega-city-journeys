@@ -63,63 +63,63 @@
   /* Mountain Earth palette
      #4A2C20 deep brown, #A0522D rust, #D9B08C tan,
      #8FA68F sage, #F4F1EA cream */
-  --background: #F4F1EA;
-  --foreground: #2A1A14;
+  --background: #f4f1ea;
+  --foreground: #2a1a14;
 
-  --card: #FFFFFF;
-  --card-foreground: #2A1A14;
+  --card: #ffffff;
+  --card-foreground: #2a1a14;
 
-  --popover: #FFFFFF;
-  --popover-foreground: #2A1A14;
+  --popover: #ffffff;
+  --popover-foreground: #2a1a14;
 
-  --primary: #4A2C20;
-  --primary-foreground: #F4F1EA;
+  --primary: #4a2c20;
+  --primary-foreground: #f4f1ea;
 
-  --secondary: #EDE6D8;
-  --secondary-foreground: #4A2C20;
+  --secondary: #ede6d8;
+  --secondary-foreground: #4a2c20;
 
-  --muted: #EDE6D8;
-  --muted-foreground: #6B5345;
+  --muted: #ede6d8;
+  --muted-foreground: #6b5345;
 
-  --accent: #A0522D;
-  --accent-foreground: #FFFFFF;
+  --accent: #a0522d;
+  --accent-foreground: #ffffff;
 
-  --destructive: #B3261E;
-  --destructive-foreground: #FFFFFF;
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
 
-  --border: #DCD3C2;
-  --input: #C9BFA9;
-  --ring: #A0522D;
+  --border: #dcd3c2;
+  --input: #c9bfa9;
+  --ring: #a0522d;
 
-  --whatsapp: #25D366;
-  --whatsapp-foreground: #FFFFFF;
+  --whatsapp: #25d366;
+  --whatsapp-foreground: #ffffff;
 
   /* Brand alias tokens — Mountain Earth */
-  --brand-brown: #4A2C20;
-  --brand-rust: #A0522D;
-  --brand-tan: #D9B08C;
-  --brand-sage: #8FA68F;
-  --brand-cream: #F4F1EA;
+  --brand-brown: #4a2c20;
+  --brand-rust: #a0522d;
+  --brand-tan: #d9b08c;
+  --brand-sage: #8fa68f;
+  --brand-cream: #f4f1ea;
 }
 
 .dark {
   --background: #000613;
-  --foreground: #FFFFFF;
-  --card: #001F3F;
-  --card-foreground: #FFFFFF;
-  --popover: #001F3F;
-  --popover-foreground: #FFFFFF;
-  --primary: #FF9832;
-  --primary-foreground: #001F3F;
-  --secondary: #0A2A4A;
-  --secondary-foreground: #FFFFFF;
-  --muted: #0A2A4A;
+  --foreground: #ffffff;
+  --card: #001f3f;
+  --card-foreground: #ffffff;
+  --popover: #001f3f;
+  --popover-foreground: #ffffff;
+  --primary: #ff9832;
+  --primary-foreground: #001f3f;
+  --secondary: #0a2a4a;
+  --secondary-foreground: #ffffff;
+  --muted: #0a2a4a;
   --muted-foreground: rgba(255, 255, 255, 0.7);
-  --accent: #FF9832;
-  --accent-foreground: #FFFFFF;
+  --accent: #ff9832;
+  --accent-foreground: #ffffff;
   --border: rgba(255, 255, 255, 0.12);
   --input: rgba(255, 255, 255, 0.15);
-  --ring: #FF9832;
+  --ring: #ff9832;
 }
 
 @layer base {
@@ -140,7 +140,12 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -159,13 +164,21 @@
     );
   }
   .bg-warm-gradient {
-    background: linear-gradient(135deg, #4A2C20 0%, #6B3A24 100%);
+    background: linear-gradient(135deg, #4a2c20 0%, #6b3a24 100%);
   }
   .bg-rust-gradient {
-    background: linear-gradient(135deg, #A0522D 0%, #8B4423 100%);
+    background: linear-gradient(135deg, #a0522d 0%, #8b4423 100%);
   }
-  .text-balance { text-wrap: balance; }
-  .shadow-card { box-shadow: var(--shadow-card); }
-  .shadow-soft { box-shadow: var(--shadow-soft); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
 }

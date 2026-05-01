@@ -42,7 +42,7 @@ export function QuoteForm({
   const isFull = variant === "full";
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -91,7 +91,9 @@ export function QuoteForm({
 
       <div className={isFull ? "grid gap-3 sm:grid-cols-2" : "grid gap-3"}>
         <div>
-          <label className="sr-only" htmlFor="qf-name">Name</label>
+          <label className="sr-only" htmlFor="qf-name">
+            Name
+          </label>
           <input
             id="qf-name"
             name="name"
@@ -104,7 +106,9 @@ export function QuoteForm({
           />
         </div>
         <div>
-          <label className="sr-only" htmlFor="qf-phone">Phone Number</label>
+          <label className="sr-only" htmlFor="qf-phone">
+            Phone Number
+          </label>
           <input
             id="qf-phone"
             name="phone"
@@ -120,7 +124,9 @@ export function QuoteForm({
           />
         </div>
         <div>
-          <label className="sr-only" htmlFor="qf-pickup">Pickup Location</label>
+          <label className="sr-only" htmlFor="qf-pickup">
+            Pickup Location
+          </label>
           <input
             id="qf-pickup"
             name="pickup"
@@ -132,7 +138,9 @@ export function QuoteForm({
           />
         </div>
         <div>
-          <label className="sr-only" htmlFor="qf-destination">Destination</label>
+          <label className="sr-only" htmlFor="qf-destination">
+            Destination
+          </label>
           <input
             id="qf-destination"
             name="destination"
@@ -144,7 +152,9 @@ export function QuoteForm({
           />
         </div>
         <div>
-          <label className="sr-only" htmlFor="qf-date">Travel Date</label>
+          <label className="sr-only" htmlFor="qf-date">
+            Travel Date
+          </label>
           <input
             id="qf-date"
             name="date"
@@ -155,7 +165,9 @@ export function QuoteForm({
           />
         </div>
         <div>
-          <label className="sr-only" htmlFor="qf-group">Group Size</label>
+          <label className="sr-only" htmlFor="qf-group">
+            Group Size
+          </label>
           <input
             id="qf-group"
             name="groupSize"
@@ -169,7 +181,9 @@ export function QuoteForm({
           />
         </div>
         <div className={isFull ? "sm:col-span-2" : ""}>
-          <label className="sr-only" htmlFor="qf-vehicle">Vehicle Preference</label>
+          <label className="sr-only" htmlFor="qf-vehicle">
+            Vehicle Preference
+          </label>
           <select
             id="qf-vehicle"
             name="vehicle"
@@ -186,7 +200,9 @@ export function QuoteForm({
         </div>
         {isFull && (
           <div className="sm:col-span-2">
-            <label className="sr-only" htmlFor="qf-message">Message</label>
+            <label className="sr-only" htmlFor="qf-message">
+              Message
+            </label>
             <textarea
               id="qf-message"
               name="message"

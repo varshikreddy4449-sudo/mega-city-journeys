@@ -1,5 +1,13 @@
 import {
-  Users, Route, MapPin, Briefcase, GraduationCap, Heart, PartyPopper, Package, Plane,
+  Users,
+  Route,
+  MapPin,
+  Briefcase,
+  GraduationCap,
+  Heart,
+  PartyPopper,
+  Package,
+  Plane,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 

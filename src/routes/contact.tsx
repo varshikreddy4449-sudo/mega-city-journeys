@@ -10,22 +10,39 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Mega City Tours & Travells | Get Travel Quote in Hyderabad" },
-      { name: "description", content: "Contact Mega City Tours & Travells in Hyderabad for group travel, per KM trips, and outstation bookings. Call, WhatsApp, or share your trip details." },
+      {
+        name: "description",
+        content:
+          "Contact Mega City Tours & Travells in Hyderabad for group travel, per KM trips, and outstation bookings. Call, WhatsApp, or share your trip details.",
+      },
       { property: "og:title", content: "Contact Mega City Tours & Travells" },
-      { property: "og:description", content: "Get a travel quote on WhatsApp or by phone. Hyderabad based travel partner." },
+      {
+        property: "og:description",
+        content: "Get a travel quote on WhatsApp or by phone. Hyderabad based travel partner.",
+      },
     ],
   }),
   component: ContactPage,
 });
 
 const tripTypes = [
-  "Family Trip", "Group Travel", "School/College Trip", "Corporate Travel",
-  "Pilgrimage Trip", "Wedding/Event Travel", "Local Trip", "Outstation Trip", "Other",
+  "Family Trip",
+  "Group Travel",
+  "School/College Trip",
+  "Corporate Travel",
+  "Pilgrimage Trip",
+  "Wedding/Event Travel",
+  "Local Trip",
+  "Outstation Trip",
+  "Other",
 ];
 
 const formSchema = z.object({
   name: z.string().trim().min(2, "Name is required").max(100),
-  phone: z.string().trim().regex(/^[0-9+\s-]{10,15}$/, "Enter a valid phone number"),
+  phone: z
+    .string()
+    .trim()
+    .regex(/^[0-9+\s-]{10,15}$/, "Enter a valid phone number"),
   travelDate: z.string().trim().max(50).optional().or(z.literal("")),
   pickup: z.string().trim().max(200).optional().or(z.literal("")),
   destination: z.string().trim().min(2, "Destination is required").max(200),
@@ -81,13 +98,16 @@ Message: ${data.message || "-"}`;
     setSubmitted(true);
   };
 
-  const inputCls = "mt-1 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring";
+  const inputCls =
+    "mt-1 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring";
 
   return (
     <>
       <section className="bg-warm-gradient text-primary-foreground py-16 md:py-20">
         <div className="mx-auto max-w-5xl px-4 md:px-6 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground">Contact Us</h1>
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground">
+            Contact Us
+          </h1>
           <p className="mt-3 text-brand-cream/85 max-w-2xl mx-auto">
             Tell us your trip details and our team will help with vehicle and pricing options.
           </p>
@@ -98,40 +118,71 @@ Message: ${data.message || "-"}`;
         <div className="mx-auto max-w-7xl px-4 md:px-6 grid lg:grid-cols-5 gap-8">
           {/* Contact cards */}
           <aside className="lg:col-span-2 space-y-4">
-            <a href={`tel:+91${site.phones[0]}`} className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-warm-gradient text-primary-foreground"><Phone className="h-5 w-5" /></div>
+            <a
+              href={`tel:+91${site.phones[0]}`}
+              className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow"
+            >
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-warm-gradient text-primary-foreground">
+                <Phone className="h-5 w-5" />
+              </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Call</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">
+                  Call
+                </div>
                 <div className="font-display text-base text-primary">{site.phones[0]}</div>
                 <div className="font-display text-base text-primary">{site.phones[1]}</div>
               </div>
             </a>
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-whatsapp text-whatsapp-foreground"><MessageCircle className="h-5 w-5" /></div>
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow"
+            >
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-whatsapp text-whatsapp-foreground">
+                <MessageCircle className="h-5 w-5" />
+              </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">WhatsApp</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">
+                  WhatsApp
+                </div>
                 <div className="font-display text-base text-primary">{site.whatsapp}</div>
                 <div className="text-xs text-muted-foreground">Tap to chat with us</div>
               </div>
             </a>
-            <a href={`mailto:${site.email}`} className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-rust-gradient text-primary-foreground"><Mail className="h-5 w-5" /></div>
+            <a
+              href={`mailto:${site.email}`}
+              className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow"
+            >
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-rust-gradient text-primary-foreground">
+                <Mail className="h-5 w-5" />
+              </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Email</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">
+                  Email
+                </div>
                 <div className="font-display text-base text-primary break-all">{site.email}</div>
               </div>
             </a>
             <div className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary"><MapPin className="h-5 w-5" /></div>
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary">
+                <MapPin className="h-5 w-5" />
+              </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Address</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">
+                  Address
+                </div>
                 <div className="text-sm text-foreground/85">{site.address}</div>
               </div>
             </div>
             <div className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary"><Clock className="h-5 w-5" /></div>
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary">
+                <Clock className="h-5 w-5" />
+              </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Business Hours</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">
+                  Business Hours
+                </div>
                 <div className="text-sm text-foreground/85">Open daily, {site.hours}</div>
               </div>
             </div>
@@ -171,26 +222,56 @@ Message: ${data.message || "-"}`;
             ) : (
               <form onSubmit={onSubmit} className="space-y-4">
                 <h2 className="font-display text-2xl text-primary">Request a quote</h2>
-                <p className="text-sm text-muted-foreground -mt-2">Share trip details — we usually respond within business hours ({site.hours}).</p>
+                <p className="text-sm text-muted-foreground -mt-2">
+                  Share trip details — we usually respond within business hours ({site.hours}).
+                </p>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field label="Name *" error={errors.name}>
-                    <input name="name" required maxLength={100} className={inputCls} placeholder="Your full name" />
+                    <input
+                      name="name"
+                      required
+                      maxLength={100}
+                      className={inputCls}
+                      placeholder="Your full name"
+                    />
                   </Field>
                   <Field label="Phone Number *" error={errors.phone}>
-                    <input name="phone" required maxLength={15} className={inputCls} placeholder="10-digit mobile" />
+                    <input
+                      name="phone"
+                      required
+                      maxLength={15}
+                      className={inputCls}
+                      placeholder="10-digit mobile"
+                    />
                   </Field>
                   <Field label="Travel Date">
                     <input type="date" name="travelDate" className={inputCls} />
                   </Field>
                   <Field label="Group Size">
-                    <input name="groupSize" maxLength={50} className={inputCls} placeholder="e.g. 25 people" />
+                    <input
+                      name="groupSize"
+                      maxLength={50}
+                      className={inputCls}
+                      placeholder="e.g. 25 people"
+                    />
                   </Field>
                   <Field label="Pickup Location">
-                    <input name="pickup" maxLength={200} className={inputCls} placeholder="e.g. Kukatpally, Hyderabad" />
+                    <input
+                      name="pickup"
+                      maxLength={200}
+                      className={inputCls}
+                      placeholder="e.g. Kukatpally, Hyderabad"
+                    />
                   </Field>
                   <Field label="Destination *" error={errors.destination}>
-                    <input name="destination" required maxLength={200} className={inputCls} placeholder="e.g. Srisailam" />
+                    <input
+                      name="destination"
+                      required
+                      maxLength={200}
+                      className={inputCls}
+                      placeholder="e.g. Srisailam"
+                    />
                   </Field>
                   <Field label="Vehicle Preference">
                     <select name="vehicle" defaultValue="" className={inputCls}>
@@ -205,13 +286,23 @@ Message: ${data.message || "-"}`;
                   <Field label="Trip Type">
                     <select name="tripType" defaultValue="" className={inputCls}>
                       <option value="">Select trip type</option>
-                      {tripTypes.map((t) => <option key={t} value={t}>{t}</option>)}
+                      {tripTypes.map((t) => (
+                        <option key={t} value={t}>
+                          {t}
+                        </option>
+                      ))}
                     </select>
                   </Field>
                 </div>
 
                 <Field label="Message">
-                  <textarea name="message" rows={4} maxLength={1000} className={inputCls} placeholder="Anything else we should know? (route, stops, timings...)" />
+                  <textarea
+                    name="message"
+                    rows={4}
+                    maxLength={1000}
+                    className={inputCls}
+                    placeholder="Anything else we should know? (route, stops, timings...)"
+                  />
                 </Field>
 
                 <button
@@ -220,7 +311,9 @@ Message: ${data.message || "-"}`;
                 >
                   <Send className="h-4 w-4" /> Send Enquiry
                 </button>
-                <p className="text-xs text-muted-foreground">By submitting, your trip details will be sent to our team via WhatsApp.</p>
+                <p className="text-xs text-muted-foreground">
+                  By submitting, your trip details will be sent to our team via WhatsApp.
+                </p>
               </form>
             )}
           </div>
@@ -232,7 +325,15 @@ Message: ${data.message || "-"}`;
   );
 }
 
-function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
+function Field({
+  label,
+  error,
+  children,
+}: {
+  label: string;
+  error?: string;
+  children: React.ReactNode;
+}) {
   return (
     <label className="block">
       <span className="text-sm font-semibold text-primary">{label}</span>

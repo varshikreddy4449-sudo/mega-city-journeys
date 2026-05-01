@@ -44,9 +44,21 @@ const heroPills = ["Group Travel", "Per KM Trips", "Outstation Travel"];
 
 const chooseCards = [
   { q: "Need a vehicle for family or friends?", a: "Choose Group Travel", slug: "group-travel" },
-  { q: "Travelling outside Hyderabad?", a: "Choose Per KM or Outstation Trips", slug: "per-km-travel" },
-  { q: "Planning a school or college trip?", a: "Choose School & College Trips", slug: "school-college-trips" },
-  { q: "Moving wedding guests?", a: "Choose Wedding & Event Transport", slug: "wedding-event-transport" },
+  {
+    q: "Travelling outside Hyderabad?",
+    a: "Choose Per KM or Outstation Trips",
+    slug: "per-km-travel",
+  },
+  {
+    q: "Planning a school or college trip?",
+    a: "Choose School & College Trips",
+    slug: "school-college-trips",
+  },
+  {
+    q: "Moving wedding guests?",
+    a: "Choose Wedding & Event Transport",
+    slug: "wedding-event-transport",
+  },
   { q: "Planning temple travel?", a: "Choose Pilgrimage Trips", slug: "pilgrimage-trips" },
   { q: "Need office or team transport?", a: "Choose Corporate Travel", slug: "corporate-travel" },
 ];
@@ -100,8 +112,7 @@ function ServicesPage() {
       <section
         className="relative overflow-hidden text-brand-cream"
         style={{
-          background:
-            "linear-gradient(120deg, #4A2C20 0%, #4A2C20 55%, #6B3422 78%, #A0522D 100%)",
+          background: "linear-gradient(120deg, #4A2C20 0%, #4A2C20 55%, #6B3422 78%, #A0522D 100%)",
         }}
       >
         {/* Sage glow accent */}
@@ -223,7 +234,9 @@ function ServicesPage() {
       <section className="py-10 md:py-14 border-b border-border/60">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <div className="text-center mb-6">
-            <div className="text-xs font-semibold uppercase tracking-wider text-accent">Quick Navigation</div>
+            <div className="text-xs font-semibold uppercase tracking-wider text-accent">
+              Quick Navigation
+            </div>
             <h2 className="mt-2 font-display text-2xl md:text-3xl font-bold text-primary">
               Jump to a Service
             </h2>
@@ -276,15 +289,21 @@ function ServicesPage() {
                   </div>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <p className="text-sm md:text-base text-foreground/85 leading-relaxed">{s.short}</p>
+                  <p className="text-sm md:text-base text-foreground/85 leading-relaxed">
+                    {s.short}
+                  </p>
 
                   <dl className="mt-5 space-y-3 text-sm">
                     <div>
-                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-accent">Best for</dt>
+                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                        Best for
+                      </dt>
                       <dd className="mt-1 text-foreground/90">{s.bestFor}</dd>
                     </div>
                     <div>
-                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-accent">Suggested vehicles</dt>
+                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                        Suggested vehicles
+                      </dt>
                       <dd className="mt-1 text-foreground/90">{s.vehicles}</dd>
                     </div>
                   </dl>
@@ -307,10 +326,7 @@ function ServicesPage() {
       {/* ALL SERVICES GRID */}
       <section className="py-16 md:py-24 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeader
-            eyebrow="Full Service List"
-            title="All Travel Services We Offer"
-          />
+          <SectionHeader eyebrow="Full Service List" title="All Travel Services We Offer" />
           <div className="grid gap-5 md:grid-cols-2">
             {rest.map((s) => (
               <article
@@ -435,7 +451,8 @@ function ServicesPage() {
                 What to Share for a Quick Quote
               </h2>
               <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-                The more details you share, the faster we can suggest the right vehicle and confirm pricing.
+                The more details you share, the faster we can suggest the right vehicle and confirm
+                pricing.
               </p>
 
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
@@ -498,8 +515,8 @@ function ServicesPage() {
             Need Help Choosing the Right Vehicle?
           </h2>
           <p className="mt-5 text-base md:text-lg text-brand-cream/90 max-w-2xl mx-auto leading-relaxed">
-            Share your route, travel date, group size, and vehicle preference. Our team will suggest the
-            right option for your trip.
+            Share your route, travel date, group size, and vehicle preference. Our team will suggest
+            the right option for your trip.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center items-center">
             <a

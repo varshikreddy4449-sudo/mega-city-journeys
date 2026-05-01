@@ -39,7 +39,8 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: "About Mega City Tours & Travells" },
       {
         property: "og:description",
-        content: "Hyderabad-based travel partner with owned, branded fleet and experienced drivers.",
+        content:
+          "Hyderabad-based travel partner with owned, branded fleet and experienced drivers.",
       },
       { property: "og:image", content: brandedBus },
     ],
@@ -64,14 +65,46 @@ const trustBullets = [
 ];
 
 const helpItems = [
-  { icon: Heart, title: "Family Trips", desc: "Comfortable vehicles for weekend getaways and family outings." },
-  { icon: GraduationCap, title: "School and College Trips", desc: "Safe group transport for excursions and educational visits." },
-  { icon: Briefcase, title: "Corporate Outings", desc: "Reliable team movement for offsites and company events." },
-  { icon: Sparkles, title: "Wedding Guest Transport", desc: "On-time pickups and drops for wedding parties and guests." },
-  { icon: Mountain, title: "Pilgrimage Trips", desc: "Trusted vehicles for temple yatras and spiritual journeys." },
-  { icon: MapPin, title: "Local Hyderabad Sightseeing", desc: "City tours covering popular Hyderabad landmarks." },
-  { icon: RouteIcon, title: "Outstation Per KM Trips", desc: "One-way and round-trip travel across nearby states." },
-  { icon: Package, title: "Custom Group Packages", desc: "Tailored multi-day plans built around your group needs." },
+  {
+    icon: Heart,
+    title: "Family Trips",
+    desc: "Comfortable vehicles for weekend getaways and family outings.",
+  },
+  {
+    icon: GraduationCap,
+    title: "School and College Trips",
+    desc: "Safe group transport for excursions and educational visits.",
+  },
+  {
+    icon: Briefcase,
+    title: "Corporate Outings",
+    desc: "Reliable team movement for offsites and company events.",
+  },
+  {
+    icon: Sparkles,
+    title: "Wedding Guest Transport",
+    desc: "On-time pickups and drops for wedding parties and guests.",
+  },
+  {
+    icon: Mountain,
+    title: "Pilgrimage Trips",
+    desc: "Trusted vehicles for temple yatras and spiritual journeys.",
+  },
+  {
+    icon: MapPin,
+    title: "Local Hyderabad Sightseeing",
+    desc: "City tours covering popular Hyderabad landmarks.",
+  },
+  {
+    icon: RouteIcon,
+    title: "Outstation Per KM Trips",
+    desc: "One-way and round-trip travel across nearby states.",
+  },
+  {
+    icon: Package,
+    title: "Custom Group Packages",
+    desc: "Tailored multi-day plans built around your group needs.",
+  },
 ];
 
 const steps = [
@@ -124,8 +157,8 @@ function AboutPage() {
             A Hyderabad Travel Partner You Can Rely On
           </h1>
           <p className="mt-5 max-w-2xl text-base md:text-lg text-brand-cream/85 leading-relaxed">
-            Mega City Tours & Travells helps families, schools, colleges, companies, wedding groups, and
-            pilgrimage groups arrange reliable vehicles for local and outstation travel.
+            Mega City Tours & Travells helps families, schools, colleges, companies, wedding groups,
+            and pilgrimage groups arrange reliable vehicles for local and outstation travel.
           </p>
         </div>
       </section>
@@ -174,7 +207,9 @@ function AboutPage() {
               />
               <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-brand-brown/85 backdrop-blur px-4 py-3 text-brand-cream">
                 <div className="text-xs uppercase tracking-wider opacity-80">Branded Fleet</div>
-                <div className="font-display text-lg font-semibold">Recognisable at every pickup</div>
+                <div className="font-display text-lg font-semibold">
+                  Recognisable at every pickup
+                </div>
               </div>
             </div>
 
@@ -186,9 +221,10 @@ function AboutPage() {
                 A Fleet-Backed Travel Company, Not Just a Booking Contact
               </h2>
               <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
-                Every vehicle carries the Mega City Tours & Travells identity, making it easier for customers
-                to recognize the vehicle at pickup. The company supports local trips, outstation journeys,
-                group travel, school and college trips, corporate movement, weddings, and pilgrimages.
+                Every vehicle carries the Mega City Tours & Travells identity, making it easier for
+                customers to recognize the vehicle at pickup. The company supports local trips,
+                outstation journeys, group travel, school and college trips, corporate movement,
+                weddings, and pilgrimages.
               </p>
               <ul className="mt-7 grid gap-3 sm:grid-cols-2">
                 {trustBullets.map((item) => (
@@ -235,10 +271,7 @@ function AboutPage() {
       {/* HOW WE WORK */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeader
-            eyebrow="How We Work"
-            title="Simple, Clear, and Practical Trip Planning"
-          />
+          <SectionHeader eyebrow="How We Work" title="Simple, Clear, and Practical Trip Planning" />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {steps.map(({ icon: Icon, title, desc }, idx) => (
               <div
@@ -274,7 +307,10 @@ function AboutPage() {
               </h2>
               <ul className="mt-8 space-y-3.5">
                 {whyPoints.map((p) => (
-                  <li key={p} className="flex items-start gap-3 text-brand-cream/90 text-base md:text-lg">
+                  <li
+                    key={p}
+                    className="flex items-start gap-3 text-brand-cream/90 text-base md:text-lg"
+                  >
                     <CheckCircle2 className="h-6 w-6 text-brand-tan shrink-0 mt-0.5" />
                     <span>{p}</span>
                   </li>

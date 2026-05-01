@@ -26,9 +26,16 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Gallery | Mega City Tours & Travells" },
-      { name: "description", content: "Real photos of Mega City Tours and Travells vehicles, interiors, and branded fleet in Hyderabad." },
+      {
+        name: "description",
+        content:
+          "Real photos of Mega City Tours and Travells vehicles, interiors, and branded fleet in Hyderabad.",
+      },
       { property: "og:title", content: "Gallery | Mega City Tours & Travells" },
-      { property: "og:description", content: "A real look at our vehicles, interiors, and branded fleet in Hyderabad." },
+      {
+        property: "og:description",
+        content: "A real look at our vehicles, interiors, and branded fleet in Hyderabad.",
+      },
       { property: "og:image", content: fleetHero },
       { name: "twitter:image", content: fleetHero },
     ],
@@ -173,7 +180,8 @@ function GalleryPage() {
   const [active, setActive] = useState<Cat>("All");
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
-  const list = active === "All" ? items : items.filter((i) => i.cats.includes(active as Exclude<Cat, "All">));
+  const list =
+    active === "All" ? items : items.filter((i) => i.cats.includes(active as Exclude<Cat, "All">));
 
   const close = useCallback(() => setOpenIdx(null), []);
   const prev = useCallback(
@@ -214,11 +222,16 @@ function GalleryPage() {
         style={{ backgroundColor: "#4A2C20" }}
       >
         <div className="mx-auto max-w-5xl px-4 md:px-6 text-center">
-          <span className="inline-block rounded-full px-4 py-1 text-xs font-semibold tracking-wider"
-            style={{ backgroundColor: "#A0522D", color: "#F4F1EA" }}>
+          <span
+            className="inline-block rounded-full px-4 py-1 text-xs font-semibold tracking-wider"
+            style={{ backgroundColor: "#A0522D", color: "#F4F1EA" }}
+          >
             REAL FLEET PHOTOS
           </span>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl font-bold" style={{ color: "#F4F1EA" }}>
+          <h1
+            className="mt-4 font-display text-4xl md:text-5xl font-bold"
+            style={{ color: "#F4F1EA" }}
+          >
             Gallery
           </h1>
           <p className="mt-3 text-base md:text-lg" style={{ color: "#D9B08C" }}>
@@ -236,7 +249,8 @@ function GalleryPage() {
           >
             <ShieldCheck className="h-5 w-5 mt-0.5 shrink-0" style={{ color: "#8FA68F" }} />
             <p className="text-sm" style={{ color: "#4A2C20" }}>
-              All photos shown here are real vehicle and fleet images from Mega City Tours &amp; Travells.
+              All photos shown here are real vehicle and fleet images from Mega City Tours &amp;
+              Travells.
             </p>
           </div>
 
@@ -249,14 +263,16 @@ function GalleryPage() {
                   onClick={() => setActive(c)}
                   className={cn(
                     "shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-all",
-                    active === c
-                      ? "shadow-card"
-                      : "hover:opacity-80",
+                    active === c ? "shadow-card" : "hover:opacity-80",
                   )}
                   style={
                     active === c
                       ? { backgroundColor: "#A0522D", color: "#F4F1EA" }
-                      : { backgroundColor: "#F4F1EA", color: "#4A2C20", border: "1px solid #D9B08C" }
+                      : {
+                          backgroundColor: "#F4F1EA",
+                          color: "#4A2C20",
+                          border: "1px solid #D9B08C",
+                        }
                   }
                 >
                   {c}
@@ -303,7 +319,9 @@ function GalleryPage() {
           </div>
 
           {list.length === 0 && (
-            <p className="text-center text-muted-foreground py-12">No photos in this category yet.</p>
+            <p className="text-center text-muted-foreground py-12">
+              No photos in this category yet.
+            </p>
           )}
         </div>
       </section>
@@ -329,14 +347,20 @@ function GalleryPage() {
           {list.length > 1 && (
             <>
               <button
-                onClick={(e) => { e.stopPropagation(); prev(); }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prev();
+                }}
                 aria-label="Previous image"
                 className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 rounded-full p-2 text-white hover:bg-white/10"
               >
                 <ChevronLeft className="h-7 w-7" />
               </button>
               <button
-                onClick={(e) => { e.stopPropagation(); next(); }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  next();
+                }}
                 aria-label="Next image"
                 className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 rounded-full p-2 text-white hover:bg-white/10"
               >
@@ -345,10 +369,7 @@ function GalleryPage() {
             </>
           )}
 
-          <div
-            className="max-w-5xl w-full"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
             <img
               src={current.src}
               alt={current.alt}

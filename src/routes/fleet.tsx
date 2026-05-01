@@ -17,7 +17,10 @@ export const Route = createFileRoute("/fleet")({
           "Owned fleet from Hyderabad — Brezza, Innova Crysta, Fortuner, Tempo Traveller, Urbania, and 22/28/40/50 seater buses. AC and Non-AC, with experienced drivers included.",
       },
       { property: "og:title", content: "Our Travel Fleet — Hyderabad" },
-      { property: "og:description", content: "Cars, SUVs, tempo travellers, and 22 to 50 seater buses with drivers." },
+      {
+        property: "og:description",
+        content: "Cars, SUVs, tempo travellers, and 22 to 50 seater buses with drivers.",
+      },
     ],
   }),
   component: FleetPage,
@@ -69,14 +72,20 @@ function FleetPage() {
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
-              <div key={f} className="flex items-start gap-2 rounded-xl bg-secondary/60 p-3 text-sm">
+              <div
+                key={f}
+                className="flex items-start gap-2 rounded-xl bg-secondary/60 p-3 text-sm"
+              >
                 <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 shrink-0" />
                 <span>{f}</span>
               </div>
             ))}
           </div>
 
-          <div className="mb-10 relative overflow-hidden rounded-2xl shadow-card border border-border/60" style={{ aspectRatio: "21 / 9" }}>
+          <div
+            className="mb-10 relative overflow-hidden rounded-2xl shadow-card border border-border/60"
+            style={{ aspectRatio: "21 / 9" }}
+          >
             <img
               src={brandedBus}
               alt="Mega City Tours and Travells branded bus in Hyderabad."
@@ -93,7 +102,9 @@ function FleetPage() {
             />
             <div className="relative h-full flex items-center justify-end px-6 md:px-10">
               <div className="max-w-xs text-right">
-                <p className="text-xs font-semibold uppercase tracking-wider text-brand-tan">Owned & Branded</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-tan">
+                  Owned & Branded
+                </p>
                 <h3 className="mt-2 font-display text-xl md:text-2xl font-bold text-white leading-tight">
                   Recognise our buses on the road
                 </h3>
@@ -115,12 +126,12 @@ function FleetPage() {
                       v.slug === "tempo-traveller"
                         ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells."
                         : v.slug === "urbania"
-                        ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
-                        : v.slug === "innova-crysta"
-                        ? "Innova Crysta for family and outstation trips in Hyderabad."
-                        : v.slug.startsWith("bus-")
-                        ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
-                        : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
+                          ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
+                          : v.slug === "innova-crysta"
+                            ? "Innova Crysta for family and outstation trips in Hyderabad."
+                            : v.slug.startsWith("bus-")
+                              ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
+                              : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
                     }
                     loading="lazy"
                     className="h-full w-full object-cover object-center"
@@ -133,16 +144,26 @@ function FleetPage() {
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">{v.bestFor}</p>
                   <div className="mt-4 grid grid-cols-2 gap-2 text-[11px]">
-                    <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">{v.ac}</div>
-                    <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">{v.count} vehicles</div>
-                    <div className="col-span-2 rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">Driver included</div>
+                    <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">
+                      {v.ac}
+                    </div>
+                    <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">
+                      {v.count} vehicles
+                    </div>
+                    <div className="col-span-2 rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">
+                      Driver included
+                    </div>
                   </div>
                   <div className="mt-4 flex items-baseline gap-1">
                     <span className="text-xs text-muted-foreground">Starting</span>
-                    <span className="font-display text-xl font-bold text-primary">{v.startingPrice}</span>
+                    <span className="font-display text-xl font-bold text-primary">
+                      {v.startingPrice}
+                    </span>
                   </div>
                   <a
-                    href={whatsappLink(`Hi Mega City Tours & Travells, I would like to book the ${v.name} (${v.seats} seater).`)}
+                    href={whatsappLink(
+                      `Hi Mega City Tours & Travells, I would like to book the ${v.name} (${v.seats} seater).`,
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-full bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold shadow-card"

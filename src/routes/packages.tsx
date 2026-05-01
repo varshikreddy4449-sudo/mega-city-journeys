@@ -60,13 +60,48 @@ const filters: Filter[] = [
 ];
 
 const tripTypeCards: { icon: typeof MapPin; label: string; desc: string; filter: Filter }[] = [
-  { icon: MapPin, label: "Local Trips", desc: "City sightseeing and short rentals.", filter: "Local" },
-  { icon: Landmark, label: "Pilgrimage Trips", desc: "Temple yatra and darshan routes.", filter: "Pilgrimage" },
-  { icon: Users, label: "Family Trips", desc: "Comfortable rides for family groups.", filter: "Family" },
-  { icon: GraduationCap, label: "School & College Trips", desc: "Safe student group travel.", filter: "School/College" },
-  { icon: Briefcase, label: "Corporate Trips", desc: "Office travel and team outings.", filter: "Corporate" },
-  { icon: Heart, label: "Wedding & Event Transport", desc: "Guest pickup and event movement.", filter: "Wedding/Event" },
-  { icon: Sparkles, label: "Custom Packages", desc: "Built around your route and dates.", filter: "Custom" },
+  {
+    icon: MapPin,
+    label: "Local Trips",
+    desc: "City sightseeing and short rentals.",
+    filter: "Local",
+  },
+  {
+    icon: Landmark,
+    label: "Pilgrimage Trips",
+    desc: "Temple yatra and darshan routes.",
+    filter: "Pilgrimage",
+  },
+  {
+    icon: Users,
+    label: "Family Trips",
+    desc: "Comfortable rides for family groups.",
+    filter: "Family",
+  },
+  {
+    icon: GraduationCap,
+    label: "School & College Trips",
+    desc: "Safe student group travel.",
+    filter: "School/College",
+  },
+  {
+    icon: Briefcase,
+    label: "Corporate Trips",
+    desc: "Office travel and team outings.",
+    filter: "Corporate",
+  },
+  {
+    icon: Heart,
+    label: "Wedding & Event Transport",
+    desc: "Guest pickup and event movement.",
+    filter: "Wedding/Event",
+  },
+  {
+    icon: Sparkles,
+    label: "Custom Packages",
+    desc: "Built around your route and dates.",
+    filter: "Custom",
+  },
 ];
 
 const howItWorks = [
@@ -129,8 +164,7 @@ function PackagesPage() {
       <section
         className="relative overflow-hidden text-brand-cream"
         style={{
-          background:
-            "linear-gradient(120deg, #4A2C20 0%, #4A2C20 55%, #6B3422 78%, #A0522D 100%)",
+          background: "linear-gradient(120deg, #4A2C20 0%, #4A2C20 55%, #6B3422 78%, #A0522D 100%)",
         }}
       >
         <div
@@ -323,9 +357,15 @@ function PackagesPage() {
                         <MapPin className="h-4 w-4 text-brand-sage" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground">From</div>
-                        <div className="text-sm font-semibold text-foreground truncate">{p.from}</div>
-                        <div className="mt-1.5 text-[10px] uppercase tracking-wider text-muted-foreground">To</div>
+                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                          From
+                        </div>
+                        <div className="text-sm font-semibold text-foreground truncate">
+                          {p.from}
+                        </div>
+                        <div className="mt-1.5 text-[10px] uppercase tracking-wider text-muted-foreground">
+                          To
+                        </div>
                         <div className="text-sm font-semibold text-foreground truncate">{p.to}</div>
                       </div>
                     </div>
@@ -335,7 +375,9 @@ function PackagesPage() {
                     <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-brown text-brand-cream">
                       <RouteIcon className="h-4.5 w-4.5" />
                     </div>
-                    <div className="text-sm font-semibold text-foreground">Hyderabad based, custom route</div>
+                    <div className="text-sm font-semibold text-foreground">
+                      Hyderabad based, custom route
+                    </div>
                   </div>
                 )}
 
