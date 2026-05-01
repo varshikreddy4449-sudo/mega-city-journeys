@@ -20,7 +20,7 @@ import {
   Compass,
   Route as RouteIcon,
 } from "lucide-react";
-import heroImg from "@/assets/megacity-fleet.jpg";
+import heroImg from "@/assets/megacity-fleet-hero.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
@@ -102,20 +102,21 @@ function HomePage() {
           <img
             src={heroImg}
             alt="Mega City Tours and Travells owned fleet in Hyderabad."
-            className="h-full w-full object-cover object-center"
-            style={{ objectPosition: "center 70%" }}
+            className="h-full w-full object-cover"
+            style={{ objectPosition: "center bottom" }}
             width={1600}
-            height={1100}
+            height={513}
           />
-          {/* Warm Mountain Earth overlay — stronger on left where text sits */}
+          {/* Strong left-side warm dark gradient for text readability */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 hidden lg:block"
             style={{
               background:
-                "linear-gradient(90deg, rgba(42,26,20,0.85) 0%, rgba(74,44,32,0.72) 45%, rgba(74,44,32,0.45) 75%, rgba(74,44,32,0.35) 100%)",
+                "linear-gradient(90deg, rgba(74,44,32,0.88) 0%, rgba(74,44,32,0.78) 25%, rgba(74,44,32,0.55) 50%, rgba(74,44,32,0.30) 75%, rgba(74,44,32,0.22) 100%)",
             }}
           />
-          <div className="absolute inset-0 lg:hidden" style={{ background: "rgba(42,26,20,0.45)" }} />
+          {/* Mobile: even wash so headline reads */}
+          <div className="absolute inset-0 lg:hidden" style={{ background: "rgba(74,44,32,0.70)" }} />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-12 md:pt-[90px] md:pb-20 lg:pt-[100px] lg:pb-24">
           <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
