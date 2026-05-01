@@ -82,12 +82,16 @@ function FleetPage() {
                 className="overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col"
                 style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}
               >
-                <div className="flex items-center justify-center bg-white" style={{ height: 180 }}>
+                <div className="overflow-hidden bg-secondary/30" style={{ height: 200 }}>
                   <img
                     src={v.image}
-                    alt={v.name}
+                    alt={
+                      v.slug === "tempo-traveller"
+                        ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells."
+                        : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
+                    }
                     loading="lazy"
-                    className="h-full w-full object-contain object-center p-3"
+                    className="h-full w-full object-cover object-center"
                   />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
