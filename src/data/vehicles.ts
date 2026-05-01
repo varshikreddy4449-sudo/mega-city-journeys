@@ -7,6 +7,7 @@ import bus from "@/assets/vehicle-bus.jpg";
 import bus28 from "@/assets/vehicle-bus-28.jpg";
 import bus40 from "@/assets/vehicle-bus-40.jpg";
 import bus50 from "@/assets/vehicle-bus-50.jpg";
+import bus22 from "@/assets/vehicle-bus-22.jpg";
 
 export type Vehicle = {
   slug: string;
@@ -72,13 +73,13 @@ export const vehicles: Vehicle[] = [
   },
   {
     slug: "bus-22",
-    name: "Mini Bus",
+    name: "Bus",
     seats: 22,
     count: 4,
-    image: bus,
-    bestFor: "Mid-size groups, school events, corporate",
+    image: bus22,
+    bestFor: "Small groups, school trips, family events, and short group travel",
     ac: "AC / Non-AC",
-    startingPrice: "₹35/km",
+    startingPrice: "Ask for Price",
   },
   {
     slug: "bus-28",
