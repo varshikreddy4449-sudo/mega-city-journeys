@@ -14,9 +14,9 @@ export const Route = createFileRoute("/fleet")({
       {
         name: "description",
         content:
-          "Owned fleet from Hyderabad — Brezza, Innova Crysta, Fortuner, Tempo Traveller, Urbania, and 22/28/40/50 seater buses. AC and Non-AC, with experienced drivers included.",
+          "Owned fleet from Hyderabad: Brezza, Innova Crysta, Fortuner, Tempo Traveller, Urbania, and 22/28/40/50 seater buses. AC and Non-AC, with experienced drivers included.",
       },
-      { property: "og:title", content: "Our Travel Fleet — Hyderabad" },
+      { property: "og:title", content: "Our Travel Fleet | Hyderabad" },
       {
         property: "og:description",
         content: "Cars, SUVs, tempo travellers, and 22 to 50 seater buses with drivers.",
@@ -62,7 +62,7 @@ function FleetPage() {
             Vehicles for every group size
           </h1>
           <p className="mt-5 text-base md:text-lg text-brand-cream/85 max-w-2xl mx-auto">
-            From 4-seater Brezza to 50-seater buses — owned fleet, clean interiors, and experienced
+            From 4-seater Brezza to 50-seater buses. Owned fleet, clean interiors, and experienced
             drivers for local and outstation travel.
           </p>
         </div>

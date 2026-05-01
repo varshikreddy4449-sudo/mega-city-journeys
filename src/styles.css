@@ -39,7 +39,7 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
 
-  /* Brand alias tokens — kept for compatibility but mapped to new palette */
+  /* Brand alias tokens: kept for compatibility but mapped to new palette */
   --color-brand-cream: var(--brand-cream);
   --color-brand-tan: var(--brand-tan);
   --color-brand-rust: var(--brand-rust);
@@ -94,7 +94,7 @@
   --whatsapp: #25d366;
   --whatsapp-foreground: #ffffff;
 
-  /* Brand alias tokens — Mountain Earth */
+  /* Brand alias tokens: Mountain Earth */
   --brand-brown: #4a2c20;
   --brand-rust: #a0522d;
   --brand-tan: #d9b08c;
@@ -154,7 +154,7 @@
 }
 
 @layer utilities {
-  /* Hero overlay — deep navy near-black wash over hero image */
+  /* Hero overlay: deep navy near-black wash over hero image */
   .bg-hero-overlay {
     background: linear-gradient(
       135deg,

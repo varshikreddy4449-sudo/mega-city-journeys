@@ -223,7 +223,7 @@ Message: ${data.message || "-"}`;
               <form onSubmit={onSubmit} className="space-y-4">
                 <h2 className="font-display text-2xl text-primary">Request a quote</h2>
                 <p className="text-sm text-muted-foreground -mt-2">
-                  Share trip details — we usually respond within business hours ({site.hours}).
+                  Share trip details. We usually respond within business hours ({site.hours}).
                 </p>
 
                 <div className="grid gap-4 sm:grid-cols-2">

@@ -49,7 +49,7 @@ export const faqs: FAQ[] = [
   {
     category: "Vehicles",
     q: "Are vehicles available 24/7?",
-    a: "Yes. Vehicles are available 24/7, 365 days a year — for both local and outstation trips.",
+    a: "Yes. Vehicles are available 24/7, 365 days a year, for both local and outstation trips.",
   },
   {
     category: "Routes",
