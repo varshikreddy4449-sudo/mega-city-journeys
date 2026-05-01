@@ -5,6 +5,7 @@ import tempo from "@/assets/vehicle-tempo.jpg";
 import urbania from "@/assets/vehicle-urbania.jpg";
 import bus from "@/assets/vehicle-bus.jpg";
 import bus28 from "@/assets/vehicle-bus-28.jpg";
+import bus40 from "@/assets/vehicle-bus-40.jpg";
 
 export type Vehicle = {
   slug: string;
