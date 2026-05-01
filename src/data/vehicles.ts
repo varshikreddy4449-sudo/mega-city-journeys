@@ -33,9 +33,9 @@ export const vehicles: Vehicle[] = [
     seats: 7,
     count: 4,
     image: innova,
-    bestFor: "Family trips, outstation comfort travel",
+    bestFor: "Family trips, airport transfers, comfortable outstation travel, and small groups",
     ac: "AC",
-    startingPrice: "₹18/km",
+    startingPrice: "Ask for Price",
   },
   {
     slug: "fortuner",
