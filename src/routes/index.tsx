@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/megacity-fleet-hero.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
+import urbaniaInterior from "@/assets/urbania-interior.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { faqs } from "@/data/faqs";
@@ -280,6 +281,49 @@ function HomePage() {
                   </span>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CLEAN INTERIORS / WHY CHOOSE MEGA CITY */}
+      <section className="py-14 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div className="order-2 lg:order-1">
+              <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4">
+                Why Choose Mega City
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-primary text-balance">
+                Clean interiors, comfortable seating
+              </h2>
+              <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+                Clean interiors, comfortable seating, and well-maintained vehicles for local and
+                outstation journeys. Our fleet is regularly serviced and detailed so every group
+                travels in comfort — whether it's a short city trip or a multi-day yatra.
+              </p>
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Plush, well-cushioned seats with headrests",
+                  "AC vehicles cleaned before every trip",
+                  "Regular servicing and safety checks",
+                  "Courteous, experienced drivers",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-base text-foreground/90">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="order-1 lg:order-2 relative overflow-hidden rounded-2xl shadow-soft border border-border/60" style={{ aspectRatio: "4 / 3" }}>
+              <img
+                src={urbaniaInterior}
+                alt="Clean Urbania interior for comfortable group travel in Hyderabad."
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: "center" }}
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
