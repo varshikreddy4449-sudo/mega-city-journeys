@@ -68,6 +68,49 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* BRAND PROOF BANNER */}
+      <section className="pb-16 md:pb-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+            <div className="relative overflow-hidden rounded-2xl shadow-soft border border-border/60" style={{ aspectRatio: "3 / 4" }}>
+              <img
+                src={brandedBus}
+                alt="Mega City Tours and Travells branded bus in Hyderabad."
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: "center" }}
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4">
+                Brand You Can Recognise
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-primary text-balance">
+                Owned, branded, and built around our customers
+              </h2>
+              <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+                Every vehicle in our fleet carries the Mega City Tours & Travells branding —
+                a sign of accountability, ownership, and the same team you spoke to on the phone.
+                When our bus arrives at your pickup point, you know exactly who you're travelling with.
+              </p>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Owned & branded fleet",
+                  "Direct contact with the owner",
+                  "Hyderabad based, locally rooted",
+                  "Available 365 days, 24/7",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm md:text-base text-foreground/90">
+                    <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader eyebrow="What We Do" title="Travel support for every kind of group" />
