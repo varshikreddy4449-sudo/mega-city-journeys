@@ -24,6 +24,7 @@ import heroImg from "@/assets/megacity-fleet-hero.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
 import urbaniaInterior from "@/assets/urbania-interior.jpg";
 import busInterior from "@/assets/bus-interior.jpg";
+import busInterior2 from "@/assets/bus-interior-2.jpg";
 import volvoBus from "@/assets/volvo-bus.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
@@ -328,10 +329,19 @@ function HomePage() {
                   loading="lazy"
                 />
               </div>
-              <div className="relative overflow-hidden rounded-2xl shadow-card border border-border/60 col-span-2" style={{ aspectRatio: "16 / 9" }}>
+              <div className="relative overflow-hidden rounded-2xl shadow-card border border-border/60" style={{ aspectRatio: "1 / 1" }}>
                 <img
                   src={busInterior}
                   alt="Clean bus interior for comfortable group travel in Hyderabad."
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ objectPosition: "center" }}
+                  loading="lazy"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl shadow-card border border-border/60" style={{ aspectRatio: "1 / 1" }}>
+                <img
+                  src={busInterior2}
+                  alt="Bus seating interior for group travel in Hyderabad."
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ objectPosition: "center" }}
                   loading="lazy"
