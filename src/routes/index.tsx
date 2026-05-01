@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Hyderabad's trusted travel partner — owned fleet of 33+ vehicles from 4 to 50 seats for family, school, corporate, wedding, pilgrimage, and outstation group travel.",
+          "Hyderabad's trusted travel partner. Owned fleet of 33+ vehicles from 4 to 50 seats for family, school, corporate, wedding, pilgrimage, and outstation group travel.",
       },
       { property: "og:title", content: "Mega City Tours & Travells | Hyderabad" },
       {
@@ -185,12 +185,12 @@ function HomePage() {
                 Reliable Group Travel & Per KM Trips from Hyderabad
               </h1>
               <p className="mt-5 text-base md:text-lg text-brand-cream/85 max-w-xl leading-relaxed">
-                Owned fleet from 4 to 50 seats with experienced drivers — for families, schools,
+                Owned fleet from 4 to 50 seats with experienced drivers, for families, schools,
                 companies, weddings, pilgrimage groups, and outstation journeys across Telangana and
                 nearby states.
               </p>
 
-              {/* CTAs — visible above the fold on mobile */}
+              {/* CTAs: visible above the fold on mobile */}
               <div className="mt-7 flex flex-col sm:flex-row gap-3">
                 <a
                   href={whatsappLink()}
@@ -236,12 +236,12 @@ function HomePage() {
               </div>
             </div>
 
-            {/* Right: hero quote form (desktop) — hidden on mobile to keep CTAs visible above fold */}
+            {/* Right: hero quote form (desktop), hidden on mobile to keep CTAs visible above fold */}
             <div className="hidden lg:block">
               <QuoteForm
                 variant="compact"
                 title="Get a Quick Quote"
-                subtitle="Share your trip details — we respond on WhatsApp."
+                subtitle="Share your trip details. We respond on WhatsApp."
                 ctaLabel="Get Quote"
               />
             </div>
@@ -249,13 +249,13 @@ function HomePage() {
         </div>
       </section>
 
-      {/* MOBILE QUOTE FORM — directly below hero */}
+      {/* MOBILE QUOTE FORM: directly below hero */}
       <section className="lg:hidden bg-secondary/40 py-10">
         <div className="mx-auto max-w-md px-4">
           <QuoteForm
             variant="compact"
             title="Get a Quick Quote"
-            subtitle="Share your trip details — we respond on WhatsApp."
+            subtitle="Share your trip details. We respond on WhatsApp."
             ctaLabel="Get Quote"
           />
         </div>
@@ -343,9 +343,9 @@ function HomePage() {
               </h2>
               <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
                 Owned and operated by M Kondal Reddy from {site.city}, Mega City Tours & Travells
-                runs an in-house fleet of 33+ vehicles — from 4-seater Brezza to 50-seater buses —
+                runs an in-house fleet of 33+ vehicles, from 4-seater Brezza to 50-seater buses,
                 with drivers carrying 20–30 years of experience. Local sightseeing, outstation
-                journeys, pilgrimage yatras, school excursions, corporate travel — all handled with
+                journeys, pilgrimage yatras, school excursions, and corporate travel, all handled with
                 one team you can call any time of the year.
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
@@ -383,7 +383,7 @@ function HomePage() {
               <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
                 Clean interiors, comfortable seating, and well-maintained vehicles for local and
                 outstation journeys. Our fleet is regularly serviced and detailed so every group
-                travels in comfort — whether it's a short city trip or a multi-day yatra.
+                travels in comfort, whether it's a short city trip or a multi-day yatra.
               </p>
               <ul className="mt-6 space-y-3">
                 {[
@@ -447,7 +447,7 @@ function HomePage() {
           <SectionHeader
             eyebrow="Our Services"
             title="Travel built around your group and route"
-            subtitle="From short local trips to large group travel — pick what fits your journey."
+            subtitle="From short local trips to large group travel. Pick what fits your journey."
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (
@@ -480,7 +480,7 @@ function HomePage() {
           <SectionHeader
             eyebrow="Our Fleet"
             title="Vehicles for Every Group Size"
-            subtitle="Owned, well-maintained vehicles from 4 to 50 seats — drivers included."
+            subtitle="Owned, well-maintained vehicles from 4 to 50 seats. Drivers included."
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {vehicles.map((v) => (
@@ -650,14 +650,14 @@ function HomePage() {
               Why Mega City
             </span>
             <h2 className="mt-4 font-display text-3xl md:text-5xl font-bold text-white text-balance">
-              Trusted travel — every trip, every time
+              Trusted travel, every trip, every time
             </h2>
           </div>
           <ul className="mt-12 grid gap-6 md:grid-cols-2">
             {[
               {
                 title: "Owned Fleet of 33+ Vehicles",
-                sub: "From 4-seater Brezza to 50-seater buses — no third-party vehicles.",
+                sub: "From 4-seater Brezza to 50-seater buses. No third-party vehicles.",
               },
               {
                 title: "Drivers with 20–30 Years Experience",
@@ -669,7 +669,7 @@ function HomePage() {
               },
               {
                 title: "Available 24/7, 365 Days",
-                sub: "Last-minute trips, early-morning pickups, late-night returns — covered.",
+                sub: "Last-minute trips, early-morning pickups, late-night returns, all covered.",
               },
               {
                 title: "Transparent Per-KM Pricing",
@@ -677,7 +677,7 @@ function HomePage() {
               },
               {
                 title: "Easy WhatsApp Booking",
-                sub: "Share trip details on WhatsApp — get vehicle options in minutes.",
+                sub: "Share trip details on WhatsApp. Get vehicle options in minutes.",
               },
             ].map((p) => (
               <li key={p.title} className="flex items-start gap-4">
@@ -710,7 +710,7 @@ function HomePage() {
               ["Share Trip Details", "Send pickup, destination, date, group size."],
               ["Get Vehicle Options", "We suggest the right vehicle and route."],
               ["Confirm Booking", "Lock route, timing, vehicle, advance payment."],
-              ["Start Travel", "Driver arrives on time — enjoy the trip."],
+              ["Start Travel", "Driver arrives on time. Enjoy the trip."],
             ].map(([title, desc], i) => (
               <div
                 key={title}
@@ -755,7 +755,7 @@ function HomePage() {
                 Get a Custom Trip Quote
               </h2>
               <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
-                Tell us about your trip — pickup, destination, group size, and travel date. Our team
+                Tell us about your trip: pickup, destination, group size, and travel date. Our team
                 will respond with vehicle options and a clear quote.
               </p>
 

@@ -15,10 +15,10 @@ export const Route = createFileRoute("/faqs")({
         content:
           "Answers to common questions about bookings, pricing, vehicles, routes, payments, and group travel from Hyderabad.",
       },
-      { property: "og:title", content: "Travel Booking FAQs — Mega City Tours & Travells" },
+      { property: "og:title", content: "Travel Booking FAQs | Mega City Tours & Travells" },
       {
         property: "og:description",
-        content: "Booking, pricing, vehicles, routes, payments, group travel — all answered.",
+        content: "Booking, pricing, vehicles, routes, payments, group travel, all answered.",
       },
     ],
   }),
