@@ -53,9 +53,9 @@ export const vehicles: Vehicle[] = [
     seats: 12,
     count: 2,
     image: tempo,
-    bestFor: "Small groups, weekend trips, pilgrimage",
+    bestFor: "Group trips, school/college trips, pilgrimage trips, and family outings",
     ac: "AC / Non-AC",
-    startingPrice: "₹22/km",
+    startingPrice: "Ask for Price",
   },
   {
     slug: "urbania",
