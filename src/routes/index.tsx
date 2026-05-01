@@ -23,6 +23,7 @@ import {
 import heroImg from "@/assets/megacity-fleet-hero.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
 import urbaniaInterior from "@/assets/urbania-interior.jpg";
+import busInterior from "@/assets/bus-interior.jpg";
 import volvoBus from "@/assets/volvo-bus.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
@@ -317,14 +318,25 @@ function HomePage() {
                 ))}
               </ul>
             </div>
-            <div className="order-1 lg:order-2 relative overflow-hidden rounded-2xl shadow-soft border border-border/60" style={{ aspectRatio: "4 / 3" }}>
-              <img
-                src={urbaniaInterior}
-                alt="Clean Urbania interior for comfortable group travel in Hyderabad."
-                className="absolute inset-0 h-full w-full object-cover"
-                style={{ objectPosition: "center" }}
-                loading="lazy"
-              />
+            <div className="order-1 lg:order-2 grid grid-cols-2 gap-3">
+              <div className="relative overflow-hidden rounded-2xl shadow-soft border border-border/60 col-span-2" style={{ aspectRatio: "16 / 9" }}>
+                <img
+                  src={urbaniaInterior}
+                  alt="Clean Urbania interior for comfortable group travel in Hyderabad."
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ objectPosition: "center" }}
+                  loading="lazy"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl shadow-card border border-border/60 col-span-2" style={{ aspectRatio: "16 / 9" }}>
+                <img
+                  src={busInterior}
+                  alt="Clean bus interior for comfortable group travel in Hyderabad."
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ objectPosition: "center" }}
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
