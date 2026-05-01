@@ -23,6 +23,7 @@ import {
 import heroImg from "@/assets/megacity-fleet-hero.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
 import urbaniaInterior from "@/assets/urbania-interior.jpg";
+import volvoBus from "@/assets/volvo-bus.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { faqs } from "@/data/faqs";
@@ -463,6 +464,30 @@ function HomePage() {
             title="Popular Routes & Packages from Hyderabad"
             subtitle="Pricing varies by route, vehicle, and group size. Share your details for a custom quote."
           />
+          <div className="mb-10 relative overflow-hidden rounded-2xl shadow-card border border-border/60" style={{ aspectRatio: "21 / 9" }}>
+            <img
+              src={volvoBus}
+              alt="Bus for outstation and pilgrimage trips from Hyderabad."
+              className="absolute inset-0 h-full w-full object-cover"
+              style={{ objectPosition: "center 60%" }}
+              loading="lazy"
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(74,44,32,0.78) 0%, rgba(74,44,32,0.45) 55%, rgba(74,44,32,0.15) 100%)",
+              }}
+            />
+            <div className="relative h-full flex items-center px-6 md:px-10">
+              <div className="max-w-md">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-tan">Outstation & Pilgrimage</p>
+                <h3 className="mt-2 font-display text-2xl md:text-3xl font-bold text-white leading-tight">
+                  Comfortable buses for long-distance group travel
+                </h3>
+              </div>
+            </div>
+          </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {popularRoutes.map((r) => (
               <div
