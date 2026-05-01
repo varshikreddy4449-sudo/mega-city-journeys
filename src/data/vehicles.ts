@@ -59,13 +59,13 @@ export const vehicles: Vehicle[] = [
   },
   {
     slug: "urbania",
-    name: "Force Urbania",
+    name: "Urbania",
     seats: 12,
     count: 4,
     image: urbania,
-    bestFor: "Premium small-group outstation travel",
+    bestFor: "Comfortable group travel, corporate trips, family outings, and outstation travel",
     ac: "AC",
-    startingPrice: "₹30/km",
+    startingPrice: "Ask for Price",
   },
   {
     slug: "bus-22",
