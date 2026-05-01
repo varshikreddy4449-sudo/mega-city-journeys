@@ -5,6 +5,7 @@ import { CTASection } from "@/components/CTASection";
 import { vehicles } from "@/data/vehicles";
 import { whatsappLink } from "@/data/site";
 import fleetHero from "@/assets/megacity-fleet.jpg";
+import brandedBus from "@/assets/megacity-branded-bus.jpg";
 
 export const Route = createFileRoute("/fleet")({
   head: () => ({
@@ -73,6 +74,31 @@ function FleetPage() {
                 <span>{f}</span>
               </div>
             ))}
+          </div>
+
+          <div className="mb-10 relative overflow-hidden rounded-2xl shadow-card border border-border/60" style={{ aspectRatio: "21 / 9" }}>
+            <img
+              src={brandedBus}
+              alt="Mega City Tours and Travells branded bus in Hyderabad."
+              className="absolute inset-0 h-full w-full object-cover"
+              style={{ objectPosition: "center 35%" }}
+              loading="lazy"
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(74,44,32,0.10) 0%, rgba(74,44,32,0.05) 60%, rgba(74,44,32,0.55) 100%)",
+              }}
+            />
+            <div className="relative h-full flex items-center justify-end px-6 md:px-10">
+              <div className="max-w-xs text-right">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-tan">Owned & Branded</p>
+                <h3 className="mt-2 font-display text-xl md:text-2xl font-bold text-white leading-tight">
+                  Recognise our buses on the road
+                </h3>
+              </div>
+            </div>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
