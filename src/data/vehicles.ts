@@ -5,6 +5,7 @@ import tempo from "@/assets/vehicle-tempo.jpg";
 import urbania from "@/assets/vehicle-urbania.jpg";
 import bus from "@/assets/vehicle-bus.jpg";
 import bus28 from "@/assets/vehicle-bus-28.jpg";
+import bus40 from "@/assets/vehicle-bus-40.jpg";
 
 export type Vehicle = {
   slug: string;
@@ -93,7 +94,7 @@ export const vehicles: Vehicle[] = [
     name: "Bus",
     seats: 40,
     count: 9,
-    image: bus,
+    image: bus40,
     bestFor: "Large groups, weddings, school/college trips, corporate outings, and pilgrimages",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
