@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CTASection } from "@/components/CTASection";
+import { AreasServed } from "@/components/AreasServed";
 import { vehicles } from "@/data/vehicles";
 import { whatsappLink } from "@/data/site";
 import fleetHero from "@/assets/megacity-fleet.jpg";
@@ -13,16 +14,17 @@ import bus50Interior from "@/assets/bus-50-interior.jpg";
 export const Route = createFileRoute("/fleet")({
   head: () => ({
     meta: [
-      { title: "Travel Vehicles in Hyderabad | Cars, SUVs, Tempo Travellers & Buses" },
+      { title: "Bus Rental Hyderabad | Tempo Traveller, Urbania, 22/28/40/50 Seater Buses" },
       {
         name: "description",
         content:
-          "Owned fleet from Hyderabad: Brezza, Innova Crysta, Fortuner, Tempo Traveller, Urbania, and 22/28/40/50 seater buses. AC and Non-AC, with experienced drivers included.",
+          "Bus rental Hyderabad and tempo traveller rental Hyderabad. Owned fleet: Brezza, Innova Crysta, Fortuner, 12 seater Tempo Traveller, 12 seater Urbania, and 22, 28, 40, and 50 seater bus rental in Hyderabad with experienced drivers.",
       },
-      { property: "og:title", content: "Our Travel Fleet | Hyderabad" },
+      { property: "og:title", content: "Bus Rental Hyderabad | Tempo Traveller & Urbania Fleet" },
       {
         property: "og:description",
-        content: "Cars, SUVs, tempo travellers, and 22 to 50 seater buses with drivers.",
+        content:
+          "12 seater tempo traveller, 12 seater Urbania, and 22 to 50 seater bus rental in Hyderabad with drivers included.",
       },
     ],
   }),
