@@ -35,21 +35,22 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
 import { QuoteForm } from "@/components/QuoteForm";
+import { AreasServed } from "@/components/AreasServed";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mega City Tours & Travells | Group Travel & Per KM Trips in Hyderabad" },
+      { title: "Mega City Tours & Travells | Bus Rental & Tempo Traveller Rental Hyderabad" },
       {
         name: "description",
         content:
-          "Hyderabad's trusted travel partner. Owned fleet of 33+ vehicles from 4 to 50 seats for family, school, corporate, wedding, pilgrimage, and outstation group travel.",
+          "Group travel agency Hyderabad with bus rental Hyderabad, tempo traveller rental Hyderabad, Urbania, and 22 to 50 seater bus rental. Per KM travels Hyderabad for outstation, family, school and college, wedding guest, pilgrimage, and corporate travel.",
       },
       { property: "og:title", content: "Mega City Tours & Travells | Hyderabad" },
       {
         property: "og:description",
         content:
-          "Group travel, per KM trips, and outstation travel from Hyderabad across Telangana and nearby states.",
+          "Bus rental, tempo traveller rental, and per KM travels from Hyderabad across Telangana and nearby states.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -750,6 +751,8 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      <AreasServed />
 
       {/* FINAL QUOTE FORM */}
       <section className="py-16 md:py-24" style={{ backgroundColor: "#F4F1EA" }}>
