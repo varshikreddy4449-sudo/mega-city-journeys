@@ -215,9 +215,27 @@ const items: Item[] = [
   },
   {
     src: bus50,
-    alt: "50 seater bus for large group travel in Hyderabad",
+    alt: "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
     caption: "50-seater bus for large group travel",
     cats: ["Buses"],
+  },
+  {
+    src: bus50Side,
+    alt: "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
+    caption: "50-seater bus side view",
+    cats: ["Buses"],
+  },
+  {
+    src: bus50Front,
+    alt: "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
+    caption: "50-seater bus front view",
+    cats: ["Buses"],
+  },
+  {
+    src: bus50Interior,
+    alt: "50 seater bus interior with comfortable seating in Hyderabad",
+    caption: "Spacious 50-seater bus interior",
+    cats: ["Buses", "Interiors"],
   },
   {
     src: bus,
