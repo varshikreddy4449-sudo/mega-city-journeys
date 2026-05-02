@@ -70,10 +70,11 @@ export const services: Service[] = [
     slug: "corporate-travel",
     title: "Corporate Travel",
     short:
-      "Reliable group transport for company offsites, conferences, training events, and team outings.",
-    bestFor: "Company outings, offsites, training, employee transport",
+      "Mega City Tours & Travells supports corporate travel services in Hyderabad, including office team outings, employee movement, company events, business meetings, and monthly staff transport requirements.",
+    bestFor:
+      "Office team outings, employee transportation services, company outings, business meetings, monthly staff transport",
     needs: "Number of employees, route, schedule, AC vehicle preference",
-    vehicles: "Urbania, Tempo Traveller, Bus",
+    vehicles: "Urbania, Tempo Traveller, Corporate bus rental Hyderabad (22 to 50 seater)",
     icon: Briefcase,
   },
   {

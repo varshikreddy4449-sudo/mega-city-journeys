@@ -25,21 +25,22 @@ import { whatsappLink, telLink, site } from "@/data/site";
 import { cn } from "@/lib/utils";
 import fleetImg from "@/assets/megacity-fleet-hero.jpg";
 import busInteriorImg from "@/assets/bus-interior.jpg";
+import { AreasServed } from "@/components/AreasServed";
 
 export const Route = createFileRoute("/packages")({
   head: () => ({
     meta: [
-      { title: "Popular Routes & Custom Travel Plans from Hyderabad | Mega City Tours & Travells" },
+      { title: "Popular Routes & Telangana Tour Packages from Hyderabad | Mega City Tours & Travells" },
       {
         name: "description",
         content:
-          "Popular routes from Hyderabad and custom travel plans for families, schools, colleges, companies, pilgrimages, and weddings. Price on request.",
+          "Bus rental for Srisailam trip, Hyderabad to Yadadri vehicle booking, Hyderabad to Warangal group travel, Hyderabad to Vijayawada outstation trip, Hyderabad local sightseeing vehicle rental, and Telangana tour packages from Hyderabad. Price on request.",
       },
-      { property: "og:title", content: "Popular Routes & Custom Travel Plans from Hyderabad" },
+      { property: "og:title", content: "Popular Routes & Telangana Tour Packages from Hyderabad" },
       {
         property: "og:description",
         content:
-          "Common routes and custom plans from Hyderabad with vehicle suggestions. Price on request.",
+          "Srisailam, Yadadri, Warangal, Vijayawada and local sightseeing routes with suggested vehicles. Price on request.",
       },
     ],
   }),
@@ -529,6 +530,8 @@ function PackagesPage() {
           </div>
         </div>
       </section>
+
+      <AreasServed />
 
       {/* FINAL CTA */}
       <section className="bg-rust-gradient text-primary-foreground py-16 md:py-20">

@@ -21,7 +21,7 @@ export type Pkg = {
 export const packages: Pkg[] = [
   {
     slug: "hyderabad-local-sightseeing",
-    title: "Hyderabad Local Sightseeing",
+    title: "Hyderabad Local Sightseeing Vehicle Rental",
     from: "Hyderabad",
     to: "City Tour",
     bestFor: "Families, guests, local city tours",
@@ -31,7 +31,7 @@ export const packages: Pkg[] = [
   },
   {
     slug: "hyderabad-to-srisailam",
-    title: "Hyderabad to Srisailam",
+    title: "Bus Rental for Srisailam Trip",
     from: "Hyderabad",
     to: "Srisailam",
     bestFor: "Pilgrimage groups and family temple trips",
@@ -41,7 +41,7 @@ export const packages: Pkg[] = [
   },
   {
     slug: "hyderabad-to-yadadri",
-    title: "Hyderabad to Yadadri",
+    title: "Hyderabad to Yadadri Vehicle Booking",
     from: "Hyderabad",
     to: "Yadadri",
     bestFor: "Temple visits and family groups",
@@ -51,7 +51,7 @@ export const packages: Pkg[] = [
   },
   {
     slug: "hyderabad-to-warangal",
-    title: "Hyderabad to Warangal",
+    title: "Hyderabad to Warangal Group Travel",
     from: "Hyderabad",
     to: "Warangal",
     bestFor: "Heritage trips, college tours, family travel",
@@ -61,7 +61,7 @@ export const packages: Pkg[] = [
   },
   {
     slug: "hyderabad-to-vijayawada",
-    title: "Hyderabad to Vijayawada",
+    title: "Hyderabad to Vijayawada Outstation Trip",
     from: "Hyderabad",
     to: "Vijayawada",
     bestFor: "Family trips and business travel",
@@ -89,15 +89,15 @@ export const packages: Pkg[] = [
   },
   {
     slug: "corporate-group-outing",
-    title: "Corporate Group Outing",
-    bestFor: "Office teams and company outings",
-    vehicles: "Urbania, Traveller, Bus",
+    title: "Corporate Group Outing & Office Team Travel",
+    bestFor: "Office teams, company outings, employee transportation services Hyderabad",
+    vehicles: "Urbania, Traveller, Corporate bus rental Hyderabad",
     tripType: "Local or outstation",
     category: "Corporate",
   },
   {
     slug: "wedding-guest-transport",
-    title: "Wedding Guest Transport",
+    title: "Wedding Guest Transport Hyderabad",
     bestFor: "Guest pickup, drop, and event movement",
     vehicles: "Car, SUV, Traveller, Bus",
     tripType: "Local package",
@@ -105,8 +105,8 @@ export const packages: Pkg[] = [
   },
   {
     slug: "custom-telangana-tour",
-    title: "Custom Telangana Tour",
-    bestFor: "Custom route planning",
+    title: "Telangana Tour Packages from Hyderabad",
+    bestFor: "Custom multi-day Telangana route planning",
     vehicles: "Based on group size",
     tripType: "Custom",
     category: "Custom",

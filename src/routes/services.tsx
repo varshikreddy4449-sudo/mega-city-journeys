@@ -20,6 +20,7 @@ import tempoImg from "@/assets/vehicle-tempo.jpg";
 import urbaniaImg from "@/assets/vehicle-urbania.jpg";
 import bus40Img from "@/assets/vehicle-bus-40.jpg";
 import tempoInteriorImg from "@/assets/tempo-interior.jpg";
+import { AreasServed } from "@/components/AreasServed";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -28,12 +29,13 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Group travel, per KM trips, local sightseeing, outstation tours, corporate travel, school and college trips, pilgrimage, and wedding transport from Hyderabad.",
+          "Group travel agency Hyderabad offering per KM travels, local sightseeing, outstation travel, corporate travel services, employee transportation, school and college trip transport, pilgrimage travel, and wedding guest transport from Hyderabad.",
       },
       { property: "og:title", content: "Travel Services in Hyderabad" },
       {
         property: "og:description",
-        content: "Group, corporate, school, pilgrimage and outstation travel from Hyderabad.",
+        content:
+          "Group travel, corporate travel services, school and college trip transport, pilgrimage and outstation travel from Hyderabad.",
       },
     ],
   }),
@@ -509,6 +511,8 @@ function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <AreasServed />
 
       {/* BOTTOM CTA */}
       <section className="bg-rust-gradient text-primary-foreground py-16 md:py-24">

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CTASection } from "@/components/CTASection";
+import { AreasServed } from "@/components/AreasServed";
 import { vehicles } from "@/data/vehicles";
 import { whatsappLink } from "@/data/site";
 import fleetHero from "@/assets/megacity-fleet.jpg";
@@ -13,16 +14,17 @@ import bus50Interior from "@/assets/bus-50-interior.jpg";
 export const Route = createFileRoute("/fleet")({
   head: () => ({
     meta: [
-      { title: "Travel Vehicles in Hyderabad | Cars, SUVs, Tempo Travellers & Buses" },
+      { title: "Bus Rental Hyderabad | Tempo Traveller, Urbania, 22/28/40/50 Seater Buses" },
       {
         name: "description",
         content:
-          "Owned fleet from Hyderabad: Brezza, Innova Crysta, Fortuner, Tempo Traveller, Urbania, and 22/28/40/50 seater buses. AC and Non-AC, with experienced drivers included.",
+          "Bus rental Hyderabad and tempo traveller rental Hyderabad. Owned fleet: Brezza, Innova Crysta, Fortuner, 12 seater Tempo Traveller, 12 seater Urbania, and 22, 28, 40, and 50 seater bus rental in Hyderabad with experienced drivers.",
       },
-      { property: "og:title", content: "Our Travel Fleet | Hyderabad" },
+      { property: "og:title", content: "Bus Rental Hyderabad | Tempo Traveller & Urbania Fleet" },
       {
         property: "og:description",
-        content: "Cars, SUVs, tempo travellers, and 22 to 50 seater buses with drivers.",
+        content:
+          "12 seater tempo traveller, 12 seater Urbania, and 22 to 50 seater bus rental in Hyderabad with drivers included.",
       },
     ],
   }),
@@ -151,7 +153,23 @@ function FleetPage() {
                     <h3 className="font-display text-xl font-semibold text-primary">{v.name}</h3>
                     <span className="text-sm font-bold text-accent">{v.seats} Seater</span>
                   </div>
-                  <p className="mt-1 text-sm text-muted-foreground">{v.bestFor}</p>
+                  {(() => {
+                    const seoHeading: Record<string, string> = {
+                      "tempo-traveller": "12 Seater Tempo Traveller Rental in Hyderabad",
+                      urbania: "12 Seater Urbania Rental in Hyderabad",
+                      "bus-22": "22 Seater Bus Rental in Hyderabad",
+                      "bus-28": "28 Seater Bus Rental in Hyderabad",
+                      "bus-40": "40 Seater Bus Rental in Hyderabad",
+                      "bus-50": "50 Seater Bus Rental in Hyderabad",
+                    };
+                    const heading = seoHeading[v.slug];
+                    return heading ? (
+                      <h4 className="mt-1 text-xs font-semibold uppercase tracking-wider text-accent">
+                        {heading}
+                      </h4>
+                    ) : null;
+                  })()}
+                  <p className="mt-2 text-sm text-muted-foreground">{v.bestFor}</p>
                   <div className="mt-4 grid grid-cols-2 gap-2 text-[11px]">
                     <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">
                       {v.ac}
@@ -219,6 +237,8 @@ function FleetPage() {
           </div>
         </div>
       </section>
+
+      <AreasServed />
 
       <CTASection />
     </>
