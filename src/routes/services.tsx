@@ -19,7 +19,7 @@ import { whatsappLink, telLink, site } from "@/data/site";
 import tempoImg from "@/assets/vehicle-tempo.jpg";
 import urbaniaImg from "@/assets/vehicle-urbania.jpg";
 import bus40Img from "@/assets/vehicle-bus-40.jpg";
-import busInteriorImg from "@/assets/bus-interior.jpg";
+import tempoInteriorImg from "@/assets/tempo-interior.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -490,8 +490,8 @@ function ServicesPage() {
               style={{ aspectRatio: "4 / 5" }}
             >
               <img
-                src={busInteriorImg}
-                alt="Bus seating interior for group travel in Hyderabad."
+                src={tempoInteriorImg}
+                alt="Tempo Traveller interior for group travel in Hyderabad"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />

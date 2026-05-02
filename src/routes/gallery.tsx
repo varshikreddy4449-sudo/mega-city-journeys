@@ -89,6 +89,24 @@ const items: Item[] = [
     cats: ["Tempo Traveller"],
   },
   {
+    src: tempoExteriorFront,
+    alt: "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
+    caption: "Tempo Traveller front view",
+    cats: ["Tempo Traveller"],
+  },
+  {
+    src: tempoExteriorRear,
+    alt: "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
+    caption: "Tempo Traveller rear view",
+    cats: ["Tempo Traveller"],
+  },
+  {
+    src: tempoInterior,
+    alt: "Tempo Traveller interior for group travel in Hyderabad",
+    caption: "Comfortable seating for small and medium group trips",
+    cats: ["Tempo Traveller", "Interiors"],
+  },
+  {
     src: urbania,
     alt: "Force Urbania for group travel in Hyderabad",
     caption: "Urbania for comfortable group travel",

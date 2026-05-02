@@ -406,8 +406,8 @@ function HomePage() {
                 style={{ aspectRatio: "16 / 9" }}
               >
                 <img
-                  src={urbaniaInterior}
-                  alt="Clean Urbania interior for comfortable group travel in Hyderabad."
+                  src={tempoInterior}
+                  alt="Tempo Traveller interior for group travel in Hyderabad"
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ objectPosition: "center" }}
                   loading="lazy"

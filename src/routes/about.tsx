@@ -322,8 +322,8 @@ function AboutPage() {
               style={{ aspectRatio: "4 / 5" }}
             >
               <img
-                src={busInterior}
-                alt="Bus seating interior for group travel in Hyderabad."
+                src={tempoInterior}
+                alt="Tempo Traveller interior for group travel in Hyderabad"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
