@@ -238,6 +238,8 @@ function FleetPage() {
         </div>
       </section>
 
+      <AreasServed />
+
       <CTASection />
     </>
   );
