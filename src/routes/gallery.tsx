@@ -29,6 +29,9 @@ import bus40Rear from "@/assets/bus-40-rear.jpg";
 import bus40Side from "@/assets/bus-40-side.jpg";
 import bus40RearYellow from "@/assets/bus-40-rear-yellow.jpg";
 import bus50 from "@/assets/vehicle-bus-50.jpg";
+import bus50Side from "@/assets/bus-50-side.jpg";
+import bus50Front from "@/assets/bus-50-front.jpg";
+import bus50Interior from "@/assets/bus-50-interior.jpg";
 import bus from "@/assets/vehicle-bus.jpg";
 import busInterior from "@/assets/bus-interior.jpg";
 import busInterior2 from "@/assets/bus-interior-2.jpg";
@@ -212,9 +215,27 @@ const items: Item[] = [
   },
   {
     src: bus50,
-    alt: "50 seater bus for large group travel in Hyderabad",
+    alt: "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
     caption: "50-seater bus for large group travel",
     cats: ["Buses"],
+  },
+  {
+    src: bus50Side,
+    alt: "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
+    caption: "50-seater bus side view",
+    cats: ["Buses"],
+  },
+  {
+    src: bus50Front,
+    alt: "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
+    caption: "50-seater bus front view",
+    cats: ["Buses"],
+  },
+  {
+    src: bus50Interior,
+    alt: "50 seater bus interior with comfortable seating in Hyderabad",
+    caption: "Spacious 50-seater bus interior",
+    cats: ["Buses", "Interiors"],
   },
   {
     src: bus,
