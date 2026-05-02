@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/megacity-fleet-hero.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
+import tempoInterior from "@/assets/tempo-interior.jpg";
 import urbaniaInterior from "@/assets/urbania-interior.jpg";
 import busInterior from "@/assets/bus-interior.jpg";
 import busInterior2 from "@/assets/bus-interior-2.jpg";
@@ -405,8 +406,8 @@ function HomePage() {
                 style={{ aspectRatio: "16 / 9" }}
               >
                 <img
-                  src={urbaniaInterior}
-                  alt="Clean Urbania interior for comfortable group travel in Hyderabad."
+                  src={tempoInterior}
+                  alt="Tempo Traveller interior for group travel in Hyderabad"
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ objectPosition: "center" }}
                   loading="lazy"
@@ -493,7 +494,7 @@ function HomePage() {
                     src={v.image}
                     alt={
                       v.slug === "tempo-traveller"
-                        ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells."
+                        ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells"
                         : v.slug === "urbania"
                           ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
                           : v.slug === "innova-crysta"

@@ -25,7 +25,7 @@ import { CTASection } from "@/components/CTASection";
 import { whatsappLink, telLink, site } from "@/data/site";
 import heroImg from "@/assets/hero-travel.jpg";
 import brandedBus from "@/assets/megacity-branded-bus.jpg";
-import busInterior from "@/assets/bus-interior.jpg";
+import tempoInterior from "@/assets/tempo-interior.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -322,8 +322,8 @@ function AboutPage() {
               style={{ aspectRatio: "4 / 5" }}
             >
               <img
-                src={busInterior}
-                alt="Bus seating interior for group travel in Hyderabad."
+                src={tempoInterior}
+                alt="Tempo Traveller interior for group travel in Hyderabad"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
