@@ -15,6 +15,10 @@ import tempoInterior from "@/assets/tempo-interior.jpg";
 import urbania from "@/assets/vehicle-urbania.jpg";
 import urbaniaInterior from "@/assets/urbania-interior.jpg";
 import innova from "@/assets/vehicle-innova.jpg";
+import innovaFront from "@/assets/innova-exterior-front.jpg";
+import innovaRear from "@/assets/innova-exterior-rear.jpg";
+import innovaInteriorFront from "@/assets/innova-interior-front.jpg";
+import innovaInteriorRear from "@/assets/innova-interior-rear.jpg";
 import brezza from "@/assets/vehicle-brezza.jpg";
 import fortuner from "@/assets/vehicle-fortuner.jpg";
 import bus22 from "@/assets/vehicle-bus-22.jpg";
@@ -120,9 +124,33 @@ const items: Item[] = [
   },
   {
     src: innova,
-    alt: "Innova Crysta for family trips from Hyderabad",
+    alt: "Innova Crysta for family and outstation trips from Hyderabad",
     caption: "Innova Crysta for family and outstation trips",
     cats: ["Cars & SUVs"],
+  },
+  {
+    src: innovaFront,
+    alt: "Innova Crysta for family and outstation trips from Hyderabad",
+    caption: "Innova Crysta front view",
+    cats: ["Cars & SUVs"],
+  },
+  {
+    src: innovaRear,
+    alt: "Innova Crysta for family and outstation trips from Hyderabad",
+    caption: "Innova Crysta rear view",
+    cats: ["Cars & SUVs"],
+  },
+  {
+    src: innovaInteriorFront,
+    alt: "Innova Crysta interior for family trips in Hyderabad",
+    caption: "Comfortable car interiors for family trips",
+    cats: ["Cars & SUVs", "Interiors"],
+  },
+  {
+    src: innovaInteriorRear,
+    alt: "Innova Crysta interior for family trips in Hyderabad",
+    caption: "Spacious rear seating for family travel",
+    cats: ["Cars & SUVs", "Interiors"],
   },
   {
     src: brezza,
