@@ -24,6 +24,10 @@ import fortuner from "@/assets/vehicle-fortuner.jpg";
 import bus22 from "@/assets/vehicle-bus-22.jpg";
 import bus28 from "@/assets/vehicle-bus-28.jpg";
 import bus40 from "@/assets/vehicle-bus-40.jpg";
+import bus40Front from "@/assets/bus-40-front.jpg";
+import bus40Rear from "@/assets/bus-40-rear.jpg";
+import bus40Side from "@/assets/bus-40-side.jpg";
+import bus40RearYellow from "@/assets/bus-40-rear-yellow.jpg";
 import bus50 from "@/assets/vehicle-bus-50.jpg";
 import bus from "@/assets/vehicle-bus.jpg";
 import busInterior from "@/assets/bus-interior.jpg";
@@ -178,8 +182,32 @@ const items: Item[] = [
   },
   {
     src: bus40,
-    alt: "40 seater bus for school and college trips in Hyderabad",
-    caption: "40-seater bus for school, college, and event travel",
+    alt: "40 seater bus rental in Hyderabad for large group travel",
+    caption: "40-seater bus for large group travel",
+    cats: ["Buses"],
+  },
+  {
+    src: bus40Front,
+    alt: "40 seater bus rental in Hyderabad for large group travel",
+    caption: "40-seater bus front view",
+    cats: ["Buses"],
+  },
+  {
+    src: bus40Side,
+    alt: "40 seater bus rental in Hyderabad for large group travel",
+    caption: "40-seater bus side view",
+    cats: ["Buses"],
+  },
+  {
+    src: bus40Rear,
+    alt: "40 seater bus rental in Hyderabad for large group travel",
+    caption: "40-seater bus rear view",
+    cats: ["Buses"],
+  },
+  {
+    src: bus40RearYellow,
+    alt: "40 seater bus rental in Hyderabad for large group travel",
+    caption: "40-seater bus rear angle",
     cats: ["Buses"],
   },
   {

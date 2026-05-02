@@ -96,6 +96,8 @@ const featuredImages: Record<string, string> = {
   "group-travel": tempoImg,
   "per-km-travel": urbaniaImg,
   "outstation-trips": bus40Img,
+  "wedding-event-transport": bus40Img,
+  "pilgrimage-trips": bus40Img,
 };
 
 function enquireLink(title: string) {

@@ -501,9 +501,11 @@ function HomePage() {
                             ? "Innova Crysta for family and outstation trips in Hyderabad."
                             : v.slug === "bus-28"
                               ? "28 seater bus rental in Hyderabad for medium group travel"
-                              : v.slug.startsWith("bus-")
-                                ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
-                                : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
+                              : v.slug === "bus-40"
+                                ? "40 seater bus rental in Hyderabad for large group travel"
+                                : v.slug.startsWith("bus-")
+                                  ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
+                                  : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
                     }
                     loading="lazy"
                     className="h-full w-full object-cover object-center"
