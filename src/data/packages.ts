@@ -21,7 +21,7 @@ export type Pkg = {
 export const packages: Pkg[] = [
   {
     slug: "hyderabad-local-sightseeing",
-    title: "Hyderabad Local Sightseeing",
+    title: "Hyderabad Local Sightseeing Vehicle Rental",
     from: "Hyderabad",
     to: "City Tour",
     bestFor: "Families, guests, local city tours",
@@ -31,7 +31,7 @@ export const packages: Pkg[] = [
   },
   {
     slug: "hyderabad-to-srisailam",
-    title: "Hyderabad to Srisailam",
+    title: "Bus Rental for Srisailam Trip",
     from: "Hyderabad",
     to: "Srisailam",
     bestFor: "Pilgrimage groups and family temple trips",
@@ -41,7 +41,7 @@ export const packages: Pkg[] = [
   },
   {
     slug: "hyderabad-to-yadadri",
-    title: "Hyderabad to Yadadri",
+    title: "Hyderabad to Yadadri Vehicle Booking",
     from: "Hyderabad",
     to: "Yadadri",
     bestFor: "Temple visits and family groups",
@@ -51,7 +51,7 @@ export const packages: Pkg[] = [
   },
   {
     slug: "hyderabad-to-warangal",
-    title: "Hyderabad to Warangal",
+    title: "Hyderabad to Warangal Group Travel",
     from: "Hyderabad",
     to: "Warangal",
     bestFor: "Heritage trips, college tours, family travel",
@@ -61,7 +61,7 @@ export const packages: Pkg[] = [
   },
   {
     slug: "hyderabad-to-vijayawada",
-    title: "Hyderabad to Vijayawada",
+    title: "Hyderabad to Vijayawada Outstation Trip",
     from: "Hyderabad",
     to: "Vijayawada",
     bestFor: "Family trips and business travel",
