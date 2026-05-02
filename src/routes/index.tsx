@@ -26,6 +26,7 @@ import tempoInterior from "@/assets/tempo-interior.jpg";
 import urbaniaInterior from "@/assets/urbania-interior.jpg";
 import busInterior from "@/assets/bus-interior.jpg";
 import busInterior2 from "@/assets/bus-interior-2.jpg";
+import bus50Interior from "@/assets/bus-50-interior.jpg";
 import volvoBus from "@/assets/volvo-bus.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
@@ -406,20 +407,8 @@ function HomePage() {
                 style={{ aspectRatio: "16 / 9" }}
               >
                 <img
-                  src={tempoInterior}
-                  alt="Tempo Traveller interior for group travel in Hyderabad"
-                  className="absolute inset-0 h-full w-full object-cover"
-                  style={{ objectPosition: "center" }}
-                  loading="lazy"
-                />
-              </div>
-              <div
-                className="relative overflow-hidden rounded-2xl shadow-card border border-border/60"
-                style={{ aspectRatio: "1 / 1" }}
-              >
-                <img
                   src={busInterior}
-                  alt="Clean bus interior for comfortable group travel in Hyderabad."
+                  alt="Clean bus interior for group travel in Hyderabad"
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ objectPosition: "center" }}
                   loading="lazy"
@@ -431,7 +420,19 @@ function HomePage() {
               >
                 <img
                   src={busInterior2}
-                  alt="Bus seating interior for group travel in Hyderabad."
+                  alt="Clean bus interior for group travel in Hyderabad"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ objectPosition: "center" }}
+                  loading="lazy"
+                />
+              </div>
+              <div
+                className="relative overflow-hidden rounded-2xl shadow-card border border-border/60"
+                style={{ aspectRatio: "1 / 1" }}
+              >
+                <img
+                  src={bus50Interior}
+                  alt="Clean bus interior for group travel in Hyderabad"
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ objectPosition: "center" }}
                   loading="lazy"
