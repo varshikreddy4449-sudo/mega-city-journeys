@@ -6,6 +6,9 @@ import { vehicles } from "@/data/vehicles";
 import { whatsappLink } from "@/data/site";
 import fleetHero from "@/assets/megacity-fleet.jpg";
 import brandedBus from "@/assets/megacity-branded-bus.jpg";
+import busInterior from "@/assets/bus-interior.jpg";
+import busInterior2 from "@/assets/bus-interior-2.jpg";
+import bus50Interior from "@/assets/bus-50-interior.jpg";
 
 export const Route = createFileRoute("/fleet")({
   head: () => ({
