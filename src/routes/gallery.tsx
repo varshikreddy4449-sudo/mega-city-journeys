@@ -172,7 +172,7 @@ const items: Item[] = [
   },
   {
     src: bus28,
-    alt: "28 seater bus rental in Hyderabad by Mega City Tours and Travells",
+    alt: "28 seater bus rental in Hyderabad for medium group travel",
     caption: "28-seater bus for medium group travel",
     cats: ["Buses"],
   },
