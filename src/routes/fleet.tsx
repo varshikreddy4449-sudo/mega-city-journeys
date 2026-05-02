@@ -129,9 +129,11 @@ function FleetPage() {
                           ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
                           : v.slug === "innova-crysta"
                             ? "Innova Crysta for family and outstation trips in Hyderabad."
-                            : v.slug.startsWith("bus-")
-                              ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
-                              : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
+                            : v.slug === "bus-28"
+                              ? "28 seater bus rental in Hyderabad for medium group travel"
+                              : v.slug.startsWith("bus-")
+                                ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
+                                : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
                     }
                     loading="lazy"
                     className="h-full w-full object-cover object-center"
