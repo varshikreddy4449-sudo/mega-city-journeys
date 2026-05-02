@@ -153,7 +153,23 @@ function FleetPage() {
                     <h3 className="font-display text-xl font-semibold text-primary">{v.name}</h3>
                     <span className="text-sm font-bold text-accent">{v.seats} Seater</span>
                   </div>
-                  <p className="mt-1 text-sm text-muted-foreground">{v.bestFor}</p>
+                  {(() => {
+                    const seoHeading: Record<string, string> = {
+                      "tempo-traveller": "12 Seater Tempo Traveller Rental in Hyderabad",
+                      urbania: "12 Seater Urbania Rental in Hyderabad",
+                      "bus-22": "22 Seater Bus Rental in Hyderabad",
+                      "bus-28": "28 Seater Bus Rental in Hyderabad",
+                      "bus-40": "40 Seater Bus Rental in Hyderabad",
+                      "bus-50": "50 Seater Bus Rental in Hyderabad",
+                    };
+                    const heading = seoHeading[v.slug];
+                    return heading ? (
+                      <h4 className="mt-1 text-xs font-semibold uppercase tracking-wider text-accent">
+                        {heading}
+                      </h4>
+                    ) : null;
+                  })()}
+                  <p className="mt-2 text-sm text-muted-foreground">{v.bestFor}</p>
                   <div className="mt-4 grid grid-cols-2 gap-2 text-[11px]">
                     <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">
                       {v.ac}
