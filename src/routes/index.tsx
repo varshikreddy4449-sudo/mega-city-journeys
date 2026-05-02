@@ -493,7 +493,7 @@ function HomePage() {
                     src={v.image}
                     alt={
                       v.slug === "tempo-traveller"
-                        ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells."
+                        ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells"
                         : v.slug === "urbania"
                           ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
                           : v.slug === "innova-crysta"

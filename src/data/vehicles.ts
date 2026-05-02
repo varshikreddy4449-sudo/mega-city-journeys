@@ -57,7 +57,7 @@ export const vehicles: Vehicle[] = [
     seats: 12,
     count: 2,
     image: tempo,
-    bestFor: "Group trips, school/college trips, pilgrimage trips, and family outings",
+    bestFor: "Group trips, school and college trips, pilgrimage trips, and family outings",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
   },
