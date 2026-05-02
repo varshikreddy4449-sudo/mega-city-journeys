@@ -233,8 +233,8 @@ const items: Item[] = [
   },
   {
     src: bus50Interior,
-    alt: "50 seater bus interior with comfortable seating in Hyderabad",
-    caption: "Spacious 50-seater bus interior",
+    alt: "Clean bus interior for group travel in Hyderabad",
+    caption: "Spacious bus interiors for large group movement",
     cats: ["Buses", "Interiors"],
   },
   {
