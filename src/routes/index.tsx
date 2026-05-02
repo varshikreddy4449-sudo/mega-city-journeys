@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/megacity-fleet-hero.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
+import tempoInterior from "@/assets/tempo-interior.jpg";
 import urbaniaInterior from "@/assets/urbania-interior.jpg";
 import busInterior from "@/assets/bus-interior.jpg";
 import busInterior2 from "@/assets/bus-interior-2.jpg";

@@ -25,7 +25,7 @@ import { CTASection } from "@/components/CTASection";
 import { whatsappLink, telLink, site } from "@/data/site";
 import heroImg from "@/assets/hero-travel.jpg";
 import brandedBus from "@/assets/megacity-branded-bus.jpg";
-import busInterior from "@/assets/bus-interior.jpg";
+import tempoInterior from "@/assets/tempo-interior.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
