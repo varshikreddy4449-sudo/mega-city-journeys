@@ -233,8 +233,8 @@ const items: Item[] = [
   },
   {
     src: bus50Interior,
-    alt: "50 seater bus interior with comfortable seating in Hyderabad",
-    caption: "Spacious 50-seater bus interior",
+    alt: "Clean bus interior for group travel in Hyderabad",
+    caption: "Spacious bus interiors for large group movement",
     cats: ["Buses", "Interiors"],
   },
   {
@@ -252,14 +252,14 @@ const items: Item[] = [
   {
     src: busInterior,
     alt: "Clean bus interior for group travel in Hyderabad",
-    caption: "Clean bus interior",
-    cats: ["Interiors"],
+    caption: "Clean bus interiors for long group trips",
+    cats: ["Interiors", "Buses"],
   },
   {
     src: busInterior2,
-    alt: "Modern bus interior with comfortable seats in Hyderabad",
-    caption: "Comfortable bus seating",
-    cats: ["Interiors"],
+    alt: "Clean bus interior for group travel in Hyderabad",
+    caption: "Comfortable seating for school, college, and family travel",
+    cats: ["Interiors", "Buses"],
   },
 ];
 

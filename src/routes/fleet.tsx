@@ -6,6 +6,9 @@ import { vehicles } from "@/data/vehicles";
 import { whatsappLink } from "@/data/site";
 import fleetHero from "@/assets/megacity-fleet.jpg";
 import brandedBus from "@/assets/megacity-branded-bus.jpg";
+import busInterior from "@/assets/bus-interior.jpg";
+import busInterior2 from "@/assets/bus-interior-2.jpg";
+import bus50Interior from "@/assets/bus-50-interior.jpg";
 
 export const Route = createFileRoute("/fleet")({
   head: () => ({
@@ -179,6 +182,40 @@ function FleetPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Comfort proof — bus interiors */}
+          <div className="mt-14">
+            <SectionHeader
+              eyebrow="Comfort Proof"
+              title="Clean interiors, comfortable seating"
+              subtitle="Real photos from our buses — cleaned before every trip and serviced regularly."
+            />
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { src: busInterior, caption: "Clean bus interiors for long group trips" },
+                {
+                  src: busInterior2,
+                  caption: "Comfortable seating for school, college, and family travel",
+                },
+                { src: bus50Interior, caption: "Spacious bus interiors for large group movement" },
+              ].map((it) => (
+                <figure
+                  key={it.caption}
+                  className="overflow-hidden rounded-2xl border border-border/60 shadow-card bg-card"
+                >
+                  <div className="relative" style={{ aspectRatio: "4 / 3" }}>
+                    <img
+                      src={it.src}
+                      alt="Clean bus interior for group travel in Hyderabad"
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  </div>
+                  <figcaption className="p-3 text-sm text-foreground/80">{it.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>
