@@ -9,9 +9,12 @@ import bus40 from "@/assets/vehicle-bus-40.jpg";
 import bus50 from "@/assets/vehicle-bus-50.jpg";
 import bus22 from "@/assets/vehicle-bus-22.jpg";
 
+export type VehicleCategory = "Car" | "SUV" | "Traveller" | "Bus";
+
 export type Vehicle = {
   slug: string;
   name: string;
+  category: VehicleCategory;
   seats: number;
   count: number;
   image: string;
