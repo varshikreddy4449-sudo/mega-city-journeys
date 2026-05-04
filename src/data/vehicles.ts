@@ -26,6 +26,7 @@ export type Vehicle = {
 export const vehicles: Vehicle[] = [
   {
     slug: "breeza",
+    category: "Car",
     name: "Maruti Brezza",
     seats: 4,
     count: 4,
@@ -36,6 +37,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     slug: "innova-crysta",
+    category: "SUV",
     name: "Innova Crysta",
     seats: 7,
     count: 4,
@@ -46,6 +48,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     slug: "fortuner",
+    category: "SUV",
     name: "Toyota Fortuner",
     seats: 7,
     count: 1,
@@ -56,6 +59,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     slug: "tempo-traveller",
+    category: "Traveller",
     name: "Tempo Traveller",
     seats: 12,
     count: 2,
@@ -66,6 +70,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     slug: "urbania",
+    category: "Traveller",
     name: "Urbania",
     seats: 12,
     count: 4,
@@ -76,6 +81,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     slug: "bus-22",
+    category: "Bus",
     name: "Bus",
     seats: 22,
     count: 4,
@@ -86,6 +92,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     slug: "bus-28",
+    category: "Bus",
     name: "Bus",
     seats: 28,
     count: 3,
@@ -96,6 +103,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     slug: "bus-40",
+    category: "Bus",
     name: "Bus",
     seats: 40,
     count: 9,
@@ -107,6 +115,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     slug: "bus-50",
+    category: "Bus",
     name: "Bus",
     seats: 50,
     count: 2,
