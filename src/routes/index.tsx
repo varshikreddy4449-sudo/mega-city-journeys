@@ -76,75 +76,152 @@ const occasions = [
   { icon: MapPin, title: "Airport Transfers" },
 ];
 
-const popularRoutes = [
+type RouteCard = {
+  title: string;
+  bestFor: string;
+  vehicles: string;
+  tripType: string;
+  category: string;
+};
+
+const popularRoutes: RouteCard[] = [
   {
     title: "Hyderabad Local Sightseeing",
-    note: "Charminar, Golconda, Salar Jung, Birla Mandir",
+    bestFor: "Families and tourists exploring the city",
+    vehicles: "Brezza, Innova, Tempo Traveller",
+    tripType: "Local / Day Rental",
     category: "Local",
   },
-  { title: "Srisailam", note: "One or two-day temple yatra", category: "Pilgrimage" },
-  { title: "Yadadri", note: "Same-day Lakshmi Narasimha darshan", category: "Pilgrimage" },
-  { title: "Warangal", note: "Thousand Pillar Temple, Warangal Fort", category: "Heritage" },
-  { title: "Vijayawada", note: "Outstation one-way or round trip", category: "Outstation" },
-  { title: "Nagarjuna Sagar", note: "Day trip to dam & Ethipothala Falls", category: "Weekend" },
   {
-    title: "Custom Telangana Tour",
-    note: "Multi-day temples, forts, getaways",
-    category: "Custom",
+    title: "Hyderabad to Srisailam",
+    bestFor: "Pilgrimage groups and families",
+    vehicles: "SUV, Traveller, Bus",
+    tripType: "Outstation / Per KM",
+    category: "Pilgrimage",
+  },
+  {
+    title: "Hyderabad to Yadadri",
+    bestFor: "Same-day darshan trips",
+    vehicles: "Innova, Urbania, Bus",
+    tripType: "One-Day Round Trip",
+    category: "Pilgrimage",
+  },
+  {
+    title: "Hyderabad to Warangal",
+    bestFor: "Heritage and family trips",
+    vehicles: "Innova, Traveller, Bus",
+    tripType: "Outstation / Per KM",
+    category: "Family",
+  },
+  {
+    title: "Hyderabad to Vijayawada",
+    bestFor: "Outstation business and family travel",
+    vehicles: "Innova, Fortuner, Urbania",
+    tripType: "One-Way or Round Trip",
+    category: "Outstation",
+  },
+  {
+    title: "Hyderabad to Nagarjuna Sagar",
+    bestFor: "Weekend day trips and picnics",
+    vehicles: "Traveller, Urbania, Bus",
+    tripType: "One-Day Round Trip",
+    category: "Family",
   },
   {
     title: "School / College One-Day Trip",
-    note: "22 / 28 / 40 / 50 seater buses",
-    category: "Education",
+    bestFor: "Picnics, study tours, college outings",
+    vehicles: "22, 28, 40, 50 seater Bus",
+    tripType: "Group Charter",
+    category: "School/College",
   },
   {
     title: "Corporate Group Outing",
-    note: "Offsite logistics with AC vehicles",
+    bestFor: "Offsites, conferences, team events",
+    vehicles: "Urbania, Traveller, Bus",
+    tripType: "Local or Outstation",
     category: "Corporate",
+  },
+  {
+    title: "Wedding Guest Transport",
+    bestFor: "Baraat, sangeet, guest pickups",
+    vehicles: "Traveller, Urbania, 28–50 seater Bus",
+    tripType: "Event Logistics",
+    category: "Wedding/Event",
+  },
+  {
+    title: "Custom Telangana Tour",
+    bestFor: "Multi-day temples, forts, getaways",
+    vehicles: "Any vehicle, 4 to 50 seats",
+    tripType: "Multi-Day Custom",
+    category: "Custom",
   },
 ];
 
-const services = [
+const featuredServices = [
   {
     icon: Users,
     title: "Group Travel",
-    desc: "Comfortable transport for groups of 4 to 50 with experienced drivers.",
+    desc: "Vehicles for families, schools, companies, weddings, and group outings.",
+    bestFor: "Families, schools, events",
+    vehicles: "Traveller, Urbania, Bus",
   },
   {
     icon: RouteIcon,
-    title: "Per KM Travel",
-    desc: "Transparent per-KM pricing for outstation trips, one-way or round-trip.",
-  },
-  {
-    icon: MapIcon,
-    title: "Local Trips",
-    desc: "Hyderabad sightseeing, day rentals, and short city packages.",
+    title: "Per KM Trips",
+    desc: "Distance-based pricing for outstation journeys, one-way or round trip.",
+    bestFor: "Outstation, long-distance",
+    vehicles: "Car, SUV, Traveller, Bus",
   },
   {
     icon: Plane,
     title: "Outstation Trips",
-    desc: "Telangana, Andhra, Karnataka, Maharashtra and beyond.",
+    desc: "Comfortable travel across Telangana, Andhra, Karnataka, and beyond.",
+    bestFor: "Multi-day tours, getaways",
+    vehicles: "Innova, Fortuner, Urbania, Bus",
+  },
+];
+
+const moreServices = [
+  {
+    icon: MapIcon,
+    title: "Local Trips",
+    desc: "Hyderabad sightseeing, day rentals, and short city packages.",
+    bestFor: "Sightseeing, day use",
   },
   {
     icon: Briefcase,
     title: "Corporate Travel",
     desc: "Offsites, conferences, training events, and team outings.",
+    bestFor: "Companies and teams",
   },
   {
     icon: GraduationCap,
     title: "School & College Trips",
     desc: "Safe, on-time bus transport for picnics and study tours.",
-  },
-  {
-    icon: Heart,
-    title: "Pilgrimage Tours",
-    desc: "Srisailam, Yadadri, Tirupati, Shirdi and more temple journeys.",
+    bestFor: "Schools and colleges",
   },
   {
     icon: PartyPopper,
     title: "Wedding & Event Transport",
-    desc: "Guest transport for weddings, baraat, sangeet and events.",
+    desc: "Guest transport for weddings, baraat, sangeet, and events.",
+    bestFor: "Weddings and events",
   },
+  {
+    icon: Heart,
+    title: "Pilgrimage Trips",
+    desc: "Srisailam, Yadadri, Tirupati, Shirdi, and more temple journeys.",
+    bestFor: "Temple yatras",
+  },
+];
+
+const quoteChecklist = [
+  { icon: MapPin, label: "Pickup location" },
+  { icon: MapPin, label: "Destination" },
+  { icon: CheckCircle2, label: "Travel date" },
+  { icon: Users, label: "Group size" },
+  { icon: Bus, label: "Vehicle preference" },
+  { icon: RouteIcon, label: "One-way or round trip" },
+  { icon: Compass, label: "Local or outstation" },
 ];
 
 function HomePage() {
