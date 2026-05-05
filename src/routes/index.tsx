@@ -927,8 +927,14 @@ function HomePage() {
       </section>
 
       {/* WHY CHOOSE MEGA CITY */}
-      <section className="py-16 md:py-24 text-white" style={{ backgroundColor: "#4A2C20" }}>
-        <div className="mx-auto max-w-5xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24 text-white" style={{ backgroundColor: "#4A2C20" }}>
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute right-[-100px] top-1/2 -translate-y-1/2 w-[500px] md:w-[680px] opacity-[0.07]"
+        />
+        <div className="relative mx-auto max-w-5xl px-4 md:px-6">
           <div className="text-center">
             <span className="inline-block rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-tan">
               Why Mega City
