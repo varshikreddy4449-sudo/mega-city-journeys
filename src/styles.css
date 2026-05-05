@@ -182,3 +182,26 @@
     box-shadow: var(--shadow-glow);
   }
 }
+
+@layer utilities {
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 4px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #a0522d;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 220ms ease;
+  }
+  .nav-link:hover {
+    color: #a0522d !important;
+  }
+  .nav-link:hover::after,
+  .nav-link-active::after {
+    transform: scaleX(1);
+  }
+}
