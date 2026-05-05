@@ -745,13 +745,13 @@ function HomePage() {
         </div>
       </section>
 
-      {/* POPULAR ROUTES & PACKAGES */}
+      {/* POPULAR ROUTES FROM HYDERABAD */}
       <section className="py-14 md:py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Popular Routes"
-            title="Popular Routes & Packages from Hyderabad"
-            subtitle="Pricing varies by route, vehicle, and group size. Share your details for a custom quote."
+            title="Popular Routes from Hyderabad"
+            subtitle="Choose a common route or ask for a custom quote based on your vehicle, date, and group size."
           />
           <div
             className="mb-10 relative overflow-hidden rounded-2xl shadow-card border border-border/60"
@@ -783,29 +783,109 @@ function HomePage() {
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {popularRoutes.map((r) => (
-              <div
-                key={r.title}
-                className="rounded-2xl bg-card border border-border/60 p-6 shadow-card hover:shadow-soft transition-shadow flex flex-col"
-              >
-                <span className="self-start inline-block rounded-full bg-accent/10 text-accent px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide mb-3">
-                  {r.category}
+            {popularRoutes.map((r) => {
+              const dest = r.title.toLowerCase().includes("hyderabad to")
+                ? r.title.replace(/^Hyderabad to\s+/i, "")
+                : null;
+              return (
+                <div
+                  key={r.title}
+                  className="rounded-2xl bg-card border border-border/60 p-6 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all flex flex-col"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="inline-block rounded-full bg-accent/10 text-accent px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide">
+                      {r.category}
+                    </span>
+                    <span className="text-[11px] font-semibold text-muted-foreground">
+                      {r.tripType}
+                    </span>
+                  </div>
+
+                  {dest ? (
+                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-primary/90">
+                      <MapPin className="h-4 w-4 text-accent" />
+                      <span>Hyderabad</span>
+                      <span
+                        aria-hidden
+                        className="flex-1 mx-1 border-t border-dashed"
+                        style={{ borderColor: "color-mix(in oklab, var(--brand-rust) 50%, transparent)" }}
+                      />
+                      <ArrowRight className="h-4 w-4 text-accent" />
+                      <span>{dest}</span>
+                    </div>
+                  ) : (
+                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-primary/90">
+                      <Compass className="h-4 w-4 text-accent" />
+                      <span>{r.title}</span>
+                    </div>
+                  )}
+
+                  <h3 className="mt-3 font-display text-lg font-bold text-primary leading-tight">
+                    {dest ? r.title : "Group Travel Option"}
+                  </h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                    <span className="font-semibold text-foreground/80">Best for:</span> {r.bestFor}
+                  </p>
+                  <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                    <span className="font-semibold text-foreground/80">Suggested vehicles:</span>{" "}
+                    {r.vehicles}
+                  </p>
+                  <p className="mt-4 text-sm font-semibold text-primary/80">Price on Request</p>
+                  <a
+                    href={whatsappLink(`Hi Mega City, please share the price for: ${r.title}.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                  >
+                    <MessageCircle className="h-4 w-4" /> Ask for Price
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* What to share for a quick quote */}
+          <div
+            className="mt-12 rounded-2xl border p-6 md:p-8"
+            style={{ backgroundColor: "#F4E8D6", borderColor: "#D9B08C" }}
+          >
+            <div className="grid gap-6 md:grid-cols-[1.2fr_2fr] md:items-center">
+              <div>
+                <span className="inline-block rounded-full bg-accent text-accent-foreground px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                  Quick Quote
                 </span>
-                <h3 className="font-display text-lg font-bold text-primary leading-tight">
-                  {r.title}
+                <h3 className="mt-3 font-display text-2xl md:text-3xl font-bold text-primary leading-tight">
+                  What to Share for a Quick Quote
                 </h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{r.note}</p>
-                <p className="mt-4 text-sm font-semibold text-primary">Price on Request</p>
+                <p className="mt-2 text-sm md:text-base text-foreground/75 leading-relaxed">
+                  Send these details on WhatsApp and our team will suggest the right vehicle.
+                </p>
                 <a
-                  href={whatsappLink(`Hi Mega City, please share the price for: ${r.title}.`)}
+                  href={whatsappLink(
+                    "Hi Mega City, I would like a quick quote. Here are my trip details:",
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                  className="mt-4 inline-flex items-center gap-2 rounded-lg text-white px-5 py-2.5 text-sm font-bold shadow-card"
+                  style={{ backgroundColor: "#25D366" }}
                 >
-                  <MessageCircle className="h-4 w-4" /> Ask for Price
+                  <MessageCircle className="h-4 w-4" /> Send Details on WhatsApp
                 </a>
               </div>
-            ))}
+              <ul className="grid gap-2 sm:grid-cols-2">
+                {quoteChecklist.map((c) => (
+                  <li
+                    key={c.label}
+                    className="flex items-center gap-3 rounded-xl bg-white border border-border/60 px-3 py-2.5 shadow-card"
+                  >
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                      <c.icon className="h-4 w-4" />
+                    </span>
+                    <span className="text-sm font-semibold text-primary">{c.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
