@@ -709,16 +709,33 @@ function HomePage() {
                     <div className="mt-4 text-sm font-semibold text-primary/80">
                       Price on Request
                     </div>
-                    <a
-                      href={whatsappLink(
-                        `Hi Mega City, please share the price for the ${v.name} (${v.seats} seater).`,
-                      )}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                    <div className="mt-3 grid grid-cols-2 gap-2">
+                      <a
+                        href={`tel:+91${site.phones[0]}`}
+                        className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary text-primary-foreground py-2.5 text-xs font-semibold hover:opacity-90 transition"
+                      >
+                        <Phone className="h-4 w-4" /> Call
+                      </a>
+                      <a
+                        href={whatsappLink(
+                          `Hi Mega City, please share the price for the ${v.name} (${v.seats} seater).`,
+                        )}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-1.5 rounded-lg py-2.5 text-xs font-semibold text-white hover:opacity-90 transition"
+                        style={{ backgroundColor: "#25D366" }}
+                      >
+                        <WhatsAppIcon className="h-4 w-4" /> WhatsApp
+                      </a>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => openVehicle(v)}
+                      className="mt-2 inline-flex items-center justify-center gap-1.5 w-full rounded-lg border border-accent/60 bg-accent/5 text-primary py-2.5 text-xs font-semibold hover:bg-accent/10 transition"
                     >
-                      <WhatsAppIcon className="h-4 w-4" /> Ask for Price
-                    </a>
+                      <Info className="h-4 w-4" /> Explore
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </button>
                   </div>
                 </div>
               );
