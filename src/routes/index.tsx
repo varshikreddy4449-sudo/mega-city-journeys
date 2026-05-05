@@ -425,8 +425,14 @@ function HomePage() {
       </section>
 
       {/* OWNED FLEET TRUST SECTION */}
-      <section className="py-14 md:py-20 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-14 md:py-20 bg-secondary/40">
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -right-16 top-1/2 -translate-y-1/2 w-[420px] md:w-[560px] opacity-[0.06]"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div
               className="reveal relative overflow-hidden rounded-2xl shadow-soft border border-border/60"
