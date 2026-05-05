@@ -35,30 +35,48 @@ export function Header() {
         "backdrop-blur-md backdrop-saturate-150",
       )}
       style={{
-        backgroundColor: scrolled ? "rgba(244, 241, 234, 0.78)" : "rgba(244, 241, 234, 0.45)",
+        backgroundColor: scrolled ? "rgba(244, 241, 234, 0.95)" : "rgba(244, 241, 234, 0.88)",
         borderBottom: scrolled
-          ? "1px solid rgba(74, 44, 32, 0.12)"
-          : "1px solid rgba(255, 255, 255, 0.25)",
-        boxShadow: scrolled ? "0px 4px 20px rgba(74, 44, 32, 0.08)" : undefined,
+          ? "1px solid rgba(74, 44, 32, 0.10)"
+          : "1px solid rgba(74, 44, 32, 0.06)",
+        boxShadow: scrolled ? "0 6px 24px rgba(74, 44, 32, 0.10)" : "none",
       }}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
-        <Link to="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
+      <div
+        className={cn(
+          "mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 md:px-6 transition-all duration-300",
+          scrolled ? "py-2 md:py-2.5" : "py-3 md:py-3.5",
+        )}
+      >
+        <Link
+          to="/"
+          className="flex items-center gap-3 group"
+          onClick={() => setOpen(false)}
+        >
           <img
             src={logo}
             alt="Mega City Tours & Travells logo"
-            className="h-11 w-11 md:h-12 md:w-12 object-contain rounded-lg bg-white p-1 shadow-card"
+            className={cn(
+              "object-contain rounded-lg bg-white p-1 transition-all duration-300",
+              scrolled ? "h-10 w-10" : "h-11 w-11 md:h-12 md:w-12",
+            )}
+            style={{ boxShadow: "0 2px 6px rgba(74, 44, 32, 0.10)" }}
+          />
+          <span
+            aria-hidden
+            className="hidden sm:block h-8 w-px"
+            style={{ backgroundColor: "rgba(74, 44, 32, 0.15)" }}
           />
           <div className="leading-tight">
             <div
               className="font-display text-base font-bold md:text-lg"
-              style={{ color: "#4A2C20" }}
+              style={{ color: "#4A2C20", letterSpacing: "-0.01em" }}
             >
               Mega City
             </div>
             <div
-              className="text-[10px] uppercase tracking-wider md:text-xs"
-              style={{ color: "#6B5345" }}
+              className="text-[10px] font-semibold uppercase md:text-[11px]"
+              style={{ color: "#8A6B5A", letterSpacing: "0.14em" }}
             >
               Tours & Travells
             </div>
@@ -70,9 +88,12 @@ export function Header() {
             <Link
               key={item.to}
               to={item.to}
-              className="rounded-md px-3 py-2 text-sm font-semibold transition-colors hover:bg-white/40"
+              className="nav-link relative rounded-md px-3 py-2 text-sm font-semibold transition-colors"
               style={{ color: "#4A2C20" }}
-              activeProps={{ style: { color: "#A0522D", fontWeight: 700 } }}
+              activeProps={{
+                className: "nav-link nav-link-active relative rounded-md px-3 py-2 text-sm font-bold transition-colors",
+                style: { color: "#A0522D" },
+              }}
               activeOptions={{ exact: item.to === "/" }}
             >
               {item.label}
@@ -85,12 +106,18 @@ export function Header() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5"
             style={{
               backgroundColor: "#A0522D",
-              borderRadius: "8px",
-              padding: "14px 28px",
-              boxShadow: "0 6px 16px rgba(160, 82, 45, 0.35)",
+              borderRadius: "9999px",
+              padding: "10px 20px",
+              boxShadow: "0 4px 14px rgba(160, 82, 45, 0.32)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = "0 8px 20px rgba(160, 82, 45, 0.42)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = "0 4px 14px rgba(160, 82, 45, 0.32)";
             }}
           >
             <WhatsAppIcon className="h-4 w-4" />
@@ -100,7 +127,7 @@ export function Header() {
 
         <button
           aria-label="Toggle menu"
-          className="rounded-md p-2 lg:hidden"
+          className="rounded-md p-2 lg:hidden transition-colors"
           style={{ color: "#4A2C20" }}
           onClick={() => setOpen((v) => !v)}
         >
@@ -108,49 +135,62 @@ export function Header() {
         </button>
       </div>
 
-      {open && (
-        <div className="border-t border-border bg-white/90 backdrop-blur-md lg:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col px-4 py-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-base font-medium hover:bg-secondary"
-                style={{ color: "#4A2C20" }}
-                activeProps={{
-                  style: { color: "#A0522D", fontWeight: 700, backgroundColor: "#EDE6D8" },
-                }}
-                activeOptions={{ exact: item.to === "/" }}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center justify-center gap-2 text-base font-bold text-white"
-              style={{ backgroundColor: "#A0522D", borderRadius: "8px", padding: "14px 32px" }}
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              Get Quote on WhatsApp
-            </a>
-            <a
-              href={`tel:+91${site.phones[0]}`}
-              className="mt-2 inline-flex items-center justify-center gap-2 text-base font-bold"
-              style={{
-                border: "2px solid #4A2C20",
-                color: "#4A2C20",
-                borderRadius: "8px",
-                padding: "12px 28px",
+      <div
+        className={cn(
+          "lg:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-out",
+          open ? "max-h-[640px] opacity-100" : "max-h-0 opacity-0",
+        )}
+        style={{
+          borderTop: open ? "1px solid rgba(74, 44, 32, 0.08)" : "none",
+          backgroundColor: "rgba(255, 255, 255, 0.96)",
+          backdropFilter: "blur(8px)",
+        }}
+      >
+        <nav className="mx-auto flex max-w-7xl flex-col px-4 py-3">
+          {navItems.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              onClick={() => setOpen(false)}
+              className="rounded-md px-3 py-3 text-base font-medium transition-colors"
+              style={{ color: "#4A2C20" }}
+              activeProps={{
+                style: { color: "#A0522D", fontWeight: 700, backgroundColor: "#EDE6D8" },
               }}
+              activeOptions={{ exact: item.to === "/" }}
             >
-              Call {site.phones[0]}
-            </a>
-          </nav>
-        </div>
-      )}
+              {item.label}
+            </Link>
+          ))}
+          <a
+            href={whatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center justify-center gap-2 text-base font-bold text-white"
+            style={{
+              backgroundColor: "#A0522D",
+              borderRadius: "9999px",
+              padding: "14px 28px",
+              boxShadow: "0 4px 14px rgba(160, 82, 45, 0.32)",
+            }}
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+            Get Quote on WhatsApp
+          </a>
+          <a
+            href={`tel:+91${site.phones[0]}`}
+            className="mt-2 inline-flex items-center justify-center gap-2 text-base font-bold"
+            style={{
+              border: "2px solid #4A2C20",
+              color: "#4A2C20",
+              borderRadius: "9999px",
+              padding: "12px 28px",
+            }}
+          >
+            Call {site.phones[0]}
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }
