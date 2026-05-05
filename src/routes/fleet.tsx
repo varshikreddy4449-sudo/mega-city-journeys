@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCircle2, MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import { CheckCircle2 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CTASection } from "@/components/CTASection";
 import { AreasServed } from "@/components/AreasServed";
@@ -195,7 +196,7 @@ function FleetPage() {
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-full bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold shadow-card"
                   >
-                    <MessageCircle className="h-4 w-4" /> Book
+                    <WhatsAppIcon className="h-4 w-4" /> Book
                   </a>
                 </div>
               </div>

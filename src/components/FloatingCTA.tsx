@@ -1,4 +1,5 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { site, whatsappLink } from "@/data/site";
 
 export function FloatingCTA() {
@@ -34,7 +35,7 @@ export function FloatingCTA() {
             boxShadow: "0px 4px 16px rgba(37,211,102,0.4)",
           }}
         >
-          <MessageCircle className="h-6 w-6" />
+          <WhatsAppIcon className="h-6 w-6" />
         </a>
       </div>
 
@@ -59,7 +60,7 @@ export function FloatingCTA() {
             className="flex items-center justify-center gap-2 py-3 text-sm font-bold text-white"
             style={{ backgroundColor: "#25D366", borderRadius: "8px" }}
           >
-            <MessageCircle className="h-4 w-4" />
+            <WhatsAppIcon className="h-4 w-4" />
             WhatsApp
           </a>
         </div>

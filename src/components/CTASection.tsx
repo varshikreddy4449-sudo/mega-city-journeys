@@ -1,4 +1,5 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { site, whatsappLink } from "@/data/site";
 
 export function CTASection({
@@ -40,7 +41,7 @@ export function CTASection({
               fontSize: "16px",
             }}
           >
-            <MessageCircle className="h-5 w-5" />
+            <WhatsAppIcon className="h-5 w-5" />
             WhatsApp to Quote
           </a>
           <a

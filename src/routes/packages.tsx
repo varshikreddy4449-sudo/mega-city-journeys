@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { useState } from "react";
 import {
-  MessageCircle,
   Phone,
   MapPin,
   ArrowRight,
@@ -117,7 +117,7 @@ const howItWorks = [
     desc: "We suggest a suitable car, SUV, traveller, Urbania, or bus based on your group size.",
   },
   {
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     title: "Get a Custom Quote",
     desc: "Pricing is shared based on route, vehicle type, trip date, and travel requirements.",
   },
@@ -207,7 +207,7 @@ function PackagesPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-semibold text-whatsapp-foreground shadow-glow"
                 >
-                  <MessageCircle className="h-5 w-5" /> Get Quote on WhatsApp
+                  <WhatsAppIcon className="h-5 w-5" /> Get Quote on WhatsApp
                 </a>
                 <a
                   href={telLink()}
@@ -413,7 +413,7 @@ function PackagesPage() {
                   rel="noopener noreferrer"
                   className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-rust-gradient text-primary-foreground py-2.5 text-sm font-semibold shadow-card hover:shadow-glow transition"
                 >
-                  <MessageCircle className="h-4 w-4" /> Ask for Price
+                  <WhatsAppIcon className="h-4 w-4" /> Ask for Price
                 </a>
               </article>
             ))}
@@ -491,7 +491,7 @@ function PackagesPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-whatsapp text-whatsapp-foreground px-6 py-3 font-semibold shadow-glow"
                 >
-                  <MessageCircle className="h-5 w-5" /> Get Suggestion on WhatsApp
+                  <WhatsAppIcon className="h-5 w-5" /> Get Suggestion on WhatsApp
                 </a>
                 <a
                   href={telLink()}
@@ -550,7 +550,7 @@ function PackagesPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-whatsapp text-whatsapp-foreground px-7 py-3.5 font-semibold shadow-soft"
             >
-              <MessageCircle className="h-5 w-5" /> Get Quote on WhatsApp
+              <WhatsAppIcon className="h-5 w-5" /> Get Quote on WhatsApp
             </a>
             <a
               href={telLink()}

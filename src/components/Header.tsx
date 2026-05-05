@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { whatsappLink, site } from "@/data/site";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.jpg";
@@ -92,7 +93,7 @@ export function Header() {
               boxShadow: "0 6px 16px rgba(160, 82, 45, 0.35)",
             }}
           >
-            <MessageCircle className="h-4 w-4" />
+            <WhatsAppIcon className="h-4 w-4" />
             Get Quote on WhatsApp
           </a>
         </div>
@@ -132,7 +133,7 @@ export function Header() {
               className="mt-3 inline-flex items-center justify-center gap-2 text-base font-bold text-white"
               style={{ backgroundColor: "#A0522D", borderRadius: "8px", padding: "14px 32px" }}
             >
-              <MessageCircle className="h-5 w-5" />
+              <WhatsAppIcon className="h-5 w-5" />
               Get Quote on WhatsApp
             </a>
             <a

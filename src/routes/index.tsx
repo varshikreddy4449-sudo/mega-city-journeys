@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { Link } from "@tanstack/react-router";
 import {
-  MessageCircle,
   Phone,
   MapPin,
   Users,
@@ -280,7 +280,7 @@ function HomePage() {
                   className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02]"
                   style={{ backgroundColor: "#25D366", borderRadius: "8px", padding: "16px 28px" }}
                 >
-                  <MessageCircle className="h-5 w-5" /> WhatsApp Us
+                  <WhatsAppIcon className="h-5 w-5" /> WhatsApp Us
                 </a>
                 <a
                   href={`tel:+91${site.phones[0]}`}
@@ -379,7 +379,7 @@ function HomePage() {
                 desc: "Cars, SUVs, tempo travellers, Urbania, and buses from 4 to 50 seats.",
               },
               {
-                icon: MessageCircle,
+                icon: WhatsAppIcon,
                 title: "Easy WhatsApp Booking",
                 desc: "Share trip details over WhatsApp or call for quick vehicle options.",
               },
@@ -556,7 +556,7 @@ function HomePage() {
                   rel="noopener noreferrer"
                   className="mt-5 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
                 >
-                  <MessageCircle className="h-4 w-4" /> Enquire on WhatsApp
+                  <WhatsAppIcon className="h-4 w-4" /> Enquire on WhatsApp
                 </a>
               </div>
             ))}
@@ -680,7 +680,7 @@ function HomePage() {
                       rel="noopener noreferrer"
                       className="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
                     >
-                      <MessageCircle className="h-4 w-4" /> Ask for Price
+                      <WhatsAppIcon className="h-4 w-4" /> Ask for Price
                     </a>
                   </div>
                 </div>
@@ -836,7 +836,7 @@ function HomePage() {
                     rel="noopener noreferrer"
                     className="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
                   >
-                    <MessageCircle className="h-4 w-4" /> Ask for Price
+                    <WhatsAppIcon className="h-4 w-4" /> Ask for Price
                   </a>
                 </div>
               );
@@ -868,7 +868,7 @@ function HomePage() {
                   className="mt-4 inline-flex items-center gap-2 rounded-lg text-white px-5 py-2.5 text-sm font-bold shadow-card"
                   style={{ backgroundColor: "#25D366" }}
                 >
-                  <MessageCircle className="h-4 w-4" /> Send Details on WhatsApp
+                  <WhatsAppIcon className="h-4 w-4" /> Send Details on WhatsApp
                 </a>
               </div>
               <ul className="grid gap-2 sm:grid-cols-2">
@@ -1019,7 +1019,7 @@ function HomePage() {
                     className="flex h-12 w-12 items-center justify-center rounded-xl text-white"
                     style={{ backgroundColor: "#25D366" }}
                   >
-                    <MessageCircle className="h-6 w-6" />
+                    <WhatsAppIcon className="h-6 w-6" />
                   </span>
                   <div>
                     <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
