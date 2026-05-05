@@ -33,17 +33,56 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mega City Tours & Travells | Hyderabad" },
+      {
+        title:
+          "Mega City Tours & Travells | Group Travel & Per KM Trips from Hyderabad",
+      },
       {
         name: "description",
         content:
-          "Group travel, per KM trips, and outstation travel from Hyderabad across Telangana and nearby states.",
+          "Owned fleet from 4 to 50 seats for family trips, school travel, corporate outings, pilgrimages, weddings, and outstation journeys across Hyderabad and nearby regions.",
       },
       { name: "author", content: "Mega City Tours & Travells" },
-      { name: "theme-color", content: "#001F3F" },
+      { name: "theme-color", content: "#4A2C20" },
       { property: "og:site_name", content: "Mega City Tours & Travells" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://megacitytravells.com/" },
+      {
+        property: "og:title",
+        content:
+          "Mega City Tours & Travells | Group Travel & Per KM Trips from Hyderabad",
+      },
+      {
+        property: "og:description",
+        content:
+          "Owned fleet from 4 to 50 seats for family trips, school travel, corporate outings, pilgrimages, weddings, and outstation journeys across Hyderabad and nearby regions.",
+      },
+      {
+        property: "og:image",
+        content: "https://megacitytravells.com/og-image.jpg",
+      },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content:
+          "Mega City Tours & Travells — bus and Innova fleet from Hyderabad",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content:
+          "Mega City Tours & Travells | Group Travel & Per KM Trips from Hyderabad",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Owned fleet from 4 to 50 seats for family trips, school travel, corporate outings, pilgrimages, weddings, and outstation journeys across Hyderabad and nearby regions.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://megacitytravells.com/og-image.jpg",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
