@@ -230,9 +230,16 @@ const quoteChecklist = [
 ];
 
 function HomePage() {
+  const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const openVehicle = (v: Vehicle) => {
+    setSelectedVehicle(v);
+    setModalOpen(true);
+  };
   return (
     <>
       <LocalBusinessSchema />
+      <VehicleDetailModal vehicle={selectedVehicle} open={modalOpen} onOpenChange={setModalOpen} />
 
       {/* HERO */}
       <section className="relative overflow-hidden">
