@@ -176,8 +176,20 @@ const items: Item[] = [
   },
   {
     src: fortuner,
-    alt: "Toyota Fortuner for premium travel in Hyderabad",
-    caption: "Premium SUV for special travel",
+    alt: "White Fortuner exterior side view - Mega City Tours & Travells",
+    caption: "Fortuner exterior side view",
+    cats: ["Cars & SUVs"],
+  },
+  {
+    src: fortunerFront,
+    alt: "White Fortuner front view - Mega City Tours & Travells",
+    caption: "Fortuner front view",
+    cats: ["Cars & SUVs"],
+  },
+  {
+    src: fortunerAngle,
+    alt: "White Fortuner exterior angle view - Mega City Tours & Travells",
+    caption: "Fortuner exterior angle view",
     cats: ["Cars & SUVs"],
   },
   {
