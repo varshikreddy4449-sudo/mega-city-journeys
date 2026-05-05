@@ -19,7 +19,7 @@ import { whatsappLink, telLink, site } from "@/data/site";
 import tempoImg from "@/assets/vehicle-tempo.jpg";
 import urbaniaImg from "@/assets/vehicle-urbania.jpg";
 import bus40Img from "@/assets/vehicle-bus-40.jpg";
-import tempoInteriorImg from "@/assets/tempo-interior.jpg";
+import tempoExteriorImg from "@/assets/tempo-exterior-side.jpg";
 import { AreasServed } from "@/components/AreasServed";
 
 export const Route = createFileRoute("/services")({
@@ -494,8 +494,8 @@ function ServicesPage() {
               style={{ aspectRatio: "4 / 5" }}
             >
               <img
-                src={tempoInteriorImg}
-                alt="Tempo Traveller interior for group travel in Hyderabad"
+                src={tempoExteriorImg}
+                alt="Vehicle quote support for Mega City Tours and Travells in Hyderabad"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
