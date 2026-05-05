@@ -237,7 +237,7 @@ function HomePage() {
             src={heroImg}
             alt="Mega City Tours and Travells owned fleet in Hyderabad."
             className="h-full w-full object-cover"
-            style={{ objectPosition: "center bottom" }}
+            style={{ objectPosition: "center right" }}
             width={1600}
             height={513}
           />
