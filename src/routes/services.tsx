@@ -16,10 +16,10 @@ import {
 import { SectionHeader } from "@/components/SectionHeader";
 import { services } from "@/data/services";
 import { whatsappLink, telLink, site } from "@/data/site";
-import tempoImg from "@/assets/vehicle-tempo.jpg";
-import urbaniaImg from "@/assets/vehicle-urbania.jpg";
-import bus40Img from "@/assets/vehicle-bus-40.jpg";
-import tempoExteriorImg from "@/assets/tempo-exterior-side.jpg";
+import tempoImg from "@/assets/vehicle-tempo.webp";
+import urbaniaImg from "@/assets/vehicle-urbania.webp";
+import bus40Img from "@/assets/vehicle-bus-40.webp";
+import tempoExteriorImg from "@/assets/tempo-exterior-side.webp";
 import { AreasServed } from "@/components/AreasServed";
 
 export const Route = createFileRoute("/services")({

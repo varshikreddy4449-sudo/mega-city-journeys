@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { whatsappLink, site } from "@/data/site";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.webp";
 
 const navItems = [
   { to: "/", label: "Home" },

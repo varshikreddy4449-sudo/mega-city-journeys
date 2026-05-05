@@ -21,14 +21,14 @@ import {
   Info,
   ArrowRight,
 } from "lucide-react";
-import heroImg from "@/assets/hero-fleet-clean.jpg";
-import fleetImg from "@/assets/megacity-fleet.jpg";
-import tempoInterior from "@/assets/tempo-interior.jpg";
-import urbaniaInterior from "@/assets/urbania-interior.jpg";
-import busInterior from "@/assets/bus-interior.jpg";
-import busInterior2 from "@/assets/bus-interior-2.jpg";
-import bus50Interior from "@/assets/bus-50-interior.jpg";
-import volvoBus from "@/assets/volvo-bus.jpg";
+import heroImg from "@/assets/hero-fleet-clean.webp";
+import fleetImg from "@/assets/megacity-fleet.webp";
+import tempoInterior from "@/assets/tempo-interior.webp";
+import urbaniaInterior from "@/assets/urbania-interior.webp";
+import busInterior from "@/assets/bus-interior.webp";
+import busInterior2 from "@/assets/bus-interior-2.webp";
+import bus50Interior from "@/assets/bus-50-interior.webp";
+import volvoBus from "@/assets/volvo-bus.webp";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { faqs } from "@/data/faqs";
