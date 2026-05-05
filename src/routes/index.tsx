@@ -584,76 +584,129 @@ function HomePage() {
       </section>
 
       {/* VEHICLES FOR EVERY GROUP SIZE */}
-      <section className="py-14 md:py-20 bg-secondary/40">
+      <section className="py-14 md:py-20" style={{ backgroundColor: "#F4F1EA" }}>
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Our Fleet"
             title="Vehicles for Every Group Size"
-            subtitle="Owned, well-maintained vehicles from 4 to 50 seats. Drivers included."
+            subtitle="Choose from cars, SUVs, travellers, Urbania, and buses for small families, medium groups, and large travel needs."
           />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {vehicles.map((v) => (
+
+          {/* Trust strip */}
+          <div className="mb-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {[
+              { num: "33+", label: "Owned Vehicles" },
+              { num: "4–50", label: "Seater Options" },
+              { num: "100%", label: "Drivers Included" },
+              { num: "Custom", label: "Price on Request" },
+            ].map((t) => (
               <div
-                key={v.slug}
-                className="overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col shadow-card"
+                key={t.label}
+                className="rounded-xl bg-white border border-border/60 px-4 py-3 text-center shadow-card"
               >
-                <div className="overflow-hidden bg-secondary/30" style={{ height: 200 }}>
-                  <img
-                    src={v.image}
-                    alt={
-                      v.slug === "tempo-traveller"
-                        ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells"
-                        : v.slug === "urbania"
-                          ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
-                          : v.slug === "innova-crysta"
-                            ? "Innova Crysta for family and outstation trips in Hyderabad."
-                            : v.slug === "bus-28"
-                              ? "28 seater bus rental in Hyderabad for medium group travel"
-                              : v.slug === "bus-40"
-                                ? "40 seater bus rental in Hyderabad for large group travel"
-                                : v.slug === "bus-50"
-                                  ? "50 seater bus rental in Hyderabad by Mega City Tours and Travells"
-                                  : v.slug.startsWith("bus-")
-                                    ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
-                                    : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
-                    }
-                    loading="lazy"
-                    className="h-full w-full object-cover object-center"
-                  />
+                <div className="font-display text-xl md:text-2xl font-bold text-accent leading-none">
+                  {t.num}
                 </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="font-display text-lg font-semibold text-primary">{v.name}</h3>
-                    <span className="text-sm font-bold text-accent">{v.seats} Seater</span>
-                  </div>
-                  <p className="mt-1 text-sm text-muted-foreground">{v.bestFor}</p>
-                  <div className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
-                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
-                      {v.ac}
-                    </span>
-                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
-                      {v.count} available
-                    </span>
-                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
-                      Driver included
-                    </span>
-                  </div>
-                  <div className="mt-4 mb-2 text-sm font-semibold text-primary">
-                    Price on Request
-                  </div>
-                  <a
-                    href={whatsappLink(
-                      `Hi Mega City, please share the price for the ${v.name} (${v.seats} seater).`,
-                    )}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
-                  >
-                    <MessageCircle className="h-4 w-4" /> Ask for Price
-                  </a>
-                </div>
+                <div className="mt-1 text-xs font-semibold text-foreground/75">{t.label}</div>
               </div>
             ))}
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {vehicles.map((v) => {
+              const altText =
+                v.slug === "tempo-traveller"
+                  ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells"
+                  : v.slug === "urbania"
+                    ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
+                    : v.slug === "innova-crysta"
+                      ? "Innova Crysta for family and outstation trips in Hyderabad."
+                      : v.slug === "bus-22"
+                        ? "22 seater bus rental in Hyderabad for small group travel"
+                        : v.slug === "bus-28"
+                          ? "28 seater bus rental in Hyderabad for medium group travel"
+                          : v.slug === "bus-40"
+                            ? "40 seater bus rental in Hyderabad for large group travel"
+                            : v.slug === "bus-50"
+                              ? "50 seater bus rental in Hyderabad by Mega City Tours and Travells"
+                              : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`;
+              return (
+                <div
+                  key={v.slug}
+                  className="group overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all"
+                >
+                  <div
+                    className="relative overflow-hidden bg-secondary/30"
+                    style={{ aspectRatio: "16 / 10" }}
+                  >
+                    <img
+                      src={v.image}
+                      alt={altText}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+                    />
+                    <span className="absolute top-3 left-3 inline-flex items-center rounded-full bg-white/95 backdrop-blur px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-primary shadow-card">
+                      {v.category}
+                    </span>
+                    <span className="absolute top-3 right-3 inline-flex items-center rounded-full bg-accent text-accent-foreground px-2.5 py-1 text-[11px] font-bold">
+                      {v.seats} Seater
+                    </span>
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3 className="font-display text-lg font-bold text-primary leading-tight">
+                      {v.name}
+                    </h3>
+                    <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                      <span className="font-semibold text-foreground/80">Best for:</span> {v.bestFor}
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                      <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
+                        {v.ac}
+                      </span>
+                      <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
+                        {v.count} available
+                      </span>
+                      <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
+                        Driver included
+                      </span>
+                    </div>
+                    <div className="mt-4 text-sm font-semibold text-primary/80">
+                      Price on Request
+                    </div>
+                    <a
+                      href={whatsappLink(
+                        `Hi Mega City, please share the price for the ${v.name} (${v.seats} seater).`,
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                    >
+                      <MessageCircle className="h-4 w-4" /> Ask for Price
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Pricing note */}
+          <div
+            className="mt-10 rounded-2xl border p-5 md:p-6 flex items-start gap-4"
+            style={{ backgroundColor: "#F4E8D6", borderColor: "#D9B08C" }}
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+              <Info className="h-5 w-5" />
+            </span>
+            <div>
+              <h4 className="font-display text-base md:text-lg font-bold text-primary">
+                Why we share prices on request
+              </h4>
+              <p className="mt-1 text-sm md:text-[15px] text-foreground/80 leading-relaxed">
+                Final cost depends on route, vehicle type, travel date, group size, tolls, parking,
+                permits, state taxes, and driver allowance. Share your trip details and we will
+                send a clear quote.
+              </p>
+            </div>
           </div>
         </div>
       </section>
