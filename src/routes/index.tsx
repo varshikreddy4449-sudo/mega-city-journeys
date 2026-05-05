@@ -21,7 +21,7 @@ import {
   Info,
   ArrowRight,
 } from "lucide-react";
-import heroImg from "@/assets/bus-40-side.jpg";
+import heroImg from "@/assets/hero-fleet-clean.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
 import tempoInterior from "@/assets/tempo-interior.jpg";
 import urbaniaInterior from "@/assets/urbania-interior.jpg";
@@ -233,37 +233,40 @@ function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          {/* Mobile crop: bus centered, full vehicle visible */}
+          {/* Mobile crop: vehicles in lower portion, dark sky above for headline */}
           <img
             src={heroImg}
-            alt="Mega City Tours and Travells branded bus in Hyderabad."
+            alt="Mega City Tours and Travells fleet of bus and Innova in Hyderabad."
             className="h-full w-full object-cover lg:hidden"
-            style={{ objectPosition: "center center" }}
-            width={1600}
-            height={900}
+            style={{ objectPosition: "70% bottom" }}
+            width={1920}
+            height={1280}
           />
-          {/* Desktop crop: bus sits in the center band, form covers right edge / sky only */}
+          {/* Desktop crop: vehicles on right, clean dark space on left for headline */}
           <img
             src={heroImg}
             alt=""
             aria-hidden="true"
             className="hidden lg:block h-full w-full object-cover"
-            style={{ objectPosition: "40% 65%" }}
-            width={1600}
-            height={513}
+            style={{ objectPosition: "center center" }}
+            width={1920}
+            height={1080}
           />
-          {/* Desktop: strong warm wash on the left for headline, soft right wash behind form */}
+          {/* Desktop: very strong dark wash on left for headline, light wash on right */}
           <div
             className="absolute inset-0 hidden lg:block"
             style={{
               background:
-                "linear-gradient(90deg, rgba(42,26,20,0.86) 0%, rgba(74,44,32,0.62) 25%, rgba(74,44,32,0.18) 50%, rgba(74,44,32,0.22) 72%, rgba(74,44,32,0.55) 100%)",
+                "linear-gradient(90deg, rgba(20,12,8,0.92) 0%, rgba(30,18,12,0.82) 30%, rgba(40,24,16,0.45) 55%, rgba(40,24,16,0.35) 75%, rgba(40,24,16,0.55) 100%)",
             }}
           />
-          {/* Mobile: even wash so headline reads */}
+          {/* Mobile: stronger top-down wash so headline reads cleanly above the vehicles */}
           <div
             className="absolute inset-0 lg:hidden"
-            style={{ background: "rgba(74,44,32,0.70)" }}
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(20,12,8,0.85) 0%, rgba(30,18,12,0.7) 45%, rgba(40,24,16,0.55) 100%)",
+            }}
           />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-12 md:pt-[90px] md:pb-20 lg:pt-[100px] lg:pb-24">
