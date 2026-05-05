@@ -192,13 +192,13 @@
     bottom: 4px;
     height: 2px;
     border-radius: 2px;
-    background-color: #a0522d;
+    background-color: #ff7a59;
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 220ms ease;
   }
   .nav-link:hover {
-    color: #a0522d !important;
+    color: #ff7a59 !important;
   }
   .nav-link:hover::after,
   .nav-link-active::after {
