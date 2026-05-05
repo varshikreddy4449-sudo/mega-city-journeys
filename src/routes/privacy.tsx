@@ -4,7 +4,9 @@ export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
       { title: "Privacy Policy | Mega City Tours & Travells" },
-      { name: "description", content: "Privacy Policy for Mega City Tours & Travells, Hyderabad." },
+      { name: "description", content: "Privacy Policy for Mega City Tours & Travells, Hyderabad. How we collect, use, and protect your information." },
+      { property: "og:title", content: "Privacy Policy | Mega City Tours & Travells" },
+      { property: "og:description", content: "How Mega City Tours & Travells collects, uses, and protects your booking information." },
     ],
   }),
   component: PrivacyPage,
