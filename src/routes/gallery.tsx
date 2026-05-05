@@ -21,7 +21,9 @@ import innovaInteriorFront from "@/assets/innova-interior-front.jpg";
 import innovaInteriorRear from "@/assets/innova-interior-rear.jpg";
 import brezza from "@/assets/vehicle-brezza-front.jpg";
 import brezzaRear from "@/assets/vehicle-brezza-rear.jpg";
-import fortuner from "@/assets/vehicle-fortuner.jpg";
+import fortuner from "@/assets/vehicle-fortuner-side.jpg";
+import fortunerFront from "@/assets/vehicle-fortuner-front.jpg";
+import fortunerAngle from "@/assets/vehicle-fortuner-angle.jpg";
 import bus22 from "@/assets/vehicle-bus-22.jpg";
 import bus28 from "@/assets/vehicle-bus-28.jpg";
 import bus40 from "@/assets/vehicle-bus-40.jpg";
@@ -174,8 +176,20 @@ const items: Item[] = [
   },
   {
     src: fortuner,
-    alt: "Toyota Fortuner for premium travel in Hyderabad",
-    caption: "Premium SUV for special travel",
+    alt: "White Fortuner exterior side view - Mega City Tours & Travells",
+    caption: "Fortuner exterior side view",
+    cats: ["Cars & SUVs"],
+  },
+  {
+    src: fortunerFront,
+    alt: "White Fortuner front view - Mega City Tours & Travells",
+    caption: "Fortuner front view",
+    cats: ["Cars & SUVs"],
+  },
+  {
+    src: fortunerAngle,
+    alt: "White Fortuner exterior angle view - Mega City Tours & Travells",
+    caption: "Fortuner exterior angle view",
     cats: ["Cars & SUVs"],
   },
   {

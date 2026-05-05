@@ -1,6 +1,6 @@
 import brezza from "@/assets/vehicle-brezza-front.jpg";
 import innova from "@/assets/vehicle-innova.jpg";
-import fortuner from "@/assets/vehicle-fortuner.jpg";
+import fortuner from "@/assets/vehicle-fortuner-side.jpg";
 import tempo from "@/assets/vehicle-tempo.jpg";
 import urbania from "@/assets/vehicle-urbania.jpg";
 import bus from "@/assets/vehicle-bus.jpg";

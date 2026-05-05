@@ -137,6 +137,8 @@ function FleetPage() {
                             ? "Innova Crysta for family and outstation trips in Hyderabad."
                             : v.slug === "breeza"
                               ? "White Brezza front view - Mega City Tours & Travells"
+                              : v.slug === "fortuner"
+                                ? "White Fortuner exterior side view - Mega City Tours & Travells"
                               : v.slug === "bus-28"
                                 ? "28 seater bus rental in Hyderabad for medium group travel"
                                 : v.slug === "bus-40"
@@ -159,6 +161,7 @@ function FleetPage() {
                   {(() => {
                     const seoHeading: Record<string, string> = {
                       breeza: "Brezza Rental in Hyderabad",
+                      fortuner: "Fortuner Rental in Hyderabad",
                       "tempo-traveller": "12 Seater Tempo Traveller Rental in Hyderabad",
                       urbania: "12 Seater Urbania Rental in Hyderabad",
                       "bus-22": "22 Seater Bus Rental in Hyderabad",
