@@ -614,8 +614,14 @@ function HomePage() {
       </section>
 
       {/* VEHICLES FOR EVERY GROUP SIZE */}
-      <section className="py-14 md:py-20" style={{ backgroundColor: "#F4F1EA" }}>
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-14 md:py-20" style={{ backgroundColor: "#F4F1EA" }}>
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -left-24 top-10 w-[480px] md:w-[640px] opacity-[0.05]"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Our Fleet"
             title="Vehicles for Every Group Size"
