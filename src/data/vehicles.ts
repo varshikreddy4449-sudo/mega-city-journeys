@@ -1,4 +1,4 @@
-import brezza from "@/assets/vehicle-brezza.jpg";
+import brezza from "@/assets/vehicle-brezza-front.jpg";
 import innova from "@/assets/vehicle-innova.jpg";
 import fortuner from "@/assets/vehicle-fortuner.jpg";
 import tempo from "@/assets/vehicle-tempo.jpg";
