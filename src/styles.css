@@ -52,9 +52,9 @@
   --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 
-  --shadow-card: 0px 4px 12px rgba(74, 44, 32, 0.08);
-  --shadow-soft: 0px 8px 24px rgba(74, 44, 32, 0.14);
-  --shadow-glow: 0px 8px 24px rgba(160, 82, 45, 0.35);
+  --shadow-card: 0px 4px 12px rgba(13, 92, 99, 0.08);
+  --shadow-soft: 0px 8px 24px rgba(13, 92, 99, 0.14);
+  --shadow-glow: 0px 8px 24px rgba(255, 122, 89, 0.35);
 }
 
 :root {
@@ -227,7 +227,7 @@
   }
   .hover-lift:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(74, 44, 32, 0.12);
+    box-shadow: 0 10px 24px rgba(13, 92, 99, 0.12);
   }
 
   @media (prefers-reduced-motion: reduce) {
