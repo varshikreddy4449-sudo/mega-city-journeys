@@ -22,6 +22,10 @@ import {
   ArrowRight,
 } from "lucide-react";
 import heroImg from "@/assets/hero-fleet-clean.webp";
+import logoImg from "@/assets/logo.webp";
+import { useState } from "react";
+import { VehicleDetailModal } from "@/components/VehicleDetailModal";
+import type { Vehicle } from "@/data/vehicles";
 import fleetImg from "@/assets/megacity-fleet.webp";
 import tempoInterior from "@/assets/tempo-interior.webp";
 import urbaniaInterior from "@/assets/urbania-interior.webp";
