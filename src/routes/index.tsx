@@ -19,6 +19,8 @@ import {
   Plane,
   Compass,
   Route as RouteIcon,
+  Info,
+  ArrowRight,
 } from "lucide-react";
 import heroImg from "@/assets/megacity-fleet-hero.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
