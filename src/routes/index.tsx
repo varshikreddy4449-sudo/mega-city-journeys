@@ -233,20 +233,31 @@ function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
+          {/* Mobile crop: keeps full bus visible */}
           <img
             src={heroImg}
             alt="Mega City Tours and Travells owned fleet in Hyderabad."
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover lg:hidden"
             style={{ objectPosition: "center right" }}
             width={1600}
             height={513}
           />
-          {/* Strong left-side warm dark gradient for text readability */}
+          {/* Desktop crop: shifts focal point so the bus sits between text and form */}
+          <img
+            src={heroImg}
+            alt=""
+            aria-hidden="true"
+            className="hidden lg:block h-full w-full object-cover"
+            style={{ objectPosition: "60% center" }}
+            width={1600}
+            height={513}
+          />
+          {/* Desktop: strong wash on the left for headline, lighter on the right where the form sits */}
           <div
             className="absolute inset-0 hidden lg:block"
             style={{
               background:
-                "linear-gradient(90deg, rgba(74,44,32,0.88) 0%, rgba(74,44,32,0.78) 25%, rgba(74,44,32,0.55) 50%, rgba(74,44,32,0.30) 75%, rgba(74,44,32,0.22) 100%)",
+                "linear-gradient(90deg, rgba(42,26,20,0.85) 0%, rgba(74,44,32,0.70) 22%, rgba(74,44,32,0.30) 45%, rgba(74,44,32,0.18) 65%, rgba(74,44,32,0.45) 100%)",
             }}
           />
           {/* Mobile: even wash so headline reads */}
@@ -256,7 +267,7 @@ function HomePage() {
           />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-12 md:pt-[90px] md:pb-20 lg:pt-[100px] lg:pb-24">
-          <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[1.5fr_minmax(0,380px)] lg:gap-14 lg:items-center">
             {/* Left: copy + CTAs */}
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-brand-cream/15 backdrop-blur px-3 py-1 text-xs font-semibold text-brand-cream uppercase tracking-wider">
