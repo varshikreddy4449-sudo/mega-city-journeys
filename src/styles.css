@@ -154,20 +154,20 @@
 }
 
 @layer utilities {
-  /* Hero overlay: deep navy near-black wash over hero image */
+  /* Hero overlay: deep teal wash over hero image */
   .bg-hero-overlay {
     background: linear-gradient(
       135deg,
-      rgba(42, 26, 20, 0.78) 0%,
-      rgba(74, 44, 32, 0.68) 60%,
-      rgba(74, 44, 32, 0.55) 100%
+      rgba(10, 42, 46, 0.78) 0%,
+      rgba(13, 92, 99, 0.68) 60%,
+      rgba(13, 92, 99, 0.55) 100%
     );
   }
   .bg-warm-gradient {
-    background: linear-gradient(135deg, #4a2c20 0%, #6b3a24 100%);
+    background: linear-gradient(135deg, #0d5c63 0%, #0a4549 100%);
   }
   .bg-rust-gradient {
-    background: linear-gradient(135deg, #a0522d 0%, #8b4423 100%);
+    background: linear-gradient(135deg, #ff7a59 0%, #e85a3a 100%);
   }
   .text-balance {
     text-wrap: balance;
