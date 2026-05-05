@@ -202,12 +202,12 @@ function FleetPage() {
             ))}
           </div>
 
-          {/* Comfort proof — bus interiors */}
+          {/* Comfort proof - bus interiors */}
           <div className="mt-14">
             <SectionHeader
               eyebrow="Comfort Proof"
               title="Clean interiors, comfortable seating"
-              subtitle="Real photos from our buses — cleaned before every trip and serviced regularly."
+              subtitle="Real photos from our buses, cleaned before every trip and serviced regularly."
             />
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {[
