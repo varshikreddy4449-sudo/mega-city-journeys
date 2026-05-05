@@ -13,12 +13,13 @@ import {
   Map as MapIcon,
   Home,
   GraduationCap,
-  Landmark,
   Heart,
   PartyPopper,
   Plane,
   Compass,
   Route as RouteIcon,
+  Info,
+  ArrowRight,
 } from "lucide-react";
 import heroImg from "@/assets/megacity-fleet-hero.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
@@ -76,75 +77,152 @@ const occasions = [
   { icon: MapPin, title: "Airport Transfers" },
 ];
 
-const popularRoutes = [
+type RouteCard = {
+  title: string;
+  bestFor: string;
+  vehicles: string;
+  tripType: string;
+  category: string;
+};
+
+const popularRoutes: RouteCard[] = [
   {
     title: "Hyderabad Local Sightseeing",
-    note: "Charminar, Golconda, Salar Jung, Birla Mandir",
+    bestFor: "Families and tourists exploring the city",
+    vehicles: "Brezza, Innova, Tempo Traveller",
+    tripType: "Local / Day Rental",
     category: "Local",
   },
-  { title: "Srisailam", note: "One or two-day temple yatra", category: "Pilgrimage" },
-  { title: "Yadadri", note: "Same-day Lakshmi Narasimha darshan", category: "Pilgrimage" },
-  { title: "Warangal", note: "Thousand Pillar Temple, Warangal Fort", category: "Heritage" },
-  { title: "Vijayawada", note: "Outstation one-way or round trip", category: "Outstation" },
-  { title: "Nagarjuna Sagar", note: "Day trip to dam & Ethipothala Falls", category: "Weekend" },
   {
-    title: "Custom Telangana Tour",
-    note: "Multi-day temples, forts, getaways",
-    category: "Custom",
+    title: "Hyderabad to Srisailam",
+    bestFor: "Pilgrimage groups and families",
+    vehicles: "SUV, Traveller, Bus",
+    tripType: "Outstation / Per KM",
+    category: "Pilgrimage",
+  },
+  {
+    title: "Hyderabad to Yadadri",
+    bestFor: "Same-day darshan trips",
+    vehicles: "Innova, Urbania, Bus",
+    tripType: "One-Day Round Trip",
+    category: "Pilgrimage",
+  },
+  {
+    title: "Hyderabad to Warangal",
+    bestFor: "Heritage and family trips",
+    vehicles: "Innova, Traveller, Bus",
+    tripType: "Outstation / Per KM",
+    category: "Family",
+  },
+  {
+    title: "Hyderabad to Vijayawada",
+    bestFor: "Outstation business and family travel",
+    vehicles: "Innova, Fortuner, Urbania",
+    tripType: "One-Way or Round Trip",
+    category: "Outstation",
+  },
+  {
+    title: "Hyderabad to Nagarjuna Sagar",
+    bestFor: "Weekend day trips and picnics",
+    vehicles: "Traveller, Urbania, Bus",
+    tripType: "One-Day Round Trip",
+    category: "Family",
   },
   {
     title: "School / College One-Day Trip",
-    note: "22 / 28 / 40 / 50 seater buses",
-    category: "Education",
+    bestFor: "Picnics, study tours, college outings",
+    vehicles: "22, 28, 40, 50 seater Bus",
+    tripType: "Group Charter",
+    category: "School/College",
   },
   {
     title: "Corporate Group Outing",
-    note: "Offsite logistics with AC vehicles",
+    bestFor: "Offsites, conferences, team events",
+    vehicles: "Urbania, Traveller, Bus",
+    tripType: "Local or Outstation",
     category: "Corporate",
+  },
+  {
+    title: "Wedding Guest Transport",
+    bestFor: "Baraat, sangeet, guest pickups",
+    vehicles: "Traveller, Urbania, 28–50 seater Bus",
+    tripType: "Event Logistics",
+    category: "Wedding/Event",
+  },
+  {
+    title: "Custom Telangana Tour",
+    bestFor: "Multi-day temples, forts, getaways",
+    vehicles: "Any vehicle, 4 to 50 seats",
+    tripType: "Multi-Day Custom",
+    category: "Custom",
   },
 ];
 
-const services = [
+const featuredServices = [
   {
     icon: Users,
     title: "Group Travel",
-    desc: "Comfortable transport for groups of 4 to 50 with experienced drivers.",
+    desc: "Vehicles for families, schools, companies, weddings, and group outings.",
+    bestFor: "Families, schools, events",
+    vehicles: "Traveller, Urbania, Bus",
   },
   {
     icon: RouteIcon,
-    title: "Per KM Travel",
-    desc: "Transparent per-KM pricing for outstation trips, one-way or round-trip.",
-  },
-  {
-    icon: MapIcon,
-    title: "Local Trips",
-    desc: "Hyderabad sightseeing, day rentals, and short city packages.",
+    title: "Per KM Trips",
+    desc: "Distance-based pricing for outstation journeys, one-way or round trip.",
+    bestFor: "Outstation, long-distance",
+    vehicles: "Car, SUV, Traveller, Bus",
   },
   {
     icon: Plane,
     title: "Outstation Trips",
-    desc: "Telangana, Andhra, Karnataka, Maharashtra and beyond.",
+    desc: "Comfortable travel across Telangana, Andhra, Karnataka, and beyond.",
+    bestFor: "Multi-day tours, getaways",
+    vehicles: "Innova, Fortuner, Urbania, Bus",
+  },
+];
+
+const moreServices = [
+  {
+    icon: MapIcon,
+    title: "Local Trips",
+    desc: "Hyderabad sightseeing, day rentals, and short city packages.",
+    bestFor: "Sightseeing, day use",
   },
   {
     icon: Briefcase,
     title: "Corporate Travel",
     desc: "Offsites, conferences, training events, and team outings.",
+    bestFor: "Companies and teams",
   },
   {
     icon: GraduationCap,
     title: "School & College Trips",
     desc: "Safe, on-time bus transport for picnics and study tours.",
-  },
-  {
-    icon: Heart,
-    title: "Pilgrimage Tours",
-    desc: "Srisailam, Yadadri, Tirupati, Shirdi and more temple journeys.",
+    bestFor: "Schools and colleges",
   },
   {
     icon: PartyPopper,
     title: "Wedding & Event Transport",
-    desc: "Guest transport for weddings, baraat, sangeet and events.",
+    desc: "Guest transport for weddings, baraat, sangeet, and events.",
+    bestFor: "Weddings and events",
   },
+  {
+    icon: Heart,
+    title: "Pilgrimage Trips",
+    desc: "Srisailam, Yadadri, Tirupati, Shirdi, and more temple journeys.",
+    bestFor: "Temple yatras",
+  },
+];
+
+const quoteChecklist = [
+  { icon: MapPin, label: "Pickup location" },
+  { icon: MapPin, label: "Destination" },
+  { icon: CheckCircle2, label: "Travel date" },
+  { icon: Users, label: "Group size" },
+  { icon: Bus, label: "Vehicle preference" },
+  { icon: RouteIcon, label: "One-way or round trip" },
+  { icon: Compass, label: "Local or outstation" },
 ];
 
 function HomePage() {
@@ -452,25 +530,52 @@ function HomePage() {
             title="Travel built around your group and route"
             subtitle="From short local trips to large group travel. Pick what fits your journey."
           />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((s) => (
+          {/* Featured 3 services */}
+          <div className="grid gap-6 md:grid-cols-3">
+            {featuredServices.map((s) => (
               <div
                 key={s.title}
-                className="group rounded-2xl border border-border/60 bg-card p-6 shadow-card hover:shadow-soft transition-shadow"
+                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-7 shadow-card hover:shadow-soft transition-all hover:-translate-y-0.5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warm-gradient text-primary-foreground mb-4 group-hover:scale-105 transition-transform">
-                  <s.icon className="h-5 w-5" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent mb-5">
+                  <s.icon className="h-7 w-7" strokeWidth={1.75} />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-primary">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <h3 className="font-display text-xl font-bold text-primary">{s.title}</h3>
+                <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">{s.desc}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5 text-[11px]">
+                  <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
+                    Best for: {s.bestFor}
+                  </span>
+                  <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
+                    {s.vehicles}
+                  </span>
+                </div>
                 <a
                   href={whatsappLink(`Hi Mega City, I would like to enquire about ${s.title}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center text-sm font-semibold text-accent hover:underline"
+                  className="mt-5 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
                 >
-                  Enquire Now →
+                  <MessageCircle className="h-4 w-4" /> Enquire on WhatsApp
                 </a>
+              </div>
+            ))}
+          </div>
+
+          {/* Secondary services */}
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {moreServices.map((s) => (
+              <div
+                key={s.title}
+                className="rounded-2xl border border-border/60 bg-card p-5 shadow-card hover:shadow-soft transition-shadow"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent mb-3">
+                  <s.icon className="h-5 w-5" />
+                </div>
+                <h4 className="font-display text-base font-semibold text-primary leading-tight">
+                  {s.title}
+                </h4>
+                <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -478,76 +583,129 @@ function HomePage() {
       </section>
 
       {/* VEHICLES FOR EVERY GROUP SIZE */}
-      <section className="py-14 md:py-20 bg-secondary/40">
+      <section className="py-14 md:py-20" style={{ backgroundColor: "#F4F1EA" }}>
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Our Fleet"
             title="Vehicles for Every Group Size"
-            subtitle="Owned, well-maintained vehicles from 4 to 50 seats. Drivers included."
+            subtitle="Choose from cars, SUVs, travellers, Urbania, and buses for small families, medium groups, and large travel needs."
           />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {vehicles.map((v) => (
+
+          {/* Trust strip */}
+          <div className="mb-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {[
+              { num: "33+", label: "Owned Vehicles" },
+              { num: "4–50", label: "Seater Options" },
+              { num: "100%", label: "Drivers Included" },
+              { num: "Custom", label: "Price on Request" },
+            ].map((t) => (
               <div
-                key={v.slug}
-                className="overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col shadow-card"
+                key={t.label}
+                className="rounded-xl bg-white border border-border/60 px-4 py-3 text-center shadow-card"
               >
-                <div className="overflow-hidden bg-secondary/30" style={{ height: 200 }}>
-                  <img
-                    src={v.image}
-                    alt={
-                      v.slug === "tempo-traveller"
-                        ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells"
-                        : v.slug === "urbania"
-                          ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
-                          : v.slug === "innova-crysta"
-                            ? "Innova Crysta for family and outstation trips in Hyderabad."
-                            : v.slug === "bus-28"
-                              ? "28 seater bus rental in Hyderabad for medium group travel"
-                              : v.slug === "bus-40"
-                                ? "40 seater bus rental in Hyderabad for large group travel"
-                                : v.slug === "bus-50"
-                                  ? "50 seater bus rental in Hyderabad by Mega City Tours and Travells"
-                                  : v.slug.startsWith("bus-")
-                                    ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
-                                    : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
-                    }
-                    loading="lazy"
-                    className="h-full w-full object-cover object-center"
-                  />
+                <div className="font-display text-xl md:text-2xl font-bold text-accent leading-none">
+                  {t.num}
                 </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="font-display text-lg font-semibold text-primary">{v.name}</h3>
-                    <span className="text-sm font-bold text-accent">{v.seats} Seater</span>
-                  </div>
-                  <p className="mt-1 text-sm text-muted-foreground">{v.bestFor}</p>
-                  <div className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
-                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
-                      {v.ac}
-                    </span>
-                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
-                      {v.count} available
-                    </span>
-                    <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
-                      Driver included
-                    </span>
-                  </div>
-                  <div className="mt-4 mb-2 text-sm font-semibold text-primary">
-                    Price on Request
-                  </div>
-                  <a
-                    href={whatsappLink(
-                      `Hi Mega City, please share the price for the ${v.name} (${v.seats} seater).`,
-                    )}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
-                  >
-                    <MessageCircle className="h-4 w-4" /> Ask for Price
-                  </a>
-                </div>
+                <div className="mt-1 text-xs font-semibold text-foreground/75">{t.label}</div>
               </div>
             ))}
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {vehicles.map((v) => {
+              const altText =
+                v.slug === "tempo-traveller"
+                  ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells"
+                  : v.slug === "urbania"
+                    ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
+                    : v.slug === "innova-crysta"
+                      ? "Innova Crysta for family and outstation trips in Hyderabad."
+                      : v.slug === "bus-22"
+                        ? "22 seater bus rental in Hyderabad for small group travel"
+                        : v.slug === "bus-28"
+                          ? "28 seater bus rental in Hyderabad for medium group travel"
+                          : v.slug === "bus-40"
+                            ? "40 seater bus rental in Hyderabad for large group travel"
+                            : v.slug === "bus-50"
+                              ? "50 seater bus rental in Hyderabad by Mega City Tours and Travells"
+                              : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`;
+              return (
+                <div
+                  key={v.slug}
+                  className="group overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all"
+                >
+                  <div
+                    className="relative overflow-hidden bg-secondary/30"
+                    style={{ aspectRatio: "16 / 10" }}
+                  >
+                    <img
+                      src={v.image}
+                      alt={altText}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+                    />
+                    <span className="absolute top-3 left-3 inline-flex items-center rounded-full bg-white/95 backdrop-blur px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-primary shadow-card">
+                      {v.category}
+                    </span>
+                    <span className="absolute top-3 right-3 inline-flex items-center rounded-full bg-accent text-accent-foreground px-2.5 py-1 text-[11px] font-bold">
+                      {v.seats} Seater
+                    </span>
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3 className="font-display text-lg font-bold text-primary leading-tight">
+                      {v.name}
+                    </h3>
+                    <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                      <span className="font-semibold text-foreground/80">Best for:</span> {v.bestFor}
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                      <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
+                        {v.ac}
+                      </span>
+                      <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
+                        {v.count} available
+                      </span>
+                      <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
+                        Driver included
+                      </span>
+                    </div>
+                    <div className="mt-4 text-sm font-semibold text-primary/80">
+                      Price on Request
+                    </div>
+                    <a
+                      href={whatsappLink(
+                        `Hi Mega City, please share the price for the ${v.name} (${v.seats} seater).`,
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                    >
+                      <MessageCircle className="h-4 w-4" /> Ask for Price
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Pricing note */}
+          <div
+            className="mt-10 rounded-2xl border p-5 md:p-6 flex items-start gap-4"
+            style={{ backgroundColor: "#F4E8D6", borderColor: "#D9B08C" }}
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+              <Info className="h-5 w-5" />
+            </span>
+            <div>
+              <h4 className="font-display text-base md:text-lg font-bold text-primary">
+                Why we share prices on request
+              </h4>
+              <p className="mt-1 text-sm md:text-[15px] text-foreground/80 leading-relaxed">
+                Final cost depends on route, vehicle type, travel date, group size, tolls, parking,
+                permits, state taxes, and driver allowance. Share your trip details and we will
+                send a clear quote.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -586,13 +744,13 @@ function HomePage() {
         </div>
       </section>
 
-      {/* POPULAR ROUTES & PACKAGES */}
+      {/* POPULAR ROUTES FROM HYDERABAD */}
       <section className="py-14 md:py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Popular Routes"
-            title="Popular Routes & Packages from Hyderabad"
-            subtitle="Pricing varies by route, vehicle, and group size. Share your details for a custom quote."
+            title="Popular Routes from Hyderabad"
+            subtitle="Choose a common route or ask for a custom quote based on your vehicle, date, and group size."
           />
           <div
             className="mb-10 relative overflow-hidden rounded-2xl shadow-card border border-border/60"
@@ -624,29 +782,109 @@ function HomePage() {
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {popularRoutes.map((r) => (
-              <div
-                key={r.title}
-                className="rounded-2xl bg-card border border-border/60 p-6 shadow-card hover:shadow-soft transition-shadow flex flex-col"
-              >
-                <span className="self-start inline-block rounded-full bg-accent/10 text-accent px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide mb-3">
-                  {r.category}
+            {popularRoutes.map((r) => {
+              const dest = r.title.toLowerCase().includes("hyderabad to")
+                ? r.title.replace(/^Hyderabad to\s+/i, "")
+                : null;
+              return (
+                <div
+                  key={r.title}
+                  className="rounded-2xl bg-card border border-border/60 p-6 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all flex flex-col"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="inline-block rounded-full bg-accent/10 text-accent px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide">
+                      {r.category}
+                    </span>
+                    <span className="text-[11px] font-semibold text-muted-foreground">
+                      {r.tripType}
+                    </span>
+                  </div>
+
+                  {dest ? (
+                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-primary/90">
+                      <MapPin className="h-4 w-4 text-accent" />
+                      <span>Hyderabad</span>
+                      <span
+                        aria-hidden
+                        className="flex-1 mx-1 border-t border-dashed"
+                        style={{ borderColor: "color-mix(in oklab, var(--brand-rust) 50%, transparent)" }}
+                      />
+                      <ArrowRight className="h-4 w-4 text-accent" />
+                      <span>{dest}</span>
+                    </div>
+                  ) : (
+                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-primary/90">
+                      <Compass className="h-4 w-4 text-accent" />
+                      <span>{r.title}</span>
+                    </div>
+                  )}
+
+                  <h3 className="mt-3 font-display text-lg font-bold text-primary leading-tight">
+                    {dest ? r.title : "Group Travel Option"}
+                  </h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                    <span className="font-semibold text-foreground/80">Best for:</span> {r.bestFor}
+                  </p>
+                  <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                    <span className="font-semibold text-foreground/80">Suggested vehicles:</span>{" "}
+                    {r.vehicles}
+                  </p>
+                  <p className="mt-4 text-sm font-semibold text-primary/80">Price on Request</p>
+                  <a
+                    href={whatsappLink(`Hi Mega City, please share the price for: ${r.title}.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                  >
+                    <MessageCircle className="h-4 w-4" /> Ask for Price
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* What to share for a quick quote */}
+          <div
+            className="mt-12 rounded-2xl border p-6 md:p-8"
+            style={{ backgroundColor: "#F4E8D6", borderColor: "#D9B08C" }}
+          >
+            <div className="grid gap-6 md:grid-cols-[1.2fr_2fr] md:items-center">
+              <div>
+                <span className="inline-block rounded-full bg-accent text-accent-foreground px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                  Quick Quote
                 </span>
-                <h3 className="font-display text-lg font-bold text-primary leading-tight">
-                  {r.title}
+                <h3 className="mt-3 font-display text-2xl md:text-3xl font-bold text-primary leading-tight">
+                  What to Share for a Quick Quote
                 </h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{r.note}</p>
-                <p className="mt-4 text-sm font-semibold text-primary">Price on Request</p>
+                <p className="mt-2 text-sm md:text-base text-foreground/75 leading-relaxed">
+                  Send these details on WhatsApp and our team will suggest the right vehicle.
+                </p>
                 <a
-                  href={whatsappLink(`Hi Mega City, please share the price for: ${r.title}.`)}
+                  href={whatsappLink(
+                    "Hi Mega City, I would like a quick quote. Here are my trip details:",
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                  className="mt-4 inline-flex items-center gap-2 rounded-lg text-white px-5 py-2.5 text-sm font-bold shadow-card"
+                  style={{ backgroundColor: "#25D366" }}
                 >
-                  <MessageCircle className="h-4 w-4" /> Ask for Price
+                  <MessageCircle className="h-4 w-4" /> Send Details on WhatsApp
                 </a>
               </div>
-            ))}
+              <ul className="grid gap-2 sm:grid-cols-2">
+                {quoteChecklist.map((c) => (
+                  <li
+                    key={c.label}
+                    className="flex items-center gap-3 rounded-xl bg-white border border-border/60 px-3 py-2.5 shadow-card"
+                  >
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                      <c.icon className="h-4 w-4" />
+                    </span>
+                    <span className="text-sm font-semibold text-primary">{c.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
