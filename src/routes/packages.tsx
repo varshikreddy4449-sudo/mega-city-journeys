@@ -23,8 +23,8 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { packages, type PkgCategory } from "@/data/packages";
 import { whatsappLink, telLink, site } from "@/data/site";
 import { cn } from "@/lib/utils";
-import fleetImg from "@/assets/megacity-fleet-hero.jpg";
-import busInteriorImg from "@/assets/bus-interior.jpg";
+import fleetImg from "@/assets/megacity-fleet-hero.webp";
+import busInteriorImg from "@/assets/bus-interior.webp";
 import { AreasServed } from "@/components/AreasServed";
 
 export const Route = createFileRoute("/packages")({

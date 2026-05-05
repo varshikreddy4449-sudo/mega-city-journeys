@@ -1,13 +1,13 @@
-import brezza from "@/assets/vehicle-brezza-front.jpg";
-import innova from "@/assets/vehicle-innova.jpg";
-import fortuner from "@/assets/vehicle-fortuner-side.jpg";
-import tempo from "@/assets/vehicle-tempo.jpg";
-import urbania from "@/assets/vehicle-urbania.jpg";
-import bus from "@/assets/vehicle-bus.jpg";
-import bus28 from "@/assets/vehicle-bus-28.jpg";
-import bus40 from "@/assets/vehicle-bus-40.jpg";
-import bus50 from "@/assets/vehicle-bus-50.jpg";
-import bus22 from "@/assets/vehicle-bus-22.jpg";
+import brezza from "@/assets/vehicle-brezza-front.webp";
+import innova from "@/assets/vehicle-innova.webp";
+import fortuner from "@/assets/vehicle-fortuner-side.webp";
+import tempo from "@/assets/vehicle-tempo.webp";
+import urbania from "@/assets/vehicle-urbania.webp";
+import bus from "@/assets/vehicle-bus.webp";
+import bus28 from "@/assets/vehicle-bus-28.webp";
+import bus40 from "@/assets/vehicle-bus-40.webp";
+import bus50 from "@/assets/vehicle-bus-50.webp";
+import bus22 from "@/assets/vehicle-bus-22.webp";
 
 export type VehicleCategory = "Car" | "SUV" | "Traveller" | "Bus";
 

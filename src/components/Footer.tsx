@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { site, whatsappLink } from "@/data/site";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.webp";
 
 const quickLinks = [
   ["/", "Home"],
