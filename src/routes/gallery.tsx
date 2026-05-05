@@ -385,7 +385,7 @@ function GalleryPage() {
               <button
                 key={it.caption}
                 onClick={() => setOpenIdx(idx)}
-                className="group text-left overflow-hidden rounded-2xl shadow-card bg-card transition-transform hover:-translate-y-0.5"
+                className="reveal hover-lift group text-left overflow-hidden rounded-2xl shadow-card bg-card transition-transform hover:-translate-y-0.5"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img

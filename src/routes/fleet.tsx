@@ -122,7 +122,7 @@ function FleetPage() {
             {vehicles.map((v) => (
               <div
                 key={v.slug}
-                className="overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col"
+                className="reveal hover-lift overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col"
                 style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}
               >
                 <div className="overflow-hidden bg-secondary/30" style={{ height: 200 }}>

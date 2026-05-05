@@ -4,6 +4,7 @@ import appCss from "../styles.css?url";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 function NotFoundComponent() {
   return (
@@ -81,12 +82,17 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <div className="flex min-h-screen flex-col">
+      <noscript>
+        <style>{`.reveal{opacity:1 !important;transform:none !important;}`}</style>
+      </noscript>
       <Header />
       <main className="flex-1">
         <Outlet />
       </main>
       <Footer />
       <FloatingCTA />
+      <ScrollReveal />
     </div>
   );
 }
+

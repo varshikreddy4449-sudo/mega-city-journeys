@@ -273,7 +273,7 @@ function ServicesPage() {
               <article
                 key={s.slug}
                 id={s.slug}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card hover:shadow-soft transition-all scroll-mt-24"
+                className="reveal hover-lift group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card hover:shadow-soft transition-all scroll-mt-24"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -427,7 +427,7 @@ function ServicesPage() {
             {pricingCards.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="rounded-2xl bg-card border border-border/60 p-6 shadow-card text-center"
+                className="reveal hover-lift rounded-2xl bg-card border border-border/60 p-6 shadow-card text-center"
               >
                 <div className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-rust-gradient text-primary-foreground mb-4 shadow-glow">
                   <Icon className="h-6 w-6" />
@@ -490,7 +490,7 @@ function ServicesPage() {
             </div>
 
             <div
-              className="relative overflow-hidden rounded-2xl shadow-soft border border-border/60"
+              className="reveal relative overflow-hidden rounded-2xl shadow-soft border border-border/60"
               style={{ aspectRatio: "4 / 5" }}
             >
               <img

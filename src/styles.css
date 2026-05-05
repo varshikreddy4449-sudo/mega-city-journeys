@@ -204,4 +204,41 @@
   .nav-link-active::after {
     transform: scaleX(1);
   }
+
+  /* Lightweight scroll reveal — opacity/transform only, no layout shift */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 520ms ease-out,
+      transform 520ms ease-out;
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Subtle hover lift for cards/buttons */
+  .hover-lift {
+    transition:
+      transform 220ms ease,
+      box-shadow 220ms ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(74, 44, 32, 0.12);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .hover-lift {
+      transition: none !important;
+    }
+  }
 }
+
