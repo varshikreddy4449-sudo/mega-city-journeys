@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { useState } from "react";
 import { z } from "zod";
-import { Phone, MessageCircle, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { CTASection } from "@/components/CTASection";
@@ -140,7 +141,7 @@ Message: ${data.message || "-"}`;
               className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-whatsapp text-whatsapp-foreground">
-                <MessageCircle className="h-5 w-5" />
+                <WhatsAppIcon className="h-5 w-5" />
               </div>
               <div>
                 <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">

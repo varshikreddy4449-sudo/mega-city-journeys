@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import {
   CheckCircle2,
-  MessageCircle,
   Phone,
   Bus,
   Users,
@@ -349,7 +349,7 @@ function AboutPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 font-semibold text-whatsapp-foreground shadow-glow hover:opacity-95 transition"
               >
-                <MessageCircle className="h-5 w-5" /> Get Quote on WhatsApp
+                <WhatsAppIcon className="h-5 w-5" /> Get Quote on WhatsApp
               </a>
               <a
                 href={telLink()}
