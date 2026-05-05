@@ -82,6 +82,9 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <div className="flex min-h-screen flex-col">
+      <noscript>
+        <style>{`.reveal{opacity:1 !important;transform:none !important;}`}</style>
+      </noscript>
       <Header />
       <main className="flex-1">
         <Outlet />
@@ -92,3 +95,4 @@ function RootComponent() {
     </div>
   );
 }
+
