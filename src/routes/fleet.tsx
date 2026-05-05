@@ -165,9 +165,7 @@ function FleetPage() {
                     };
                     const heading = seoHeading[v.slug];
                     return heading ? (
-                      <h4 className="mt-1 text-xs font-semibold uppercase tracking-wider text-accent">
-                        {heading}
-                      </h4>
+                      <h4 className="mt-1 text-[13px] font-medium text-accent">{heading}</h4>
                     ) : null;
                   })()}
                   <p className="mt-2 text-sm text-muted-foreground">{v.bestFor}</p>
@@ -182,22 +180,41 @@ function FleetPage() {
                       Driver included
                     </div>
                   </div>
-                  <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-xs text-muted-foreground">Starting</span>
-                    <span className="font-display text-xl font-bold text-primary">
-                      {v.startingPrice}
-                    </span>
-                  </div>
+                  {(() => {
+                    const hasRealPrice = /₹/.test(v.startingPrice);
+                    return (
+                      <div className="mt-auto pt-4">
+                        {hasRealPrice ? (
+                          <div className="flex items-baseline gap-1">
+                            <span className="text-xs text-muted-foreground">Starting</span>
+                            <span className="font-display text-xl font-bold text-primary">
+                              {v.startingPrice}
+                            </span>
+                          </div>
+                        ) : (
+                          <div>
+                            <div className="font-display text-lg font-bold text-primary">
+                              Price on Request
+                            </div>
+                            <p className="mt-0.5 text-[11px] text-muted-foreground leading-snug">
+                              Final quote depends on route, date, vehicle type, and trip details.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()}
                   <a
                     href={whatsappLink(
-                      `Hi Mega City Tours & Travells, I would like to book the ${v.name} (${v.seats} seater).`,
+                      `Hi Mega City Tours & Travells, I would like a quote for the ${v.name} (${v.seats} seater).`,
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-full bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold shadow-card"
+                    className="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-full bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold shadow-card"
                   >
-                    <WhatsAppIcon className="h-4 w-4" /> Book
+                    <WhatsAppIcon className="h-4 w-4" /> Ask for Price
                   </a>
+
                 </div>
               </div>
             ))}
