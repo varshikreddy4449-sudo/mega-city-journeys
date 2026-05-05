@@ -9,6 +9,8 @@ export const Route = createFileRoute("/terms")({
         content:
           "Terms and conditions for travel bookings with Mega City Tours & Travells, Hyderabad.",
       },
+      { property: "og:title", content: "Terms & Conditions | Mega City Tours & Travells" },
+      { property: "og:description", content: "Booking, payment, cancellation and trip terms for Mega City Tours & Travells, Hyderabad." },
     ],
   }),
   component: TermsPage,
