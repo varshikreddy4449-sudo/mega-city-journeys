@@ -531,25 +531,52 @@ function HomePage() {
             title="Travel built around your group and route"
             subtitle="From short local trips to large group travel. Pick what fits your journey."
           />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((s) => (
+          {/* Featured 3 services */}
+          <div className="grid gap-6 md:grid-cols-3">
+            {featuredServices.map((s) => (
               <div
                 key={s.title}
-                className="group rounded-2xl border border-border/60 bg-card p-6 shadow-card hover:shadow-soft transition-shadow"
+                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-7 shadow-card hover:shadow-soft transition-all hover:-translate-y-0.5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warm-gradient text-primary-foreground mb-4 group-hover:scale-105 transition-transform">
-                  <s.icon className="h-5 w-5" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent mb-5">
+                  <s.icon className="h-7 w-7" strokeWidth={1.75} />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-primary">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <h3 className="font-display text-xl font-bold text-primary">{s.title}</h3>
+                <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">{s.desc}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5 text-[11px]">
+                  <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
+                    Best for: {s.bestFor}
+                  </span>
+                  <span className="rounded-full bg-secondary px-2.5 py-1 font-semibold text-secondary-foreground">
+                    {s.vehicles}
+                  </span>
+                </div>
                 <a
                   href={whatsappLink(`Hi Mega City, I would like to enquire about ${s.title}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center text-sm font-semibold text-accent hover:underline"
+                  className="mt-5 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
                 >
-                  Enquire Now →
+                  <MessageCircle className="h-4 w-4" /> Enquire on WhatsApp
                 </a>
+              </div>
+            ))}
+          </div>
+
+          {/* Secondary services */}
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {moreServices.map((s) => (
+              <div
+                key={s.title}
+                className="rounded-2xl border border-border/60 bg-card p-5 shadow-card hover:shadow-soft transition-shadow"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent mb-3">
+                  <s.icon className="h-5 w-5" />
+                </div>
+                <h4 className="font-display text-base font-semibold text-primary leading-tight">
+                  {s.title}
+                </h4>
+                <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
