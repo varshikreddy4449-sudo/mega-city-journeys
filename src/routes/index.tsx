@@ -230,6 +230,52 @@ function HomePage() {
     <>
       <LocalBusinessSchema />
 
+      {/* SERVICE PILLS STRIP */}
+      <div
+        aria-label="Our services"
+        className="border-b"
+        style={{ backgroundColor: "#F4F1EA", borderColor: "rgba(74,44,32,0.08)" }}
+      >
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <ul
+            className="flex gap-2 overflow-x-auto py-2.5 md:py-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {[
+              { label: "Group Travel", to: "/services" },
+              { label: "Per KM Trips", to: "/services" },
+              { label: "Tempo Traveller", to: "/fleet" },
+              { label: "Urbania", to: "/fleet" },
+              { label: "Bus Rental", to: "/fleet" },
+              { label: "School Trips", to: "/services" },
+              { label: "Corporate Travel", to: "/services" },
+              { label: "Pilgrimage Trips", to: "/services" },
+            ].map((p) => (
+              <li key={p.label} className="shrink-0">
+                <Link
+                  to={p.to}
+                  className="inline-flex items-center rounded-full px-3.5 py-1.5 text-xs md:text-sm font-semibold transition-colors duration-200 hover:text-white"
+                  style={{
+                    backgroundColor: "#EDE6D8",
+                    color: "#4A2C20",
+                    border: "1px solid rgba(74,44,32,0.10)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "#A0522D";
+                    e.currentTarget.style.borderColor = "#A0522D";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "#EDE6D8";
+                    e.currentTarget.style.borderColor = "rgba(74,44,32,0.10)";
+                  }}
+                >
+                  {p.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
