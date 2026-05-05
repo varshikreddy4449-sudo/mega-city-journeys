@@ -60,46 +60,46 @@
 :root {
   --radius: 0.75rem;
 
-  /* Mountain Earth palette
-     #4A2C20 deep brown, #A0522D rust, #D9B08C tan,
-     #8FA68F sage, #F4F1EA cream */
-  --background: #f4f1ea;
-  --foreground: #2a1a14;
+  /* Ocean Breeze palette
+     #0D5C63 deep teal, #3CAEA3 medium teal, #ABDADC soft aqua,
+     #FF7A59 coral, #F7F9FA off-white */
+  --background: #f7f9fa;
+  --foreground: #0a2a2e;
 
   --card: #ffffff;
-  --card-foreground: #2a1a14;
+  --card-foreground: #0a2a2e;
 
   --popover: #ffffff;
-  --popover-foreground: #2a1a14;
+  --popover-foreground: #0a2a2e;
 
-  --primary: #4a2c20;
-  --primary-foreground: #f4f1ea;
+  --primary: #0d5c63;
+  --primary-foreground: #f7f9fa;
 
-  --secondary: #ede6d8;
-  --secondary-foreground: #4a2c20;
+  --secondary: #e6f3f4;
+  --secondary-foreground: #0d5c63;
 
-  --muted: #ede6d8;
-  --muted-foreground: #6b5345;
+  --muted: #e6f3f4;
+  --muted-foreground: #4a6b6e;
 
-  --accent: #a0522d;
+  --accent: #ff7a59;
   --accent-foreground: #ffffff;
 
   --destructive: #b3261e;
   --destructive-foreground: #ffffff;
 
-  --border: #dcd3c2;
-  --input: #c9bfa9;
-  --ring: #a0522d;
+  --border: #d4e6e7;
+  --input: #b8d4d6;
+  --ring: #ff7a59;
 
   --whatsapp: #25d366;
   --whatsapp-foreground: #ffffff;
 
-  /* Brand alias tokens: Mountain Earth */
-  --brand-brown: #4a2c20;
-  --brand-rust: #a0522d;
-  --brand-tan: #d9b08c;
-  --brand-sage: #8fa68f;
-  --brand-cream: #f4f1ea;
+  /* Brand alias tokens: mapped to Ocean Breeze for compatibility */
+  --brand-brown: #0d5c63;   /* deep teal (was deep brown) */
+  --brand-rust: #ff7a59;    /* coral (was rust) */
+  --brand-tan: #abdadc;     /* soft aqua (was tan) */
+  --brand-sage: #3caea3;    /* medium teal (was sage) */
+  --brand-cream: #f7f9fa;   /* off-white (was cream) */
 }
 
 .dark {
