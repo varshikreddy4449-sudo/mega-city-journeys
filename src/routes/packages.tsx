@@ -433,7 +433,7 @@ function PackagesPage() {
             {priceFactors.map(({ icon: Icon, label }) => (
               <div
                 key={label}
-                className="flex items-start gap-3 rounded-2xl bg-card border border-border/60 p-5 shadow-card"
+                className="reveal hover-lift flex items-start gap-3 rounded-2xl bg-card border border-border/60 p-5 shadow-card"
               >
                 <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
                   <Icon className="h-5 w-5" />
@@ -503,7 +503,7 @@ function PackagesPage() {
             </div>
 
             <div
-              className="relative overflow-hidden rounded-2xl shadow-soft border border-border/60"
+              className="reveal relative overflow-hidden rounded-2xl shadow-soft border border-border/60"
               style={{ aspectRatio: "5 / 4" }}
             >
               <img

@@ -196,7 +196,7 @@ function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div
-              className="relative overflow-hidden rounded-2xl shadow-soft border border-border/60"
+              className="reveal relative overflow-hidden rounded-2xl shadow-soft border border-border/60"
               style={{ aspectRatio: "4 / 5" }}
             >
               <img
@@ -253,7 +253,7 @@ function AboutPage() {
             {helpItems.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="rounded-2xl bg-card p-6 border border-border/60 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all"
+                className="reveal hover-lift rounded-2xl bg-card p-6 border border-border/60 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all"
               >
                 <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent mb-4">
                   <Icon className="h-5 w-5" />
@@ -318,7 +318,7 @@ function AboutPage() {
               </ul>
             </div>
             <div
-              className="relative overflow-hidden rounded-2xl shadow-soft border border-brand-cream/10"
+              className="reveal relative overflow-hidden rounded-2xl shadow-soft border border-brand-cream/10"
               style={{ aspectRatio: "4 / 5" }}
             >
               <img

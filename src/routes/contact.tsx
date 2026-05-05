@@ -121,7 +121,7 @@ Message: ${data.message || "-"}`;
           <aside className="lg:col-span-2 space-y-4">
             <a
               href={`tel:+91${site.phones[0]}`}
-              className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow"
+              className="reveal hover-lift flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-warm-gradient text-primary-foreground">
                 <Phone className="h-5 w-5" />
@@ -138,7 +138,7 @@ Message: ${data.message || "-"}`;
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow"
+              className="reveal hover-lift flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-whatsapp text-whatsapp-foreground">
                 <WhatsAppIcon className="h-5 w-5" />
@@ -153,7 +153,7 @@ Message: ${data.message || "-"}`;
             </a>
             <a
               href={`mailto:${site.email}`}
-              className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow"
+              className="reveal hover-lift flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card hover:shadow-soft transition-shadow"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-rust-gradient text-primary-foreground">
                 <Mail className="h-5 w-5" />
@@ -165,7 +165,7 @@ Message: ${data.message || "-"}`;
                 <div className="font-display text-base text-primary break-all">{site.email}</div>
               </div>
             </a>
-            <div className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card">
+            <div className="reveal hover-lift flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary">
                 <MapPin className="h-5 w-5" />
               </div>
@@ -176,7 +176,7 @@ Message: ${data.message || "-"}`;
                 <div className="text-sm text-foreground/85">{site.address}</div>
               </div>
             </div>
-            <div className="flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card">
+            <div className="reveal hover-lift flex items-start gap-4 rounded-2xl bg-card border border-border/60 p-5 shadow-card">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary">
                 <Clock className="h-5 w-5" />
               </div>
