@@ -21,7 +21,7 @@ import {
   Info,
   ArrowRight,
 } from "lucide-react";
-import heroImg from "@/assets/megacity-fleet-hero.jpg";
+import heroImg from "@/assets/bus-40-side.jpg";
 import fleetImg from "@/assets/megacity-fleet.jpg";
 import tempoInterior from "@/assets/tempo-interior.jpg";
 import urbaniaInterior from "@/assets/urbania-interior.jpg";
@@ -233,31 +233,31 @@ function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          {/* Mobile crop: keeps full bus visible */}
+          {/* Mobile crop: bus centered, full vehicle visible */}
           <img
             src={heroImg}
-            alt="Mega City Tours and Travells owned fleet in Hyderabad."
+            alt="Mega City Tours and Travells branded bus in Hyderabad."
             className="h-full w-full object-cover lg:hidden"
-            style={{ objectPosition: "center right" }}
+            style={{ objectPosition: "center center" }}
             width={1600}
-            height={513}
+            height={900}
           />
-          {/* Desktop crop: shifts focal point so the bus sits between text and form */}
+          {/* Desktop crop: bus sits in the center band, form covers right edge / sky only */}
           <img
             src={heroImg}
             alt=""
             aria-hidden="true"
             className="hidden lg:block h-full w-full object-cover"
-            style={{ objectPosition: "60% center" }}
+            style={{ objectPosition: "40% 65%" }}
             width={1600}
             height={513}
           />
-          {/* Desktop: strong wash on the left for headline, lighter on the right where the form sits */}
+          {/* Desktop: strong warm wash on the left for headline, soft right wash behind form */}
           <div
             className="absolute inset-0 hidden lg:block"
             style={{
               background:
-                "linear-gradient(90deg, rgba(42,26,20,0.85) 0%, rgba(74,44,32,0.70) 22%, rgba(74,44,32,0.30) 45%, rgba(74,44,32,0.18) 65%, rgba(74,44,32,0.45) 100%)",
+                "linear-gradient(90deg, rgba(42,26,20,0.86) 0%, rgba(74,44,32,0.62) 25%, rgba(74,44,32,0.18) 50%, rgba(74,44,32,0.22) 72%, rgba(74,44,32,0.55) 100%)",
             }}
           />
           {/* Mobile: even wash so headline reads */}
