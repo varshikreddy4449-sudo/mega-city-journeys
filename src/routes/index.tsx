@@ -13,7 +13,6 @@ import {
   Map as MapIcon,
   Home,
   GraduationCap,
-  Landmark,
   Heart,
   PartyPopper,
   Plane,
