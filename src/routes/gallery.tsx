@@ -19,7 +19,8 @@ import innovaFront from "@/assets/innova-exterior-front.jpg";
 import innovaRear from "@/assets/innova-exterior-rear.jpg";
 import innovaInteriorFront from "@/assets/innova-interior-front.jpg";
 import innovaInteriorRear from "@/assets/innova-interior-rear.jpg";
-import brezza from "@/assets/vehicle-brezza.jpg";
+import brezza from "@/assets/vehicle-brezza-front.jpg";
+import brezzaRear from "@/assets/vehicle-brezza-rear.jpg";
 import fortuner from "@/assets/vehicle-fortuner.jpg";
 import bus22 from "@/assets/vehicle-bus-22.jpg";
 import bus28 from "@/assets/vehicle-bus-28.jpg";
@@ -161,8 +162,14 @@ const items: Item[] = [
   },
   {
     src: brezza,
-    alt: "Maruti Brezza for city and short trips in Hyderabad",
-    caption: "Compact SUV for city trips",
+    alt: "White Brezza front view - Mega City Tours & Travells",
+    caption: "Brezza front view",
+    cats: ["Cars & SUVs"],
+  },
+  {
+    src: brezzaRear,
+    alt: "White Brezza rear view - Mega City Tours & Travells",
+    caption: "Brezza rear view",
     cats: ["Cars & SUVs"],
   },
   {

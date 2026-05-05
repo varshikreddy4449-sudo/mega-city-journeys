@@ -135,15 +135,17 @@ function FleetPage() {
                           ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
                           : v.slug === "innova-crysta"
                             ? "Innova Crysta for family and outstation trips in Hyderabad."
-                            : v.slug === "bus-28"
-                              ? "28 seater bus rental in Hyderabad for medium group travel"
-                              : v.slug === "bus-40"
-                                ? "40 seater bus rental in Hyderabad for large group travel"
-                                : v.slug === "bus-50"
-                                  ? "50 seater bus rental in Hyderabad by Mega City Tours and Travells"
-                                  : v.slug.startsWith("bus-")
-                                    ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
-                                    : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
+                            : v.slug === "breeza"
+                              ? "White Brezza front view - Mega City Tours & Travells"
+                              : v.slug === "bus-28"
+                                ? "28 seater bus rental in Hyderabad for medium group travel"
+                                : v.slug === "bus-40"
+                                  ? "40 seater bus rental in Hyderabad for large group travel"
+                                  : v.slug === "bus-50"
+                                    ? "50 seater bus rental in Hyderabad by Mega City Tours and Travells"
+                                    : v.slug.startsWith("bus-")
+                                      ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
+                                      : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
                     }
                     loading="lazy"
                     className="h-full w-full object-cover object-center"
@@ -156,6 +158,7 @@ function FleetPage() {
                   </div>
                   {(() => {
                     const seoHeading: Record<string, string> = {
+                      breeza: "Brezza Rental in Hyderabad",
                       "tempo-traveller": "12 Seater Tempo Traveller Rental in Hyderabad",
                       urbania: "12 Seater Urbania Rental in Hyderabad",
                       "bus-22": "22 Seater Bus Rental in Hyderabad",
