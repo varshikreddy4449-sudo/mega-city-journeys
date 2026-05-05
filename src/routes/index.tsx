@@ -22,6 +22,10 @@ import {
   ArrowRight,
 } from "lucide-react";
 import heroImg from "@/assets/hero-fleet-clean.webp";
+import logoImg from "@/assets/logo.webp";
+import { useState } from "react";
+import { VehicleDetailModal } from "@/components/VehicleDetailModal";
+import type { Vehicle } from "@/data/vehicles";
 import fleetImg from "@/assets/megacity-fleet.webp";
 import tempoInterior from "@/assets/tempo-interior.webp";
 import urbaniaInterior from "@/assets/urbania-interior.webp";
@@ -226,9 +230,16 @@ const quoteChecklist = [
 ];
 
 function HomePage() {
+  const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const openVehicle = (v: Vehicle) => {
+    setSelectedVehicle(v);
+    setModalOpen(true);
+  };
   return (
     <>
       <LocalBusinessSchema />
+      <VehicleDetailModal vehicle={selectedVehicle} open={modalOpen} onOpenChange={setModalOpen} />
 
       {/* HERO */}
       <section className="relative overflow-hidden">
@@ -414,8 +425,14 @@ function HomePage() {
       </section>
 
       {/* OWNED FLEET TRUST SECTION */}
-      <section className="py-14 md:py-20 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-14 md:py-20 bg-secondary/40">
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -right-16 top-1/2 -translate-y-1/2 w-[420px] md:w-[560px] opacity-[0.06]"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div
               className="reveal relative overflow-hidden rounded-2xl shadow-soft border border-border/60"
@@ -597,8 +614,14 @@ function HomePage() {
       </section>
 
       {/* VEHICLES FOR EVERY GROUP SIZE */}
-      <section className="py-14 md:py-20" style={{ backgroundColor: "#F4F1EA" }}>
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-14 md:py-20" style={{ backgroundColor: "#F4F1EA" }}>
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -left-24 top-10 w-[480px] md:w-[640px] opacity-[0.05]"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Our Fleet"
             title="Vehicles for Every Group Size"
@@ -686,16 +709,33 @@ function HomePage() {
                     <div className="mt-4 text-sm font-semibold text-primary/80">
                       Price on Request
                     </div>
-                    <a
-                      href={whatsappLink(
-                        `Hi Mega City, please share the price for the ${v.name} (${v.seats} seater).`,
-                      )}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                    <div className="mt-3 grid grid-cols-2 gap-2">
+                      <a
+                        href={`tel:+91${site.phones[0]}`}
+                        className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary text-primary-foreground py-2.5 text-xs font-semibold hover:opacity-90 transition"
+                      >
+                        <Phone className="h-4 w-4" /> Call
+                      </a>
+                      <a
+                        href={whatsappLink(
+                          `Hi Mega City, please share the price for the ${v.name} (${v.seats} seater).`,
+                        )}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-1.5 rounded-lg py-2.5 text-xs font-semibold text-white hover:opacity-90 transition"
+                        style={{ backgroundColor: "#25D366" }}
+                      >
+                        <WhatsAppIcon className="h-4 w-4" /> WhatsApp
+                      </a>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => openVehicle(v)}
+                      className="mt-2 inline-flex items-center justify-center gap-1.5 w-full rounded-lg border border-accent/60 bg-accent/5 text-primary py-2.5 text-xs font-semibold hover:bg-accent/10 transition"
                     >
-                      <WhatsAppIcon className="h-4 w-4" /> Ask for Price
-                    </a>
+                      <Info className="h-4 w-4" /> Explore
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </button>
                   </div>
                 </div>
               );
@@ -904,8 +944,14 @@ function HomePage() {
       </section>
 
       {/* WHY CHOOSE MEGA CITY */}
-      <section className="py-16 md:py-24 text-white" style={{ backgroundColor: "#4A2C20" }}>
-        <div className="mx-auto max-w-5xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24 text-white" style={{ backgroundColor: "#4A2C20" }}>
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute right-[-100px] top-1/2 -translate-y-1/2 w-[500px] md:w-[680px] opacity-[0.07]"
+        />
+        <div className="relative mx-auto max-w-5xl px-4 md:px-6">
           <div className="text-center">
             <span className="inline-block rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-tan">
               Why Mega City
