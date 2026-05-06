@@ -262,8 +262,9 @@ function ServicesPage() {
       </section>
 
       {/* FEATURED SERVICES */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Most Requested"
             title="Featured Travel Services"
