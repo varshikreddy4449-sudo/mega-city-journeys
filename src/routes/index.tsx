@@ -101,17 +101,31 @@ function HomePage() {
       <VehicleDetailModal vehicle={selectedVehicle} open={modalOpen} onOpenChange={setModalOpen} />
 
       {/* HERO — split layout */}
-      <section className="relative" style={{ backgroundColor: "#F4F7F8" }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: "#F4F7F8" }}>
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(800px 400px at 90% 0%, rgba(171,218,220,0.45), transparent 60%), radial-gradient(700px 350px at 0% 100%, rgba(13,92,99,0.06), transparent 60%)",
+              "radial-gradient(900px 460px at 92% -5%, rgba(171,218,220,0.55), transparent 60%), radial-gradient(700px 380px at -5% 100%, rgba(13,92,99,0.08), transparent 60%)",
           }}
         />
-        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-12 md:pt-16 md:pb-20">
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_minmax(0,440px)] lg:gap-12 lg:items-start">
+        {/* Brand watermark */}
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute hidden md:block"
+          style={{
+            right: "-120px",
+            bottom: "-80px",
+            width: "560px",
+            opacity: 0.07,
+            filter: "grayscale(100%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-14 md:pt-16 md:pb-24">
+          <div className="grid gap-12 lg:grid-cols-[1.15fr_minmax(0,440px)] lg:gap-14 lg:items-start">
             {/* LEFT */}
             <div>
               <div className="flex flex-wrap gap-2">
@@ -140,18 +154,18 @@ function HomePage() {
               </div>
 
               <h1
-                className="mt-5 font-display text-4xl md:text-5xl lg:text-[58px] font-bold leading-[1.05] text-balance"
+                className="mt-6 font-display text-4xl md:text-5xl lg:text-[58px] font-bold leading-[1.05] text-balance"
                 style={{ color: "#0D5C63" }}
               >
                 Reliable Group Travel & Per KM Trips from Hyderabad
               </h1>
-              <p className="mt-5 text-base md:text-lg text-foreground/75 max-w-xl leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-foreground/75 max-w-xl leading-relaxed">
                 Safe, comfortable, and professional transport solutions for groups from 4 to 50
                 seats. Trusted local service for family trips, school travel, corporate movement,
                 weddings, and outstation journeys.
               </p>
 
-              <div className="mt-7 flex flex-col sm:flex-row gap-3">
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <a
                   href={whatsappLink()}
                   target="_blank"
@@ -180,21 +194,56 @@ function HomePage() {
                 </a>
               </div>
 
+              {/* Mini trust row to reduce empty space under heading */}
+              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-foreground/75">
+                <span className="inline-flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
+                  33+ Owned Vehicles
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
+                  Driver Included
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
+                  24/7 Support
+                </span>
+              </div>
+
               {/* Featured vehicle image */}
-              <div
-                className="mt-8 relative overflow-hidden rounded-2xl bg-white border"
-                style={{
-                  aspectRatio: "16 / 9",
-                  borderColor: "rgba(13,92,99,0.10)",
-                  boxShadow: "0 18px 40px -18px rgba(13,92,99,0.30)",
-                }}
-              >
-                <img
-                  src={heroVehicle}
-                  alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
-                  className="absolute inset-0 h-full w-full object-cover"
-                  loading="eager"
+              <div className="mt-10 relative">
+                <div
+                  aria-hidden
+                  className="absolute -inset-4 rounded-[28px]"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(171,218,220,0.55), rgba(255,122,89,0.18))",
+                    filter: "blur(2px)",
+                  }}
                 />
+                <div
+                  className="relative overflow-hidden rounded-2xl bg-white border"
+                  style={{
+                    aspectRatio: "16 / 9",
+                    borderColor: "rgba(13,92,99,0.12)",
+                    boxShadow: "0 24px 50px -22px rgba(13,92,99,0.40)",
+                  }}
+                >
+                  <img
+                    src={heroVehicle}
+                    alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                    loading="eager"
+                  />
+                  {/* Floating badge */}
+                  <div
+                    className="absolute left-4 bottom-4 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-3 py-1.5 text-xs font-bold"
+                    style={{ color: "#0D5C63", boxShadow: "0 6px 18px rgba(13,92,99,0.18)" }}
+                  >
+                    <Snowflake className="h-3.5 w-3.5" style={{ color: "#FF7A59" }} />
+                    Featured · Force Urbania (12 Seater)
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -255,7 +304,15 @@ function HomePage() {
           src={logoImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none select-none absolute -left-24 top-10 w-[480px] md:w-[640px] opacity-[0.05]"
+          className="pointer-events-none select-none absolute -left-20 top-8 w-[420px] md:w-[620px] opacity-[0.10]"
+          style={{ filter: "grayscale(100%)" }}
+        />
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -right-24 bottom-0 w-[360px] md:w-[520px] opacity-[0.06] hidden md:block"
+          style={{ filter: "grayscale(100%)" }}
         />
         <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
@@ -336,7 +393,14 @@ function HomePage() {
       </section>
 
       {/* ABOUT MEGA CITY */}
-      <section className="py-16 md:py-24 bg-secondary/40">
+      <section className="relative overflow-hidden py-16 md:py-24 bg-secondary/40">
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -right-24 -top-16 w-[420px] md:w-[600px] opacity-[0.09]"
+          style={{ filter: "grayscale(100%)" }}
+        />
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div
@@ -378,7 +442,15 @@ function HomePage() {
           src={logoImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none select-none absolute right-[-100px] top-1/2 -translate-y-1/2 w-[500px] md:w-[680px] opacity-[0.07]"
+          className="pointer-events-none select-none absolute right-[-100px] top-1/2 -translate-y-1/2 w-[500px] md:w-[720px] opacity-[0.12]"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -left-24 -bottom-16 w-[320px] md:w-[460px] opacity-[0.08] hidden md:block"
+          style={{ filter: "brightness(0) invert(1)" }}
         />
         <div className="relative mx-auto max-w-5xl px-4 md:px-6">
           <div className="text-center">
@@ -505,8 +577,15 @@ function HomePage() {
       </section>
 
       {/* QUOTE FORM */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: "#F4F1EA" }}>
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#EAF3F4" }}>
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -left-24 top-1/2 -translate-y-1/2 w-[420px] md:w-[600px] opacity-[0.09]"
+          style={{ filter: "grayscale(100%)" }}
+        />
+        <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
               <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4">
