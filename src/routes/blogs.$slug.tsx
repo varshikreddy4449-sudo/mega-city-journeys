@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, ArrowLeft, Phone, CheckCircle2 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { LogoWatermark } from "@/components/LogoWatermark";
-import { blogs, getBlogBySlug } from "@/data/blogs";
+import { blogs, getBlogBySlug, type BlogPost } from "@/data/blogs";
 import { site, whatsappLink } from "@/data/site";
 
 export const Route = createFileRoute("/blogs/$slug")({
@@ -56,7 +56,7 @@ export const Route = createFileRoute("/blogs/$slug")({
 });
 
 function BlogPost() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: BlogPost };
   const related = post.related
     .map((s) => blogs.find((b) => b.slug === s))
     .filter(Boolean) as typeof blogs;
