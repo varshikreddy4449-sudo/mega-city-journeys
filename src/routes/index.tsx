@@ -171,11 +171,11 @@ function HomePage() {
                 </a>
               </div>
 
-              {/* Vehicle image — borderless */}
+              {/* Vehicle image — borderless, constrained */}
               <img
                 src={heroVehicle}
                 alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
-                className="mt-7 block h-auto w-full"
+                className="mt-7 mx-auto block h-auto w-full max-w-md lg:max-w-lg"
                 loading="eager"
               />
             </div>
