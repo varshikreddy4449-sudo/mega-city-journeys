@@ -438,20 +438,7 @@ function HomePage() {
         className="relative overflow-hidden py-16 md:py-24 text-white"
         style={{ backgroundColor: "#0D5C63" }}
       >
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute right-[-100px] top-1/2 -translate-y-1/2 w-[500px] md:w-[720px] opacity-[0.12]"
-          style={{ filter: "brightness(0) invert(1)" }}
-        />
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute -left-24 -bottom-16 w-[320px] md:w-[460px] opacity-[0.08] hidden md:block"
-          style={{ filter: "brightness(0) invert(1)" }}
-        />
+        <LogoWatermark position="center" invert />
         <div className="relative mx-auto max-w-5xl px-4 md:px-6">
           <div className="text-center">
             <span className="inline-block rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
