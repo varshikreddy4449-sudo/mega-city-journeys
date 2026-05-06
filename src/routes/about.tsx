@@ -165,8 +165,9 @@ function AboutPage() {
       </section>
 
       {/* INTRO + STATS */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Who We Are"
             title="Built Around Real Vehicles, Real Drivers, and Real Travel Needs"
