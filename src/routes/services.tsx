@@ -297,10 +297,10 @@ function ServicesPage() {
                 }}
               >
                 <img
-                  src={urbaniaImg}
-                  alt="Force Urbania group travel vehicle by Mega City Tours and Travells, Hyderabad"
+                  src={heroBusImg}
+                  alt="Mega City branded bus for group travel and outstation trips from Hyderabad"
                   className="block w-full"
-                  style={{ maxHeight: "320px", objectFit: "cover" }}
+                  style={{ maxHeight: "360px", objectFit: "cover", objectPosition: "center" }}
                   loading="eager"
                 />
                 <div className="p-5 grid grid-cols-3 gap-3">
