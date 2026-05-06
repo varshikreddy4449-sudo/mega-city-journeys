@@ -484,8 +484,9 @@ function HomePage() {
       </section>
 
       {/* OUR SERVICES */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Our Services"
             title="Travel built around your group"
@@ -509,8 +510,9 @@ function HomePage() {
       </section>
 
       {/* POPULAR ROUTES */}
-      <section className="py-16 md:py-24 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24 bg-secondary/40">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Popular Routes"
             title="Popular Routes from Hyderabad"
