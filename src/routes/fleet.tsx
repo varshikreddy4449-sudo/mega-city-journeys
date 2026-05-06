@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { CheckCircle2 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import { LogoWatermark } from "@/components/LogoWatermark";
 import { CTASection } from "@/components/CTASection";
 import { AreasServed } from "@/components/AreasServed";
 import { vehicles } from "@/data/vehicles";
@@ -74,8 +75,9 @@ function FleetPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-12 md:py-16">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
               <div

@@ -26,6 +26,7 @@ import { vehicles } from "@/data/vehicles";
 import { SectionHeader } from "@/components/SectionHeader";
 import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
 import { QuoteForm } from "@/components/QuoteForm";
+import { LogoWatermark } from "@/components/LogoWatermark";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -318,20 +319,7 @@ function HomePage() {
 
       {/* OUR VEHICLES */}
       <section className="relative overflow-hidden py-16 md:py-24">
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute -left-20 top-8 w-[420px] md:w-[620px] opacity-[0.10]"
-          style={{ filter: "grayscale(100%)" }}
-        />
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute -right-24 bottom-0 w-[360px] md:w-[520px] opacity-[0.06] hidden md:block"
-          style={{ filter: "grayscale(100%)" }}
-        />
+        <LogoWatermark position="center" />
         <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Our Vehicles"
@@ -412,14 +400,8 @@ function HomePage() {
 
       {/* ABOUT MEGA CITY */}
       <section className="relative overflow-hidden py-16 md:py-24 bg-secondary/40">
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute -right-24 -top-16 w-[420px] md:w-[600px] opacity-[0.09]"
-          style={{ filter: "grayscale(100%)" }}
-        />
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div
               className="reveal relative overflow-hidden rounded-2xl shadow-soft border border-border/60"
@@ -456,20 +438,7 @@ function HomePage() {
         className="relative overflow-hidden py-16 md:py-24 text-white"
         style={{ backgroundColor: "#0D5C63" }}
       >
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute right-[-100px] top-1/2 -translate-y-1/2 w-[500px] md:w-[720px] opacity-[0.12]"
-          style={{ filter: "brightness(0) invert(1)" }}
-        />
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute -left-24 -bottom-16 w-[320px] md:w-[460px] opacity-[0.08] hidden md:block"
-          style={{ filter: "brightness(0) invert(1)" }}
-        />
+        <LogoWatermark position="center" invert />
         <div className="relative mx-auto max-w-5xl px-4 md:px-6">
           <div className="text-center">
             <span className="inline-block rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
@@ -515,8 +484,9 @@ function HomePage() {
       </section>
 
       {/* OUR SERVICES */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Our Services"
             title="Travel built around your group"
@@ -540,8 +510,9 @@ function HomePage() {
       </section>
 
       {/* POPULAR ROUTES */}
-      <section className="py-16 md:py-24 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24 bg-secondary/40">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Popular Routes"
             title="Popular Routes from Hyderabad"
@@ -596,13 +567,7 @@ function HomePage() {
 
       {/* QUOTE FORM */}
       <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#EAF3F4" }}>
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute -left-24 top-1/2 -translate-y-1/2 w-[420px] md:w-[600px] opacity-[0.09]"
-          style={{ filter: "grayscale(100%)" }}
-        />
+        <LogoWatermark position="left" />
         <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>

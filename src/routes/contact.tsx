@@ -6,6 +6,7 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { CTASection } from "@/components/CTASection";
+import { LogoWatermark } from "@/components/LogoWatermark";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -115,8 +116,9 @@ Message: ${data.message || "-"}`;
         </div>
       </section>
 
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-4 md:px-6 grid lg:grid-cols-5 gap-8">
+      <section className="relative overflow-hidden py-12 md:py-16">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6 grid lg:grid-cols-5 gap-8">
           {/* Contact cards */}
           <aside className="lg:col-span-2 space-y-4">
             <a

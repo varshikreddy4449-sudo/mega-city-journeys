@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight, ShieldCheck, Maximize2 } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
 import { cn } from "@/lib/utils";
+import { LogoWatermark } from "@/components/LogoWatermark";
 
 import fleetHero from "@/assets/megacity-fleet-hero.webp";
 import fleet from "@/assets/megacity-fleet.webp";
@@ -359,8 +360,9 @@ function GalleryPage() {
         </div>
       </section>
 
-      <section className="py-10 md:py-14">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-10 md:py-14">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           {/* Trust note */}
           <div
             className="mx-auto mb-8 flex max-w-3xl items-start gap-3 rounded-2xl border p-4"

@@ -20,6 +20,7 @@ import {
   MapPinned,
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import { LogoWatermark } from "@/components/LogoWatermark";
 import { packages, type PkgCategory } from "@/data/packages";
 import { whatsappLink, telLink, site } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -265,8 +266,9 @@ function PackagesPage() {
       </section>
 
       {/* CHOOSE BY TRIP TYPE */}
-      <section className="py-16 md:py-20 bg-secondary/40">
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-20 bg-secondary/40">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Pick a Category"
             title="Choose by Trip Type"
@@ -300,8 +302,9 @@ function PackagesPage() {
       </section>
 
       {/* ROUTES LIST */}
-      <section id="routes" className="py-16 md:py-20 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section id="routes" className="relative overflow-hidden py-16 md:py-20 scroll-mt-20">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Routes & Plans"
             title="Popular Routes & Custom Travel Plans"

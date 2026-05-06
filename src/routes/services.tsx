@@ -14,6 +14,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import { LogoWatermark } from "@/components/LogoWatermark";
 import { services } from "@/data/services";
 import { whatsappLink, telLink, site } from "@/data/site";
 import tempoImg from "@/assets/vehicle-tempo.webp";
@@ -261,8 +262,9 @@ function ServicesPage() {
       </section>
 
       {/* FEATURED SERVICES */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Most Requested"
             title="Featured Travel Services"
@@ -328,8 +330,9 @@ function ServicesPage() {
       </section>
 
       {/* ALL SERVICES GRID */}
-      <section className="py-16 md:py-24 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24 bg-secondary/40">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader eyebrow="Full Service List" title="All Travel Services We Offer" />
           <div className="grid gap-5 md:grid-cols-2">
             {rest.map((s) => (
