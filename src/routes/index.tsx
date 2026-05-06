@@ -804,25 +804,26 @@ function HomePage() {
 
       {/* QUOTE FORM */}
       <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#EAF3F4" }}>
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute hidden lg:block"
-          style={{
-            width: "380px",
-            maxWidth: "32%",
-            opacity: 0.06,
-            filter: "grayscale(100%)",
-            top: "50%",
-            left: "23%",
-            transform: "translate(-50%, -50%)",
-            zIndex: 0,
-          }}
-        />
         <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-            <div>
+            <div className="relative">
+              <img
+                src={logoImg}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none select-none absolute hidden lg:block"
+                style={{
+                  width: "320px",
+                  maxWidth: "85%",
+                  opacity: 0.05,
+                  filter: "grayscale(100%)",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  zIndex: 0,
+                }}
+              />
+              <div className="relative">
               <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4">
                 Get In Touch
               </span>
