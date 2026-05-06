@@ -565,13 +565,7 @@ function HomePage() {
 
       {/* QUOTE FORM */}
       <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#EAF3F4" }}>
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute -left-24 top-1/2 -translate-y-1/2 w-[420px] md:w-[600px] opacity-[0.09]"
-          style={{ filter: "grayscale(100%)" }}
-        />
+        <LogoWatermark position="left" />
         <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
