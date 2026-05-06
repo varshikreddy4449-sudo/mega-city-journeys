@@ -21,6 +21,7 @@ import { whatsappLink, telLink, site } from "@/data/site";
 import logoImg from "@/assets/logo.webp";
 import tempoImg from "@/assets/vehicle-tempo.webp";
 import urbaniaImg from "@/assets/vehicle-urbania.webp";
+import heroBusImg from "@/assets/megacity-branded-bus.webp";
 import bus40Img from "@/assets/vehicle-bus-40.webp";
 import tempoExteriorImg from "@/assets/tempo-exterior-side.webp";
 import { AreasServed } from "@/components/AreasServed";
@@ -296,10 +297,10 @@ function ServicesPage() {
                 }}
               >
                 <img
-                  src={urbaniaImg}
-                  alt="Force Urbania group travel vehicle by Mega City Tours and Travells, Hyderabad"
+                  src={heroBusImg}
+                  alt="Mega City branded bus for group travel and outstation trips from Hyderabad"
                   className="block w-full"
-                  style={{ maxHeight: "320px", objectFit: "cover" }}
+                  style={{ maxHeight: "360px", objectFit: "cover", objectPosition: "center" }}
                   loading="eager"
                 />
                 <div className="p-5 grid grid-cols-3 gap-3">
