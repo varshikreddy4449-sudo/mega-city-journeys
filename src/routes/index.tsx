@@ -57,12 +57,48 @@ const trustStats = [
 ];
 
 const popularRoutes = [
-  { title: "Hyderabad to Srisailam", tripType: "Outstation / Per KM", category: "Pilgrimage" },
-  { title: "Hyderabad to Yadadri", tripType: "One-Day Round Trip", category: "Pilgrimage" },
-  { title: "Hyderabad to Warangal", tripType: "Outstation / Per KM", category: "Family" },
-  { title: "Hyderabad to Vijayawada", tripType: "One-Way or Round Trip", category: "Outstation" },
-  { title: "Hyderabad to Nagarjuna Sagar", tripType: "One-Day Round Trip", category: "Family" },
-  { title: "Hyderabad Local Sightseeing", tripType: "Local / Day Rental", category: "Local" },
+  {
+    title: "Hyderabad to Srisailam",
+    tripType: "Outstation / Per KM",
+    category: "Pilgrimage",
+    bestFor: "Pilgrimage / family trips",
+    vehicles: "Innova, Urbania, Tempo Traveller, Bus",
+  },
+  {
+    title: "Hyderabad to Yadadri",
+    tripType: "One-Day Round Trip",
+    category: "Pilgrimage",
+    bestFor: "Same-day darshan trips",
+    vehicles: "Innova, Tempo Traveller, 22/28 Seater Bus",
+  },
+  {
+    title: "Hyderabad to Warangal",
+    tripType: "Outstation / Per KM",
+    category: "Family",
+    bestFor: "Family & heritage trips",
+    vehicles: "Innova, Urbania, Tempo Traveller",
+  },
+  {
+    title: "Hyderabad to Vijayawada",
+    tripType: "One-Way or Round Trip",
+    category: "Outstation",
+    bestFor: "Outstation & business travel",
+    vehicles: "Innova, Urbania, 22/28 Seater Bus",
+  },
+  {
+    title: "Hyderabad to Nagarjuna Sagar",
+    tripType: "One-Day Round Trip",
+    category: "Family",
+    bestFor: "Family day-out trips",
+    vehicles: "Innova, Tempo Traveller, Urbania",
+  },
+  {
+    title: "Hyderabad Local Sightseeing",
+    tripType: "Local / Day Rental",
+    category: "Local",
+    bestFor: "City tours & day rentals",
+    vehicles: "Brezza, Innova, Tempo Traveller",
+  },
 ];
 
 const services = [
