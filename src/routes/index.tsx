@@ -100,50 +100,24 @@ function HomePage() {
       <LocalBusinessSchema />
       <VehicleDetailModal vehicle={selectedVehicle} open={modalOpen} onOpenChange={setModalOpen} />
 
-      {/* HERO — split layout */}
-      <section
-        className="relative overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(135deg, #F3FAFB 0%, #FBF7F1 55%, #EAF3F4 100%)",
-        }}
-      >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(700px 380px at 88% 0%, rgba(171,218,220,0.45), transparent 65%), radial-gradient(600px 320px at 0% 100%, rgba(13,92,99,0.07), transparent 60%)",
-          }}
-        />
-        {/* Centered brand watermark */}
-        <img
-          src={logoImg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{
-            width: "min(720px, 85%)",
-            opacity: 0.05,
-            filter: "grayscale(100%)",
-          }}
-        />
-        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-8 pb-12 md:pt-14 md:pb-20">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_minmax(0,420px)] lg:gap-12 lg:items-start">
+      {/* HERO — clean split layout (Stitch-inspired) */}
+      <section className="relative" style={{ backgroundColor: "#F7F9FA" }}>
+        <div className="mx-auto max-w-7xl px-4 md:px-6 pt-8 pb-12 md:pt-12 md:pb-16">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_minmax(0,440px)] lg:gap-12 lg:items-start">
             {/* LEFT */}
             <div>
               <div className="flex flex-wrap gap-2">
                 <span
-                  className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold"
+                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold"
                   style={{ backgroundColor: "#ABDADC", color: "#0D5C63" }}
                 >
-                  20 Years Experience
+                  <ShieldCheck className="h-3.5 w-3.5" /> 20 Years Experience
                 </span>
                 <span
-                  className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold text-white"
-                  style={{ backgroundColor: "#0D5C63" }}
+                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold"
+                  style={{ backgroundColor: "#3CABA3", color: "#ffffff" }}
                 >
-                  AC / Non-AC Options
+                  <Snowflake className="h-3.5 w-3.5" /> AC / Non-AC Options
                 </span>
                 <span
                   className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold"
@@ -158,15 +132,14 @@ function HomePage() {
               </div>
 
               <h1
-                className="mt-5 font-display text-[34px] sm:text-4xl md:text-5xl lg:text-[54px] font-bold leading-[1.08] text-balance"
+                className="mt-5 font-display text-[34px] sm:text-4xl md:text-5xl lg:text-[52px] font-bold leading-[1.08] text-balance"
                 style={{ color: "#0D5C63" }}
               >
-                Reliable Group Travel &amp; <br className="hidden sm:block" />
-                Per KM Trips from Hyderabad
+                Reliable Group Travel &amp; Per KM Trips from Hyderabad
               </h1>
               <p className="mt-4 text-base md:text-[17px] text-foreground/75 max-w-xl leading-relaxed">
-                AC &amp; Non-AC vehicles from 4 to 50 seats — for families, schools, weddings,
-                corporate trips, and outstation journeys.
+                Safe, comfortable, and professional transport solutions for groups from 4 to 50
+                seats. Local expertise you can trust.
               </p>
 
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -174,7 +147,7 @@ function HomePage() {
                   href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02] w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02]"
                   style={{
                     backgroundColor: "#25D366",
                     borderRadius: "10px",
@@ -186,7 +159,7 @@ function HomePage() {
                 </a>
                 <a
                   href={`tel:+91${site.phones[0]}`}
-                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02] w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02]"
                   style={{
                     backgroundColor: "#0D5C63",
                     borderRadius: "10px",
@@ -198,51 +171,20 @@ function HomePage() {
                 </a>
               </div>
 
-              {/* Mini trust row */}
-              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold text-foreground/75">
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
-                  33+ Vehicles
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
-                  Driver Included
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
-                  24/7 Support
-                </span>
-              </div>
-
-              {/* Featured vehicle image */}
-              <div className="mt-6 md:mt-7 relative">
-                <div
-                  aria-hidden
-                  className="absolute -inset-3 rounded-[24px]"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(171,218,220,0.55), rgba(255,122,89,0.18))",
-                    filter: "blur(2px)",
-                  }}
+              {/* Vehicle image */}
+              <div
+                className="mt-7 overflow-hidden rounded-2xl border bg-white"
+                style={{
+                  borderColor: "rgba(13,92,99,0.12)",
+                  boxShadow: "0 22px 45px -22px rgba(13,92,99,0.35)",
+                }}
+              >
+                <img
+                  src={heroVehicle}
+                  alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
+                  className="block h-auto w-full"
+                  loading="eager"
                 />
-                <div
-                  className="relative overflow-hidden rounded-2xl border"
-                  style={{
-                    aspectRatio: "16 / 9",
-                    borderColor: "rgba(13,92,99,0.12)",
-                    boxShadow: "0 22px 45px -22px rgba(13,92,99,0.40)",
-                    background:
-                      "linear-gradient(135deg, #EAF3F4 0%, #FBF7F1 100%)",
-                  }}
-                >
-                  <img
-                    src={heroVehicle}
-                    alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
-                    className="absolute inset-0 h-full w-full"
-                    style={{ objectFit: "contain", objectPosition: "center" }}
-                    loading="eager"
-                  />
-                </div>
               </div>
             </div>
 
@@ -251,7 +193,6 @@ function HomePage() {
               <QuoteForm
                 variant="compact"
                 title="Quick Quote"
-                subtitle="Share your trip details — we'll reply on WhatsApp."
                 ctaLabel="Get Quote on WhatsApp"
               />
             </div>
