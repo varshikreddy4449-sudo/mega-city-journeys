@@ -15,7 +15,7 @@ export function ScrollReveal() {
     if (typeof window === "undefined") return;
 
     const revealAll = () => {
-      document.querySelectorAll(".reveal:not(.is-visible)").forEach((el) =>
+      document.querySelectorAll(".reveal:not(.is-visible), .reveal-img:not(.is-visible)").forEach((el) =>
         el.classList.add("is-visible"),
       );
     };
@@ -38,7 +38,7 @@ export function ScrollReveal() {
     );
 
     const observeAll = () => {
-      document.querySelectorAll(".reveal:not(.is-visible)").forEach((el) => io.observe(el));
+      document.querySelectorAll(".reveal:not(.is-visible), .reveal-img:not(.is-visible)").forEach((el) => io.observe(el));
     };
 
     // Observe current elements, then re-scan on next frames in case route
