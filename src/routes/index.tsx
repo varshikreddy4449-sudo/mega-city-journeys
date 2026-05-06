@@ -804,7 +804,22 @@ function HomePage() {
 
       {/* QUOTE FORM */}
       <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#EAF3F4" }}>
-        <LogoWatermark position="left" />
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute hidden lg:block"
+          style={{
+            width: "380px",
+            maxWidth: "32%",
+            opacity: 0.06,
+            filter: "grayscale(100%)",
+            top: "50%",
+            left: "23%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 0,
+          }}
+        />
         <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
