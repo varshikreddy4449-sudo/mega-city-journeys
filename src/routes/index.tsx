@@ -101,17 +101,31 @@ function HomePage() {
       <VehicleDetailModal vehicle={selectedVehicle} open={modalOpen} onOpenChange={setModalOpen} />
 
       {/* HERO — split layout */}
-      <section className="relative" style={{ backgroundColor: "#F4F7F8" }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: "#F4F7F8" }}>
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(800px 400px at 90% 0%, rgba(171,218,220,0.45), transparent 60%), radial-gradient(700px 350px at 0% 100%, rgba(13,92,99,0.06), transparent 60%)",
+              "radial-gradient(900px 460px at 92% -5%, rgba(171,218,220,0.55), transparent 60%), radial-gradient(700px 380px at -5% 100%, rgba(13,92,99,0.08), transparent 60%)",
           }}
         />
-        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-12 md:pt-16 md:pb-20">
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_minmax(0,440px)] lg:gap-12 lg:items-start">
+        {/* Brand watermark */}
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute hidden md:block"
+          style={{
+            right: "-120px",
+            bottom: "-80px",
+            width: "560px",
+            opacity: 0.07,
+            filter: "grayscale(100%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-14 md:pt-16 md:pb-24">
+          <div className="grid gap-12 lg:grid-cols-[1.15fr_minmax(0,440px)] lg:gap-14 lg:items-start">
             {/* LEFT */}
             <div>
               <div className="flex flex-wrap gap-2">
@@ -140,18 +154,18 @@ function HomePage() {
               </div>
 
               <h1
-                className="mt-5 font-display text-4xl md:text-5xl lg:text-[58px] font-bold leading-[1.05] text-balance"
+                className="mt-6 font-display text-4xl md:text-5xl lg:text-[58px] font-bold leading-[1.05] text-balance"
                 style={{ color: "#0D5C63" }}
               >
                 Reliable Group Travel & Per KM Trips from Hyderabad
               </h1>
-              <p className="mt-5 text-base md:text-lg text-foreground/75 max-w-xl leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-foreground/75 max-w-xl leading-relaxed">
                 Safe, comfortable, and professional transport solutions for groups from 4 to 50
                 seats. Trusted local service for family trips, school travel, corporate movement,
                 weddings, and outstation journeys.
               </p>
 
-              <div className="mt-7 flex flex-col sm:flex-row gap-3">
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <a
                   href={whatsappLink()}
                   target="_blank"
@@ -180,21 +194,56 @@ function HomePage() {
                 </a>
               </div>
 
+              {/* Mini trust row to reduce empty space under heading */}
+              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-foreground/75">
+                <span className="inline-flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
+                  33+ Owned Vehicles
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
+                  Driver Included
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
+                  24/7 Support
+                </span>
+              </div>
+
               {/* Featured vehicle image */}
-              <div
-                className="mt-8 relative overflow-hidden rounded-2xl bg-white border"
-                style={{
-                  aspectRatio: "16 / 9",
-                  borderColor: "rgba(13,92,99,0.10)",
-                  boxShadow: "0 18px 40px -18px rgba(13,92,99,0.30)",
-                }}
-              >
-                <img
-                  src={heroVehicle}
-                  alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
-                  className="absolute inset-0 h-full w-full object-cover"
-                  loading="eager"
+              <div className="mt-10 relative">
+                <div
+                  aria-hidden
+                  className="absolute -inset-4 rounded-[28px]"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(171,218,220,0.55), rgba(255,122,89,0.18))",
+                    filter: "blur(2px)",
+                  }}
                 />
+                <div
+                  className="relative overflow-hidden rounded-2xl bg-white border"
+                  style={{
+                    aspectRatio: "16 / 9",
+                    borderColor: "rgba(13,92,99,0.12)",
+                    boxShadow: "0 24px 50px -22px rgba(13,92,99,0.40)",
+                  }}
+                >
+                  <img
+                    src={heroVehicle}
+                    alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                    loading="eager"
+                  />
+                  {/* Floating badge */}
+                  <div
+                    className="absolute left-4 bottom-4 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-3 py-1.5 text-xs font-bold"
+                    style={{ color: "#0D5C63", boxShadow: "0 6px 18px rgba(13,92,99,0.18)" }}
+                  >
+                    <Snowflake className="h-3.5 w-3.5" style={{ color: "#FF7A59" }} />
+                    Featured · Force Urbania (12 Seater)
+                  </div>
+                </div>
               </div>
             </div>
 
