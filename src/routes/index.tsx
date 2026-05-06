@@ -26,6 +26,7 @@ import { vehicles } from "@/data/vehicles";
 import { SectionHeader } from "@/components/SectionHeader";
 import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
 import { QuoteForm } from "@/components/QuoteForm";
+import { LogoWatermark } from "@/components/LogoWatermark";
 
 export const Route = createFileRoute("/")({
   head: () => ({
