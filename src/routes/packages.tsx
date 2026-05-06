@@ -266,8 +266,9 @@ function PackagesPage() {
       </section>
 
       {/* CHOOSE BY TRIP TYPE */}
-      <section className="py-16 md:py-20 bg-secondary/40">
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-20 bg-secondary/40">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Pick a Category"
             title="Choose by Trip Type"
