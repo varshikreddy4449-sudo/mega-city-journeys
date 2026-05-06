@@ -652,7 +652,7 @@ function StepCard({
   desc,
 }: {
   step: number;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: ComponentType<{ className?: string }>;
   title: string;
   desc: string;
 }) {
@@ -690,7 +690,7 @@ function TripTypeTile({
   onClick,
   mobile,
 }: {
-  icon: React.ComponentType<{ className?: string }>;
+  icon: ComponentType<{ className?: string }>;
   label: string;
   desc: string;
   active: boolean;
@@ -736,7 +736,7 @@ function PriceFactorCard({
   title,
   desc,
 }: {
-  icon: React.ComponentType<{ className?: string }>;
+  icon: ComponentType<{ className?: string }>;
   title: string;
   desc: string;
 }) {
