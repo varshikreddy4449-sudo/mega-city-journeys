@@ -14,6 +14,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import { LogoWatermark } from "@/components/LogoWatermark";
 import { services } from "@/data/services";
 import { whatsappLink, telLink, site } from "@/data/site";
 import tempoImg from "@/assets/vehicle-tempo.webp";
