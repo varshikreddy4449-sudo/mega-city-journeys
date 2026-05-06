@@ -226,18 +226,20 @@ function HomePage() {
                   }}
                 />
                 <div
-                  className="relative overflow-hidden rounded-2xl bg-white border"
+                  className="relative overflow-hidden rounded-2xl border"
                   style={{
-                    aspectRatio: "16 / 10",
+                    aspectRatio: "16 / 9",
                     borderColor: "rgba(13,92,99,0.12)",
                     boxShadow: "0 22px 45px -22px rgba(13,92,99,0.40)",
+                    background:
+                      "linear-gradient(135deg, #EAF3F4 0%, #FBF7F1 100%)",
                   }}
                 >
                   <img
                     src={heroVehicle}
                     alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
                     className="absolute inset-0 h-full w-full"
-                    style={{ objectFit: "cover", objectPosition: "center 55%", transform: "scale(1.08)" }}
+                    style={{ objectFit: "contain", objectPosition: "center" }}
                     loading="eager"
                   />
                 </div>
