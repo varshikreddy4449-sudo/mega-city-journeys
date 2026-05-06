@@ -21,6 +21,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import { LogoWatermark } from "@/components/LogoWatermark";
 import { CTASection } from "@/components/CTASection";
 import { whatsappLink, telLink, site } from "@/data/site";
 import heroImg from "@/assets/hero-travel.webp";
