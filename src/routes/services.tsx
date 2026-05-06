@@ -110,6 +110,75 @@ function enquireLink(title: string) {
   return whatsappLink(`Hi Mega City Tours & Travells, I would like to enquire about ${title}.`);
 }
 
+type ServiceItem = (typeof services)[number];
+
+function ServiceListCard({ service: s }: { service: ServiceItem }) {
+  return (
+    <div
+      className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white p-6 md:p-7 shadow-card hover:shadow-soft transition-all"
+      style={{ border: "1px solid rgba(13,92,99,0.10)" }}
+    >
+      {/* Top accent line */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-1"
+        style={{ background: `linear-gradient(90deg, ${TEAL}, ${TEAL_SOFT}, ${CORAL})` }}
+      />
+
+      <div className="flex items-start gap-4">
+        <div
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl shadow-sm"
+          style={{
+            background: `linear-gradient(135deg, ${AQUA}, rgba(60,174,163,0.35))`,
+            color: TEAL,
+          }}
+        >
+          <s.icon className="h-6 w-6" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="font-display text-xl font-bold leading-snug" style={{ color: TEAL }}>
+            {s.title}
+          </h3>
+          <p className="mt-1.5 text-sm text-foreground/75 leading-relaxed">{s.short}</p>
+        </div>
+      </div>
+
+      <dl className="mt-5 divide-y" style={{ borderColor: "rgba(13,92,99,0.08)" }}>
+        {[
+          { label: "Best for", value: s.bestFor },
+          { label: "Vehicles", value: s.vehicles },
+          { label: "Ideal use", value: s.needs },
+        ].map((row) => (
+          <div key={row.label} className="grid grid-cols-[88px_1fr] gap-3 py-2.5 first:pt-0">
+            <dt
+              className="text-[10.5px] font-bold uppercase tracking-wider pt-0.5"
+              style={{ color: CORAL }}
+            >
+              {row.label}
+            </dt>
+            <dd className="text-sm leading-relaxed" style={{ color: "#1f2937" }}>
+              {row.value}
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      <a
+        href={enquireLink(s.title)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-bold text-white self-start transition-transform hover:scale-[1.02]"
+        style={{
+          backgroundColor: "#25D366",
+          boxShadow: "0 6px 14px rgba(37,211,102,0.25)",
+        }}
+      >
+        <WhatsAppIcon className="h-4 w-4" /> Enquire on WhatsApp
+      </a>
+    </div>
+  );
+}
+
 function ServicesPage() {
   const featured = services.filter((s) => s.featured);
   const rest = services.filter((s) => !s.featured);
@@ -361,64 +430,39 @@ function ServicesPage() {
         <LogoWatermark position="center" />
         <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeader eyebrow="Full Service List" title="All Travel Services We Offer" />
-          <div className="stagger grid gap-5 md:grid-cols-2">
+
+          {/* Mobile: horizontal snap carousel */}
+          <div className="md:hidden">
+            <div
+              className="mb-3 flex items-center justify-center gap-2 text-xs font-medium"
+              style={{ color: TEAL }}
+            >
+              <span className="opacity-70">Swipe to explore services</span>
+              <ArrowRight className="h-3.5 w-3.5 animate-pulse" style={{ color: CORAL }} />
+            </div>
+            <div className="-mx-4 px-4 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {rest.map((s) => (
+                <article
+                  key={s.slug}
+                  id={s.slug}
+                  className="snap-start shrink-0 basis-[86%] scroll-mt-24"
+                >
+                  <ServiceListCard service={s} />
+                </article>
+              ))}
+              <div className="shrink-0 w-1" aria-hidden="true" />
+            </div>
+          </div>
+
+          {/* Desktop: 2-column grid */}
+          <div className="stagger hidden md:grid gap-6 md:grid-cols-2">
             {rest.map((s) => (
               <article
                 key={s.slug}
                 id={s.slug}
-                className="reveal hover-lift flex flex-col rounded-2xl bg-white p-6 md:p-7 shadow-card hover:shadow-soft transition-all scroll-mt-24"
-                style={{ border: "1px solid rgba(13,92,99,0.10)" }}
+                className="reveal hover-lift scroll-mt-24 h-full"
               >
-                <div className="flex items-start gap-4">
-                  <div
-                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
-                    style={{ backgroundColor: AQUA, color: TEAL }}
-                  >
-                    <s.icon className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-display text-xl font-semibold leading-snug" style={{ color: TEAL }}>
-                      {s.title}
-                    </h3>
-                    <p className="mt-2 text-sm md:text-base text-foreground/80 leading-relaxed">
-                      {s.short}
-                    </p>
-                  </div>
-                </div>
-
-                <ul className="mt-5 space-y-2 text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider shrink-0 w-24 pt-0.5" style={{ color: CORAL }}>
-                      Best for
-                    </span>
-                    <span className="text-foreground/85">{s.bestFor}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider shrink-0 w-24 pt-0.5" style={{ color: CORAL }}>
-                      Vehicles
-                    </span>
-                    <span className="text-foreground/85">{s.vehicles}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider shrink-0 w-24 pt-0.5" style={{ color: CORAL }}>
-                      Ideal use
-                    </span>
-                    <span className="text-foreground/85">{s.needs}</span>
-                  </li>
-                </ul>
-
-                <a
-                  href={enquireLink(s.title)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-bold text-white self-start transition-transform hover:scale-[1.02]"
-                  style={{
-                    backgroundColor: "#25D366",
-                    boxShadow: "0 6px 14px rgba(37,211,102,0.25)",
-                  }}
-                >
-                  <WhatsAppIcon className="h-4 w-4" /> Enquire on WhatsApp
-                </a>
+                <ServiceListCard service={s} />
               </article>
             ))}
           </div>
