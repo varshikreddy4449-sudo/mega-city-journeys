@@ -245,8 +245,9 @@ function AboutPage() {
       </section>
 
       {/* WHAT WE HELP WITH */}
-      <section className="py-16 md:py-24 bg-secondary/50">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24 bg-secondary/50">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="What We Help With"
             title="Travel Support for Every Kind of Group"
