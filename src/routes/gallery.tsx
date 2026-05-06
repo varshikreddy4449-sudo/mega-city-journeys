@@ -359,8 +359,9 @@ function GalleryPage() {
         </div>
       </section>
 
-      <section className="py-10 md:py-14">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-10 md:py-14">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           {/* Trust note */}
           <div
             className="mx-auto mb-8 flex max-w-3xl items-start gap-3 rounded-2xl border p-4"
