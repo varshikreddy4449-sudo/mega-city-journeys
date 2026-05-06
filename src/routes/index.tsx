@@ -171,12 +171,12 @@ function HomePage() {
                 </a>
               </div>
 
-              {/* Vehicle image — borderless, constrained */}
+              {/* Vehicle image — borderless, rounded */}
               <img
                 src={heroVehicle}
                 alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
-                className="mt-7 mx-auto block w-full max-w-xs sm:max-w-sm lg:max-w-md"
-                style={{ maxHeight: "260px", objectFit: "contain" }}
+                className="mt-7 mx-auto block w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-2xl"
+                style={{ maxHeight: "300px", objectFit: "cover" }}
                 loading="eager"
               />
             </div>
