@@ -301,8 +301,9 @@ function PackagesPage() {
       </section>
 
       {/* ROUTES LIST */}
-      <section id="routes" className="py-16 md:py-20 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section id="routes" className="relative overflow-hidden py-16 md:py-20 scroll-mt-20">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Routes & Plans"
             title="Popular Routes & Custom Travel Plans"
