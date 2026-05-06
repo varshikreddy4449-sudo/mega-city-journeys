@@ -101,9 +101,65 @@ function HomePage() {
       <VehicleDetailModal vehicle={selectedVehicle} open={modalOpen} onOpenChange={setModalOpen} />
 
       {/* HERO — clean split layout (Stitch-inspired) */}
-      <section className="relative" style={{ backgroundColor: "#F7F9FA" }}>
-        <div className="mx-auto max-w-7xl px-4 md:px-6 pt-8 pb-12 md:pt-12 md:pb-16">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_minmax(0,440px)] lg:gap-12 lg:items-start">
+      <section
+        className="relative overflow-hidden"
+        style={{
+          backgroundColor: "#F7F9FA",
+          backgroundImage: [
+            // Soft light aqua gradient from top-right toward center
+            "linear-gradient(215deg, rgba(171,218,220,0.55) 0%, rgba(171,218,220,0.18) 32%, rgba(247,249,250,0) 60%)",
+            // Faint teal radial glow behind the quote form (right)
+            "radial-gradient(620px 420px at 88% 30%, rgba(60,174,163,0.18), rgba(60,174,163,0) 70%)",
+            // Faint coral glow near the vehicle/CTA area (left-bottom)
+            "radial-gradient(560px 380px at 18% 88%, rgba(255,122,89,0.14), rgba(255,122,89,0) 70%)",
+            // Subtle deep-teal wash bottom
+            "radial-gradient(900px 500px at 50% 110%, rgba(13,92,99,0.06), rgba(13,92,99,0) 70%)",
+          ].join(", "),
+        }}
+      >
+        {/* Soft curved abstract shapes — very low opacity, hidden on mobile */}
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full hidden md:block"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 700"
+          fill="none"
+        >
+          <path
+            d="M -50 520 C 280 360, 560 660, 880 460 S 1380 300, 1520 420"
+            stroke="#0D5C63"
+            strokeOpacity="0.08"
+            strokeWidth="1.5"
+            fill="none"
+          />
+          <path
+            d="M -50 580 C 320 440, 620 700, 940 520 S 1380 380, 1520 480"
+            stroke="#3CAEA3"
+            strokeOpacity="0.10"
+            strokeWidth="1.25"
+            strokeDasharray="2 6"
+            fill="none"
+          />
+          <circle cx="1240" cy="160" r="180" fill="#ABDADC" fillOpacity="0.18" />
+          <circle cx="200" cy="80" r="120" fill="#3CAEA3" fillOpacity="0.08" />
+        </svg>
+
+        {/* Centered logo watermark — extremely subtle */}
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute left-1/2 top-1/2 hidden md:block"
+          style={{
+            width: "560px",
+            transform: "translate(-50%, -50%)",
+            opacity: 0.04,
+            filter: "grayscale(100%)",
+          }}
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-8 pb-12 md:pt-14 md:pb-20">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_minmax(0,460px)] lg:gap-14 lg:items-start">
             {/* LEFT */}
             <div>
               <div className="flex flex-wrap gap-2">
@@ -171,27 +227,56 @@ function HomePage() {
                 </a>
               </div>
 
-              {/* Vehicle image — borderless, rounded */}
-              <img
-                src={heroVehicle}
-                alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
-                className="mt-7 mx-auto block w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-2xl"
-                style={{ maxHeight: "300px", objectFit: "cover" }}
-                loading="eager"
-              />
+              {/* Vehicle image — soft glow card, borderless */}
+              <div className="relative mt-8 mx-auto w-full max-w-sm sm:max-w-md lg:max-w-lg">
+                <div
+                  aria-hidden="true"
+                  className="absolute -inset-4 rounded-[28px] hidden sm:block"
+                  style={{
+                    background:
+                      "radial-gradient(60% 60% at 50% 60%, rgba(255,122,89,0.18), rgba(255,122,89,0) 70%)",
+                    filter: "blur(8px)",
+                  }}
+                />
+                <img
+                  src={heroVehicle}
+                  alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
+                  className="relative block w-full rounded-2xl"
+                  style={{
+                    maxHeight: "300px",
+                    objectFit: "cover",
+                    boxShadow:
+                      "0 18px 40px -12px rgba(13,92,99,0.30), 0 6px 16px -8px rgba(255,122,89,0.20)",
+                  }}
+                  loading="eager"
+                />
+              </div>
             </div>
 
             {/* RIGHT — Quick Quote card */}
             <div className="lg:sticky lg:top-24">
-              <QuoteForm
-                variant="compact"
-                title="Quick Quote"
-                ctaLabel="Get Quote on WhatsApp"
-              />
+              <div
+                className="rounded-2xl"
+                style={{
+                  border: "1px solid rgba(13,92,99,0.12)",
+                  boxShadow:
+                    "0 24px 48px -20px rgba(13,92,99,0.25), 0 8px 20px -10px rgba(60,174,163,0.18)",
+                  background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,1) 100%)",
+                  backdropFilter: "blur(6px)",
+                }}
+              >
+                <QuoteForm
+                  variant="compact"
+                  title="Quick Quote"
+                  ctaLabel="Get Quote on WhatsApp"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* TRUST STATS */}
       <section
