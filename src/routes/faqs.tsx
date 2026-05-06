@@ -48,8 +48,9 @@ function FAQPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-4xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-12 md:py-16">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-4xl px-4 md:px-6">
           <div className="flex flex-wrap gap-2 justify-center mb-8">
             {categories.map((c) => (
               <button
