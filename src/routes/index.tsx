@@ -171,21 +171,13 @@ function HomePage() {
                 </a>
               </div>
 
-              {/* Vehicle image */}
-              <div
-                className="mt-7 overflow-hidden rounded-2xl border bg-white"
-                style={{
-                  borderColor: "rgba(13,92,99,0.12)",
-                  boxShadow: "0 22px 45px -22px rgba(13,92,99,0.35)",
-                }}
-              >
-                <img
-                  src={heroVehicle}
-                  alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
-                  className="block h-auto w-full"
-                  loading="eager"
-                />
-              </div>
+              {/* Vehicle image — borderless */}
+              <img
+                src={heroVehicle}
+                alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
+                className="mt-7 block h-auto w-full"
+                loading="eager"
+              />
             </div>
 
             {/* RIGHT — Quick Quote card */}
