@@ -304,7 +304,15 @@ function HomePage() {
           src={logoImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none select-none absolute -left-24 top-10 w-[480px] md:w-[640px] opacity-[0.05]"
+          className="pointer-events-none select-none absolute -left-20 top-8 w-[420px] md:w-[620px] opacity-[0.10]"
+          style={{ filter: "grayscale(100%)" }}
+        />
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -right-24 bottom-0 w-[360px] md:w-[520px] opacity-[0.06] hidden md:block"
+          style={{ filter: "grayscale(100%)" }}
         />
         <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
