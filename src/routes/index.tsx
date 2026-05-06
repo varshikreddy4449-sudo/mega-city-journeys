@@ -577,8 +577,15 @@ function HomePage() {
       </section>
 
       {/* QUOTE FORM */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: "#F4F1EA" }}>
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#EAF3F4" }}>
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -left-24 top-1/2 -translate-y-1/2 w-[420px] md:w-[600px] opacity-[0.09]"
+          style={{ filter: "grayscale(100%)" }}
+        />
+        <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
               <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4">
