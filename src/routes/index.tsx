@@ -100,53 +100,55 @@ function HomePage() {
       <LocalBusinessSchema />
       <VehicleDetailModal vehicle={selectedVehicle} open={modalOpen} onOpenChange={setModalOpen} />
 
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt="Mega City Tours and Travells fleet of bus and Innova in Hyderabad."
-            className="h-full w-full object-cover lg:hidden"
-            style={{ objectPosition: "70% bottom" }}
-            width={1920}
-            height={1280}
-          />
-          <img
-            src={heroImg}
-            alt=""
-            aria-hidden="true"
-            className="hidden lg:block h-full w-full object-cover"
-            style={{ objectPosition: "center center" }}
-            width={1920}
-            height={1080}
-          />
-          <div
-            className="absolute inset-0 hidden lg:block"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(8,30,32,0.92) 0%, rgba(10,40,44,0.78) 35%, rgba(13,92,99,0.35) 65%, rgba(13,92,99,0.45) 100%)",
-            }}
-          />
-          <div
-            className="absolute inset-0 lg:hidden"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(8,30,32,0.85) 0%, rgba(10,40,44,0.65) 50%, rgba(13,92,99,0.5) 100%)",
-            }}
-          />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-12 pb-14 md:pt-24 md:pb-24">
-          <div className="grid gap-10 lg:grid-cols-[1.5fr_minmax(0,380px)] lg:gap-14 lg:items-center">
+      {/* HERO — split layout */}
+      <section className="relative" style={{ backgroundColor: "#F4F7F8" }}>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(800px 400px at 90% 0%, rgba(171,218,220,0.45), transparent 60%), radial-gradient(700px 350px at 0% 100%, rgba(13,92,99,0.06), transparent 60%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-12 md:pt-16 md:pb-20">
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_minmax(0,440px)] lg:gap-12 lg:items-start">
+            {/* LEFT */}
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-3 py-1 text-xs font-semibold text-white uppercase tracking-wider">
-                <MapPin className="h-3.5 w-3.5" /> Hyderabad's Trusted Travel Partner
-              </span>
-              <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-white text-balance">
+              <div className="flex flex-wrap gap-2">
+                <span
+                  className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold"
+                  style={{ backgroundColor: "#ABDADC", color: "#0D5C63" }}
+                >
+                  20 Years Experience
+                </span>
+                <span
+                  className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold text-white"
+                  style={{ backgroundColor: "#0D5C63" }}
+                >
+                  AC / Non-AC Options
+                </span>
+                <span
+                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold"
+                  style={{
+                    backgroundColor: "#FFFFFF",
+                    color: "#0D5C63",
+                    border: "1px solid rgba(13,92,99,0.18)",
+                  }}
+                >
+                  <MapPin className="h-3.5 w-3.5" /> Hyderabad Based
+                </span>
+              </div>
+
+              <h1
+                className="mt-5 font-display text-4xl md:text-5xl lg:text-[58px] font-bold leading-[1.05] text-balance"
+                style={{ color: "#0D5C63" }}
+              >
                 Reliable Group Travel & Per KM Trips from Hyderabad
               </h1>
-              <p className="mt-5 text-base md:text-lg text-white/85 max-w-xl leading-relaxed">
-                AC and Non-AC vehicles from 4 to 50 seats with experienced drivers, for families,
-                schools, companies, weddings, pilgrimage groups, and outstation journeys.
+              <p className="mt-5 text-base md:text-lg text-foreground/75 max-w-xl leading-relaxed">
+                Safe, comfortable, and professional transport solutions for groups from 4 to 50
+                seats. Trusted local service for family trips, school travel, corporate movement,
+                weddings, and outstation journeys.
               </p>
 
               <div className="mt-7 flex flex-col sm:flex-row gap-3">
@@ -155,26 +157,54 @@ function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02]"
-                  style={{ backgroundColor: "#25D366", borderRadius: "8px", padding: "16px 28px" }}
+                  style={{
+                    backgroundColor: "#25D366",
+                    borderRadius: "10px",
+                    padding: "14px 24px",
+                    boxShadow: "0 6px 18px rgba(37,211,102,0.28)",
+                  }}
                 >
                   <WhatsAppIcon className="h-5 w-5" /> WhatsApp Us
                 </a>
                 <a
                   href={`tel:+91${site.phones[0]}`}
-                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02] bg-accent"
-                  style={{ borderRadius: "8px", padding: "16px 28px" }}
+                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02]"
+                  style={{
+                    backgroundColor: "#0D5C63",
+                    borderRadius: "10px",
+                    padding: "14px 24px",
+                    boxShadow: "0 6px 18px rgba(13,92,99,0.28)",
+                  }}
                 >
-                  <Phone className="h-5 w-5" /> Call {site.phones[0]}
+                  <Phone className="h-5 w-5" /> Call Now
                 </a>
+              </div>
+
+              {/* Featured vehicle image */}
+              <div
+                className="mt-8 relative overflow-hidden rounded-2xl bg-white border"
+                style={{
+                  aspectRatio: "16 / 9",
+                  borderColor: "rgba(13,92,99,0.10)",
+                  boxShadow: "0 18px 40px -18px rgba(13,92,99,0.30)",
+                }}
+              >
+                <img
+                  src={heroVehicle}
+                  alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="eager"
+                />
               </div>
             </div>
 
-            <div className="hidden lg:block">
+            {/* RIGHT — Quick Quote card */}
+            <div className="lg:sticky lg:top-24">
               <QuoteForm
-                variant="compact"
-                title="Get a Quick Quote"
-                subtitle="Share your trip details. We respond on WhatsApp."
-                ctaLabel="Get Quote"
+                variant="full"
+                title="Quick Quote"
+                subtitle="Share your trip details and we'll send a clear estimate."
+                ctaLabel="Request Estimate"
               />
             </div>
           </div>
@@ -182,32 +212,38 @@ function HomePage() {
       </section>
 
       {/* TRUST STATS */}
-      <section className="py-10 md:py-14 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {trustStats.map((s) => (
-              <div key={s.label} className="text-center pt-4 border-t-[3px] border-accent">
-                <div className="font-display font-bold leading-none text-accent text-[32px] md:text-[44px]">
-                  {s.num}
-                </div>
-                <div className="mt-2 text-sm font-medium text-foreground/80">{s.label}</div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-2">
+      <section
+        className="py-10 md:py-14 bg-white border-y"
+        style={{ borderColor: "rgba(13,92,99,0.08)" }}
+      >
+        <div className="mx-auto max-w-5xl px-4 md:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { icon: Snowflake, label: "AC & Non-AC" },
-              { icon: ShieldCheck, label: "Experienced Drivers" },
-              { icon: Calendar, label: "Available 365 Days" },
-              { icon: MapPin, label: "Hyderabad Based" },
-            ].map((t) => (
-              <span
-                key={t.label}
-                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-semibold text-foreground/85 shadow-card"
+              { icon: ShieldCheck, num: "33+", label: "Vehicles" },
+              { icon: Users, num: "4–50", label: "Seater Options" },
+              { icon: Calendar, num: "365", label: "Days Available" },
+            ].map((s) => (
+              <div
+                key={s.label}
+                className="flex items-center gap-4 rounded-2xl bg-white border px-5 py-4 shadow-card"
+                style={{ borderColor: "rgba(13,92,99,0.10)" }}
               >
-                <t.icon className="h-3.5 w-3.5 text-accent" />
-                {t.label}
-              </span>
+                <span
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                  style={{ backgroundColor: "#ABDADC", color: "#0D5C63" }}
+                >
+                  <s.icon className="h-6 w-6" />
+                </span>
+                <div>
+                  <div
+                    className="font-display text-2xl font-bold leading-none"
+                    style={{ color: "#0D5C63" }}
+                  >
+                    {s.num}
+                  </div>
+                  <div className="mt-1 text-sm font-medium text-foreground/70">{s.label}</div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
