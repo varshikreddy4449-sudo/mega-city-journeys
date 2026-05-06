@@ -5,6 +5,7 @@ import { CTASection } from "@/components/CTASection";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { faqs } from "@/data/faqs";
 import { cn } from "@/lib/utils";
+import { LogoWatermark } from "@/components/LogoWatermark";
 
 export const Route = createFileRoute("/faqs")({
   head: () => ({
