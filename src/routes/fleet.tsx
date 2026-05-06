@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { CheckCircle2 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import { LogoWatermark } from "@/components/LogoWatermark";
 import { CTASection } from "@/components/CTASection";
 import { AreasServed } from "@/components/AreasServed";
 import { vehicles } from "@/data/vehicles";
