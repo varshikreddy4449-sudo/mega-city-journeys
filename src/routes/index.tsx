@@ -393,7 +393,14 @@ function HomePage() {
       </section>
 
       {/* ABOUT MEGA CITY */}
-      <section className="py-16 md:py-24 bg-secondary/40">
+      <section className="relative overflow-hidden py-16 md:py-24 bg-secondary/40">
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -right-24 -top-16 w-[420px] md:w-[600px] opacity-[0.09]"
+          style={{ filter: "grayscale(100%)" }}
+        />
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div
