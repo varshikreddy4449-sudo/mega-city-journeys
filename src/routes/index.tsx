@@ -548,55 +548,230 @@ function HomePage() {
       {/* POPULAR ROUTES */}
       <section className="relative overflow-hidden py-16 md:py-24 bg-secondary/40">
         <LogoWatermark position="center" />
+        {/* Subtle map/route background pattern — very low opacity */}
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full hidden md:block"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 900"
+          fill="none"
+        >
+          <path
+            d="M -40 700 C 260 540, 520 820, 820 620 S 1320 460, 1500 580"
+            stroke="#0D5C63"
+            strokeOpacity="0.07"
+            strokeWidth="1.5"
+            fill="none"
+          />
+          <path
+            d="M -40 760 C 320 600, 640 880, 980 660 S 1340 520, 1500 640"
+            stroke="#3CAEA3"
+            strokeOpacity="0.10"
+            strokeWidth="1.25"
+            strokeDasharray="2 8"
+            fill="none"
+          />
+          <path
+            d="M 80 180 C 380 80, 700 320, 1020 200 S 1360 120, 1480 220"
+            stroke="#FF7A59"
+            strokeOpacity="0.06"
+            strokeWidth="1.25"
+            strokeDasharray="3 7"
+            fill="none"
+          />
+          {/* tiny location pins */}
+          {[
+            [120, 200],
+            [1020, 200],
+            [820, 620],
+            [260, 540],
+            [1340, 520],
+          ].map(([cx, cy], i) => (
+            <g key={i} opacity="0.18">
+              <circle cx={cx} cy={cy} r="6" fill="#FF7A59" />
+              <circle cx={cx} cy={cy} r="2" fill="#FFFFFF" />
+            </g>
+          ))}
+        </svg>
+
         <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader
             eyebrow="Popular Routes"
             title="Popular Routes from Hyderabad"
             subtitle="Choose a common route or ask for a custom quote."
           />
+
           <div className="stagger grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {popularRoutes.map((r) => {
-              const dest = r.title.replace(/^Hyderabad to\s+/i, "");
               const isFromHyd = /^Hyderabad to/i.test(r.title);
+              const dest = isFromHyd ? r.title.replace(/^Hyderabad to\s+/i, "") : r.title;
               return (
-                <div
+                <article
                   key={r.title}
-                  className="reveal hover-lift rounded-2xl bg-card border border-border/60 p-6 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all flex flex-col"
+                  className="reveal hover-lift group relative overflow-hidden rounded-2xl bg-card border border-border/60 p-6 shadow-card hover:shadow-soft transition-all flex flex-col"
                 >
+                  {/* faint dotted route line in card background */}
+                  <svg
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-6 -bottom-6 w-40 h-40 opacity-[0.07]"
+                    viewBox="0 0 160 160"
+                    fill="none"
+                  >
+                    <path
+                      d="M 10 140 C 50 90, 90 130, 150 40"
+                      stroke="#0D5C63"
+                      strokeWidth="2"
+                      strokeDasharray="3 6"
+                      fill="none"
+                    />
+                  </svg>
+
                   <div className="flex items-center justify-between gap-3">
-                    <span className="inline-block rounded-full bg-accent/10 text-accent px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide">
+                    <span
+                      className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide"
+                      style={{ backgroundColor: "#ABDADC", color: "#0D5C63" }}
+                    >
                       {r.category}
                     </span>
-                    <span className="text-[11px] font-semibold text-muted-foreground">
+                    <span
+                      className="rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide"
+                      style={{ backgroundColor: "#F7F9FA", color: "#0D5C63", border: "1px solid rgba(13,92,99,0.15)" }}
+                    >
                       {r.tripType}
                     </span>
                   </div>
-                  <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-primary/90">
+
+                  {/* Route — From → To */}
+                  <div className="mt-5 relative">
                     {isFromHyd ? (
-                      <>
-                        <MapPin className="h-4 w-4 text-accent" />
-                        <span>Hyderabad</span>
-                        <ArrowRight className="h-4 w-4 text-accent" />
-                        <span>{dest}</span>
-                      </>
+                      <div className="flex items-start gap-3">
+                        <div className="flex flex-col items-center pt-1">
+                          <MapPin className="h-4 w-4" style={{ color: "#FF7A59" }} />
+                          <span
+                            className="my-1 block w-px h-6"
+                            style={{
+                              backgroundImage:
+                                "linear-gradient(to bottom, rgba(255,122,89,0.8) 50%, transparent 50%)",
+                              backgroundSize: "1px 6px",
+                            }}
+                          />
+                          <MapPin className="h-4 w-4" style={{ color: "#0D5C63" }} fill="#0D5C63" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                            From
+                          </div>
+                          <div className="font-display text-base font-bold leading-tight" style={{ color: "#0D5C63" }}>
+                            Hyderabad
+                          </div>
+                          <div className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                            To
+                          </div>
+                          <div className="font-display text-lg md:text-xl font-bold leading-tight" style={{ color: "#0D5C63" }}>
+                            {dest}
+                          </div>
+                        </div>
+                      </div>
                     ) : (
-                      <>
-                        <Compass className="h-4 w-4 text-accent" />
-                        <span>{r.title}</span>
-                      </>
+                      <div className="flex items-center gap-2">
+                        <Compass className="h-5 w-5" style={{ color: "#FF7A59" }} />
+                        <div className="font-display text-lg md:text-xl font-bold leading-tight" style={{ color: "#0D5C63" }}>
+                          {dest}
+                        </div>
+                      </div>
                     )}
                   </div>
+
+                  <dl className="mt-5 space-y-2 text-sm">
+                    <div>
+                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                        Best for
+                      </dt>
+                      <dd className="mt-0.5 text-foreground/85">{r.bestFor}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                        Suggested vehicles
+                      </dt>
+                      <dd className="mt-0.5 text-foreground/85">{r.vehicles}</dd>
+                    </div>
+                  </dl>
+
+                  <div className="mt-5 flex items-baseline justify-between border-t border-border/60 pt-4">
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                      Price
+                    </span>
+                    <span className="font-display text-sm font-bold" style={{ color: "#0D5C63" }}>
+                      On Request
+                    </span>
+                  </div>
+
                   <a
                     href={whatsappLink(`Hi Mega City, please share the price for: ${r.title}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold hover:shadow-glow transition-shadow"
+                    className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-lg py-2.5 text-sm font-semibold text-white transition-shadow hover:shadow-glow"
+                    style={{ backgroundColor: "#25D366" }}
                   >
                     <WhatsAppIcon className="h-4 w-4" /> Ask for Price
                   </a>
-                </div>
+                </article>
               );
             })}
+          </div>
+
+          {/* Pricing note */}
+          <p className="mx-auto mt-8 max-w-3xl text-center text-xs md:text-sm text-muted-foreground leading-relaxed">
+            Prices are shared on request because final cost depends on route, vehicle type, travel
+            date, group size, tolls, parking, permits, state taxes, and driver allowance.
+          </p>
+
+          {/* Custom route CTA */}
+          <div
+            className="reveal mt-8 rounded-2xl border p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+            style={{
+              backgroundColor: "#FFFFFF",
+              borderColor: "rgba(13,92,99,0.15)",
+              boxShadow: "0 8px 24px -12px rgba(13,92,99,0.18)",
+            }}
+          >
+            <div className="flex items-start gap-3">
+              <span
+                className="hidden sm:flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
+                style={{ backgroundColor: "#ABDADC", color: "#0D5C63" }}
+              >
+                <RouteIcon className="h-5 w-5" />
+              </span>
+              <div>
+                <h3 className="font-display text-lg md:text-xl font-bold" style={{ color: "#0D5C63" }}>
+                  Don&apos;t see your route?
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  Share your pickup, destination, date, and group size. We&apos;ll suggest the right
+                  vehicle.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-2 md:shrink-0">
+              <a
+                href={whatsappLink(
+                  "Hi Mega City, I'd like a custom quote. My pickup, destination, date, and group size are: ",
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-white"
+                style={{ backgroundColor: "#25D366" }}
+              >
+                <WhatsAppIcon className="h-4 w-4" /> Get Custom Quote
+              </a>
+              <a
+                href={`tel:+91${site.phones[0]}`}
+                className="inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-white"
+                style={{ backgroundColor: "#0D5C63" }}
+              >
+                <Phone className="h-4 w-4" /> Call Now
+              </a>
+            </div>
           </div>
         </div>
       </section>
