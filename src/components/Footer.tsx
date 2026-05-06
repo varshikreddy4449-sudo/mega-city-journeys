@@ -62,7 +62,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div>
+          <div className="reveal">
             <h4 className="font-display text-base mb-4 font-bold" style={{ color: "#FFFFFF" }}>
               Quick Links
             </h4>
@@ -81,7 +81,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="reveal">
             <h4 className="font-display text-base mb-4 font-bold" style={{ color: "#FFFFFF" }}>
               Services
             </h4>
@@ -100,7 +100,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="reveal">
             <h4 className="font-display text-base mb-4 font-bold" style={{ color: "#FFFFFF" }}>
               Contact
             </h4>
