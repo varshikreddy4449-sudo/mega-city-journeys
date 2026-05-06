@@ -6,6 +6,7 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { CTASection } from "@/components/CTASection";
+import { LogoWatermark } from "@/components/LogoWatermark";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
