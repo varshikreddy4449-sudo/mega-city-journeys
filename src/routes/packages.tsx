@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
-import { useState } from "react";
+import { useState, type ComponentType } from "react";
 import {
   Phone,
   MapPin,
