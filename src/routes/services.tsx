@@ -21,6 +21,7 @@ import { whatsappLink, telLink, site } from "@/data/site";
 import logoImg from "@/assets/logo.webp";
 import tempoImg from "@/assets/vehicle-tempo.webp";
 import urbaniaImg from "@/assets/vehicle-urbania.webp";
+import heroBusImg from "@/assets/megacity-branded-bus.webp";
 import bus40Img from "@/assets/vehicle-bus-40.webp";
 import tempoExteriorImg from "@/assets/tempo-exterior-side.webp";
 import { AreasServed } from "@/components/AreasServed";
