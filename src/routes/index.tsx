@@ -242,6 +242,7 @@ function HomePage() {
                   />
                 </div>
               </div>
+            </div>
 
             {/* RIGHT — Quick Quote card */}
             <div className="lg:sticky lg:top-24">
