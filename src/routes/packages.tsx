@@ -20,6 +20,7 @@ import {
   MapPinned,
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import { LogoWatermark } from "@/components/LogoWatermark";
 import { packages, type PkgCategory } from "@/data/packages";
 import { whatsappLink, telLink, site } from "@/data/site";
 import { cn } from "@/lib/utils";
