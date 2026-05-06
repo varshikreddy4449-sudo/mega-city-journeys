@@ -337,24 +337,16 @@ function GalleryPage() {
 
   return (
     <>
-      <section
-        className="text-primary-foreground py-16 md:py-20"
-        style={{ backgroundColor: "#4A2C20" }}
-      >
+      <section className="bg-warm-gradient text-primary-foreground py-16 md:py-20">
         <div className="mx-auto max-w-5xl px-4 md:px-6 text-center">
-          <span
-            className="inline-block rounded-full px-4 py-1 text-xs font-semibold tracking-wider"
-            style={{ backgroundColor: "#A0522D", color: "#F4F1EA" }}
-          >
+          <span className="inline-block rounded-full bg-accent/20 text-accent-foreground px-4 py-1 text-xs font-semibold tracking-wider"
+            style={{ backgroundColor: "rgba(255,122,89,0.95)" }}>
             REAL FLEET PHOTOS
           </span>
-          <h1
-            className="mt-4 font-display text-4xl md:text-5xl font-bold"
-            style={{ color: "#F4F1EA" }}
-          >
+          <h1 className="mt-4 font-display text-4xl md:text-5xl font-bold text-primary-foreground">
             Gallery
           </h1>
-          <p className="mt-3 text-base md:text-lg" style={{ color: "#D9B08C" }}>
+          <p className="mt-3 text-base md:text-lg text-brand-cream/85 max-w-2xl mx-auto">
             A real look at Mega City Tours &amp; Travells vehicles, interiors, and branded fleet.
           </p>
         </div>
@@ -364,12 +356,9 @@ function GalleryPage() {
         <LogoWatermark position="center" />
         <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           {/* Trust note */}
-          <div
-            className="mx-auto mb-8 flex max-w-3xl items-start gap-3 rounded-2xl border p-4"
-            style={{ backgroundColor: "#F4F1EA", borderColor: "#D9B08C" }}
-          >
-            <ShieldCheck className="h-5 w-5 mt-0.5 shrink-0" style={{ color: "#8FA68F" }} />
-            <p className="text-sm" style={{ color: "#4A2C20" }}>
+          <div className="mx-auto mb-8 flex max-w-3xl items-start gap-3 rounded-2xl border border-border bg-secondary/50 p-4">
+            <ShieldCheck className="h-5 w-5 mt-0.5 shrink-0 text-primary" />
+            <p className="text-sm text-foreground/85">
               All photos shown here are real vehicle and fleet images from Mega City Tours &amp;
               Travells.
             </p>
@@ -384,17 +373,10 @@ function GalleryPage() {
                   onClick={() => setActive(c)}
                   className={cn(
                     "shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-all",
-                    active === c ? "shadow-card" : "hover:opacity-80",
-                  )}
-                  style={
                     active === c
-                      ? { backgroundColor: "#A0522D", color: "#F4F1EA" }
-                      : {
-                          backgroundColor: "#F4F1EA",
-                          color: "#4A2C20",
-                          border: "1px solid #D9B08C",
-                        }
-                  }
+                      ? "bg-warm-gradient text-primary-foreground shadow-card"
+                      : "bg-card text-foreground border border-border hover:bg-secondary",
+                  )}
                 >
                   {c}
                 </button>
@@ -417,23 +399,15 @@ function GalleryPage() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span
-                    className="absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-semibold"
-                    style={{ backgroundColor: "rgba(74,44,32,0.9)", color: "#F4F1EA" }}
-                  >
+                  <span className="absolute left-3 top-3 rounded-full bg-primary/90 text-primary-foreground px-2.5 py-1 text-[11px] font-semibold backdrop-blur">
                     {it.cats[0]}
                   </span>
-                  <span
-                    className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
-                    style={{ backgroundColor: "rgba(255,255,255,0.95)", color: "#4A2C20" }}
-                  >
+                  <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-accent text-accent-foreground px-2 py-1 text-[11px] font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                     <Maximize2 className="h-3 w-3" /> View
                   </span>
                 </div>
                 <div className="p-3">
-                  <p className="text-sm font-medium" style={{ color: "#4A2C20" }}>
-                    {it.caption}
-                  </p>
+                  <p className="text-sm font-medium text-foreground">{it.caption}</p>
                 </div>
               </button>
             ))}
@@ -497,10 +471,7 @@ function GalleryPage() {
               className="mx-auto max-h-[78vh] w-auto rounded-xl object-contain shadow-2xl"
             />
             <div className="mt-4 text-center">
-              <span
-                className="inline-block rounded-full px-3 py-1 text-xs font-semibold"
-                style={{ backgroundColor: "#A0522D", color: "#F4F1EA" }}
-              >
+              <span className="inline-block rounded-full bg-accent text-accent-foreground px-3 py-1 text-xs font-semibold">
                 {current.cats[0]}
               </span>
               <p className="mt-2 text-white text-base md:text-lg">{current.caption}</p>
