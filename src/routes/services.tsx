@@ -110,6 +110,75 @@ function enquireLink(title: string) {
   return whatsappLink(`Hi Mega City Tours & Travells, I would like to enquire about ${title}.`);
 }
 
+type ServiceItem = (typeof services)[number];
+
+function ServiceListCard({ service: s }: { service: ServiceItem }) {
+  return (
+    <div
+      className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white p-6 md:p-7 shadow-card hover:shadow-soft transition-all"
+      style={{ border: "1px solid rgba(13,92,99,0.10)" }}
+    >
+      {/* Top accent line */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-1"
+        style={{ background: `linear-gradient(90deg, ${TEAL}, ${TEAL_SOFT}, ${CORAL})` }}
+      />
+
+      <div className="flex items-start gap-4">
+        <div
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl shadow-sm"
+          style={{
+            background: `linear-gradient(135deg, ${AQUA}, rgba(60,174,163,0.35))`,
+            color: TEAL,
+          }}
+        >
+          <s.icon className="h-6 w-6" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="font-display text-xl font-bold leading-snug" style={{ color: TEAL }}>
+            {s.title}
+          </h3>
+          <p className="mt-1.5 text-sm text-foreground/75 leading-relaxed">{s.short}</p>
+        </div>
+      </div>
+
+      <dl className="mt-5 divide-y" style={{ borderColor: "rgba(13,92,99,0.08)" }}>
+        {[
+          { label: "Best for", value: s.bestFor },
+          { label: "Vehicles", value: s.vehicles },
+          { label: "Ideal use", value: s.needs },
+        ].map((row) => (
+          <div key={row.label} className="grid grid-cols-[88px_1fr] gap-3 py-2.5 first:pt-0">
+            <dt
+              className="text-[10.5px] font-bold uppercase tracking-wider pt-0.5"
+              style={{ color: CORAL }}
+            >
+              {row.label}
+            </dt>
+            <dd className="text-sm leading-relaxed" style={{ color: "#1f2937" }}>
+              {row.value}
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      <a
+        href={enquireLink(s.title)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-bold text-white self-start transition-transform hover:scale-[1.02]"
+        style={{
+          backgroundColor: "#25D366",
+          boxShadow: "0 6px 14px rgba(37,211,102,0.25)",
+        }}
+      >
+        <WhatsAppIcon className="h-4 w-4" /> Enquire on WhatsApp
+      </a>
+    </div>
+  );
+}
+
 function ServicesPage() {
   const featured = services.filter((s) => s.featured);
   const rest = services.filter((s) => !s.featured);
