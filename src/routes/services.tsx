@@ -330,8 +330,9 @@ function ServicesPage() {
       </section>
 
       {/* ALL SERVICES GRID */}
-      <section className="py-16 md:py-24 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="relative overflow-hidden py-16 md:py-24 bg-secondary/40">
+        <LogoWatermark position="center" />
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeader eyebrow="Full Service List" title="All Travel Services We Offer" />
           <div className="grid gap-5 md:grid-cols-2">
             {rest.map((s) => (
