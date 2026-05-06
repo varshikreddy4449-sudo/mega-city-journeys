@@ -101,31 +101,35 @@ function HomePage() {
       <VehicleDetailModal vehicle={selectedVehicle} open={modalOpen} onOpenChange={setModalOpen} />
 
       {/* HERO — split layout */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: "#F4F7F8" }}>
+      <section
+        className="relative overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(135deg, #F3FAFB 0%, #FBF7F1 55%, #EAF3F4 100%)",
+        }}
+      >
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(900px 460px at 92% -5%, rgba(171,218,220,0.55), transparent 60%), radial-gradient(700px 380px at -5% 100%, rgba(13,92,99,0.08), transparent 60%)",
+              "radial-gradient(700px 380px at 88% 0%, rgba(171,218,220,0.45), transparent 65%), radial-gradient(600px 320px at 0% 100%, rgba(13,92,99,0.07), transparent 60%)",
           }}
         />
-        {/* Brand watermark */}
+        {/* Centered brand watermark */}
         <img
           src={logoImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none select-none absolute hidden md:block"
+          className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
           style={{
-            right: "-120px",
-            bottom: "-80px",
-            width: "560px",
-            opacity: 0.07,
+            width: "min(720px, 85%)",
+            opacity: 0.05,
             filter: "grayscale(100%)",
           }}
         />
-        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-14 md:pt-16 md:pb-24">
-          <div className="grid gap-12 lg:grid-cols-[1.15fr_minmax(0,440px)] lg:gap-14 lg:items-start">
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-8 pb-12 md:pt-14 md:pb-20">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_minmax(0,420px)] lg:gap-12 lg:items-start">
             {/* LEFT */}
             <div>
               <div className="flex flex-wrap gap-2">
@@ -154,27 +158,27 @@ function HomePage() {
               </div>
 
               <h1
-                className="mt-6 font-display text-4xl md:text-5xl lg:text-[58px] font-bold leading-[1.05] text-balance"
+                className="mt-5 font-display text-[34px] sm:text-4xl md:text-5xl lg:text-[54px] font-bold leading-[1.08] text-balance"
                 style={{ color: "#0D5C63" }}
               >
-                Reliable Group Travel & Per KM Trips from Hyderabad
+                Reliable Group Travel &amp; <br className="hidden sm:block" />
+                Per KM Trips from Hyderabad
               </h1>
-              <p className="mt-6 text-base md:text-lg text-foreground/75 max-w-xl leading-relaxed">
-                Safe, comfortable, and professional transport solutions for groups from 4 to 50
-                seats. Trusted local service for family trips, school travel, corporate movement,
-                weddings, and outstation journeys.
+              <p className="mt-4 text-base md:text-[17px] text-foreground/75 max-w-xl leading-relaxed">
+                AC &amp; Non-AC vehicles from 4 to 50 seats — for families, schools, weddings,
+                corporate trips, and outstation journeys.
               </p>
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <a
                   href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02]"
+                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02] w-full sm:w-auto"
                   style={{
                     backgroundColor: "#25D366",
                     borderRadius: "10px",
-                    padding: "14px 24px",
+                    padding: "13px 22px",
                     boxShadow: "0 6px 18px rgba(37,211,102,0.28)",
                   }}
                 >
@@ -182,11 +186,11 @@ function HomePage() {
                 </a>
                 <a
                   href={`tel:+91${site.phones[0]}`}
-                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02]"
+                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white transition-transform hover:scale-[1.02] w-full sm:w-auto"
                   style={{
                     backgroundColor: "#0D5C63",
                     borderRadius: "10px",
-                    padding: "14px 24px",
+                    padding: "13px 22px",
                     boxShadow: "0 6px 18px rgba(13,92,99,0.28)",
                   }}
                 >
@@ -194,27 +198,27 @@ function HomePage() {
                 </a>
               </div>
 
-              {/* Mini trust row to reduce empty space under heading */}
-              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-foreground/75">
-                <span className="inline-flex items-center gap-2">
+              {/* Mini trust row */}
+              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold text-foreground/75">
+                <span className="inline-flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
-                  33+ Owned Vehicles
+                  33+ Vehicles
                 </span>
-                <span className="inline-flex items-center gap-2">
+                <span className="inline-flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
                   Driver Included
                 </span>
-                <span className="inline-flex items-center gap-2">
+                <span className="inline-flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4" style={{ color: "#FF7A59" }} />
                   24/7 Support
                 </span>
               </div>
 
               {/* Featured vehicle image */}
-              <div className="mt-10 relative">
+              <div className="mt-6 md:mt-7 relative">
                 <div
                   aria-hidden
-                  className="absolute -inset-4 rounded-[28px]"
+                  className="absolute -inset-3 rounded-[24px]"
                   style={{
                     background:
                       "linear-gradient(135deg, rgba(171,218,220,0.55), rgba(255,122,89,0.18))",
@@ -226,7 +230,7 @@ function HomePage() {
                   style={{
                     aspectRatio: "16 / 9",
                     borderColor: "rgba(13,92,99,0.12)",
-                    boxShadow: "0 24px 50px -22px rgba(13,92,99,0.40)",
+                    boxShadow: "0 22px 45px -22px rgba(13,92,99,0.40)",
                   }}
                 >
                   <img
@@ -235,9 +239,8 @@ function HomePage() {
                     className="absolute inset-0 h-full w-full object-cover object-center"
                     loading="eager"
                   />
-                  {/* Floating badge */}
                   <div
-                    className="absolute left-4 bottom-4 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-3 py-1.5 text-xs font-bold"
+                    className="absolute left-3 bottom-3 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-3 py-1.5 text-xs font-bold"
                     style={{ color: "#0D5C63", boxShadow: "0 6px 18px rgba(13,92,99,0.18)" }}
                   >
                     <Snowflake className="h-3.5 w-3.5" style={{ color: "#FF7A59" }} />
@@ -250,10 +253,10 @@ function HomePage() {
             {/* RIGHT — Quick Quote card */}
             <div className="lg:sticky lg:top-24">
               <QuoteForm
-                variant="full"
+                variant="compact"
                 title="Quick Quote"
-                subtitle="Share your trip details and we'll send a clear estimate."
-                ctaLabel="Request Estimate"
+                subtitle="Share your trip details — we'll reply on WhatsApp."
+                ctaLabel="Get Quote on WhatsApp"
               />
             </div>
           </div>
