@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight, ShieldCheck, Maximize2 } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
 import { cn } from "@/lib/utils";
+import { LogoWatermark } from "@/components/LogoWatermark";
 
 import fleetHero from "@/assets/megacity-fleet-hero.webp";
 import fleet from "@/assets/megacity-fleet.webp";
