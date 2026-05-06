@@ -30,10 +30,10 @@ export function Footer() {
     <footer className="text-white pb-24 lg:pb-0" style={{ backgroundColor: "#000613" }}>
       <div className="mx-auto max-w-7xl px-4 md:px-6" style={{ paddingTop: 60, paddingBottom: 60 }}>
         <div
-          className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-10"
+          className="stagger grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-10"
           style={{ columnGap: 40 }}
         >
-          <div>
+          <div className="reveal">
             <div className="flex items-center gap-3 mb-4">
               <img
                 src={logo}
@@ -62,7 +62,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div>
+          <div className="reveal">
             <h4 className="font-display text-base mb-4 font-bold" style={{ color: "#FFFFFF" }}>
               Quick Links
             </h4>
@@ -81,7 +81,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="reveal">
             <h4 className="font-display text-base mb-4 font-bold" style={{ color: "#FFFFFF" }}>
               Services
             </h4>
@@ -100,7 +100,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="reveal">
             <h4 className="font-display text-base mb-4 font-bold" style={{ color: "#FFFFFF" }}>
               Contact
             </h4>
