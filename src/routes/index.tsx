@@ -228,7 +228,7 @@ function HomePage() {
                 <div
                   className="relative overflow-hidden rounded-2xl bg-white border"
                   style={{
-                    aspectRatio: "16 / 9",
+                    aspectRatio: "16 / 10",
                     borderColor: "rgba(13,92,99,0.12)",
                     boxShadow: "0 22px 45px -22px rgba(13,92,99,0.40)",
                   }}
@@ -236,16 +236,10 @@ function HomePage() {
                   <img
                     src={heroVehicle}
                     alt="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
-                    className="absolute inset-0 h-full w-full object-cover object-center"
+                    className="absolute inset-0 h-full w-full"
+                    style={{ objectFit: "cover", objectPosition: "center 55%", transform: "scale(1.08)" }}
                     loading="eager"
                   />
-                  <div
-                    className="absolute left-3 bottom-3 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur px-3 py-1.5 text-xs font-bold"
-                    style={{ color: "#0D5C63", boxShadow: "0 6px 18px rgba(13,92,99,0.18)" }}
-                  >
-                    <Snowflake className="h-3.5 w-3.5" style={{ color: "#FF7A59" }} />
-                    Featured · Force Urbania (12 Seater)
-                  </div>
                 </div>
               </div>
             </div>
