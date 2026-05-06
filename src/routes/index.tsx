@@ -27,6 +27,8 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
 import { QuoteForm } from "@/components/QuoteForm";
 import { LogoWatermark } from "@/components/LogoWatermark";
+import { Link } from "@tanstack/react-router";
+import { blogs } from "@/data/blogs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -797,6 +799,58 @@ function HomePage() {
               >
                 <Phone className="h-4 w-4" /> Call Now
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BLOG PREVIEW */}
+      <section className="relative overflow-hidden py-16 md:py-20">
+        <LogoWatermark position="left" />
+        <div className="relative mx-auto max-w-6xl px-4 md:px-6">
+          <div className="flex items-end justify-between gap-4 mb-8 flex-wrap">
+            <div>
+              <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-3">
+                Travel Guides
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-primary leading-tight">
+                Travel Guides from Hyderabad
+              </h2>
+              <p className="mt-2 text-muted-foreground max-w-xl">
+                Helpful answers before booking your vehicle.
+              </p>
+            </div>
+            <Link
+              to="/blogs"
+              className="inline-flex items-center gap-1.5 text-sm font-bold text-accent hover:underline"
+            >
+              View All Blogs <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          {/* Mobile horizontal scroll, desktop grid */}
+          <div className="-mx-4 md:mx-0">
+            <div className="flex gap-4 overflow-x-auto px-4 pb-2 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0 scrollbar-hide snap-x snap-mandatory">
+              {blogs.slice(0, 6).map((b) => (
+                <Link
+                  key={b.slug}
+                  to="/blogs/$slug"
+                  params={{ slug: b.slug }}
+                  className="snap-start shrink-0 w-[78%] sm:w-[55%] md:w-auto rounded-2xl bg-white border border-border p-5 hover:-translate-y-0.5 transition-transform"
+                  style={{ boxShadow: "0 10px 30px -16px rgba(13,92,99,0.18)" }}
+                >
+                  <span className="inline-block rounded-full bg-accent/10 text-accent px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider">
+                    {b.category}
+                  </span>
+                  <div className="mt-2 font-display text-base md:text-lg font-bold text-primary leading-snug">
+                    {b.title}
+                  </div>
+                  <div className="mt-2 text-sm text-muted-foreground line-clamp-2">{b.summary}</div>
+                  <div className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-primary">
+                    Read More <ArrowRight className="h-3 w-3" />
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

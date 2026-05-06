@@ -11,6 +11,7 @@ const quickLinks = [
   ["/packages", "Packages"],
   ["/fleet", "Fleet"],
   ["/gallery", "Gallery"],
+  ["/blogs", "Blogs"],
   ["/faqs", "FAQs"],
   ["/contact", "Contact"],
 ] as const;
