@@ -874,7 +874,9 @@ function HomePage() {
                   </div>
                 </a>
               </div>
+              </div>
             </div>
+
 
             <QuoteForm variant="full" ctaLabel="Submit Enquiry" />
           </div>
