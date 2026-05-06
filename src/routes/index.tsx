@@ -254,7 +254,7 @@ function HomePage() {
             subtitle="AC and Non-AC vehicles from 4 to 50 seats. Driver included on every trip."
           />
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {vehicles.map((v) => {
               const title = v.category === "Bus" ? `${v.seats} Seater Bus` : v.name;
               return (
@@ -394,7 +394,7 @@ function HomePage() {
               Trusted travel, every trip, every time
             </h2>
           </div>
-          <ul className="mt-14 grid gap-8 md:grid-cols-2">
+          <ul className="stagger mt-14 grid gap-8 md:grid-cols-2">
             {[
               {
                 title: "33+ Owned Vehicles",
@@ -413,7 +413,7 @@ function HomePage() {
                 sub: "Last-minute trips, early-morning pickups, late-night returns.",
               },
             ].map((p) => (
-              <li key={p.title} className="flex items-start gap-4">
+              <li key={p.title} className="reveal flex items-start gap-4">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent text-white">
                   <CheckCircle2 className="h-6 w-6" strokeWidth={2.5} />
                 </span>
@@ -437,7 +437,7 @@ function HomePage() {
             title="Travel built around your group"
             subtitle="From short local trips to large group travel."
           />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="stagger grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (
               <div
                 key={s.title}
@@ -462,7 +462,7 @@ function HomePage() {
             title="Popular Routes from Hyderabad"
             subtitle="Choose a common route or ask for a custom quote."
           />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="stagger grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {popularRoutes.map((r) => {
               const dest = r.title.replace(/^Hyderabad to\s+/i, "");
               const isFromHyd = /^Hyderabad to/i.test(r.title);

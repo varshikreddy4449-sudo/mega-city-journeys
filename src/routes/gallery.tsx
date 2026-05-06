@@ -401,7 +401,7 @@ function GalleryPage() {
           </div>
 
           {/* Grid */}
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="stagger grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {list.map((it, idx) => (
               <button
                 key={it.caption}
