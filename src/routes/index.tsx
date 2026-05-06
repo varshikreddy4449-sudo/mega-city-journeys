@@ -442,7 +442,15 @@ function HomePage() {
           src={logoImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none select-none absolute right-[-100px] top-1/2 -translate-y-1/2 w-[500px] md:w-[680px] opacity-[0.07]"
+          className="pointer-events-none select-none absolute right-[-100px] top-1/2 -translate-y-1/2 w-[500px] md:w-[720px] opacity-[0.12]"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+        <img
+          src={logoImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -left-24 -bottom-16 w-[320px] md:w-[460px] opacity-[0.08] hidden md:block"
+          style={{ filter: "brightness(0) invert(1)" }}
         />
         <div className="relative mx-auto max-w-5xl px-4 md:px-6">
           <div className="text-center">
