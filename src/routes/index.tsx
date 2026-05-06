@@ -528,7 +528,33 @@ function HomePage() {
             title="Travel built around your group"
             subtitle="From short local trips to large group travel."
           />
-          <div className="stagger grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {/* Mobile swipe hint */}
+          <div className="md:hidden mb-3 flex items-center justify-center gap-2 text-xs font-medium text-muted-foreground">
+            <span>Swipe to explore</span>
+            <span aria-hidden="true" className="inline-block animate-pulse">→</span>
+          </div>
+
+          {/* Mobile: horizontal snap carousel. Desktop/tablet: original grid */}
+          <div
+            className="md:hidden -mx-4 px-4 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            style={{ scrollPaddingLeft: "1rem", scrollPaddingRight: "1rem" }}
+          >
+            {services.map((s) => (
+              <div
+                key={s.title}
+                className="snap-start shrink-0 basis-[82%] rounded-2xl border border-border/60 bg-card p-6 text-center shadow-card"
+              >
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10 text-accent mb-4">
+                  <s.icon className="h-8 w-8" strokeWidth={1.75} />
+                </div>
+                <h3 className="font-display text-lg font-bold text-primary">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+            <div aria-hidden="true" className="shrink-0 w-1" />
+          </div>
+
+          <div className="hidden md:grid stagger gap-6 md:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (
               <div
                 key={s.title}
