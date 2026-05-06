@@ -1,14 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useMemo, useState } from "react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Phone, Images, Users, Snowflake, BadgeCheck } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { LogoWatermark } from "@/components/LogoWatermark";
 import { CTASection } from "@/components/CTASection";
 import { AreasServed } from "@/components/AreasServed";
 import { vehicles } from "@/data/vehicles";
-import { whatsappLink } from "@/data/site";
+import { whatsappLink, site } from "@/data/site";
+import { cn } from "@/lib/utils";
 import fleetHero from "@/assets/megacity-fleet.webp";
-import brandedBus from "@/assets/megacity-branded-bus.webp";
 import busInterior from "@/assets/bus-interior.webp";
 import busInterior2 from "@/assets/bus-interior-2.webp";
 import bus50Interior from "@/assets/bus-50-interior.webp";
@@ -42,155 +43,184 @@ const features = [
   "Tolls, parking, permits and driver allowance charged separately",
 ];
 
+type Filter = "All" | "Cars & SUVs" | "Urbania" | "Tempo Traveller" | "Buses" | "Interiors";
+const filters: Filter[] = [
+  "All",
+  "Cars & SUVs",
+  "Urbania",
+  "Tempo Traveller",
+  "Buses",
+  "Interiors",
+];
+
+const seoHeading: Record<string, string> = {
+  breeza: "Brezza Rental in Hyderabad",
+  fortuner: "Fortuner Rental in Hyderabad",
+  "innova-crysta": "Innova Crysta Rental in Hyderabad",
+  "tempo-traveller": "12 Seater Tempo Traveller Rental in Hyderabad",
+  urbania: "12 Seater Urbania Rental in Hyderabad",
+  "bus-22": "22 Seater Bus Rental in Hyderabad",
+  "bus-28": "28 Seater Bus Rental in Hyderabad",
+  "bus-40": "40 Seater Bus Rental in Hyderabad",
+  "bus-50": "50 Seater Bus Rental in Hyderabad",
+};
+
+const altMap: Record<string, string> = {
+  "tempo-traveller":
+    "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
+  urbania: "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells.",
+  "innova-crysta": "Innova Crysta for family and outstation trips in Hyderabad.",
+  breeza: "White Brezza front view - Mega City Tours & Travells",
+  fortuner: "White Fortuner exterior side view - Mega City Tours & Travells",
+  "bus-22": "22 seater bus rental in Hyderabad",
+  "bus-28": "28 seater bus rental in Hyderabad for medium group travel",
+  "bus-40": "40 seater bus rental in Hyderabad for large group travel",
+  "bus-50": "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
+};
+
+function matchFilter(category: string, slug: string, f: Filter): boolean {
+  if (f === "All") return true;
+  if (f === "Interiors") return false;
+  if (f === "Cars & SUVs") return category === "Car" || category === "SUV";
+  if (f === "Urbania") return slug === "urbania";
+  if (f === "Tempo Traveller") return slug === "tempo-traveller";
+  if (f === "Buses") return category === "Bus";
+  return true;
+}
+
 function FleetPage() {
+  const [active, setActive] = useState<Filter>("All");
+  const list = useMemo(
+    () => vehicles.filter((v) => matchFilter(v.category, v.slug, active)),
+    [active],
+  );
+  const showInteriors = active === "All" || active === "Interiors";
+
   return (
     <>
-      <section className="relative overflow-hidden text-primary-foreground">
-        <div className="absolute inset-0">
-          <img
-            src={fleetHero}
-            alt="Mega City Tours and Travells owned fleet in Hyderabad."
-            className="h-full w-full object-cover"
-            style={{ objectPosition: "center 65%" }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(42,26,20,0.82) 0%, rgba(74,44,32,0.70) 60%, rgba(160,82,45,0.55) 100%)",
-            }}
-          />
-        </div>
-        <div className="relative mx-auto max-w-5xl px-4 md:px-6 py-16 md:py-24 text-center">
-          <span className="inline-block rounded-full bg-brand-cream/15 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wider">
-            Our Fleet
-          </span>
-          <h1 className="mt-4 font-display text-4xl md:text-6xl font-bold text-primary-foreground text-balance">
-            Vehicles for every group size
-          </h1>
-          <p className="mt-5 text-base md:text-lg text-brand-cream/85 max-w-2xl mx-auto">
-            From 4-seater Brezza to 50-seater buses. Owned fleet, clean interiors, and experienced
-            drivers for local and outstation travel.
-          </p>
+      {/* Hero — split layout, ocean breeze theme */}
+      <section className="bg-warm-gradient text-primary-foreground">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <span className="inline-block rounded-full bg-accent text-accent-foreground px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+              Our Fleet
+            </span>
+            <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-balance">
+              Our Vehicles
+            </h1>
+            <p className="mt-4 text-base md:text-lg text-brand-cream/85 max-w-xl">
+              Choose the right vehicle for your group size, route, and comfort needs. Owned fleet
+              from 4-seater cars to 50-seater buses with experienced drivers.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-6 py-3 text-sm font-semibold shadow-glow hover-lift"
+              >
+                <WhatsAppIcon className="h-4 w-4" /> Get Quote on WhatsApp
+              </a>
+              <a
+                href={`tel:+91${site.phones[0]}`}
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 text-primary-foreground border border-white/30 px-6 py-3 text-sm font-semibold hover:bg-white/15"
+              >
+                <Phone className="h-4 w-4" /> Call Now
+              </a>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl bg-accent/30 blur-2xl opacity-40" />
+            <div className="relative overflow-hidden rounded-3xl shadow-soft border border-white/20" style={{ aspectRatio: "5/4" }}>
+              <img
+                src={fleetHero}
+                alt="Mega City Tours and Travells owned fleet in Hyderabad."
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: "center 65%" }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="relative overflow-hidden py-12 md:py-16">
         <LogoWatermark position="center" />
         <div className="relative mx-auto max-w-7xl px-4 md:px-6">
-          <div className="mb-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Feature pills */}
+          <div className="mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
               <div
                 key={f}
-                className="flex items-start gap-2 rounded-xl bg-secondary/60 p-3 text-sm"
+                className="flex items-start gap-2 rounded-xl bg-secondary/60 p-3 text-sm border border-border"
               >
                 <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 shrink-0" />
-                <span>{f}</span>
+                <span className="text-foreground/85">{f}</span>
               </div>
             ))}
           </div>
 
-          <div
-            className="mb-10 relative overflow-hidden rounded-2xl shadow-card border border-border/60"
-            style={{ aspectRatio: "21 / 9" }}
-          >
-            <img
-              src={brandedBus}
-              alt="Mega City Tours and Travells branded bus in Hyderabad."
-              className="absolute inset-0 h-full w-full object-cover"
-              style={{ objectPosition: "center 35%" }}
-              loading="lazy"
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(74,44,32,0.10) 0%, rgba(74,44,32,0.05) 60%, rgba(74,44,32,0.55) 100%)",
-              }}
-            />
-            <div className="relative h-full flex items-center justify-end px-6 md:px-10">
-              <div className="max-w-xs text-right">
-                <p className="text-xs font-semibold uppercase tracking-wider text-brand-tan">
-                  Owned & Branded
-                </p>
-                <h3 className="mt-2 font-display text-xl md:text-2xl font-bold text-white leading-tight">
-                  Recognise our buses on the road
-                </h3>
-              </div>
+          {/* Filter chips */}
+          <div className="-mx-4 md:mx-0 mb-8">
+            <div className="flex gap-2 overflow-x-auto px-4 md:flex-wrap md:justify-center md:px-0 scrollbar-hide">
+              {filters.map((f) => (
+                <button
+                  key={f}
+                  onClick={() => setActive(f)}
+                  className={cn(
+                    "shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-all",
+                    active === f
+                      ? "bg-warm-gradient text-primary-foreground shadow-card"
+                      : "bg-card text-foreground border border-border hover:bg-secondary",
+                  )}
+                >
+                  {f}
+                </button>
+              ))}
             </div>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {vehicles.map((v) => (
-              <div
-                key={v.slug}
-                className="reveal hover-lift overflow-hidden rounded-2xl bg-white border border-border/60 flex flex-col"
-                style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}
-              >
-                <div className="overflow-hidden bg-secondary/30" style={{ height: 200 }}>
-                  <img
-                    src={v.image}
-                    alt={
-                      v.slug === "tempo-traveller"
-                        ? "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells"
-                        : v.slug === "urbania"
-                          ? "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells."
-                          : v.slug === "innova-crysta"
-                            ? "Innova Crysta for family and outstation trips in Hyderabad."
-                            : v.slug === "breeza"
-                              ? "White Brezza front view - Mega City Tours & Travells"
-                              : v.slug === "fortuner"
-                                ? "White Fortuner exterior side view - Mega City Tours & Travells"
-                              : v.slug === "bus-28"
-                                ? "28 seater bus rental in Hyderabad for medium group travel"
-                                : v.slug === "bus-40"
-                                  ? "40 seater bus rental in Hyderabad for large group travel"
-                                  : v.slug === "bus-50"
-                                    ? "50 seater bus rental in Hyderabad by Mega City Tours and Travells"
-                                    : v.slug.startsWith("bus-")
-                                      ? "Large bus rental in Hyderabad for group travel by Mega City Tours and Travells."
-                                      : `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`
-                    }
-                    loading="lazy"
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="font-display text-xl font-semibold text-primary">{v.name}</h3>
-                    <span className="text-sm font-bold text-accent">{v.seats} Seater</span>
-                  </div>
-                  {(() => {
-                    const seoHeading: Record<string, string> = {
-                      breeza: "Brezza Rental in Hyderabad",
-                      fortuner: "Fortuner Rental in Hyderabad",
-                      "tempo-traveller": "12 Seater Tempo Traveller Rental in Hyderabad",
-                      urbania: "12 Seater Urbania Rental in Hyderabad",
-                      "bus-22": "22 Seater Bus Rental in Hyderabad",
-                      "bus-28": "28 Seater Bus Rental in Hyderabad",
-                      "bus-40": "40 Seater Bus Rental in Hyderabad",
-                      "bus-50": "50 Seater Bus Rental in Hyderabad",
-                    };
-                    const heading = seoHeading[v.slug];
-                    return heading ? (
-                      <h4 className="mt-1 text-[13px] font-medium text-accent">{heading}</h4>
-                    ) : null;
-                  })()}
-                  <p className="mt-2 text-sm text-muted-foreground">{v.bestFor}</p>
-                  <div className="mt-4 grid grid-cols-2 gap-2 text-[11px]">
-                    <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">
-                      {v.ac}
+          {/* Vehicle grid */}
+          {active !== "Interiors" && (
+            <div className="stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {list.map((v) => {
+                const hasRealPrice = /₹/.test(v.startingPrice);
+                return (
+                  <article
+                    key={v.slug}
+                    className="reveal hover-lift overflow-hidden rounded-2xl bg-card border border-border flex flex-col shadow-card"
+                  >
+                    <div className="overflow-hidden bg-secondary/40 relative" style={{ height: 200 }}>
+                      <img
+                        src={v.image}
+                        alt={altMap[v.slug] ?? `${v.name} for hire in Hyderabad by Mega City Tours and Travells.`}
+                        loading="lazy"
+                        className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                      />
+                      <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-accent text-accent-foreground px-2.5 py-1 text-[11px] font-semibold">
+                        <Users className="h-3 w-3" /> {v.seats} Seater
+                      </span>
                     </div>
-                    <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">
-                      {v.count} vehicles
-                    </div>
-                    <div className="col-span-2 rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center">
-                      Driver included
-                    </div>
-                  </div>
-                  {(() => {
-                    const hasRealPrice = /₹/.test(v.startingPrice);
-                    return (
+                    <div className="p-5 flex flex-col flex-1">
+                      <h3 className="font-display text-xl font-bold text-primary">{v.name}</h3>
+                      {seoHeading[v.slug] && (
+                        <h4 className="mt-1 text-[12px] font-semibold text-accent">
+                          {seoHeading[v.slug]}
+                        </h4>
+                      )}
+                      <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
+                        <span className="font-semibold text-primary">Best for: </span>
+                        {v.bestFor}
+                      </p>
+
+                      <div className="mt-4 grid grid-cols-2 gap-2 text-[11px]">
+                        <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center inline-flex items-center justify-center gap-1">
+                          <Snowflake className="h-3 w-3" /> {v.ac}
+                        </div>
+                        <div className="rounded-lg bg-secondary px-2 py-1.5 font-semibold text-secondary-foreground text-center inline-flex items-center justify-center gap-1">
+                          <BadgeCheck className="h-3 w-3" /> Driver included
+                        </div>
+                      </div>
+
                       <div className="mt-auto pt-4">
                         {hasRealPrice ? (
                           <div className="flex items-baseline gap-1">
@@ -205,60 +235,102 @@ function FleetPage() {
                               Price on Request
                             </div>
                             <p className="mt-0.5 text-[11px] text-muted-foreground leading-snug">
-                              Final quote depends on route, date, vehicle type, and trip details.
+                              Final quote depends on route, date, vehicle, and trip details.
                             </p>
                           </div>
                         )}
                       </div>
-                    );
-                  })()}
-                  <a
-                    href={whatsappLink(
-                      `Hi Mega City Tours & Travells, I would like a quote for the ${v.name} (${v.seats} seater).`,
-                    )}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-full bg-warm-gradient text-primary-foreground py-2.5 text-sm font-semibold shadow-card"
-                  >
-                    <WhatsAppIcon className="h-4 w-4" /> Ask for Price
-                  </a>
 
-                </div>
-              </div>
-            ))}
-          </div>
+                      <div className="mt-4 grid grid-cols-2 gap-2">
+                        <a
+                          href={whatsappLink(
+                            `Hi Mega City Tours & Travells, I would like a quote for the ${v.name} (${v.seats} seater).`,
+                          )}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-1.5 rounded-full bg-warm-gradient text-primary-foreground py-2.5 text-[13px] font-semibold shadow-card"
+                        >
+                          <WhatsAppIcon className="h-4 w-4" /> WhatsApp
+                        </a>
+                        <a
+                          href={`tel:+91${site.phones[0]}`}
+                          className="inline-flex items-center justify-center gap-1.5 rounded-full bg-accent text-accent-foreground py-2.5 text-[13px] font-semibold shadow-card"
+                        >
+                          <Phone className="h-4 w-4" /> Call
+                        </a>
+                      </div>
+                      <Link
+                        to="/gallery"
+                        className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full border border-border bg-card text-primary py-2.5 text-[13px] font-semibold hover:bg-secondary"
+                      >
+                        <Images className="h-4 w-4" /> Gallery
+                      </Link>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )}
 
           {/* Comfort proof - bus interiors */}
-          <div className="mt-14">
-            <SectionHeader
-              eyebrow="Comfort Proof"
-              title="Clean interiors, comfortable seating"
-              subtitle="Real photos from our buses, cleaned before every trip and serviced regularly."
-            />
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                { src: busInterior, caption: "Clean bus interiors for long group trips" },
-                {
-                  src: busInterior2,
-                  caption: "Comfortable seating for school, college, and family travel",
-                },
-                { src: bus50Interior, caption: "Spacious bus interiors for large group movement" },
-              ].map((it) => (
-                <figure
-                  key={it.caption}
-                  className="overflow-hidden rounded-2xl border border-border/60 shadow-card bg-card"
-                >
-                  <div className="relative" style={{ aspectRatio: "4 / 3" }}>
-                    <img
-                      src={it.src}
-                      alt="Clean bus interior for group travel in Hyderabad"
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                  </div>
-                  <figcaption className="p-3 text-sm text-foreground/80">{it.caption}</figcaption>
-                </figure>
-              ))}
+          {showInteriors && (
+            <div className="mt-14">
+              <SectionHeader
+                eyebrow="Comfort Proof"
+                title="Clean interiors, comfortable seating"
+                subtitle="Real photos from our buses, cleaned before every trip and serviced regularly."
+              />
+              <div className="stagger mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {[
+                  { src: busInterior, caption: "Clean bus interiors for long group trips" },
+                  {
+                    src: busInterior2,
+                    caption: "Comfortable seating for school, college, and family travel",
+                  },
+                  { src: bus50Interior, caption: "Spacious bus interiors for large group movement" },
+                ].map((it) => (
+                  <figure
+                    key={it.caption}
+                    className="reveal hover-lift overflow-hidden rounded-2xl border border-border shadow-card bg-card"
+                  >
+                    <div className="relative" style={{ aspectRatio: "4 / 3" }}>
+                      <img
+                        src={it.src}
+                        alt="Clean bus interior for group travel in Hyderabad"
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                    </div>
+                    <figcaption className="p-3 text-sm text-foreground/80">{it.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Need help choosing CTA */}
+          <div className="mt-14 rounded-3xl bg-gradient-to-br from-secondary to-card border border-border p-6 md:p-10 text-center">
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-primary">
+              Need help choosing a vehicle?
+            </h3>
+            <p className="mt-2 text-foreground/75 max-w-2xl mx-auto">
+              Tell us your group size and route — we'll suggest the right vehicle for your trip.
+            </p>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-warm-gradient text-primary-foreground px-7 py-3 text-sm font-semibold shadow-card hover-lift"
+              >
+                <WhatsAppIcon className="h-5 w-5" /> Get Quote on WhatsApp
+              </a>
+              <a
+                href={`tel:+91${site.phones[0]}`}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent text-accent-foreground px-7 py-3 text-sm font-semibold shadow-card hover-lift"
+              >
+                <Phone className="h-5 w-5" /> Call Now
+              </a>
             </div>
           </div>
         </div>
