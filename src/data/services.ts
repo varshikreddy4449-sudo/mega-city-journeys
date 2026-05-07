@@ -10,6 +10,12 @@ import {
   Plane,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import imgBrezza from "@/assets/vehicle-brezza-front.webp";
+import imgUrbania from "@/assets/vehicle-urbania.webp";
+import imgBus40 from "@/assets/bus-40-front.webp";
+import imgTempo from "@/assets/tempo-exterior-front.webp";
+import imgBus22 from "@/assets/bus-22-main.png";
+import imgBus50 from "@/assets/bus-50-side.webp";
 
 export type Service = {
   slug: string;
@@ -19,6 +25,7 @@ export type Service = {
   needs: string;
   vehicles: string;
   icon: LucideIcon;
+  image?: string;
   featured?: boolean;
 };
 
