@@ -183,7 +183,6 @@ function FleetPage() {
           {active !== "Interiors" && (
             <div className="stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {list.map((v) => {
-                const hasRealPrice = /₹/.test(v.startingPrice);
                 return (
                   <article
                     key={v.slug}
