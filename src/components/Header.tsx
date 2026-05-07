@@ -61,7 +61,7 @@ export function Header() {
             alt="Mega City Tours & Travells logo"
             className={cn(
               "object-contain rounded-lg bg-white p-1 transition-all duration-300",
-              scrolled ? "h-12 w-12" : "h-13 w-13 md:h-14 md:w-14",
+              scrolled ? "h-12 w-12" : "h-14 w-14 md:h-16 md:w-16",
             )}
             style={{ boxShadow: "0 2px 6px rgba(13, 92, 99, 0.12)" }}
           />
