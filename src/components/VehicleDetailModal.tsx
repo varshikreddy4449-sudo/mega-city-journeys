@@ -52,12 +52,14 @@ const useCases: Record<string, string[]> = {
   breeza: ["Airport pickup / drop", "Local city sightseeing", "Short family outings", "Pickup & drop trips"],
   "innova-crysta": ["Family outstation trips", "Airport transfers", "Comfortable group of 6–7", "Pilgrimage trips"],
   fortuner: ["Premium corporate travel", "VIP guest pickup", "Outstation family trips", "Wedding guest transport"],
-  "tempo-traveller": ["School & college trips", "Pilgrimage groups", "Family outings", "Outstation group travel"],
+  "tempo-traveller-12": ["School & college trips", "Pilgrimage groups", "Family outings", "Outstation group travel"],
+  "tempo-traveller-16": ["Wedding guest movement", "Larger family groups", "Outstation travel", "Pilgrimage groups"],
   urbania: ["Corporate offsites", "Comfortable group travel", "Family functions", "Outstation journeys"],
   "bus-22": ["Small group trips", "School picnics", "Family events", "Short group travel"],
   "bus-28": ["Medium group travel", "School / college trips", "Family functions", "Local & outstation"],
   "bus-40": ["School & college trips", "Weddings", "Corporate outings", "Pilgrimage / large groups"],
   "bus-50": ["Large weddings", "School & college trips", "Corporate events", "Big group movement"],
+  "bus-40-white": ["Group tours", "School trips", "Pilgrimage movement", "Outstation travel"],
 };
 
 export function VehicleDetailModal({
