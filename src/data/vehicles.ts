@@ -1,13 +1,15 @@
 import brezza from "@/assets/vehicle-brezza-front.webp";
 import innova from "@/assets/vehicle-innova.webp";
 import fortuner from "@/assets/vehicle-fortuner-side.webp";
-import tempo from "@/assets/vehicle-tempo.webp";
+import tempoFront from "@/assets/tempo-exterior-front.webp";
+import tempoRear from "@/assets/tempo-exterior-rear.webp";
 import urbania from "@/assets/vehicle-urbania.webp";
-import bus from "@/assets/vehicle-bus.webp";
-import bus28 from "@/assets/vehicle-bus-28.webp";
-import bus40 from "@/assets/vehicle-bus-40.webp";
+import brandedBus from "@/assets/megacity-branded-bus.webp";
+import busBlue from "@/assets/vehicle-bus-28.webp";
+import busRed from "@/assets/vehicle-bus-40.webp";
+import busYellow from "@/assets/vehicle-bus-22.webp";
 import bus50 from "@/assets/vehicle-bus-50.webp";
-import bus22 from "@/assets/vehicle-bus-22.webp";
+import busWhite from "@/assets/vehicle-bus.webp";
 
 export type VehicleCategory = "Car" | "SUV" | "Traveller" | "Bus";
 
@@ -58,13 +60,24 @@ export const vehicles: Vehicle[] = [
     startingPrice: "₹26/km",
   },
   {
-    slug: "tempo-traveller",
+    slug: "tempo-traveller-12",
     category: "Traveller",
     name: "Tempo Traveller",
     seats: 12,
-    count: 2,
-    image: tempo,
+    count: 1,
+    image: tempoFront,
     bestFor: "Group trips, school and college trips, pilgrimage trips, and family outings",
+    ac: "AC / Non-AC",
+    startingPrice: "Ask for Price",
+  },
+  {
+    slug: "tempo-traveller-16",
+    category: "Traveller",
+    name: "Tempo Traveller",
+    seats: 16,
+    count: 1,
+    image: tempoRear,
+    bestFor: "Larger group trips, wedding transport, pilgrimage trips, and outstation travel",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
   },
@@ -85,7 +98,7 @@ export const vehicles: Vehicle[] = [
     name: "Bus",
     seats: 22,
     count: 4,
-    image: bus22,
+    image: brandedBus,
     bestFor: "Small groups, school trips, family events, and short group travel",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
@@ -96,7 +109,7 @@ export const vehicles: Vehicle[] = [
     name: "Bus",
     seats: 28,
     count: 3,
-    image: bus28,
+    image: busRed,
     bestFor: "Medium groups, school trips, family functions, and local or outstation group travel",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
@@ -107,7 +120,7 @@ export const vehicles: Vehicle[] = [
     name: "Bus",
     seats: 40,
     count: 9,
-    image: bus40,
+    image: busYellow,
     bestFor:
       "Large groups, weddings, school and college trips, corporate outings, and pilgrimages",
     ac: "AC / Non-AC",
@@ -122,6 +135,17 @@ export const vehicles: Vehicle[] = [
     image: bus50,
     bestFor:
       "Large events, school and college trips, weddings, corporate outings, and big group movement",
+    ac: "AC / Non-AC",
+    startingPrice: "Ask for Price",
+  },
+  {
+    slug: "bus-40-white",
+    category: "Bus",
+    name: "Bus",
+    seats: 40,
+    count: 1,
+    image: busWhite,
+    bestFor: "Group tours, school travel, family events, and comfortable mid-size movement",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
   },

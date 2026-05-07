@@ -9,7 +9,7 @@ import fleetHero from "@/assets/megacity-fleet-hero.webp";
 import fleet from "@/assets/megacity-fleet.webp";
 import brandedBus from "@/assets/megacity-branded-bus.webp";
 import volvo from "@/assets/volvo-bus.webp";
-import tempo from "@/assets/vehicle-tempo.webp";
+import tempoExteriorSide from "@/assets/tempo-exterior-side.webp";
 import tempoExteriorFront from "@/assets/tempo-exterior-front.webp";
 import tempoExteriorRear from "@/assets/tempo-exterior-rear.webp";
 import tempoInterior from "@/assets/tempo-interior.webp";
@@ -98,27 +98,27 @@ const items: Item[] = [
     cats: ["Branded Fleet", "Buses"],
   },
   {
-    src: tempo,
-    alt: "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
-    caption: "Tempo Traveller for group trips",
+    src: tempoExteriorFront,
+    alt: "12 seater Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
+    caption: "12-seater Tempo Traveller front view",
     cats: ["Tempo Traveller"],
   },
   {
-    src: tempoExteriorFront,
-    alt: "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
-    caption: "Tempo Traveller front view",
+    src: tempoExteriorSide,
+    alt: "12 seater Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
+    caption: "12-seater Tempo Traveller side view",
     cats: ["Tempo Traveller"],
   },
   {
     src: tempoExteriorRear,
-    alt: "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
-    caption: "Tempo Traveller rear view",
+    alt: "16 seater Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
+    caption: "16-seater Tempo Traveller rear view",
     cats: ["Tempo Traveller"],
   },
   {
     src: tempoInterior,
     alt: "Tempo Traveller interior for group travel in Hyderabad",
-    caption: "Comfortable seating for small and medium group trips",
+    caption: "Comfortable seating for 12 and 16 seater Tempo Traveller trips",
     cats: ["Tempo Traveller", "Interiors"],
   },
   {
@@ -195,44 +195,44 @@ const items: Item[] = [
   },
   {
     src: bus22,
-    alt: "22 seater bus rental in Hyderabad by Mega City Tours and Travells",
-    caption: "22-seater bus for small group travel",
+    alt: "40 seater yellow bus rental in Hyderabad by Mega City Tours and Travells",
+    caption: "40-seater yellow bus for large group travel",
     cats: ["Buses"],
   },
   {
     src: bus28,
-    alt: "28 seater bus rental in Hyderabad for medium group travel",
-    caption: "28-seater bus for medium group travel",
+    alt: "Blue bus rental in Hyderabad for 28 and 40 seater group travel",
+    caption: "Blue bus used in 28-seater and 40-seater fleet",
     cats: ["Buses"],
   },
   {
     src: bus40,
-    alt: "40 seater bus rental in Hyderabad for large group travel",
-    caption: "40-seater bus for large group travel",
+    alt: "28 seater red bus rental in Hyderabad for medium group travel",
+    caption: "28-seater red bus for medium group travel",
     cats: ["Buses"],
   },
   {
     src: bus40Front,
-    alt: "40 seater bus rental in Hyderabad for large group travel",
-    caption: "40-seater bus front view",
+    alt: "28 seater red bus rental in Hyderabad for medium group travel",
+    caption: "28-seater red bus front view",
     cats: ["Buses"],
   },
   {
     src: bus40Side,
-    alt: "40 seater bus rental in Hyderabad for large group travel",
-    caption: "40-seater bus side view",
+    alt: "40 seater yellow bus rental in Hyderabad for large group travel",
+    caption: "40-seater yellow bus side view",
     cats: ["Buses"],
   },
   {
     src: bus40Rear,
-    alt: "40 seater bus rental in Hyderabad for large group travel",
-    caption: "40-seater bus rear view",
+    alt: "40 seater blue bus rental in Hyderabad for large group travel",
+    caption: "40-seater blue bus rear view",
     cats: ["Buses"],
   },
   {
     src: bus40RearYellow,
-    alt: "40 seater bus rental in Hyderabad for large group travel",
-    caption: "40-seater bus rear angle",
+    alt: "40 seater yellow bus rental in Hyderabad for large group travel",
+    caption: "40-seater yellow bus rear angle",
     cats: ["Buses"],
   },
   {
@@ -261,14 +261,14 @@ const items: Item[] = [
   },
   {
     src: bus,
-    alt: "Mega City bus rental for group travel in Hyderabad",
-    caption: "Bus ready for group travel",
+    alt: "40 seater white bus rental in Hyderabad for group travel",
+    caption: "40-seater white bus for group travel",
     cats: ["Buses", "Branded Fleet"],
   },
   {
     src: volvo,
-    alt: "Volvo style bus for long distance travel from Hyderabad",
-    caption: "Bus for long distance group travel",
+    alt: "White bus for long distance group travel from Hyderabad",
+    caption: "White bus for long distance group travel",
     cats: ["Buses"],
   },
   {
