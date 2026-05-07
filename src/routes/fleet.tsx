@@ -62,7 +62,7 @@ const seoHeading: Record<string, string> = {
   urbania: "12 Seater Urbania Rental in Hyderabad",
   "bus-22": "22 Seater Bus Rental in Hyderabad",
   "bus-28": "28 Seater Bus Rental in Hyderabad",
-  "bus-40": "40 Seater Bus Rental in Hyderabad",
+  "bus-40": "22 Seater Bus Rental in Hyderabad",
   "bus-50": "50 Seater Bus Rental in Hyderabad",
   "bus-40-white": "40 Seater Bus Rental in Hyderabad",
 };
