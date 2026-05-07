@@ -8,7 +8,7 @@ import brandedBus from "@/assets/megacity-branded-bus.webp";
 import busBlue from "@/assets/vehicle-bus-28.webp";
 import busRed from "@/assets/vehicle-bus-40.webp";
 import busYellow from "@/assets/vehicle-bus-22.webp";
-import volvoBus from "@/assets/volvo-bus.webp";
+import bus50 from "@/assets/vehicle-bus-50.webp";
 
 export type VehicleCategory = "Car" | "SUV" | "Traveller" | "Bus";
 
