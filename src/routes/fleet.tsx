@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import fleetHero from "@/assets/megacity-fleet.webp";
 import busInterior from "@/assets/bus-interior.webp";
 import busInterior2 from "@/assets/bus-interior-2.webp";
-import bus50Interior from "@/assets/bus-50-interior.webp";
+import bus50Interior from "@/assets/bus-50-interior-new.png";
 
 export const Route = createFileRoute("/fleet")({
   head: () => ({

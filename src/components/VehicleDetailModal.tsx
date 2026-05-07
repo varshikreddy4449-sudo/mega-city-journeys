@@ -32,10 +32,9 @@ import bus40Front from "@/assets/bus-40-front.webp";
 import bus40Side from "@/assets/bus-40-side.webp";
 import bus40Rear from "@/assets/bus-40-rear.webp";
 import bus40RearYellow from "@/assets/bus-40-rear-yellow.webp";
-import bus50 from "@/assets/vehicle-bus-50.webp";
-import bus50Front from "@/assets/bus-50-front.webp";
-import bus50Side from "@/assets/bus-50-side.webp";
-import bus50Interior from "@/assets/bus-50-interior.webp";
+import bus50 from "@/assets/bus-50-main.png";
+import bus50Front from "@/assets/bus-50-front.png";
+import bus50Interior from "@/assets/bus-50-interior-new.png";
 import busInterior from "@/assets/bus-interior.webp";
 
 const galleries: Record<string, string[]> = {
@@ -48,7 +47,7 @@ const galleries: Record<string, string[]> = {
   "bus-22": [bus22Main, bus22Front, bus22InteriorMaroon, bus22InteriorBeige],
   "bus-28": [busRed, bus40Front, busInterior],
   "bus-40": [busYellow, bus40Side, bus40RearYellow],
-  "bus-50": [bus50, bus50Front, bus50Side, bus50Interior],
+  "bus-50": [bus50, bus50Front, bus50Interior],
   "bus-40-white": [busWhite, bus40Rear, busInterior],
 };
 

@@ -15,7 +15,7 @@ import imgUrbania from "@/assets/vehicle-urbania.webp";
 import imgBus40 from "@/assets/bus-40-front.webp";
 import imgTempo from "@/assets/tempo-exterior-front.webp";
 import imgBus22 from "@/assets/bus-22-main.png";
-import imgBus50 from "@/assets/bus-50-side.webp";
+import imgBus50 from "@/assets/bus-50-main.png";
 
 export type Service = {
   slug: string;
