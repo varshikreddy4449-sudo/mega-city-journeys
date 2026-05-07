@@ -386,6 +386,9 @@ function HomePage() {
                     <span className="absolute top-3 right-3 inline-flex items-center rounded-full bg-accent text-accent-foreground px-2.5 py-1 text-[11px] font-bold">
                       {v.seats} Seater
                     </span>
+                    <span className="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-white/95 text-primary px-2.5 py-1 text-[11px] font-bold shadow-sm">
+                      <Snowflake className="h-3 w-3 text-accent" /> {v.ac}
+                    </span>
                   </div>
                   <div className="p-5 flex flex-col flex-1">
                     <h3 className="font-display text-lg font-bold text-primary leading-tight">
