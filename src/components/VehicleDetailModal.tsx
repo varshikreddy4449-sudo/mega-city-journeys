@@ -24,6 +24,7 @@ import brandedBus from "@/assets/megacity-branded-bus.webp";
 import busBlue from "@/assets/vehicle-bus-28.webp";
 import busRed from "@/assets/vehicle-bus-40.webp";
 import busYellow from "@/assets/vehicle-bus-22.webp";
+import busWhite from "@/assets/vehicle-bus.webp";
 import bus40Front from "@/assets/bus-40-front.webp";
 import bus40Side from "@/assets/bus-40-side.webp";
 import bus40Rear from "@/assets/bus-40-rear.webp";
