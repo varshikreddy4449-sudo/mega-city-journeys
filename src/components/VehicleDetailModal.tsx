@@ -20,7 +20,10 @@ import tempoRear from "@/assets/tempo-exterior-rear.webp";
 import tempoInterior from "@/assets/tempo-interior.webp";
 import urbania from "@/assets/vehicle-urbania.webp";
 import urbaniaInterior from "@/assets/urbania-interior.webp";
-import brandedBus from "@/assets/megacity-branded-bus.webp";
+import bus22Main from "@/assets/bus-22-main.png";
+import bus22Front from "@/assets/bus-22-front.png";
+import bus22InteriorMaroon from "@/assets/bus-22-interior-maroon.png";
+import bus22InteriorBeige from "@/assets/bus-22-interior-beige.png";
 import busBlue from "@/assets/vehicle-bus-28.webp";
 import busRed from "@/assets/vehicle-bus-40.webp";
 import busYellow from "@/assets/vehicle-bus-22.webp";
@@ -42,7 +45,7 @@ const galleries: Record<string, string[]> = {
   "tempo-traveller-12": [tempoFront, tempoSide, tempoInterior],
   "tempo-traveller-16": [tempoRear, tempoSide, tempoInterior],
   urbania: [urbania, urbaniaInterior],
-  "bus-22": [brandedBus, busInterior],
+  "bus-22": [bus22Main, bus22Front, bus22InteriorMaroon, bus22InteriorBeige],
   "bus-28": [busRed, bus40Front, busInterior],
   "bus-40": [busYellow, bus40Side, bus40RearYellow],
   "bus-50": [bus50, bus50Front, bus50Side, bus50Interior],
