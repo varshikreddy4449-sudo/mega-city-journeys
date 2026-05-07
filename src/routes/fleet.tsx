@@ -57,18 +57,22 @@ const seoHeading: Record<string, string> = {
   breeza: "Brezza Rental in Hyderabad",
   fortuner: "Fortuner Rental in Hyderabad",
   "innova-crysta": "Innova Crysta Rental in Hyderabad",
-  "tempo-traveller": "12 Seater Tempo Traveller Rental in Hyderabad",
+  "tempo-traveller-12": "12 Seater Tempo Traveller Rental in Hyderabad",
+  "tempo-traveller-16": "16 Seater Tempo Traveller Rental in Hyderabad",
   urbania: "12 Seater Urbania Rental in Hyderabad",
   "bus-22": "22 Seater Bus Rental in Hyderabad",
   "bus-28": "28 Seater Bus Rental in Hyderabad",
   "bus-40": "40 Seater Bus Rental in Hyderabad",
   "bus-50": "50 Seater Bus Rental in Hyderabad",
+  "bus-40-white": "40 Seater Bus Rental in Hyderabad",
 };
 
 const altMap: Record<string, string> = {
-  "tempo-traveller":
-    "Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
-  urbania: "Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells.",
+  "tempo-traveller-12":
+    "12 seater Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
+  "tempo-traveller-16":
+    "16 seater Tempo Traveller rental in Hyderabad by Mega City Tours and Travells",
+  urbania: "12 seater Urbania vehicle for group travel in Hyderabad by Mega City Tours and Travells.",
   "innova-crysta": "Innova Crysta for family and outstation trips in Hyderabad.",
   breeza: "White Brezza front view - Mega City Tours & Travells",
   fortuner: "White Fortuner exterior side view - Mega City Tours & Travells",
@@ -76,6 +80,7 @@ const altMap: Record<string, string> = {
   "bus-28": "28 seater bus rental in Hyderabad for medium group travel",
   "bus-40": "40 seater bus rental in Hyderabad for large group travel",
   "bus-50": "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
+  "bus-40-white": "40 seater bus rental in Hyderabad for large group travel",
 };
 
 function matchFilter(category: string, slug: string, f: Filter): boolean {
