@@ -9,7 +9,7 @@ import busBlue from "@/assets/vehicle-bus-28.webp";
 import busRed from "@/assets/vehicle-bus-40.webp";
 import busYellow from "@/assets/vehicle-bus-22.webp";
 import bus50 from "@/assets/bus-50-main.png";
-import busWhite from "@/assets/vehicle-bus.webp";
+import busWhite from "@/assets/bus-40-white-main.png";
 
 export type VehicleCategory = "Car" | "SUV" | "Traveller" | "Bus";
 
