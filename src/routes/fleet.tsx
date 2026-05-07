@@ -78,7 +78,7 @@ const altMap: Record<string, string> = {
   fortuner: "White Fortuner exterior side view - Mega City Tours & Travells",
   "bus-22": "22 seater bus rental in Hyderabad",
   "bus-28": "28 seater bus rental in Hyderabad for medium group travel",
-  "bus-40": "40 seater bus rental in Hyderabad for large group travel",
+  "bus-40": "22 seater bus rental in Hyderabad for small group travel",
   "bus-50": "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
   "bus-40-white": "40 seater bus rental in Hyderabad for large group travel",
 };
