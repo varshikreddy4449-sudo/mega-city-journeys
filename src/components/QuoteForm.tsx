@@ -155,17 +155,23 @@ export function QuoteForm({
             className={fieldClass}
           />
         </div>
-        <div>
+        <div className="relative">
           <label className="sr-only" htmlFor="qf-date">
-            Travel Date
+            Date of Journey
           </label>
           <input
             id="qf-date"
             name="date"
-            type="date"
+            type={form.date ? "date" : "text"}
             value={form.date}
             onChange={handleChange}
-            className={fieldClass}
+            onFocus={(e) => (e.currentTarget.type = "date")}
+            onBlur={(e) => {
+              if (!e.currentTarget.value) e.currentTarget.type = "text";
+            }}
+            placeholder="Date of Journey"
+            className={fieldClass + " text-foreground appearance-none"}
+            style={{ colorScheme: "light" }}
           />
         </div>
         <div>
