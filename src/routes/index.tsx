@@ -309,6 +309,15 @@ function HomePage() {
                   variant="compact"
                   title="Quick Quote"
                   ctaLabel="Get Quote on WhatsApp"
+                  vehiclePlaceholder="Type of Vehicle"
+                  vehicleOptions={[
+                    "Brezza",
+                    "Innova Crysta",
+                    "Fortuner",
+                    "Urbania",
+                    "Tempo Traveller",
+                    "Bus",
+                  ]}
                 />
               </div>
             </div>

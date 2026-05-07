@@ -4,7 +4,7 @@ import { site, whatsappLink } from "@/data/site";
 
 type Variant = "compact" | "full";
 
-const vehicleOptions = [
+const defaultVehicleOptions = [
   "Any / Need suggestion",
   "Maruti Brezza (4 seater)",
   "Innova Crysta (7 seater)",
@@ -22,11 +22,15 @@ export function QuoteForm({
   title,
   subtitle,
   ctaLabel = "Get Quote",
+  vehicleOptions = defaultVehicleOptions,
+  vehiclePlaceholder,
 }: {
   variant?: Variant;
   title?: string;
   subtitle?: string;
   ctaLabel?: string;
+  vehicleOptions?: string[];
+  vehiclePlaceholder?: string;
 }) {
   const [form, setForm] = useState({
     name: "",
@@ -35,7 +39,7 @@ export function QuoteForm({
     destination: "",
     date: "",
     groupSize: "",
-    vehicle: vehicleOptions[0],
+    vehicle: vehiclePlaceholder ? "" : vehicleOptions[0],
     message: "",
   });
 
@@ -191,6 +195,11 @@ export function QuoteForm({
             onChange={handleChange}
             className={fieldClass}
           >
+            {vehiclePlaceholder && (
+              <option value="" disabled>
+                {vehiclePlaceholder}
+              </option>
+            )}
             {vehicleOptions.map((v) => (
               <option key={v} value={v}>
                 {v}
