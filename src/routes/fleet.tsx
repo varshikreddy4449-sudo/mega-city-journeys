@@ -183,7 +183,6 @@ function FleetPage() {
           {active !== "Interiors" && (
             <div className="stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {list.map((v) => {
-                const hasRealPrice = /₹/.test(v.startingPrice);
                 return (
                   <article
                     key={v.slug}
@@ -221,27 +220,8 @@ function FleetPage() {
                         </div>
                       </div>
 
-                      <div className="mt-auto pt-4">
-                        {hasRealPrice ? (
-                          <div className="flex items-baseline gap-1">
-                            <span className="text-xs text-muted-foreground">Starting</span>
-                            <span className="font-display text-xl font-bold text-primary">
-                              {v.startingPrice}
-                            </span>
-                          </div>
-                        ) : (
-                          <div>
-                            <div className="font-display text-lg font-bold text-primary">
-                              Price on Request
-                            </div>
-                            <p className="mt-0.5 text-[11px] text-muted-foreground leading-snug">
-                              Final quote depends on route, date, vehicle, and trip details.
-                            </p>
-                          </div>
-                        )}
-                      </div>
 
-                      <div className="mt-4 grid grid-cols-2 gap-2">
+                      <div className="mt-auto pt-4 grid grid-cols-2 gap-2">
                         <a
                           href={whatsappLink(
                             `Hi Mega City Tours & Travells, I would like a quote for the ${v.name} (${v.seats} seater).`,
