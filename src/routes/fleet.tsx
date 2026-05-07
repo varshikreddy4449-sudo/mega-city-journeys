@@ -88,7 +88,7 @@ function matchFilter(category: string, slug: string, f: Filter): boolean {
   if (f === "Interiors") return false;
   if (f === "Cars & SUVs") return category === "Car" || category === "SUV";
   if (f === "Urbania") return slug === "urbania";
-  if (f === "Tempo Traveller") return slug === "tempo-traveller";
+  if (f === "Tempo Traveller") return slug === "tempo-traveller-12" || slug === "tempo-traveller-16";
   if (f === "Buses") return category === "Bus";
   return true;
 }
