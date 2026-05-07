@@ -20,12 +20,14 @@ import tempoRear from "@/assets/tempo-exterior-rear.webp";
 import tempoInterior from "@/assets/tempo-interior.webp";
 import urbania from "@/assets/vehicle-urbania.webp";
 import urbaniaInterior from "@/assets/urbania-interior.webp";
-import bus22 from "@/assets/vehicle-bus-22.webp";
-import bus28 from "@/assets/vehicle-bus-28.webp";
-import bus40 from "@/assets/vehicle-bus-40.webp";
+import brandedBus from "@/assets/megacity-branded-bus.webp";
+import busBlue from "@/assets/vehicle-bus-28.webp";
+import busRed from "@/assets/vehicle-bus-40.webp";
+import busYellow from "@/assets/vehicle-bus-22.webp";
 import bus40Front from "@/assets/bus-40-front.webp";
 import bus40Side from "@/assets/bus-40-side.webp";
 import bus40Rear from "@/assets/bus-40-rear.webp";
+import bus40RearYellow from "@/assets/bus-40-rear-yellow.webp";
 import bus50 from "@/assets/vehicle-bus-50.webp";
 import bus50Front from "@/assets/bus-50-front.webp";
 import bus50Side from "@/assets/bus-50-side.webp";
@@ -36,12 +38,14 @@ const galleries: Record<string, string[]> = {
   breeza: [brezzaFront, brezzaRear],
   "innova-crysta": [innovaExtFront, innovaExtRear, innovaIntFront, innovaIntRear],
   fortuner: [fortunerSide, fortunerFront, fortunerAngle],
-  "tempo-traveller": [tempoFront, tempoSide, tempoRear, tempoInterior],
+  "tempo-traveller-12": [tempoFront, tempoSide, tempoInterior],
+  "tempo-traveller-16": [tempoRear, tempoSide, tempoInterior],
   urbania: [urbania, urbaniaInterior],
-  "bus-22": [bus22, busInterior],
-  "bus-28": [bus28, busInterior],
-  "bus-40": [bus40, bus40Front, bus40Side, bus40Rear],
+  "bus-22": [brandedBus, busInterior],
+  "bus-28": [busRed, bus40Front, busInterior],
+  "bus-40": [busYellow, bus40Side, bus40RearYellow],
   "bus-50": [bus50, bus50Front, bus50Side, bus50Interior],
+  "bus-40-white": [busBlue, bus40Rear, busInterior],
 };
 
 const useCases: Record<string, string[]> = {
