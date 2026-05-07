@@ -849,7 +849,7 @@ function HomePage() {
 
       {/* BLOG PREVIEW */}
       <section className="relative overflow-hidden py-16 md:py-20">
-        <LogoWatermark position="left" />
+        <LogoWatermark position="center" />
         <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <div className="flex items-end justify-between gap-4 mb-8 flex-wrap">
             <div>
