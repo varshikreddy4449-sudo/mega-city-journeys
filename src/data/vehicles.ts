@@ -34,7 +34,7 @@ export const vehicles: Vehicle[] = [
     count: 4,
     image: brezza,
     bestFor: "Small families, airport transfers, city trips",
-    ac: "AC",
+    ac: "AC / Non-AC",
     startingPrice: "₹14/km",
   },
   {
@@ -45,7 +45,7 @@ export const vehicles: Vehicle[] = [
     count: 4,
     image: innova,
     bestFor: "Family trips, airport transfers, comfortable outstation travel, and small groups",
-    ac: "AC",
+    ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
   },
   {
@@ -56,7 +56,7 @@ export const vehicles: Vehicle[] = [
     count: 1,
     image: fortuner,
     bestFor: "Premium family / corporate outstation travel",
-    ac: "AC",
+    ac: "AC / Non-AC",
     startingPrice: "₹26/km",
   },
   {
@@ -89,7 +89,7 @@ export const vehicles: Vehicle[] = [
     count: 4,
     image: urbania,
     bestFor: "Comfortable group travel, corporate trips, family outings, and outstation travel",
-    ac: "AC",
+    ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
   },
   {
