@@ -36,7 +36,7 @@ import bus40Rear from "@/assets/bus-40-rear.webp";
 import bus40Side from "@/assets/bus-40-side.webp";
 import bus40RearYellow from "@/assets/bus-40-rear-yellow.webp";
 import bus50 from "@/assets/bus-50-main.png";
-import bus50Side from "@/assets/bus-50-main.png";
+
 import bus50Front from "@/assets/bus-50-front.png";
 import bus50Interior from "@/assets/bus-50-interior-new.png";
 import bus from "@/assets/vehicle-bus.webp";
@@ -260,12 +260,6 @@ const items: Item[] = [
     src: bus50,
     alt: "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
     caption: "50-seater bus for large group travel",
-    cats: ["Buses"],
-  },
-  {
-    src: bus50Side,
-    alt: "50 seater bus rental in Hyderabad by Mega City Tours and Travells",
-    caption: "50-seater bus side view",
     cats: ["Buses"],
   },
   {
