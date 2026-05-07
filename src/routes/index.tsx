@@ -21,6 +21,11 @@ import { useState } from "react";
 import { VehicleDetailModal } from "@/components/VehicleDetailModal";
 import type { Vehicle } from "@/data/vehicles";
 import fleetImg from "@/assets/megacity-fleet.webp";
+import routeSrisailam from "@/assets/routes/srisailam.png";
+import routeYadadri from "@/assets/routes/yadadri.png";
+import routeWarangal from "@/assets/routes/warangal.png";
+import routeVijayawada from "@/assets/routes/vijayawada.png";
+import routeNagarjunaSagar from "@/assets/routes/nagarjuna-sagar.png";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -59,13 +64,21 @@ const trustStats = [
   { num: "365", label: "Days Available" },
 ];
 
-const popularRoutes = [
+const popularRoutes: Array<{
+  title: string;
+  tripType: string;
+  category: string;
+  bestFor: string;
+  vehicles: string;
+  image?: string;
+}> = [
   {
     title: "Hyderabad to Srisailam",
     tripType: "Outstation / Per KM",
     category: "Pilgrimage",
     bestFor: "Pilgrimage / family trips",
     vehicles: "Innova, Urbania, Tempo Traveller, Bus",
+    image: routeSrisailam,
   },
   {
     title: "Hyderabad to Yadadri",
@@ -73,6 +86,7 @@ const popularRoutes = [
     category: "Pilgrimage",
     bestFor: "Same-day darshan trips",
     vehicles: "Innova, Tempo Traveller, 22/28 Seater Bus",
+    image: routeYadadri,
   },
   {
     title: "Hyderabad to Warangal",
@@ -80,6 +94,7 @@ const popularRoutes = [
     category: "Family",
     bestFor: "Family & heritage trips",
     vehicles: "Innova, Urbania, Tempo Traveller",
+    image: routeWarangal,
   },
   {
     title: "Hyderabad to Vijayawada",
@@ -87,6 +102,7 @@ const popularRoutes = [
     category: "Outstation",
     bestFor: "Outstation & business travel",
     vehicles: "Innova, Urbania, 22/28 Seater Bus",
+    image: routeVijayawada,
   },
   {
     title: "Hyderabad to Nagarjuna Sagar",
@@ -94,6 +110,7 @@ const popularRoutes = [
     category: "Family",
     bestFor: "Family day-out trips",
     vehicles: "Innova, Tempo Traveller, Urbania",
+    image: routeNagarjunaSagar,
   },
   {
     title: "Hyderabad Local Sightseeing",
