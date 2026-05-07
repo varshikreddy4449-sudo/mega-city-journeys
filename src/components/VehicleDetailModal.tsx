@@ -27,7 +27,10 @@ import bus22InteriorBeige from "@/assets/bus-22-interior-beige.png";
 import busBlue from "@/assets/vehicle-bus-28.webp";
 import busRed from "@/assets/vehicle-bus-40.webp";
 import busYellow from "@/assets/vehicle-bus-22.webp";
-import busWhite from "@/assets/vehicle-bus.webp";
+import busWhite from "@/assets/bus-40-white-main.png";
+import bus40WhiteFront from "@/assets/bus-40-white-front.png";
+import bus40WhiteRear from "@/assets/bus-40-white-rear.png";
+import bus40WhiteInterior from "@/assets/bus-40-white-interior.png";
 import bus40Front from "@/assets/bus-40-front.webp";
 import bus40Side from "@/assets/bus-40-side.webp";
 import bus40Rear from "@/assets/bus-40-rear.webp";
@@ -48,7 +51,7 @@ const galleries: Record<string, string[]> = {
   "bus-28": [busRed, bus40Front, busInterior],
   "bus-40": [busYellow, bus40Side, bus40RearYellow],
   "bus-50": [bus50, bus50Front, bus50Interior],
-  "bus-40-white": [busWhite, bus40Rear, busInterior],
+  "bus-40-white": [busWhite, bus40WhiteFront, bus40WhiteRear, bus40WhiteInterior],
 };
 
 const useCases: Record<string, string[]> = {
