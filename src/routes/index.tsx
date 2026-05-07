@@ -21,6 +21,11 @@ import { useState } from "react";
 import { VehicleDetailModal } from "@/components/VehicleDetailModal";
 import type { Vehicle } from "@/data/vehicles";
 import fleetImg from "@/assets/megacity-fleet.webp";
+import routeSrisailam from "@/assets/routes/srisailam.png";
+import routeYadadri from "@/assets/routes/yadadri.png";
+import routeWarangal from "@/assets/routes/warangal.png";
+import routeVijayawada from "@/assets/routes/vijayawada.png";
+import routeNagarjunaSagar from "@/assets/routes/nagarjuna-sagar.png";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -59,13 +64,21 @@ const trustStats = [
   { num: "365", label: "Days Available" },
 ];
 
-const popularRoutes = [
+const popularRoutes: Array<{
+  title: string;
+  tripType: string;
+  category: string;
+  bestFor: string;
+  vehicles: string;
+  image?: string;
+}> = [
   {
     title: "Hyderabad to Srisailam",
     tripType: "Outstation / Per KM",
     category: "Pilgrimage",
     bestFor: "Pilgrimage / family trips",
     vehicles: "Innova, Urbania, Tempo Traveller, Bus",
+    image: routeSrisailam,
   },
   {
     title: "Hyderabad to Yadadri",
@@ -73,6 +86,7 @@ const popularRoutes = [
     category: "Pilgrimage",
     bestFor: "Same-day darshan trips",
     vehicles: "Innova, Tempo Traveller, 22/28 Seater Bus",
+    image: routeYadadri,
   },
   {
     title: "Hyderabad to Warangal",
@@ -80,6 +94,7 @@ const popularRoutes = [
     category: "Family",
     bestFor: "Family & heritage trips",
     vehicles: "Innova, Urbania, Tempo Traveller",
+    image: routeWarangal,
   },
   {
     title: "Hyderabad to Vijayawada",
@@ -87,6 +102,7 @@ const popularRoutes = [
     category: "Outstation",
     bestFor: "Outstation & business travel",
     vehicles: "Innova, Urbania, 22/28 Seater Bus",
+    image: routeVijayawada,
   },
   {
     title: "Hyderabad to Nagarjuna Sagar",
@@ -94,6 +110,7 @@ const popularRoutes = [
     category: "Family",
     bestFor: "Family day-out trips",
     vehicles: "Innova, Tempo Traveller, Urbania",
+    image: routeNagarjunaSagar,
   },
   {
     title: "Hyderabad Local Sightseeing",
@@ -652,122 +669,130 @@ function HomePage() {
               return (
                 <article
                   key={r.title}
-                  className="reveal hover-lift group relative overflow-hidden rounded-2xl bg-card border border-border/60 p-6 shadow-card hover:shadow-soft transition-all flex flex-col"
+                  className="reveal hover-lift group relative overflow-hidden rounded-2xl bg-card border border-border/60 shadow-card hover:shadow-soft transition-all flex flex-col"
                 >
-                  {/* faint dotted route line in card background */}
-                  <svg
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -right-6 -bottom-6 w-40 h-40 opacity-[0.07]"
-                    viewBox="0 0 160 160"
-                    fill="none"
-                  >
-                    <path
-                      d="M 10 140 C 50 90, 90 130, 150 40"
-                      stroke="#0D5C63"
-                      strokeWidth="2"
-                      strokeDasharray="3 6"
+                  {r.image && (
+                    <div className="relative w-full overflow-hidden bg-secondary/30" style={{ aspectRatio: "16 / 9" }}>
+                      <img
+                        src={r.image}
+                        alt={`${r.title} - Mega City Tours & Travells`}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+
+                  <div className="relative flex flex-1 flex-col p-6">
+                    {/* faint dotted route line in card background */}
+                    <svg
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -right-6 -bottom-6 w-40 h-40 opacity-[0.07]"
+                      viewBox="0 0 160 160"
                       fill="none"
-                    />
-                  </svg>
-
-                  <div className="flex items-center justify-between gap-3">
-                    <span
-                      className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide"
-                      style={{ backgroundColor: "#ABDADC", color: "#0D5C63" }}
                     >
-                      {r.category}
-                    </span>
-                    <span
-                      className="rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide"
-                      style={{ backgroundColor: "#F7F9FA", color: "#0D5C63", border: "1px solid rgba(13,92,99,0.15)" }}
-                    >
-                      {r.tripType}
-                    </span>
-                  </div>
+                      <path
+                        d="M 10 140 C 50 90, 90 130, 150 40"
+                        stroke="#0D5C63"
+                        strokeWidth="2"
+                        strokeDasharray="3 6"
+                        fill="none"
+                      />
+                    </svg>
 
-                  {/* Route — From → To */}
-                  <div className="mt-5 relative">
-                    {isFromHyd ? (
-                      <div className="flex items-start gap-3">
-                        <div className="flex flex-col items-center pt-1">
-                          <MapPin className="h-4 w-4" style={{ color: "#FF7A59" }} />
-                          <span
-                            className="my-1 block w-px h-6"
-                            style={{
-                              backgroundImage:
-                                "linear-gradient(to bottom, rgba(255,122,89,0.8) 50%, transparent 50%)",
-                              backgroundSize: "1px 6px",
-                            }}
-                          />
-                          <MapPin className="h-4 w-4" style={{ color: "#0D5C63" }} fill="#0D5C63" />
+                    <div className="flex items-center justify-between gap-3">
+                      <span
+                        className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide"
+                        style={{ backgroundColor: "#ABDADC", color: "#0D5C63" }}
+                      >
+                        {r.category}
+                      </span>
+                      <span
+                        className="rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide"
+                        style={{ backgroundColor: "#F7F9FA", color: "#0D5C63", border: "1px solid rgba(13,92,99,0.15)" }}
+                      >
+                        {r.tripType}
+                      </span>
+                    </div>
+
+                    {/* Route — From → To */}
+                    <div className="mt-5 relative">
+                      {isFromHyd ? (
+                        <div className="flex items-start gap-3">
+                          <div className="flex flex-col items-center pt-1">
+                            <MapPin className="h-4 w-4" style={{ color: "#FF7A59" }} />
+                            <span
+                              className="my-1 block w-px h-6"
+                              style={{
+                                backgroundImage:
+                                  "linear-gradient(to bottom, rgba(255,122,89,0.8) 50%, transparent 50%)",
+                                backgroundSize: "1px 6px",
+                              }}
+                            />
+                            <MapPin className="h-4 w-4" style={{ color: "#0D5C63" }} fill="#0D5C63" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                              From
+                            </div>
+                            <div className="font-display text-base font-bold leading-tight" style={{ color: "#0D5C63" }}>
+                              Hyderabad
+                            </div>
+                            <div className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                              To
+                            </div>
+                            <div className="font-display text-lg md:text-xl font-bold leading-tight" style={{ color: "#0D5C63" }}>
+                              {dest}
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                            From
-                          </div>
-                          <div className="font-display text-base font-bold leading-tight" style={{ color: "#0D5C63" }}>
-                            Hyderabad
-                          </div>
-                          <div className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                            To
-                          </div>
+                      ) : (
+                        <div className="flex items-center gap-2">
+                          <Compass className="h-5 w-5" style={{ color: "#FF7A59" }} />
                           <div className="font-display text-lg md:text-xl font-bold leading-tight" style={{ color: "#0D5C63" }}>
                             {dest}
                           </div>
                         </div>
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-2">
-                        <Compass className="h-5 w-5" style={{ color: "#FF7A59" }} />
-                        <div className="font-display text-lg md:text-xl font-bold leading-tight" style={{ color: "#0D5C63" }}>
-                          {dest}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  <dl className="mt-5 space-y-2 text-sm">
-                    <div>
-                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-accent">
-                        Best for
-                      </dt>
-                      <dd className="mt-0.5 text-foreground/85">{r.bestFor}</dd>
+                      )}
                     </div>
-                    <div>
-                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-accent">
-                        Suggested vehicles
-                      </dt>
-                      <dd className="mt-0.5 text-foreground/85">{r.vehicles}</dd>
-                    </div>
-                  </dl>
 
-                  <div className="mt-5 flex items-baseline justify-between border-t border-border/60 pt-4">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                      Price
-                    </span>
-                    <span className="font-display text-sm font-bold" style={{ color: "#0D5C63" }}>
-                      On Request
-                    </span>
+                    <dl className="mt-5 space-y-2 text-sm">
+                      <div>
+                        <dt className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                          Best for
+                        </dt>
+                        <dd className="mt-0.5 text-foreground/85">{r.bestFor}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                          Suggested vehicles
+                        </dt>
+                        <dd className="mt-0.5 text-foreground/85">{r.vehicles}</dd>
+                      </div>
+                    </dl>
+
+                    <a
+                      href={whatsappLink(`Hi Mega City, I would like a quote for: ${r.title}.`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto pt-5 inline-flex"
+                    >
+                      <span
+                        className="mt-1 inline-flex items-center justify-center gap-2 w-full rounded-lg py-2.5 text-sm font-semibold text-white transition-shadow hover:shadow-glow"
+                        style={{ backgroundColor: "#25D366" }}
+                      >
+                        <WhatsAppIcon className="h-4 w-4" /> Enquire on WhatsApp
+                      </span>
+                    </a>
                   </div>
-
-                  <a
-                    href={whatsappLink(`Hi Mega City, please share the price for: ${r.title}.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center justify-center gap-2 w-full rounded-lg py-2.5 text-sm font-semibold text-white transition-shadow hover:shadow-glow"
-                    style={{ backgroundColor: "#25D366" }}
-                  >
-                    <WhatsAppIcon className="h-4 w-4" /> Ask for Price
-                  </a>
                 </article>
               );
             })}
           </div>
 
-          {/* Pricing note */}
+          {/* Quote note */}
           <p className="mx-auto mt-8 max-w-3xl text-center text-xs md:text-sm text-muted-foreground leading-relaxed">
-            Prices are shared on request because final cost depends on route, vehicle type, travel
-            date, group size, tolls, parking, permits, state taxes, and driver allowance.
+            Final quote depends on route, vehicle type, travel date, group size, tolls, parking,
+            permits, state taxes, and driver allowance.
           </p>
 
           {/* Custom route CTA */}
