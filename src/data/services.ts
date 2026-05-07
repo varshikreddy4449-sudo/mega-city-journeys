@@ -10,12 +10,11 @@ import {
   Plane,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import imgBrezza from "@/assets/vehicle-brezza-front.webp";
-import imgUrbania from "@/assets/vehicle-urbania.webp";
-import imgBus40 from "@/assets/bus-40-front.webp";
-import imgTempo from "@/assets/tempo-exterior-front.webp";
-import imgBus22 from "@/assets/bus-22-main.png";
-import imgBus50 from "@/assets/bus-50-main.png";
+import imgLocalTrips from "@/assets/services/local-trips-innova.png";
+import imgCorporateUrbania from "@/assets/services/corporate-urbania.png";
+import imgPilgrimageCollage from "@/assets/services/pilgrimage-collage.png";
+import imgGroupTrip from "@/assets/services/group-trip.png";
+import imgUploadedBus from "@/assets/bus-50-main.png";
 
 export type Service = {
   slug: string;
@@ -33,7 +32,7 @@ export const services: Service[] = [
   {
     slug: "group-travel",
     title: "Group Travel",
-    image: imgTempo,
+    image: imgGroupTrip,
     short:
       "Comfortable group transport for families, friends, and large gatherings, with vehicles from 4 to 50 seats and experienced drivers.",
     bestFor: "Families, friend groups, community travel, function transport",
@@ -45,7 +44,7 @@ export const services: Service[] = [
   {
     slug: "per-km-travel",
     title: "Per KM Travel",
-    image: imgUrbania,
+    image: imgCorporateUrbania,
     short:
       "Distance-based pricing for outstation trips. You pay based on actual route, vehicle type, and trip type.",
     bestFor: "Outstation journeys, long-distance travel, multi-day trips",
@@ -57,7 +56,7 @@ export const services: Service[] = [
   {
     slug: "outstation-trips",
     title: "Outstation Trips",
-    image: imgBus40,
+    image: imgPilgrimageCollage,
     short:
       "Comfortable outstation travel across Telangana, Andhra Pradesh, Karnataka, Maharashtra, and beyond.",
     bestFor: "Weekend getaways, multi-day tours, intercity travel",
@@ -69,7 +68,7 @@ export const services: Service[] = [
   {
     slug: "local-trips",
     title: "Local Trips",
-    image: imgBrezza,
+    image: imgLocalTrips,
     short:
       "Hyderabad city sightseeing, day trips, and short local rentals on a flexible package basis.",
     bestFor: "Sightseeing, day rentals, in-city travel",
@@ -80,7 +79,7 @@ export const services: Service[] = [
   {
     slug: "corporate-travel",
     title: "Corporate Travel",
-    image: imgUrbania,
+    image: imgCorporateUrbania,
     short:
       "Mega City Tours & Travells supports corporate travel services in Hyderabad, including office team outings, employee movement, company events, business meetings, and monthly staff transport requirements.",
     bestFor:
@@ -92,7 +91,7 @@ export const services: Service[] = [
   {
     slug: "school-college-trips",
     title: "School & College Trips",
-    image: imgBus40,
+    image: imgUploadedBus,
     short:
       "Safe, on-time transport for educational excursions, picnics, and study tours with experienced drivers.",
     bestFor: "School picnics, college tours, educational trips",
@@ -103,7 +102,7 @@ export const services: Service[] = [
   {
     slug: "pilgrimage-trips",
     title: "Pilgrimage Trips",
-    image: imgTempo,
+    image: imgPilgrimageCollage,
     short:
       "Comfortable pilgrimage travel to Srisailam, Yadadri, Tirupati, Shirdi, and other temple destinations.",
     bestFor: "Family pilgrimages, group temple tours",
@@ -114,7 +113,7 @@ export const services: Service[] = [
   {
     slug: "wedding-event-transport",
     title: "Wedding & Event Transport",
-    image: imgBus50,
+    image: imgLocalTrips,
     short:
       "Group transport for wedding guests, baraat, sangeet, and event logistics across Hyderabad and outside.",
     bestFor: "Weddings, receptions, event guest transport",
@@ -125,7 +124,7 @@ export const services: Service[] = [
   {
     slug: "custom-packages",
     title: "Custom Packages",
-    image: imgBus22,
+    image: imgCorporateUrbania,
     short:
       "Tailored travel packages built around your group size, route, vehicle preference, and budget.",
     bestFor: "Multi-day group travel, special itineraries",
