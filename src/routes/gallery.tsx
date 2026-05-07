@@ -7,7 +7,7 @@ import { LogoWatermark } from "@/components/LogoWatermark";
 
 import fleetHero from "@/assets/megacity-fleet-hero.webp";
 import fleet from "@/assets/megacity-fleet.webp";
-import brandedBus from "@/assets/megacity-branded-bus.webp";
+import brandedBus from "@/assets/bus-22-main.png";
 import volvo from "@/assets/volvo-bus.webp";
 import tempoExteriorSide from "@/assets/tempo-exterior-side.webp";
 import tempoExteriorFront from "@/assets/tempo-exterior-front.webp";
@@ -25,7 +25,10 @@ import brezzaRear from "@/assets/vehicle-brezza-rear.webp";
 import fortuner from "@/assets/vehicle-fortuner-side.webp";
 import fortunerFront from "@/assets/vehicle-fortuner-front.webp";
 import fortunerAngle from "@/assets/vehicle-fortuner-angle.webp";
-import bus22 from "@/assets/vehicle-bus-22.webp";
+import bus22 from "@/assets/bus-22-main.png";
+import bus22Front from "@/assets/bus-22-front.png";
+import bus22InteriorMaroon from "@/assets/bus-22-interior-maroon.png";
+import bus22InteriorBeige from "@/assets/bus-22-interior-beige.png";
 import bus28 from "@/assets/vehicle-bus-28.webp";
 import bus40 from "@/assets/vehicle-bus-40.webp";
 import bus40Front from "@/assets/bus-40-front.webp";
@@ -93,8 +96,8 @@ const items: Item[] = [
   },
   {
     src: brandedBus,
-    alt: "Branded Mega City Tours and Travells bus in Hyderabad",
-    caption: "Branded Mega City vehicle",
+    alt: "22 seater Mega City Tours and Travells branded bus in Hyderabad",
+    caption: "22-seater branded Mega City bus",
     cats: ["Branded Fleet", "Buses"],
   },
   {
@@ -195,9 +198,27 @@ const items: Item[] = [
   },
   {
     src: bus22,
-    alt: "40 seater yellow bus rental in Hyderabad by Mega City Tours and Travells",
-    caption: "40-seater yellow bus for large group travel",
+    alt: "22 seater bus rental in Hyderabad by Mega City Tours and Travells",
+    caption: "22-seater bus side angle view",
     cats: ["Buses"],
+  },
+  {
+    src: bus22Front,
+    alt: "22 seater bus front view in Hyderabad by Mega City Tours and Travells",
+    caption: "22-seater bus front view",
+    cats: ["Buses"],
+  },
+  {
+    src: bus22InteriorMaroon,
+    alt: "22 seater bus interior with maroon seats by Mega City Tours and Travells",
+    caption: "22-seater bus interior with premium maroon seating",
+    cats: ["Buses", "Interiors"],
+  },
+  {
+    src: bus22InteriorBeige,
+    alt: "22 seater bus interior with beige seats by Mega City Tours and Travells",
+    caption: "22-seater bus interior with beige seating",
+    cats: ["Buses", "Interiors"],
   },
   {
     src: bus28,

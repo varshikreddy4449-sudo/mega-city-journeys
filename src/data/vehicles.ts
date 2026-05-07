@@ -4,7 +4,7 @@ import fortuner from "@/assets/vehicle-fortuner-side.webp";
 import tempoFront from "@/assets/tempo-exterior-front.webp";
 import tempoRear from "@/assets/tempo-exterior-rear.webp";
 import urbania from "@/assets/vehicle-urbania.webp";
-import brandedBus from "@/assets/megacity-branded-bus.webp";
+import bus22Main from "@/assets/bus-22-main.png";
 import busBlue from "@/assets/vehicle-bus-28.webp";
 import busRed from "@/assets/vehicle-bus-40.webp";
 import busYellow from "@/assets/vehicle-bus-22.webp";
@@ -98,7 +98,7 @@ export const vehicles: Vehicle[] = [
     name: "Bus",
     seats: 22,
     count: 4,
-    image: brandedBus,
+    image: bus22Main,
     bestFor: "Small groups, school trips, family events, and short group travel",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",

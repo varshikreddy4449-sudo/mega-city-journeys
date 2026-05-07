@@ -25,7 +25,7 @@ import { LogoWatermark } from "@/components/LogoWatermark";
 import { CTASection } from "@/components/CTASection";
 import { whatsappLink, telLink, site } from "@/data/site";
 import heroImg from "@/assets/hero-travel.webp";
-import brandedBus from "@/assets/megacity-branded-bus.webp";
+import brandedBus from "@/assets/bus-22-main.png";
 import tempoInterior from "@/assets/tempo-interior.webp";
 
 export const Route = createFileRoute("/about")({
