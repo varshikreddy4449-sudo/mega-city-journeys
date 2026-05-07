@@ -221,25 +221,6 @@ function FleetPage() {
                         </div>
                       </div>
 
-                      <div className="mt-auto pt-4">
-                        {hasRealPrice ? (
-                          <div className="flex items-baseline gap-1">
-                            <span className="text-xs text-muted-foreground">Starting</span>
-                            <span className="font-display text-xl font-bold text-primary">
-                              {v.startingPrice}
-                            </span>
-                          </div>
-                        ) : (
-                          <div>
-                            <div className="font-display text-lg font-bold text-primary">
-                              Price on Request
-                            </div>
-                            <p className="mt-0.5 text-[11px] text-muted-foreground leading-snug">
-                              Final quote depends on route, date, vehicle, and trip details.
-                            </p>
-                          </div>
-                        )}
-                      </div>
 
                       <div className="mt-4 grid grid-cols-2 gap-2">
                         <a
