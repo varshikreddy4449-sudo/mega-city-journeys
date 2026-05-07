@@ -14,6 +14,7 @@ import imgLocalTrips from "@/assets/services/local-trips-innova.png";
 import imgCorporateUrbania from "@/assets/services/corporate-urbania.png";
 import imgPilgrimageCollage from "@/assets/services/pilgrimage-collage.png";
 import imgGroupTrip from "@/assets/services/group-trip.png";
+import imgUploadedBus from "@/assets/bus-50-main.png";
 
 export type Service = {
   slug: string;
