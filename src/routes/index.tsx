@@ -26,6 +26,7 @@ import routeYadadri from "@/assets/routes/yadadri.png";
 import routeWarangal from "@/assets/routes/warangal.png";
 import routeVijayawada from "@/assets/routes/vijayawada.png";
 import routeNagarjunaSagar from "@/assets/routes/nagarjuna-sagar.png";
+import routeHyderabadLocal from "@/assets/routes/hyderabad-local.png";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { SectionHeader } from "@/components/SectionHeader";
