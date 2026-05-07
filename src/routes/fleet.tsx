@@ -222,7 +222,7 @@ function FleetPage() {
                       </div>
 
 
-                      <div className="mt-4 grid grid-cols-2 gap-2">
+                      <div className="mt-auto pt-4 grid grid-cols-2 gap-2">
                         <a
                           href={whatsappLink(
                             `Hi Mega City Tours & Travells, I would like a quote for the ${v.name} (${v.seats} seater).`,
