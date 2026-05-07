@@ -119,6 +119,7 @@ const popularRoutes: Array<{
     category: "Local",
     bestFor: "City tours & day rentals",
     vehicles: "Brezza, Innova, Tempo Traveller",
+    image: routeHyderabadLocal,
   },
 ];
 
