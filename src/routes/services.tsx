@@ -188,6 +188,7 @@ function ServiceListCard({ service: s }: { service: ServiceItem }) {
       >
         <WhatsAppIcon className="h-4 w-4" /> Enquire on WhatsApp
       </a>
+      </div>
     </div>
   );
 }
