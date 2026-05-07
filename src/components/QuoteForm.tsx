@@ -162,17 +162,25 @@ export function QuoteForm({
           <input
             id="qf-date"
             name="date"
-            type={form.date ? "date" : "text"}
+            type="date"
             value={form.date}
             onChange={handleChange}
-            onFocus={(e) => (e.currentTarget.type = "date")}
-            onBlur={(e) => {
-              if (!e.currentTarget.value) e.currentTarget.type = "text";
-            }}
-            placeholder="Date of Journey"
-            className={fieldClass + " text-foreground appearance-none"}
-            style={{ colorScheme: "light" }}
+            aria-label="Date of Journey"
+            className={
+              fieldClass +
+              " appearance-none " +
+              (form.date ? "text-foreground" : "text-muted-foreground/70")
+            }
+            style={{ colorScheme: "light", minHeight: "42px" }}
           />
+          {!form.date && (
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 left-3.5 flex items-center text-sm text-muted-foreground/70"
+            >
+              Date of Journey
+            </span>
+          )}
         </div>
         <div>
           <label className="sr-only" htmlFor="qf-group">
