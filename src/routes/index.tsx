@@ -437,7 +437,7 @@ function HomePage() {
                         onClick={() => openVehicle(v)}
                         className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-accent/60 bg-accent/5 text-primary py-2.5 text-xs font-semibold hover:bg-accent/10 transition"
                       >
-                        <Info className="h-4 w-4" /> Explore
+                        <Info className="h-4 w-4" /> More Info
                       </button>
                     </div>
                   </div>
