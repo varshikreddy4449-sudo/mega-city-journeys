@@ -9,7 +9,7 @@ import fleetHero from "@/assets/megacity-fleet-hero.webp";
 import fleet from "@/assets/megacity-fleet.webp";
 import brandedBus from "@/assets/megacity-branded-bus.webp";
 import volvo from "@/assets/volvo-bus.webp";
-import tempo from "@/assets/vehicle-tempo.webp";
+import tempoExteriorSide from "@/assets/tempo-exterior-side.webp";
 import tempoExteriorFront from "@/assets/tempo-exterior-front.webp";
 import tempoExteriorRear from "@/assets/tempo-exterior-rear.webp";
 import tempoInterior from "@/assets/tempo-interior.webp";
