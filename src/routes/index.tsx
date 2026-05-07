@@ -789,10 +789,10 @@ function HomePage() {
             })}
           </div>
 
-          {/* Pricing note */}
+          {/* Quote note */}
           <p className="mx-auto mt-8 max-w-3xl text-center text-xs md:text-sm text-muted-foreground leading-relaxed">
-            Prices are shared on request because final cost depends on route, vehicle type, travel
-            date, group size, tolls, parking, permits, state taxes, and driver allowance.
+            Final quote depends on route, vehicle type, travel date, group size, tolls, parking,
+            permits, state taxes, and driver allowance.
           </p>
 
           {/* Custom route CTA */}
