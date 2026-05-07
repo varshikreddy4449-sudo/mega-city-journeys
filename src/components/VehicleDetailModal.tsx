@@ -46,7 +46,7 @@ const galleries: Record<string, string[]> = {
   "bus-28": [busRed, bus40Front, busInterior],
   "bus-40": [busYellow, bus40Side, bus40RearYellow],
   "bus-50": [bus50, bus50Front, bus50Side, bus50Interior],
-  "bus-40-white": [busBlue, bus40Rear, busInterior],
+  "bus-40-white": [busWhite, bus40Rear, busInterior],
 };
 
 const useCases: Record<string, string[]> = {

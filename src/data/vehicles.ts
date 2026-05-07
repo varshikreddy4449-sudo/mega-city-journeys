@@ -144,7 +144,7 @@ export const vehicles: Vehicle[] = [
     name: "Bus",
     seats: 40,
     count: 1,
-    image: busBlue,
+    image: busWhite,
     bestFor: "Group tours, school travel, family events, and comfortable mid-size movement",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
