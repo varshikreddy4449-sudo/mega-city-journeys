@@ -116,16 +116,28 @@ type ServiceItem = (typeof services)[number];
 function ServiceListCard({ service: s }: { service: ServiceItem }) {
   return (
     <div
-      className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white p-6 md:p-7 shadow-card hover:shadow-soft transition-all"
+      className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-card hover:shadow-soft transition-all"
       style={{ border: "1px solid rgba(13,92,99,0.10)" }}
     >
       {/* Top accent line */}
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-1"
+        className="absolute inset-x-0 top-0 z-10 h-1"
         style={{ background: `linear-gradient(90deg, ${TEAL}, ${TEAL_SOFT}, ${CORAL})` }}
       />
 
+      {s.image && (
+        <div className="relative h-40 w-full overflow-hidden bg-secondary/30 sm:h-44">
+          <img
+            src={s.image}
+            alt={s.title}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        </div>
+      )}
+
+      <div className="flex flex-1 flex-col p-6 md:p-7">
       <div className="flex items-start gap-4">
         <div
           className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl shadow-sm"
@@ -176,6 +188,7 @@ function ServiceListCard({ service: s }: { service: ServiceItem }) {
       >
         <WhatsAppIcon className="h-4 w-4" /> Enquire on WhatsApp
       </a>
+      </div>
     </div>
   );
 }
