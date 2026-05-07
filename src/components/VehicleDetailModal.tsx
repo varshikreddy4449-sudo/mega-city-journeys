@@ -60,7 +60,7 @@ const useCases: Record<string, string[]> = {
   urbania: ["Corporate offsites", "Comfortable group travel", "Family functions", "Outstation journeys"],
   "bus-22": ["Small group trips", "School picnics", "Family events", "Short group travel"],
   "bus-28": ["Medium group travel", "School / college trips", "Family functions", "Local & outstation"],
-  "bus-40": ["School & college trips", "Weddings", "Corporate outings", "Pilgrimage / large groups"],
+  "bus-40": ["Small group trips", "School picnics", "Family events", "Short group travel"],
   "bus-50": ["Large weddings", "School & college trips", "Corporate events", "Big group movement"],
   "bus-40-white": ["Group tours", "School trips", "Pilgrimage movement", "Outstation travel"],
 };
