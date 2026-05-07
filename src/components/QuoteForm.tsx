@@ -195,6 +195,11 @@ export function QuoteForm({
             onChange={handleChange}
             className={fieldClass}
           >
+            {vehiclePlaceholder && (
+              <option value="" disabled>
+                {vehiclePlaceholder}
+              </option>
+            )}
             {vehicleOptions.map((v) => (
               <option key={v} value={v}>
                 {v}
