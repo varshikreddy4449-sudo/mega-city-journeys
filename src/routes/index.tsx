@@ -27,6 +27,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
 import { QuoteForm } from "@/components/QuoteForm";
 import { LogoWatermark } from "@/components/LogoWatermark";
+import ClientsBelt from "@/components/ClientsBelt";
 import { Link } from "@tanstack/react-router";
 import { blogs } from "@/data/blogs";
 
@@ -482,6 +483,9 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* CLIENTS / TRAVEL NETWORK */}
+      <ClientsBelt />
 
       {/* WHY CHOOSE MEGA CITY */}
       <section
