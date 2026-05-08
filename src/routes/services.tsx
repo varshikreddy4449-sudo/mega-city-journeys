@@ -21,7 +21,7 @@ import { whatsappLink, telLink, site } from "@/data/site";
 import logoImg from "@/assets/logo.webp";
 import tempoImg from "@/assets/vehicle-tempo.webp";
 import urbaniaImg from "@/assets/vehicle-urbania.webp";
-import heroBusImg from "@/assets/bus-40-mega-front.png";
+import heroBusImg from "@/assets/services-hero-megacity.png";
 import bus40Img from "@/assets/vehicle-bus-40.webp";
 import tempoExteriorImg from "@/assets/tempo-exterior-side.webp";
 import { AreasServed } from "@/components/AreasServed";
@@ -311,9 +311,9 @@ function ServicesPage() {
               >
                 <img
                   src={heroBusImg}
-                  alt="Mega City Tempo Traveller for group travel and outstation trips from Hyderabad"
+                  alt="Mega City Tours & Travells bus ready for group travel and outstation trips from Hyderabad"
                   className="block w-full"
-                  style={{ maxHeight: "380px", objectFit: "cover", objectPosition: "center" }}
+                  style={{ aspectRatio: "4 / 3", maxHeight: "420px", objectFit: "cover", objectPosition: "center 55%" }}
                   loading="eager"
                 />
                 <div className="p-5 grid grid-cols-3 gap-3">
