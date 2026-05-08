@@ -21,6 +21,7 @@ import { useState } from "react";
 import { VehicleDetailModal } from "@/components/VehicleDetailModal";
 import type { Vehicle } from "@/data/vehicles";
 import fleetImg from "@/assets/megacity-fleet.webp";
+import tempo12Home from "@/assets/tempo-12-home.jpeg";
 import routeSrisailam from "@/assets/routes/srisailam.png";
 import routeYadadri from "@/assets/routes/yadadri.png";
 import routeWarangal from "@/assets/routes/warangal.png";
@@ -407,7 +408,7 @@ function HomePage() {
                     style={{ aspectRatio: "16 / 10" }}
                   >
                     <img
-                      src={v.image}
+                      src={v.slug === "tempo-traveller-12" ? tempo12Home : v.image}
                       alt={`${title} for hire in Hyderabad by Mega City Tours and Travells.`}
                       loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
