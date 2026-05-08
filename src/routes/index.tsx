@@ -21,7 +21,8 @@ import { useState } from "react";
 import { VehicleDetailModal } from "@/components/VehicleDetailModal";
 import type { Vehicle } from "@/data/vehicles";
 import fleetImg from "@/assets/megacity-fleet.webp";
-import tempo12Home from "@/assets/tempo-12-home.jpeg";
+import { VehicleImageCarousel } from "@/components/VehicleImageCarousel";
+import { vehicleGalleries } from "@/data/vehicleGalleries";
 import routeSrisailam from "@/assets/routes/srisailam.png";
 import routeYadadri from "@/assets/routes/yadadri.png";
 import routeWarangal from "@/assets/routes/warangal.png";
@@ -407,11 +408,9 @@ function HomePage() {
                     className="relative overflow-hidden bg-secondary/30"
                     style={{ aspectRatio: "16 / 10" }}
                   >
-                    <img
-                      src={v.slug === "tempo-traveller-12" ? tempo12Home : v.image}
+                    <VehicleImageCarousel
+                      images={vehicleGalleries[v.slug] ?? [v.image]}
                       alt={`${title} for hire in Hyderabad by Mega City Tours and Travells.`}
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
                     />
                     <span className="absolute top-3 right-3 inline-flex items-center rounded-full bg-accent text-accent-foreground px-2.5 py-1 text-[11px] font-bold">
                       {v.seats} Seater
