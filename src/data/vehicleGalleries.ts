@@ -20,6 +20,8 @@ import bus22InteriorMaroon from "@/assets/bus-22-interior-maroon.png";
 import bus22InteriorBeige from "@/assets/bus-22-interior-beige.png";
 import busRed from "@/assets/vehicle-bus-40.webp";
 import busYellow from "@/assets/vehicle-bus-22.webp";
+import bus40MegaFront from "@/assets/bus-40-mega-front.png";
+import bus40MegaRear from "@/assets/bus-40-mega-rear.png";
 import busWhite from "@/assets/bus-40-white-main.png";
 import bus40WhiteFront from "@/assets/bus-40-white-front.png";
 import bus40WhiteRear from "@/assets/bus-40-white-rear.png";
@@ -41,7 +43,7 @@ export const vehicleGalleries: Record<string, string[]> = {
   urbania: [urbania, urbaniaInterior],
   "bus-22": [bus22Main, bus22Front, bus22InteriorMaroon, bus22InteriorBeige],
   "bus-28": [busRed, bus40Front, busInterior],
-  "bus-40": [busYellow, bus40Side, bus40RearYellow],
+  "bus-40": [bus40MegaFront, bus40MegaRear, busYellow, bus40Side, bus40RearYellow],
   "bus-50": [bus50, bus50Front, bus50Interior],
   "bus-40-white": [busWhite, bus40WhiteFront, bus40WhiteRear, bus40WhiteInterior],
 };

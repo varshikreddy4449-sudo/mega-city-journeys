@@ -8,6 +8,7 @@ import bus22Main from "@/assets/bus-22-main.png";
 import busBlue from "@/assets/vehicle-bus-28.webp";
 import busRed from "@/assets/vehicle-bus-40.webp";
 import busYellow from "@/assets/vehicle-bus-22.webp";
+import bus40MegaFront from "@/assets/bus-40-mega-front.png";
 import bus50 from "@/assets/bus-50-main.png";
 import busWhite from "@/assets/bus-40-white-main.png";
 
@@ -120,7 +121,7 @@ export const vehicles: Vehicle[] = [
     name: "Bus",
     seats: 40,
     count: 9,
-    image: busYellow,
+    image: bus40MegaFront,
     bestFor: "Small groups, school trips, family events, and short group travel",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
