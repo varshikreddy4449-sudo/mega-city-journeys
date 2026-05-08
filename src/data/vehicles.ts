@@ -24,6 +24,7 @@ export type Vehicle = {
   bestFor: string;
   ac: string;
   startingPrice: string;
+  tag?: string;
 };
 
 export const vehicles: Vehicle[] = [
@@ -125,6 +126,7 @@ export const vehicles: Vehicle[] = [
     bestFor: "Small groups, school trips, family events, and short group travel",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
+    tag: "Hi-Tech Bus – For Corporate Travel",
   },
   {
     slug: "bus-40-yellow",
@@ -136,6 +138,7 @@ export const vehicles: Vehicle[] = [
     bestFor: "Group tours, school trips, family functions, and comfortable group travel",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
+    tag: "Hi-Tech Bus – Perfect for Long Journeys",
   },
   {
     slug: "bus-40-white",
@@ -147,6 +150,7 @@ export const vehicles: Vehicle[] = [
     bestFor: "Group tours, school travel, family events, and comfortable mid-size movement",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
+    tag: "Hi-Tech Bus – For Family Trips",
   },
   {
     slug: "bus-50",
