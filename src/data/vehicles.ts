@@ -118,7 +118,7 @@ export const vehicles: Vehicle[] = [
     slug: "bus-40",
     category: "Bus",
     name: "Bus",
-    seats: 22,
+    seats: 40,
     count: 9,
     image: busYellow,
     bestFor:
