@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 import { site, whatsappLink } from "@/data/site";
+import { LocationAutocomplete } from "@/components/LocationAutocomplete";
 
 type Variant = "compact" | "full";
 
@@ -131,13 +132,12 @@ export function QuoteForm({
           <label className="sr-only" htmlFor="qf-pickup">
             Pickup Location
           </label>
-          <input
-            id="qf-pickup"
+          <LocationAutocomplete
             name="pickup"
             value={form.pickup}
-            onChange={handleChange}
-            maxLength={120}
+            onChange={(v) => setForm((f) => ({ ...f, pickup: v }))}
             placeholder="Pickup Location"
+            ariaLabel="Pickup Location"
             className={fieldClass}
           />
         </div>
@@ -145,20 +145,19 @@ export function QuoteForm({
           <label className="sr-only" htmlFor="qf-destination">
             Destination
           </label>
-          <input
-            id="qf-destination"
+          <LocationAutocomplete
             name="destination"
             value={form.destination}
-            onChange={handleChange}
-            maxLength={120}
+            onChange={(v) => setForm((f) => ({ ...f, destination: v }))}
             placeholder="Destination"
+            ariaLabel="Destination"
             className={fieldClass}
           />
         </div>
-        <div>
+        <div className="relative">
           <label
             htmlFor="qf-date"
-            className="mb-1 block text-xs font-semibold text-muted-foreground"
+            className="pointer-events-none absolute left-3 top-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground/80"
           >
             Date of Journey
           </label>
@@ -169,8 +168,8 @@ export function QuoteForm({
             value={form.date}
             onChange={handleChange}
             aria-label="Date of Journey"
-            className={fieldClass + " appearance-none"}
-            style={{ colorScheme: "light", minHeight: "42px" }}
+            className={fieldClass + " appearance-none pt-5 pb-1.5"}
+            style={{ colorScheme: "light", minHeight: "52px" }}
           />
         </div>
         <div>
