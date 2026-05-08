@@ -127,6 +127,17 @@ export const vehicles: Vehicle[] = [
     startingPrice: "Ask for Price",
   },
   {
+    slug: "bus-40-yellow",
+    category: "Bus",
+    name: "Bus",
+    seats: 40,
+    count: 1,
+    image: busYellow,
+    bestFor: "Group tours, school trips, family functions, and comfortable group travel",
+    ac: "AC / Non-AC",
+    startingPrice: "Ask for Price",
+  },
+  {
     slug: "bus-40-white",
     category: "Bus",
     name: "Bus",
