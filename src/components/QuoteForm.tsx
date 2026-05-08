@@ -155,8 +155,11 @@ export function QuoteForm({
             className={fieldClass}
           />
         </div>
-        <div className="relative">
-          <label className="sr-only" htmlFor="qf-date">
+        <div>
+          <label
+            htmlFor="qf-date"
+            className="mb-1 block text-xs font-semibold text-muted-foreground"
+          >
             Date of Journey
           </label>
           <input
@@ -166,21 +169,9 @@ export function QuoteForm({
             value={form.date}
             onChange={handleChange}
             aria-label="Date of Journey"
-            className={
-              fieldClass +
-              " appearance-none " +
-              (form.date ? "text-foreground" : "text-muted-foreground/70")
-            }
+            className={fieldClass + " appearance-none"}
             style={{ colorScheme: "light", minHeight: "42px" }}
           />
-          {!form.date && (
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-y-0 left-3.5 flex items-center text-sm text-muted-foreground/70 md:hidden"
-            >
-              Date of Journey
-            </span>
-          )}
         </div>
         <div>
           <label className="sr-only" htmlFor="qf-group">
