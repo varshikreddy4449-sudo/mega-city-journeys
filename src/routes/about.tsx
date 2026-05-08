@@ -31,19 +31,23 @@ import tempoInterior from "@/assets/tempo-interior.webp";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Mega City Tours & Travells | Hyderabad Travel Agency" },
+      { title: "About | Hyderabad Travel Agency & Vehicle Rental | Mega City" },
       {
         name: "description",
         content:
-          "Mega City Tours & Travells is a Hyderabad-based travel company with an owned fleet of 4 to 50 seater vehicles, experienced drivers, and easy WhatsApp booking for local and outstation trips.",
+          "Mega City Tours & Travells is a Hyderabad travel agency with an owned fleet of 4 to 50 seater vehicles, experienced drivers and easy WhatsApp booking for local and outstation trips.",
       },
-      { property: "og:title", content: "About Mega City Tours & Travells" },
+      { property: "og:title", content: "About Mega City Tours & Travells | Hyderabad" },
       {
         property: "og:description",
         content:
-          "Hyderabad-based travel partner with owned, branded fleet and experienced drivers.",
+          "Hyderabad travel partner with owned, branded fleet and experienced drivers.",
       },
       { property: "og:image", content: brandedBus },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "About Mega City Tours & Travells | Hyderabad" },
+      { name: "twitter:description", content: "Hyderabad travel partner with owned fleet and experienced drivers." },
+      { name: "twitter:image", content: brandedBus },
     ],
   }),
   component: AboutPage,

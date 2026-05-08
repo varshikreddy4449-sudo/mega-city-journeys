@@ -32,17 +32,24 @@ import { AreasServed } from "@/components/AreasServed";
 export const Route = createFileRoute("/packages")({
   head: () => ({
     meta: [
-      { title: "Popular Routes & Telangana Tour Packages from Hyderabad | Mega City Tours & Travells" },
+      { title: "Packages | Popular Routes from Hyderabad | Mega City Tours & Travells" },
       {
         name: "description",
         content:
-          "Bus rental for Srisailam trip, Hyderabad to Yadadri vehicle booking, Hyderabad to Warangal group travel, Hyderabad to Vijayawada outstation trip, Hyderabad local sightseeing vehicle rental, and Telangana tour packages from Hyderabad. Price on request.",
+          "Popular vehicle rental routes from Hyderabad — Srisailam, Yadadri, Warangal, Vijayawada, Nagarjuna Sagar and local sightseeing. Suggested vehicles for each route. Price on request.",
       },
-      { property: "og:title", content: "Popular Routes & Telangana Tour Packages from Hyderabad" },
+      { property: "og:title", content: "Packages | Popular Routes from Hyderabad" },
       {
         property: "og:description",
         content:
           "Srisailam, Yadadri, Warangal, Vijayawada and local sightseeing routes with suggested vehicles. Price on request.",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Packages | Popular Routes from Hyderabad" },
+      {
+        name: "twitter:description",
+        content:
+          "Popular routes from Hyderabad with suggested vehicles. Price on request.",
       },
     ],
   }),

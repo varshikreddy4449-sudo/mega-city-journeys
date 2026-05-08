@@ -29,17 +29,24 @@ import { AreasServed } from "@/components/AreasServed";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Travel Services in Hyderabad | Group, Corporate, School & Outstation Trips" },
+      { title: "Services | Group Travel, Bus Rental & Tempo Traveller Hyderabad" },
       {
         name: "description",
         content:
-          "Group travel agency Hyderabad offering per KM travels, local sightseeing, outstation travel, corporate travel services, employee transportation, school and college trip transport, pilgrimage travel, and wedding guest transport from Hyderabad.",
+          "Group travel, per KM trips, local sightseeing, outstation travel, corporate travel, school and college trip transport, pilgrimage trips and wedding guest transport from Hyderabad. WhatsApp or call to enquire.",
       },
-      { property: "og:title", content: "Travel Services in Hyderabad" },
+      { property: "og:title", content: "Services | Group Travel, Bus Rental & Tempo Traveller Hyderabad" },
       {
         property: "og:description",
         content:
-          "Group travel, corporate travel services, school and college trip transport, pilgrimage and outstation travel from Hyderabad.",
+          "Group travel, corporate travel, school and college trip transport, pilgrimage and outstation travel from Hyderabad.",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Services | Group Travel, Bus Rental & Tempo Traveller Hyderabad" },
+      {
+        name: "twitter:description",
+        content:
+          "Group, corporate, school, pilgrimage and outstation travel services from Hyderabad.",
       },
     ],
   }),
