@@ -423,6 +423,11 @@ function HomePage() {
                     <h3 className="font-display text-lg font-bold text-primary leading-tight">
                       {title}
                     </h3>
+                    {v.tag && (
+                      <span className="mt-2 inline-flex w-fit items-center gap-1 rounded-full bg-gradient-to-r from-accent/15 to-primary/10 border border-accent/40 px-2.5 py-1 text-[11px] font-semibold text-primary">
+                        <Sparkles className="h-3 w-3 text-accent" /> {v.tag}
+                      </span>
+                    )}
                     <div className="mt-1.5 flex items-center gap-3 text-xs font-semibold text-foreground/70">
                       <span className="inline-flex items-center gap-1">
                         <Users className="h-3.5 w-3.5 text-accent" /> {v.seats} Seater
