@@ -24,6 +24,7 @@ export type Vehicle = {
   bestFor: string;
   ac: string;
   startingPrice: string;
+  tag?: string;
 };
 
 export const vehicles: Vehicle[] = [
