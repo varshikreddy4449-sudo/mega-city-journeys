@@ -14,6 +14,7 @@ import {
   Snowflake,
   Calendar,
   ShieldCheck,
+  Sparkles,
 } from "lucide-react";
 import logoImg from "@/assets/logo.webp";
 import heroVehicle from "@/assets/vehicle-urbania.webp";
