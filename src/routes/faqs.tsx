@@ -12,16 +12,36 @@ import { whatsappLink, site } from "@/data/site";
 export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [
-      { title: "Travel Booking FAQs | Mega City Tours & Travells Hyderabad" },
+      { title: "FAQs | Vehicle Rental & Group Travel Bookings Hyderabad | Mega City" },
       {
         name: "description",
         content:
-          "Answers to common questions about bookings, pricing, vehicles, routes, payments, and group travel from Hyderabad.",
+          "Answers about bus rental, tempo traveller and Urbania bookings, pricing, vehicles, routes, payments and group travel from Hyderabad with Mega City Tours & Travells.",
       },
       { property: "og:title", content: "Travel Booking FAQs | Mega City Tours & Travells" },
       {
         property: "og:description",
-        content: "Booking, pricing, vehicles, routes, payments, group travel, all answered.",
+        content: "Booking, pricing, vehicles, routes, payments, group travel — all answered.",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Travel Booking FAQs | Mega City Tours & Travells" },
+      {
+        name: "twitter:description",
+        content: "Booking, pricing, vehicles, routes, payments, group travel — all answered.",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
       },
     ],
   }),

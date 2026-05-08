@@ -46,18 +46,21 @@ import busInterior2 from "@/assets/bus-interior-2.webp";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery | Mega City Tours & Travells" },
+      { title: "Gallery | Mega City Tours & Travells Vehicle Gallery Hyderabad" },
       {
         name: "description",
         content:
-          "Real photos of Mega City Tours and Travells vehicles, interiors, and branded fleet in Hyderabad.",
+          "Photos of Mega City Tours & Travells vehicles, interiors and branded fleet in Hyderabad — buses, tempo traveller, Urbania, Innova Crysta, Fortuner and Brezza.",
       },
-      { property: "og:title", content: "Gallery | Mega City Tours & Travells" },
+      { property: "og:title", content: "Gallery | Mega City Tours & Travells Vehicle Gallery" },
       {
         property: "og:description",
-        content: "A real look at our vehicles, interiors, and branded fleet in Hyderabad.",
+        content: "A real look at our vehicles, interiors and branded fleet in Hyderabad.",
       },
       { property: "og:image", content: fleetHero },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Gallery | Mega City Tours & Travells Vehicle Gallery" },
+      { name: "twitter:description", content: "Real photos of our vehicles, interiors and branded fleet in Hyderabad." },
       { name: "twitter:image", content: fleetHero },
     ],
   }),

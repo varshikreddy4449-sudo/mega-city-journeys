@@ -11,17 +11,20 @@ import { LogoWatermark } from "@/components/LogoWatermark";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Mega City Tours & Travells | Get Travel Quote in Hyderabad" },
+      { title: "Contact | Book Vehicle Rental in Hyderabad | Mega City Tours & Travells" },
       {
         name: "description",
         content:
-          "Contact Mega City Tours & Travells in Hyderabad for group travel, per KM trips, and outstation bookings. Call, WhatsApp, or share your trip details.",
+          "Contact Mega City Tours & Travells in Hyderabad for bus rental, tempo traveller, Urbania, group travel, per KM trips and outstation bookings. Call or WhatsApp to share your trip details.",
       },
-      { property: "og:title", content: "Contact Mega City Tours & Travells" },
+      { property: "og:title", content: "Contact | Book Vehicle Rental in Hyderabad" },
       {
         property: "og:description",
         content: "Get a travel quote on WhatsApp or by phone. Hyderabad based travel partner.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Contact | Book Vehicle Rental in Hyderabad" },
+      { name: "twitter:description", content: "Get a travel quote on WhatsApp or by phone." },
     ],
   }),
   component: ContactPage,

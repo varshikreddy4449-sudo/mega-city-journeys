@@ -11,13 +11,12 @@ export const Route = createFileRoute("/blogs/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Travel Guides & Vehicle Booking Tips from Hyderabad | Mega City Tours & Travells",
+        title: "Blogs | Travel Guides & Vehicle Booking Tips from Hyderabad",
       },
       {
         name: "description",
         content:
-          "Helpful travel guides, vehicle booking tips, and route advice for group travel, school trips, weddings, pilgrimages, corporate movement, and outstation trips from Hyderabad.",
+          "Travel guides and vehicle booking tips for group travel, school and college trips, weddings, pilgrimages, corporate travel and outstation trips from Hyderabad.",
       },
       {
         property: "og:title",
@@ -25,9 +24,11 @@ export const Route = createFileRoute("/blogs/")({
       },
       {
         property: "og:description",
-        content:
-          "Vehicle booking tips and travel guides for trips from Hyderabad.",
+        content: "Vehicle booking tips and travel guides for trips from Hyderabad.",
       },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Travel Guides from Hyderabad | Mega City Tours & Travells" },
+      { name: "twitter:description", content: "Vehicle booking tips and travel guides for trips from Hyderabad." },
     ],
   }),
   component: BlogsIndex,

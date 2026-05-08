@@ -14,6 +14,8 @@ export const Route = createFileRoute("/blogs/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Blog | Mega City Tours & Travells" }] };
     const p = loaderData.post;
+    const url = `${site.url}/blogs/${p.slug}`;
+    const ogImage = `${site.url}/og-image.jpg`;
     return {
       meta: [
         { title: p.metaTitle },
@@ -22,8 +24,33 @@ export const Route = createFileRoute("/blogs/$slug")({
         { property: "og:title", content: p.metaTitle },
         { property: "og:description", content: p.metaDescription },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+        { property: "og:image", content: ogImage },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: p.metaTitle },
+        { name: "twitter:description", content: p.metaDescription },
+        { name: "twitter:image", content: ogImage },
       ],
+      links: [{ rel: "canonical", href: url }],
       scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: p.title,
+            description: p.metaDescription,
+            mainEntityOfPage: url,
+            image: ogImage,
+            author: { "@type": "Organization", name: "Mega City Tours & Travells" },
+            publisher: {
+              "@type": "Organization",
+              name: "Mega City Tours & Travells",
+              logo: { "@type": "ImageObject", url: `${site.url}/android-chrome-512x512.png` },
+            },
+            keywords: p.keywords.join(", "),
+          }),
+        },
         {
           type: "application/ld+json",
           children: JSON.stringify({

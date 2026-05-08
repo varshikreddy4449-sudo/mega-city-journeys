@@ -43,19 +43,26 @@ import { blogs } from "@/data/blogs";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mega City Tours & Travells | Bus Rental & Tempo Traveller Rental Hyderabad" },
+      { title: "Mega City Tours & Travells | Vehicle Rentals in Hyderabad" },
       {
         name: "description",
         content:
-          "Group travel agency Hyderabad with bus rental, tempo traveller, Urbania, and 22 to 50 seater bus rental. AC and Non-AC vehicles for outstation, family, school, wedding, pilgrimage, and corporate travel.",
+          "Tours and travels in Hyderabad with bus rental, tempo traveller rental, Urbania rental, and 22 to 50 seater bus rental. AC and Non-AC vehicles for group travel, outstation, family, school, wedding, pilgrimage and corporate travel from Hyderabad.",
       },
-      { property: "og:title", content: "Mega City Tours & Travells | Hyderabad" },
+      { property: "og:title", content: "Mega City Tours & Travells | Vehicle Rentals in Hyderabad" },
       {
         property: "og:description",
         content:
-          "Bus rental, tempo traveller rental, and per KM travels from Hyderabad across Telangana and nearby states.",
+          "Bus rental, tempo traveller rental, Urbania and per KM travels from Hyderabad across Telangana and nearby states.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Mega City Tours & Travells | Vehicle Rentals in Hyderabad" },
+      {
+        name: "twitter:description",
+        content:
+          "Bus rental, tempo traveller rental, Urbania and per KM travels from Hyderabad.",
+      },
     ],
   }),
   component: HomePage,
