@@ -36,7 +36,7 @@ export const vehicleGalleries: Record<string, string[]> = {
   breeza: [brezzaFront, brezzaRear],
   "innova-crysta": [innovaExtFront, innovaExtRear, innovaIntFront, innovaIntRear],
   fortuner: [fortunerSide, fortunerFront, fortunerAngle],
-  "tempo-traveller-12": [tempo12Home, tempoFront, tempoSide, tempoInterior],
+  "tempo-traveller-12": [tempoSide, tempo12Home, tempoFront, tempoInterior],
   "tempo-traveller-16": [tempoRear, tempoSide, tempoInterior],
   urbania: [urbania, urbaniaInterior],
   "bus-22": [bus22Main, bus22Front, bus22InteriorMaroon, bus22InteriorBeige],
