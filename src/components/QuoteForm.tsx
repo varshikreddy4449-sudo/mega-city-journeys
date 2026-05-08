@@ -176,7 +176,7 @@ export function QuoteForm({
           {!form.date && (
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute inset-y-0 left-3.5 flex items-center text-sm text-muted-foreground/70"
+              className="pointer-events-none absolute inset-y-0 left-3.5 flex items-center text-sm text-muted-foreground/70 md:hidden"
             >
               Date of Journey
             </span>
