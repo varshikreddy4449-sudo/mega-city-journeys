@@ -4,7 +4,7 @@ import fortuner from "@/assets/vehicle-fortuner-side.webp";
 import tempoFront from "@/assets/tempo-exterior-front.webp";
 import tempoRear from "@/assets/tempo-exterior-rear.webp";
 import urbania from "@/assets/vehicle-urbania.webp";
-import bus21Main from "@/assets/bus-21-main.png";
+
 import bus22Main from "@/assets/bus-22-main.png";
 import busBlue from "@/assets/vehicle-bus-28.webp";
 import busRed from "@/assets/vehicle-bus-40.webp";
@@ -93,17 +93,6 @@ export const vehicles: Vehicle[] = [
     count: 1,
     image: tempoRear,
     bestFor: "Larger group trips, wedding transport, pilgrimage trips, and outstation travel",
-    ac: "AC / Non-AC",
-    startingPrice: "Ask for Price",
-  },
-  {
-    slug: "bus-21",
-    category: "Bus",
-    name: "Bus",
-    seats: 21,
-    count: 1,
-    image: bus21Main,
-    bestFor: "Small groups, family trips, school outings, and short group travel",
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
   },
