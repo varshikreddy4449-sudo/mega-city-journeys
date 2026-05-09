@@ -30,6 +30,13 @@ import routeWarangal from "@/assets/routes/warangal.png";
 import routeVijayawada from "@/assets/routes/vijayawada.png";
 import routeNagarjunaSagar from "@/assets/routes/nagarjuna-sagar.png";
 import routeHyderabadLocal from "@/assets/routes/hyderabad-local.png";
+import routeGokarna from "@/assets/routes/gokarna.png";
+import routeTirupati from "@/assets/routes/tirupati.png";
+import routePondicherry from "@/assets/routes/pondicherry.png";
+import routeKanyakumari from "@/assets/routes/kanyakumari.png";
+import routeShabari from "@/assets/routes/shabari.jpg";
+import routeMunnar from "@/assets/routes/munnar.jpg";
+import routeOoty from "@/assets/routes/ooty.jpg";
 import { site, whatsappLink } from "@/data/site";
 import { vehicles } from "@/data/vehicles";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -130,6 +137,62 @@ const popularRoutes: Array<{
     bestFor: "City tours & day rentals",
     vehicles: "Brezza, Innova, Tempo Traveller",
     image: routeHyderabadLocal,
+  },
+  {
+    title: "Hyderabad to Gokarna, Goa",
+    tripType: "Outstation / Per KM",
+    category: "Family",
+    bestFor: "Beach trips / family trips",
+    vehicles: "Innova, Urbania, Tempo Traveller, Bus",
+    image: routeGokarna,
+  },
+  {
+    title: "Hyderabad to Tirupati",
+    tripType: "Outstation / Per KM",
+    category: "Pilgrimage",
+    bestFor: "Pilgrimage / family trips",
+    vehicles: "Innova, Urbania, Tempo Traveller, Bus",
+    image: routeTirupati,
+  },
+  {
+    title: "Hyderabad to Pondicherry",
+    tripType: "Outstation / Per KM",
+    category: "Family",
+    bestFor: "Family trips / leisure trips",
+    vehicles: "Innova, Urbania, Tempo Traveller, Bus",
+    image: routePondicherry,
+  },
+  {
+    title: "Hyderabad to Kanyakumari",
+    tripType: "Outstation / Per KM",
+    category: "Outstation",
+    bestFor: "Sightseeing / family trips",
+    vehicles: "Innova, Urbania, Tempo Traveller, Bus",
+    image: routeKanyakumari,
+  },
+  {
+    title: "Hyderabad to Shabari",
+    tripType: "Outstation / Per KM",
+    category: "Pilgrimage",
+    bestFor: "Pilgrimage / devotional trips",
+    vehicles: "Innova, Urbania, Tempo Traveller, Bus",
+    image: routeShabari,
+  },
+  {
+    title: "Hyderabad to Munnar",
+    tripType: "Outstation / Per KM",
+    category: "Family",
+    bestFor: "Hill station / leisure trips",
+    vehicles: "Innova, Urbania, Tempo Traveller, Bus",
+    image: routeMunnar,
+  },
+  {
+    title: "Hyderabad to Ooty",
+    tripType: "Outstation / Per KM",
+    category: "Family",
+    bestFor: "Hill station / family trips",
+    vehicles: "Innova, Urbania, Tempo Traveller, Bus",
+    image: routeOoty,
   },
 ];
 
