@@ -53,7 +53,7 @@ export const vehicleGalleries: Record<string, string[]> = {
   "bus-22": [bus22Main, bus22Front, bus22InteriorMaroon, bus22InteriorBeige],
   "bus-28": [busRed, bus40Front, busInterior],
   "bus-40": [bus40RedFront, bus40RedFront2, bus40RedRear, bus40RedInterior],
-  "bus-40-yellow": [busYellow, bus40Front, bus40Side, bus40RearYellow],
+  "bus-40-yellow": [busYellow, bus40Side, bus40RearYellow],
   "bus-50": [bus50, bus50Front, bus50Interior],
   "bus-40-white": [busWhite, bus40WhiteFront, bus40WhiteRear, bus40WhiteInterior],
   "bus-40-eicher": [bus40EicherFront, bus40EicherInteriorBlue, bus40EicherInteriorYellow],
