@@ -439,6 +439,9 @@ function HomePage() {
         </div>
       </section>
 
+      {/* CLIENTS / TRAVEL NETWORK */}
+      <ClientsBelt />
+
       {/* OUR VEHICLES */}
       <section className="relative overflow-hidden py-16 md:py-24">
         <LogoWatermark position="center" />
