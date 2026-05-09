@@ -561,9 +561,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* CLIENTS / TRAVEL NETWORK */}
-      <ClientsBelt />
-
       {/* WHY CHOOSE MEGA CITY */}
       <section
         className="relative overflow-hidden py-16 md:py-24 text-white"
