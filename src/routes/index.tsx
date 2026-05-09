@@ -25,6 +25,7 @@ import fleetImg from "@/assets/megacity-fleet.webp";
 import { VehicleImageCarousel } from "@/components/VehicleImageCarousel";
 import { vehicleGalleries } from "@/data/vehicleGalleries";
 import routeSrisailam from "@/assets/routes/srisailam.png";
+import routeNagarjunaSagar from "@/assets/routes/nagarjuna-sagar.png";
 import routeYadadri from "@/assets/routes/yadadri.png";
 import routeWarangal from "@/assets/routes/warangal.png";
 import routeVijayawada from "@/assets/routes/vijayawada.png";
