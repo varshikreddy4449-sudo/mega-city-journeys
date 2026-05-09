@@ -115,14 +115,6 @@ const popularRoutes: Array<{
     image: routeVijayawada,
   },
   {
-    title: "Hyderabad to Nagarjuna Sagar",
-    tripType: "One-Day Round Trip",
-    category: "Family",
-    bestFor: "Family day-out trips",
-    vehicles: "Innova, Tempo Traveller, Urbania",
-    image: routeNagarjunaSagar,
-  },
-  {
     title: "Hyderabad Local Sightseeing",
     tripType: "Local / Day Rental",
     category: "Local",
