@@ -24,11 +24,9 @@ import type { Vehicle } from "@/data/vehicles";
 import fleetImg from "@/assets/megacity-fleet.webp";
 import { VehicleImageCarousel } from "@/components/VehicleImageCarousel";
 import { vehicleGalleries } from "@/data/vehicleGalleries";
-import routeSrisailam from "@/assets/routes/srisailam.png";
 import routeYadadri from "@/assets/routes/yadadri.png";
 import routeWarangal from "@/assets/routes/warangal.png";
 import routeVijayawada from "@/assets/routes/vijayawada.png";
-import routeNagarjunaSagar from "@/assets/routes/nagarjuna-sagar.png";
 import routeHyderabadLocal from "@/assets/routes/hyderabad-local.png";
 import routeGokarna from "@/assets/routes/gokarna.png";
 import routeTirupati from "@/assets/routes/tirupati.png";
@@ -91,14 +89,6 @@ const popularRoutes: Array<{
   image?: string;
 }> = [
   {
-    title: "Hyderabad to Srisailam",
-    tripType: "Outstation / Per KM",
-    category: "Pilgrimage",
-    bestFor: "Pilgrimage / family trips",
-    vehicles: "Innova, Urbania, Tempo Traveller, Bus",
-    image: routeSrisailam,
-  },
-  {
     title: "Hyderabad to Yadadri",
     tripType: "One-Day Round Trip",
     category: "Pilgrimage",
@@ -121,14 +111,6 @@ const popularRoutes: Array<{
     bestFor: "Outstation & business travel",
     vehicles: "Innova, Urbania, 22/28 Seater Bus",
     image: routeVijayawada,
-  },
-  {
-    title: "Hyderabad to Nagarjuna Sagar",
-    tripType: "One-Day Round Trip",
-    category: "Family",
-    bestFor: "Family day-out trips",
-    vehicles: "Innova, Tempo Traveller, Urbania",
-    image: routeNagarjunaSagar,
   },
   {
     title: "Hyderabad Local Sightseeing",
