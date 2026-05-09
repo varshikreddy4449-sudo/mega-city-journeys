@@ -91,14 +91,6 @@ const popularRoutes: Array<{
   image?: string;
 }> = [
   {
-    title: "Hyderabad to Srisailam",
-    tripType: "Outstation / Per KM",
-    category: "Pilgrimage",
-    bestFor: "Pilgrimage / family trips",
-    vehicles: "Innova, Urbania, Tempo Traveller, Bus",
-    image: routeSrisailam,
-  },
-  {
     title: "Hyderabad to Yadadri",
     tripType: "One-Day Round Trip",
     category: "Pilgrimage",
