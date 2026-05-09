@@ -49,7 +49,7 @@ export const vehicleGalleries: Record<string, string[]> = {
   "tempo-traveller-12": [tempoSide, tempo12Home, tempoFront, tempoInterior],
   "tempo-traveller-16": [tempoRear, tempoSide, tempoInterior],
   urbania: [urbania, urbaniaInterior],
-  "bus-21": [bus21Main, bus21Side, bus21Interior],
+  
   "bus-22": [bus22Main, bus22Front, bus22InteriorMaroon, bus22InteriorBeige],
   "bus-28": [busRed, bus40Front, busInterior],
   "bus-40": [bus40RedFront, bus40RedFront2, bus40RedRear, bus40RedInterior],
