@@ -2,12 +2,22 @@ import apolloMicrosystems from "@/assets/clients/apollo-microsystems.png";
 import indosol from "@/assets/clients/indosol.png";
 import wellsFargo from "@/assets/clients/wells-fargo.png";
 import novartis from "@/assets/clients/novartis.png";
+import pharmaChem from "@/assets/clients/pharma-chem.png";
+import infosys from "@/assets/clients/infosys.png";
+import foxconnFit from "@/assets/clients/foxconn-fit.png";
+import dtds from "@/assets/clients/dtds.png";
+import iconLifeSciences from "@/assets/clients/icon-life-sciences.png";
 
 const logos = [
-  { src: apolloMicrosystems, alt: "Apollo Microsystems" },
-  { src: indosol, alt: "Indosol" },
   { src: wellsFargo, alt: "Wells Fargo" },
   { src: novartis, alt: "Novartis" },
+  { src: apolloMicrosystems, alt: "Apollo Microsystems" },
+  { src: indosol, alt: "Indosol" },
+  { src: foxconnFit, alt: "Foxconn FIT" },
+  { src: dtds, alt: "DTDS" },
+  { src: iconLifeSciences, alt: "Icon Life Sciences" },
+  { src: pharmaChem, alt: "Pharma Chem" },
+  { src: infosys, alt: "Infosys" },
 ];
 
 export default function ClientsBelt() {
