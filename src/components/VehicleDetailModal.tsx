@@ -37,6 +37,10 @@ import bus40WhiteInterior from "@/assets/bus-40-white-interior.png";
 import bus40EicherFront from "@/assets/bus-40-eicher-front.png";
 import bus40EicherInteriorBlue from "@/assets/bus-40-eicher-interior-blue.png";
 import bus40EicherInteriorYellow from "@/assets/bus-40-eicher-interior-yellow.png";
+import bus40RedFront from "@/assets/bus-40-red-front.png";
+import bus40RedFront2 from "@/assets/bus-40-red-front2.png";
+import bus40RedRear from "@/assets/bus-40-red-rear.png";
+import bus40RedInterior from "@/assets/bus-40-red-interior.png";
 import bus40Front from "@/assets/bus-40-front.webp";
 import bus40Side from "@/assets/bus-40-side.webp";
 import bus40Rear from "@/assets/bus-40-rear.webp";
@@ -56,7 +60,7 @@ const galleries: Record<string, string[]> = {
   "bus-21": [bus21Main, bus21Side, bus21Interior],
   "bus-22": [bus22Main, bus22Front, bus22InteriorMaroon, bus22InteriorBeige],
   "bus-28": [busRed, bus40Front, busInterior],
-  "bus-40": [busYellow, bus40Side, bus40RearYellow],
+  "bus-40": [bus40RedFront, bus40RedFront2, bus40RedRear, bus40RedInterior],
   "bus-50": [bus50, bus50Front, bus50Interior],
   "bus-40-white": [busWhite, bus40WhiteFront, bus40WhiteRear, bus40WhiteInterior],
   "bus-40-eicher": [bus40EicherFront, bus40EicherInteriorBlue, bus40EicherInteriorYellow],
