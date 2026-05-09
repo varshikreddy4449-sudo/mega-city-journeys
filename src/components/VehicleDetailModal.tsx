@@ -34,6 +34,9 @@ import busWhite from "@/assets/bus-40-white-main.png";
 import bus40WhiteFront from "@/assets/bus-40-white-front.png";
 import bus40WhiteRear from "@/assets/bus-40-white-rear.png";
 import bus40WhiteInterior from "@/assets/bus-40-white-interior.png";
+import bus40EicherFront from "@/assets/bus-40-eicher-front.png";
+import bus40EicherInteriorBlue from "@/assets/bus-40-eicher-interior-blue.png";
+import bus40EicherInteriorYellow from "@/assets/bus-40-eicher-interior-yellow.png";
 import bus40Front from "@/assets/bus-40-front.webp";
 import bus40Side from "@/assets/bus-40-side.webp";
 import bus40Rear from "@/assets/bus-40-rear.webp";
@@ -56,6 +59,7 @@ const galleries: Record<string, string[]> = {
   "bus-40": [busYellow, bus40Side, bus40RearYellow],
   "bus-50": [bus50, bus50Front, bus50Interior],
   "bus-40-white": [busWhite, bus40WhiteFront, bus40WhiteRear, bus40WhiteInterior],
+  "bus-40-eicher": [bus40EicherFront, bus40EicherInteriorBlue, bus40EicherInteriorYellow],
 };
 
 const useCases: Record<string, string[]> = {
@@ -71,6 +75,7 @@ const useCases: Record<string, string[]> = {
   "bus-40": ["Small group trips", "School picnics", "Family events", "Short group travel"],
   "bus-50": ["Large weddings", "School & college trips", "Corporate events", "Big group movement"],
   "bus-40-white": ["Group tours", "School trips", "Pilgrimage movement", "Outstation travel"],
+  "bus-40-eicher": ["Group tours", "School trips", "Family functions", "Outstation travel"],
 };
 
 export function VehicleDetailModal({
