@@ -12,6 +12,7 @@ import busYellow from "@/assets/vehicle-bus-22.webp";
 import bus40MegaFront from "@/assets/bus-40-mega-front.png";
 import bus50 from "@/assets/bus-50-main.png";
 import busWhite from "@/assets/bus-40-white-main.png";
+import bus40EicherFront from "@/assets/bus-40-eicher-front.png";
 
 export type VehicleCategory = "Car" | "SUV" | "Traveller" | "Bus";
 
@@ -163,6 +164,18 @@ export const vehicles: Vehicle[] = [
     ac: "AC / Non-AC",
     startingPrice: "Ask for Price",
     tag: "Hi-Tech Bus – For Family Trips",
+  },
+  {
+    slug: "bus-40-eicher",
+    category: "Bus",
+    name: "Bus",
+    seats: 40,
+    count: 1,
+    image: bus40EicherFront,
+    bestFor: "Group tours, school trips, family functions, and comfortable group travel",
+    ac: "AC / Non-AC",
+    startingPrice: "Ask for Price",
+    tag: "Newly Added",
   },
   {
     slug: "bus-50",
