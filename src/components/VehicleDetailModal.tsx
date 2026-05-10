@@ -20,6 +20,8 @@ import tempoRear from "@/assets/tempo-exterior-rear.webp";
 import tempoInterior from "@/assets/tempo-interior.webp";
 import urbania from "@/assets/vehicle-urbania.webp";
 import urbaniaInterior from "@/assets/urbania-interior.webp";
+import urbaniaInterior2 from "@/assets/urbania-interior-2.png";
+import urbaniaInterior3 from "@/assets/urbania-interior-3.png";
 import bus22Main from "@/assets/bus-22-main.png";
 import bus22Front from "@/assets/bus-22-front.png";
 import bus22InteriorMaroon from "@/assets/bus-22-interior-maroon.png";
@@ -53,7 +55,7 @@ const galleries: Record<string, string[]> = {
   fortuner: [fortunerSide, fortunerFront, fortunerAngle],
   "tempo-traveller-12": [tempoFront, tempoSide, tempoInterior],
   "tempo-traveller-16": [tempoRear, tempoSide, tempoInterior],
-  urbania: [urbania, urbaniaInterior],
+  urbania: [urbania, urbaniaInterior, urbaniaInterior2, urbaniaInterior3],
   
   "bus-22": [bus22Main, bus22Front, bus22InteriorMaroon, bus22InteriorBeige],
   "bus-28": [busRed, bus40Front, busInterior],
