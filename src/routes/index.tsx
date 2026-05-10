@@ -360,22 +360,30 @@ function HomePage() {
                       "0 18px 40px -12px rgba(13,92,99,0.30), 0 6px 16px -8px rgba(255,122,89,0.20)",
                   }}
                 >
-                  <div
+                  {/* Blurred background video fill */}
+                  <video
                     aria-hidden="true"
-                    className="absolute inset-0"
+                    src="/videos/hero.mp4"
+                    poster="/videos/hero-poster.jpg"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    tabIndex={-1}
+                    className="absolute inset-0 h-full w-full"
                     style={{
-                      backgroundImage: "url(/videos/hero-poster.jpg)",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
+                      objectFit: "cover",
                       filter: "blur(24px)",
-                      transform: "scale(1.15)",
+                      transform: "scale(1.2)",
                     }}
                   />
                   <div
                     aria-hidden="true"
                     className="absolute inset-0"
-                    style={{ background: "rgba(13,92,99,0.25)" }}
+                    style={{ background: "rgba(13,92,99,0.30)" }}
                   />
+                  {/* Foreground video — full content visible */}
                   <video
                     src="/videos/hero.mp4"
                     poster="/videos/hero-poster.jpg"
