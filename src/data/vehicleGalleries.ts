@@ -25,9 +25,9 @@ import bus40RedFront2 from "@/assets/bus-40-red-front2.png";
 import bus40RedRear from "@/assets/bus-40-red-rear.png";
 import bus40RedInterior from "@/assets/bus-40-red-interior.png";
 import busWhite from "@/assets/bus-40-white-main.png";
-import bus40EicherFront from "@/assets/bus-40-eicher-front.png";
-import bus40EicherInteriorBlue from "@/assets/bus-40-eicher-interior-blue.png";
-import bus40EicherInteriorYellow from "@/assets/bus-40-eicher-interior-yellow.png";
+import bus40EicherNewSide from "@/assets/bus-40-eicher-new-side.png";
+import bus40EicherNewFront from "@/assets/bus-40-eicher-new-front.png";
+import bus40EicherNewInterior from "@/assets/bus-40-eicher-new-interior.png";
 import bus40WhiteFront from "@/assets/bus-40-white-front.png";
 import bus40WhiteRear from "@/assets/bus-40-white-rear.png";
 import bus40WhiteInterior from "@/assets/bus-40-white-interior.png";
@@ -53,5 +53,5 @@ export const vehicleGalleries: Record<string, string[]> = {
   "bus-40-yellow": [busYellow, bus40Side, bus40RearYellow],
   "bus-50": [bus50, bus50Front, bus50Interior],
   "bus-40-white": [busWhite, bus40WhiteFront, bus40WhiteRear, bus40WhiteInterior],
-  "bus-40-eicher": [bus40EicherFront, bus40EicherInteriorBlue, bus40EicherInteriorYellow],
+  "bus-40-eicher": [bus40EicherNewSide, bus40EicherNewFront, bus40EicherNewInterior],
 };
