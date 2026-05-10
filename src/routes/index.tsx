@@ -352,26 +352,46 @@ function HomePage() {
                     filter: "blur(8px)",
                   }}
                 />
-                <video
-                  src="/videos/hero.mp4"
-                  poster="/videos/hero-poster.jpg"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  controls={false}
-                  disablePictureInPicture
-                  controlsList="nodownload noplaybackrate noremoteplayback"
-                  aria-label="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
-                  className="relative block w-full rounded-2xl"
+                <div
+                  className="relative block w-full overflow-hidden rounded-2xl"
                   style={{
-                    maxHeight: "300px",
-                    objectFit: "cover",
+                    height: "300px",
                     boxShadow:
                       "0 18px 40px -12px rgba(13,92,99,0.30), 0 6px 16px -8px rgba(255,122,89,0.20)",
                   }}
-                />
+                >
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage: "url(/videos/hero-poster.jpg)",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      filter: "blur(24px)",
+                      transform: "scale(1.15)",
+                    }}
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0"
+                    style={{ background: "rgba(13,92,99,0.25)" }}
+                  />
+                  <video
+                    src="/videos/hero.mp4"
+                    poster="/videos/hero-poster.jpg"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    controls={false}
+                    disablePictureInPicture
+                    controlsList="nodownload noplaybackrate noremoteplayback"
+                    aria-label="Force Urbania for premium group travel in Hyderabad — Mega City Tours & Travells"
+                    className="relative z-10 block h-full w-full"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
               </div>
             </div>
 
