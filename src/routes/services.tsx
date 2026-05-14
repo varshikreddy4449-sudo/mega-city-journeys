@@ -29,24 +29,42 @@ import { AreasServed } from "@/components/AreasServed";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services | Group Travel, Bus Rental & Tempo Traveller Hyderabad" },
+      { title: "Travel Services in Hyderabad | Group, Corporate, School & Outstation Trips" },
       {
         name: "description",
         content:
           "Group travel, per KM trips, local sightseeing, outstation travel, corporate travel, school and college trip transport, pilgrimage trips and wedding guest transport from Hyderabad. WhatsApp or call to enquire.",
       },
-      { property: "og:title", content: "Services | Group Travel, Bus Rental & Tempo Traveller Hyderabad" },
+      { property: "og:title", content: "Travel Services in Hyderabad | Group, Corporate, School & Outstation Trips" },
       {
         property: "og:description",
         content:
           "Group travel, corporate travel, school and college trip transport, pilgrimage and outstation travel from Hyderabad.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://megacitytravells.com/services" },
+      { property: "og:image", content: heroBusImg },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Services | Group Travel, Bus Rental & Tempo Traveller Hyderabad" },
+      { name: "twitter:title", content: "Travel Services in Hyderabad | Group, Corporate, School & Outstation Trips" },
       {
         name: "twitter:description",
         content:
           "Group, corporate, school, pilgrimage and outstation travel services from Hyderabad.",
+      },
+      { name: "twitter:image", content: heroBusImg },
+    ],
+    links: [{ rel: "canonical", href: "https://megacitytravells.com/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytravells.com/" },
+            { "@type": "ListItem", position: 2, name: "Services", item: "https://megacitytravells.com/services" },
+          ],
+        }),
       },
     ],
   }),
