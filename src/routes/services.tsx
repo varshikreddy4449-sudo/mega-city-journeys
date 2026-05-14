@@ -174,9 +174,9 @@ function ServiceListCard({ service: s }: { service: ServiceItem }) {
           <s.icon className="h-6 w-6" />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="font-display text-xl font-bold leading-snug" style={{ color: TEAL }}>
+          <h2 className="font-display text-xl font-bold leading-snug" style={{ color: TEAL }}>
             {s.title}
-          </h3>
+          </h2>
           <p className="mt-1.5 text-sm text-foreground/75 leading-relaxed">{s.short}</p>
         </div>
       </div>
@@ -431,9 +431,9 @@ function ServicesPage() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-display text-xl font-bold leading-tight" style={{ color: TEAL }}>
+                  <h2 className="font-display text-xl font-bold leading-tight" style={{ color: TEAL }}>
                     {s.title}
-                  </h3>
+                  </h2>
                   <p className="mt-2 text-sm md:text-base text-foreground/80 leading-relaxed">
                     {s.short}
                   </p>
