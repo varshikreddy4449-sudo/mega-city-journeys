@@ -32,24 +32,42 @@ import { AreasServed } from "@/components/AreasServed";
 export const Route = createFileRoute("/packages")({
   head: () => ({
     meta: [
-      { title: "Packages | Popular Routes from Hyderabad | Mega City Tours & Travells" },
+      { title: "Tour Packages from Hyderabad | Telangana Routes & Group Trips" },
       {
         name: "description",
         content:
           "Popular vehicle rental routes from Hyderabad — Srisailam, Yadadri, Warangal, Vijayawada, Nagarjuna Sagar and local sightseeing. Suggested vehicles for each route. Price on request.",
       },
-      { property: "og:title", content: "Packages | Popular Routes from Hyderabad" },
+      { property: "og:title", content: "Tour Packages from Hyderabad | Telangana Routes & Group Trips" },
       {
         property: "og:description",
         content:
           "Srisailam, Yadadri, Warangal, Vijayawada and local sightseeing routes with suggested vehicles. Price on request.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://megacitytravells.com/packages" },
+      { property: "og:image", content: fleetImg },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Packages | Popular Routes from Hyderabad" },
+      { name: "twitter:title", content: "Tour Packages from Hyderabad | Telangana Routes & Group Trips" },
       {
         name: "twitter:description",
         content:
           "Popular routes from Hyderabad with suggested vehicles. Price on request.",
+      },
+      { name: "twitter:image", content: fleetImg },
+    ],
+    links: [{ rel: "canonical", href: "https://megacitytravells.com/packages" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytravells.com/" },
+            { "@type": "ListItem", position: 2, name: "Packages", item: "https://megacitytravells.com/packages" },
+          ],
+        }),
       },
     ],
   }),
