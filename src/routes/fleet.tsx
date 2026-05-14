@@ -17,24 +17,42 @@ import bus50Interior from "@/assets/bus-50-interior-new.png";
 export const Route = createFileRoute("/fleet")({
   head: () => ({
     meta: [
-      { title: "Fleet | Cars, Urbania, Tempo Traveller & Bus Rentals Hyderabad" },
+      { title: "Travel Vehicles in Hyderabad | Cars, SUVs, Tempo Travellers & Buses" },
       {
         name: "description",
         content:
           "Owned vehicle rental fleet in Hyderabad: Brezza, Innova Crysta, Fortuner, 12 seater Tempo Traveller, 12 seater Urbania, and 22, 28, 40 and 50 seater bus rental in Hyderabad with experienced drivers. WhatsApp or call to enquire.",
       },
-      { property: "og:title", content: "Fleet | Cars, Urbania, Tempo Traveller & Bus Rentals Hyderabad" },
+      { property: "og:title", content: "Travel Vehicles in Hyderabad | Cars, SUVs, Tempo Travellers & Buses" },
       {
         property: "og:description",
         content:
           "Tempo traveller, Urbania and 22 to 50 seater bus rental in Hyderabad with drivers included.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://megacitytravells.com/fleet" },
+      { property: "og:image", content: fleetHero },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Fleet | Cars, Urbania, Tempo Traveller & Bus Rentals Hyderabad" },
+      { name: "twitter:title", content: "Travel Vehicles in Hyderabad | Cars, SUVs, Tempo Travellers & Buses" },
       {
         name: "twitter:description",
         content:
           "Tempo traveller, Urbania and 22 to 50 seater bus rental in Hyderabad with drivers.",
+      },
+      { name: "twitter:image", content: fleetHero },
+    ],
+    links: [{ rel: "canonical", href: "https://megacitytravells.com/fleet" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytravells.com/" },
+            { "@type": "ListItem", position: 2, name: "Fleet", item: "https://megacitytravells.com/fleet" },
+          ],
+        }),
       },
     ],
   }),
