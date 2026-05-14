@@ -431,9 +431,9 @@ function ServicesPage() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-display text-xl font-bold leading-tight" style={{ color: TEAL }}>
+                  <h2 className="font-display text-xl font-bold leading-tight" style={{ color: TEAL }}>
                     {s.title}
-                  </h3>
+                  </h2>
                   <p className="mt-2 text-sm md:text-base text-foreground/80 leading-relaxed">
                     {s.short}
                   </p>
