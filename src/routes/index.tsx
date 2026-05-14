@@ -312,8 +312,8 @@ function HomePage() {
                 Reliable Group Travel &amp; Per KM Trips from Hyderabad
               </h1>
               <p className="mt-4 text-base md:text-[17px] text-foreground/75 max-w-xl leading-relaxed">
-                Safe, comfortable, and professional transport solutions for groups from 4 to 50
-                seats. Local expertise you can trust.
+                Safe, comfortable group travel and per KM trips from Hyderabad across Telangana
+                and nearby states — vehicles from 4 to 50 seats with local expertise you can trust.
               </p>
 
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
