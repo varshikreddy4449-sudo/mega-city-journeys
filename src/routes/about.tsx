@@ -31,23 +31,39 @@ import tempoInterior from "@/assets/tempo-interior.webp";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About | Hyderabad Travel Agency & Vehicle Rental | Mega City" },
+      { title: "About Mega City Tours & Travells | Hyderabad Travel Agency" },
       {
         name: "description",
         content:
           "Mega City Tours & Travells is a Hyderabad travel agency with an owned fleet of 4 to 50 seater vehicles, experienced drivers and easy WhatsApp booking for local and outstation trips.",
       },
-      { property: "og:title", content: "About Mega City Tours & Travells | Hyderabad" },
+      { property: "og:title", content: "About Mega City Tours & Travells | Hyderabad Travel Agency" },
       {
         property: "og:description",
         content:
           "Hyderabad travel partner with owned, branded fleet and experienced drivers.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://megacitytravells.com/about" },
       { property: "og:image", content: brandedBus },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "About Mega City Tours & Travells | Hyderabad" },
+      { name: "twitter:title", content: "About Mega City Tours & Travells | Hyderabad Travel Agency" },
       { name: "twitter:description", content: "Hyderabad travel partner with owned fleet and experienced drivers." },
       { name: "twitter:image", content: brandedBus },
+    ],
+    links: [{ rel: "canonical", href: "https://megacitytravells.com/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytravells.com/" },
+            { "@type": "ListItem", position: 2, name: "About", item: "https://megacitytravells.com/about" },
+          ],
+        }),
+      },
     ],
   }),
   component: AboutPage,
