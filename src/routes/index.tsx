@@ -48,27 +48,31 @@ import { blogs } from "@/data/blogs";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mega City Tours & Travells | Vehicle Rentals in Hyderabad" },
+      { title: "Mega City Tours & Travells | Group Travel & Per KM Trips in Hyderabad" },
       {
         name: "description",
         content:
-          "Tours and travels in Hyderabad with bus rental, tempo traveller rental, Urbania rental, and 22 to 50 seater bus rental. AC and Non-AC vehicles for group travel, outstation, family, school, wedding, pilgrimage and corporate travel from Hyderabad.",
+          "Mega City Tours & Travells offers reliable group travel and per KM trips from Hyderabad across Telangana — bus rental, tempo traveller, Urbania and car rental for family, corporate, school, wedding, pilgrimage and outstation trips.",
       },
-      { property: "og:title", content: "Mega City Tours & Travells | Vehicle Rentals in Hyderabad" },
+      { property: "og:title", content: "Mega City Tours & Travells | Group Travel & Per KM Trips in Hyderabad" },
       {
         property: "og:description",
         content:
-          "Bus rental, tempo traveller rental, Urbania and per KM travels from Hyderabad across Telangana and nearby states.",
+          "Reliable group travel and per KM trips from Hyderabad across Telangana — owned fleet of cars, tempo travellers, Urbania and 22 to 50 seater buses.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://megacitytravells.com/" },
+      { property: "og:image", content: "https://megacitytravells.com/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Mega City Tours & Travells | Vehicle Rentals in Hyderabad" },
+      { name: "twitter:title", content: "Mega City Tours & Travells | Group Travel & Per KM Trips in Hyderabad" },
       {
         name: "twitter:description",
         content:
-          "Bus rental, tempo traveller rental, Urbania and per KM travels from Hyderabad.",
+          "Reliable group travel and per KM trips from Hyderabad across Telangana.",
       },
+      { name: "twitter:image", content: "https://megacitytravells.com/og-image.jpg" },
     ],
+    links: [{ rel: "canonical", href: "https://megacitytravells.com/" }],
   }),
   component: HomePage,
 });
