@@ -79,15 +79,15 @@ const filters: Filter[] = [
 ];
 
 const seoHeading: Record<string, string> = {
-  breeza: "Brezza Rental in Hyderabad",
-  fortuner: "Fortuner Rental in Hyderabad",
-  "innova-crysta": "Innova Crysta Rental in Hyderabad",
+  breeza: "Brezza SUV Rental in Hyderabad",
+  fortuner: "Fortuner SUV Rental in Hyderabad",
+  "innova-crysta": "Innova Crysta Sedan & SUV Rental in Hyderabad",
   "tempo-traveller-12": "12 Seater Tempo Traveller Rental in Hyderabad",
   "tempo-traveller-16": "16 Seater Tempo Traveller Rental in Hyderabad",
   urbania: "12 Seater Urbania Rental in Hyderabad",
-  "bus-22": "22 Seater Bus Rental in Hyderabad",
-  "bus-28": "28 Seater Bus Rental in Hyderabad",
-  "bus-40": "22 Seater Bus Rental in Hyderabad",
+  "bus-22": "22 Seater Mini Bus Rental in Hyderabad",
+  "bus-28": "28 Seater Mini Bus Rental in Hyderabad",
+  "bus-40": "40 Seater Bus Rental in Hyderabad",
   "bus-50": "50 Seater Bus Rental in Hyderabad",
   "bus-40-white": "40 Seater Bus Rental in Hyderabad",
 };
