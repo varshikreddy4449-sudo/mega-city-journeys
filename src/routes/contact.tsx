@@ -11,20 +11,38 @@ import { LogoWatermark } from "@/components/LogoWatermark";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact | Book Vehicle Rental in Hyderabad | Mega City Tours & Travells" },
+      { title: "Contact Mega City Tours & Travells | Get Travel Quote in Hyderabad" },
       {
         name: "description",
         content:
           "Contact Mega City Tours & Travells in Hyderabad for bus rental, tempo traveller, Urbania, group travel, per KM trips and outstation bookings. Call or WhatsApp to share your trip details.",
       },
-      { property: "og:title", content: "Contact | Book Vehicle Rental in Hyderabad" },
+      { property: "og:title", content: "Contact Mega City Tours & Travells | Get Travel Quote in Hyderabad" },
       {
         property: "og:description",
         content: "Get a travel quote on WhatsApp or by phone. Hyderabad based travel partner.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://megacitytravells.com/contact" },
+      { property: "og:image", content: "https://megacitytravells.com/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Contact | Book Vehicle Rental in Hyderabad" },
+      { name: "twitter:title", content: "Contact Mega City Tours & Travells | Get Travel Quote in Hyderabad" },
       { name: "twitter:description", content: "Get a travel quote on WhatsApp or by phone." },
+      { name: "twitter:image", content: "https://megacitytravells.com/og-image.jpg" },
+    ],
+    links: [{ rel: "canonical", href: "https://megacitytravells.com/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytravells.com/" },
+            { "@type": "ListItem", position: 2, name: "Contact", item: "https://megacitytravells.com/contact" },
+          ],
+        }),
+      },
     ],
   }),
   component: ContactPage,
