@@ -30,7 +30,7 @@ export const Route = createFileRoute("/fleet")({
           "Tempo traveller, Urbania and 22 to 50 seater bus rental in Hyderabad with drivers included.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://megacitytravells.com/fleet" },
+      { property: "og:url", content: "https://megacitytoursandtravels.com/fleet" },
       { property: "og:image", content: fleetHero },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Travel Vehicles in Hyderabad | Cars, SUVs, Tempo Travellers & Buses" },
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/fleet")({
       },
       { name: "twitter:image", content: fleetHero },
     ],
-    links: [{ rel: "canonical", href: "https://megacitytravells.com/fleet" }],
+    links: [{ rel: "canonical", href: "https://megacitytoursandtravels.com/fleet" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -49,8 +49,8 @@ export const Route = createFileRoute("/fleet")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytravells.com/" },
-            { "@type": "ListItem", position: 2, name: "Fleet", item: "https://megacitytravells.com/fleet" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytoursandtravels.com/" },
+            { "@type": "ListItem", position: 2, name: "Fleet", item: "https://megacitytoursandtravels.com/fleet" },
           ],
         }),
       },

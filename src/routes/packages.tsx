@@ -45,7 +45,7 @@ export const Route = createFileRoute("/packages")({
           "Srisailam, Yadadri, Warangal, Vijayawada and local sightseeing routes with suggested vehicles. Price on request.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://megacitytravells.com/packages" },
+      { property: "og:url", content: "https://megacitytoursandtravels.com/packages" },
       { property: "og:image", content: fleetImg },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Tour Packages from Hyderabad | Telangana Routes & Group Trips" },
@@ -56,7 +56,7 @@ export const Route = createFileRoute("/packages")({
       },
       { name: "twitter:image", content: fleetImg },
     ],
-    links: [{ rel: "canonical", href: "https://megacitytravells.com/packages" }],
+    links: [{ rel: "canonical", href: "https://megacitytoursandtravels.com/packages" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -64,8 +64,8 @@ export const Route = createFileRoute("/packages")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytravells.com/" },
-            { "@type": "ListItem", position: 2, name: "Packages", item: "https://megacitytravells.com/packages" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytoursandtravels.com/" },
+            { "@type": "ListItem", position: 2, name: "Packages", item: "https://megacitytoursandtravels.com/packages" },
           ],
         }),
       },

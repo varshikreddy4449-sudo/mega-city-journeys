@@ -24,17 +24,17 @@ export const Route = createFileRoute("/faqs")({
         content: "Booking, pricing, vehicles, routes, payments, group travel — all answered.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://megacitytravells.com/faqs" },
-      { property: "og:image", content: "https://megacitytravells.com/og-image.jpg" },
+      { property: "og:url", content: "https://megacitytoursandtravels.com/faqs" },
+      { property: "og:image", content: "https://megacitytoursandtravels.com/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Travel Booking FAQs | Mega City Tours & Travells Hyderabad" },
       {
         name: "twitter:description",
         content: "Booking, pricing, vehicles, routes, payments, group travel — all answered.",
       },
-      { name: "twitter:image", content: "https://megacitytravells.com/og-image.jpg" },
+      { name: "twitter:image", content: "https://megacitytoursandtravels.com/og-image.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://megacitytravells.com/faqs" }],
+    links: [{ rel: "canonical", href: "https://megacitytoursandtravels.com/faqs" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -54,8 +54,8 @@ export const Route = createFileRoute("/faqs")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytravells.com/" },
-            { "@type": "ListItem", position: 2, name: "FAQs", item: "https://megacitytravells.com/faqs" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytoursandtravels.com/" },
+            { "@type": "ListItem", position: 2, name: "FAQs", item: "https://megacitytoursandtravels.com/faqs" },
           ],
         }),
       },

@@ -47,7 +47,7 @@ export const Route = createRootRoute({
       { name: "twitter:site", content: "@megacitytravells" },
       { property: "og:site_name", content: "Mega City Tours & Travells" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://megacitytravells.com/" },
+      { property: "og:url", content: "https://megacitytoursandtravels.com/" },
       {
         property: "og:title",
         content:
@@ -60,7 +60,7 @@ export const Route = createRootRoute({
       },
       {
         property: "og:image",
-        content: "https://megacitytravells.com/og-image.jpg",
+        content: "https://megacitytoursandtravels.com/og-image.jpg",
       },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
@@ -82,7 +82,7 @@ export const Route = createRootRoute({
       },
       {
         name: "twitter:image",
-        content: "https://megacitytravells.com/og-image.jpg",
+        content: "https://megacitytoursandtravels.com/og-image.jpg",
       },
     ],
     links: [
