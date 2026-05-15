@@ -44,14 +44,14 @@ export const Route = createFileRoute("/about")({
           "Hyderabad travel partner with owned, branded fleet and experienced drivers.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://megacitytravells.com/about" },
+      { property: "og:url", content: "https://megacitytoursandtravels.com/about" },
       { property: "og:image", content: brandedBus },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "About Mega City Tours & Travells | Hyderabad Travel Agency" },
       { name: "twitter:description", content: "Hyderabad travel partner with owned fleet and experienced drivers." },
       { name: "twitter:image", content: brandedBus },
     ],
-    links: [{ rel: "canonical", href: "https://megacitytravells.com/about" }],
+    links: [{ rel: "canonical", href: "https://megacitytoursandtravels.com/about" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -59,8 +59,8 @@ export const Route = createFileRoute("/about")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytravells.com/" },
-            { "@type": "ListItem", position: 2, name: "About", item: "https://megacitytravells.com/about" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytoursandtravels.com/" },
+            { "@type": "ListItem", position: 2, name: "About", item: "https://megacitytoursandtravels.com/about" },
           ],
         }),
       },

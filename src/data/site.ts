@@ -12,7 +12,7 @@ export const site = {
   whatsapp: "8919900181",
   email: "megacitytravells@gmail.com",
   hours: "9 AM to 9 PM",
-  url: "https://megacitytravells.com",
+  url: "https://megacitytoursandtravels.com",
 } as const;
 
 export const whatsappPrefill = `Hi Mega City Tours & Travells, I would like to get a quote for a trip.

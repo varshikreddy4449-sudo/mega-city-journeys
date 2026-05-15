@@ -61,8 +61,8 @@ export const Route = createFileRoute("/")({
           "Reliable group travel and per KM trips from Hyderabad across Telangana — owned fleet of cars, tempo travellers, Urbania and 22 to 50 seater buses.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://megacitytravells.com/" },
-      { property: "og:image", content: "https://megacitytravells.com/og-image.jpg" },
+      { property: "og:url", content: "https://megacitytoursandtravels.com/" },
+      { property: "og:image", content: "https://megacitytoursandtravels.com/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Mega City Tours & Travells | Group Travel & Per KM Trips in Hyderabad" },
       {
@@ -70,9 +70,9 @@ export const Route = createFileRoute("/")({
         content:
           "Reliable group travel and per KM trips from Hyderabad across Telangana.",
       },
-      { name: "twitter:image", content: "https://megacitytravells.com/og-image.jpg" },
+      { name: "twitter:image", content: "https://megacitytoursandtravels.com/og-image.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://megacitytravells.com/" }],
+    links: [{ rel: "canonical", href: "https://megacitytoursandtravels.com/" }],
   }),
   component: HomePage,
 });

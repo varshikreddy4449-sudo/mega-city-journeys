@@ -42,7 +42,7 @@ export const Route = createFileRoute("/services")({
           "Group travel, corporate travel, school and college trip transport, pilgrimage and outstation travel from Hyderabad.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://megacitytravells.com/services" },
+      { property: "og:url", content: "https://megacitytoursandtravels.com/services" },
       { property: "og:image", content: heroBusImg },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Travel Services in Hyderabad | Group, Corporate, School & Outstation Trips" },
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/services")({
       },
       { name: "twitter:image", content: heroBusImg },
     ],
-    links: [{ rel: "canonical", href: "https://megacitytravells.com/services" }],
+    links: [{ rel: "canonical", href: "https://megacitytoursandtravels.com/services" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -61,8 +61,8 @@ export const Route = createFileRoute("/services")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytravells.com/" },
-            { "@type": "ListItem", position: 2, name: "Services", item: "https://megacitytravells.com/services" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://megacitytoursandtravels.com/" },
+            { "@type": "ListItem", position: 2, name: "Services", item: "https://megacitytoursandtravels.com/services" },
           ],
         }),
       },
