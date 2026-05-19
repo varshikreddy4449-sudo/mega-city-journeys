@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PackagesRouteImport } from './routes/packages'
+import { Route as OutstationFamilyRouteImport } from './routes/outstation-family'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FleetRouteImport } from './routes/fleet'
 import { Route as FaqsRouteImport } from './routes/faqs'
@@ -40,6 +41,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const PackagesRoute = PackagesRouteImport.update({
   id: '/packages',
   path: '/packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutstationFamilyRoute = OutstationFamilyRouteImport.update({
+  id: '/outstation-family',
+  path: '/outstation-family',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -90,6 +96,7 @@ export interface FileRoutesByFullPath {
   '/faqs': typeof FaqsRoute
   '/fleet': typeof FleetRoute
   '/gallery': typeof GalleryRoute
+  '/outstation-family': typeof OutstationFamilyRoute
   '/packages': typeof PackagesRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
@@ -104,6 +111,7 @@ export interface FileRoutesByTo {
   '/faqs': typeof FaqsRoute
   '/fleet': typeof FleetRoute
   '/gallery': typeof GalleryRoute
+  '/outstation-family': typeof OutstationFamilyRoute
   '/packages': typeof PackagesRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
@@ -119,6 +127,7 @@ export interface FileRoutesById {
   '/faqs': typeof FaqsRoute
   '/fleet': typeof FleetRoute
   '/gallery': typeof GalleryRoute
+  '/outstation-family': typeof OutstationFamilyRoute
   '/packages': typeof PackagesRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
@@ -135,6 +144,7 @@ export interface FileRouteTypes {
     | '/faqs'
     | '/fleet'
     | '/gallery'
+    | '/outstation-family'
     | '/packages'
     | '/privacy'
     | '/services'
@@ -149,6 +159,7 @@ export interface FileRouteTypes {
     | '/faqs'
     | '/fleet'
     | '/gallery'
+    | '/outstation-family'
     | '/packages'
     | '/privacy'
     | '/services'
@@ -163,6 +174,7 @@ export interface FileRouteTypes {
     | '/faqs'
     | '/fleet'
     | '/gallery'
+    | '/outstation-family'
     | '/packages'
     | '/privacy'
     | '/services'
@@ -178,6 +190,7 @@ export interface RootRouteChildren {
   FaqsRoute: typeof FaqsRoute
   FleetRoute: typeof FleetRoute
   GalleryRoute: typeof GalleryRoute
+  OutstationFamilyRoute: typeof OutstationFamilyRoute
   PackagesRoute: typeof PackagesRoute
   PrivacyRoute: typeof PrivacyRoute
   ServicesRoute: typeof ServicesRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/packages'
       fullPath: '/packages'
       preLoaderRoute: typeof PackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outstation-family': {
+      id: '/outstation-family'
+      path: '/outstation-family'
+      fullPath: '/outstation-family'
+      preLoaderRoute: typeof OutstationFamilyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -282,6 +302,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqsRoute: FaqsRoute,
   FleetRoute: FleetRoute,
   GalleryRoute: GalleryRoute,
+  OutstationFamilyRoute: OutstationFamilyRoute,
   PackagesRoute: PackagesRoute,
   PrivacyRoute: PrivacyRoute,
   ServicesRoute: ServicesRoute,
