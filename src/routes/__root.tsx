@@ -99,6 +99,15 @@ export const Route = createRootRoute({
         href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
       },
     ],
+    scripts: [
+      {
+        async: true,
+        src: "https://www.googletagmanager.com/gtag/js?id=G-SPLVR0FVPW",
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-SPLVR0FVPW');`,
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
