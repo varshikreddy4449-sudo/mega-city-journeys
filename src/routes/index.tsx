@@ -997,7 +997,31 @@ function HomePage() {
         </div>
       </section>
 
+      {/* FAQ PREVIEW */}
+      <section className="relative overflow-hidden py-16 md:py-20 bg-white">
+        <div className="relative mx-auto max-w-4xl px-4 md:px-6">
+          <div className="text-center mb-8">
+            <span className="inline-block rounded-full bg-accent/10 text-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+              Frequently Asked
+            </span>
+            <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold text-primary">
+              Common Booking Questions
+            </h2>
+          </div>
+          <FAQAccordion items={homeFaqPreview} />
+          <div className="mt-8 text-center">
+            <Link
+              to="/faqs"
+              className="inline-flex items-center gap-2 rounded-full bg-warm-gradient text-primary-foreground px-6 py-3 text-sm font-semibold shadow-card hover-lift"
+            >
+              View All FAQs <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* QUOTE FORM */}
+
       <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: "#EAF3F4" }}>
         <div className="relative mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
