@@ -86,4 +86,19 @@ export const faqs: FAQ[] = [
     q: "What makes Mega City Tours & Travells different?",
     a: "Budget-friendly travel options, clean interiors, owned vehicles from 4 to 50 seats, professional drivers with 20–30 years of experience, and flexible local and outstation support.",
   },
+  {
+    category: "Corporate / Staff Transport",
+    q: "Do you provide monthly staff or factory contract services?",
+    a: "Yes. We specialize in reliable monthly staff transport and factory worker commute contracts across Hyderabad's industrial belts, including Patancheru, Jeedimetla, and Pashamylaram. We offer a fully compliant fleet (12 to 40 seaters) with trained drivers and official GST billing. Please share your company's required shift timings and routes to receive a custom commercial proposal.",
+  },
+  {
+    category: "Outstation & Pilgrimage",
+    q: "Do you offer rental vehicles for outstation trips like Srisailam or Yadagirigutta?",
+    a: "Yes, we provide premium outstation bus and tempo traveller rentals with expert drivers who specialize in regional routes. Our fleet includes highly popular 12 seater tempo travellers with pushback seats, 30 seater AC buses, and full-scale 40 seater coaches ideal for family pilgrimage groups and weekend getaway tours. Reply with your travel dates for an instant quote!",
+  },
+  {
+    category: "Wedding & Events",
+    q: "Can we book a luxury bus for wedding guest transportation?",
+    a: "Absolutely. We cater heavily to wedding planners and families requiring 30 to 40 seater AC/Non-AC luxury buses for one-time events, marriage functions, and guest transport across Hyderabad. All bookings feature clean, well-maintained vehicles, verified drivers, and complete 24/7 client support.",
+  },
 ];
