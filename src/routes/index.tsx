@@ -44,6 +44,15 @@ import { LogoWatermark } from "@/components/LogoWatermark";
 import ClientsBelt from "@/components/ClientsBelt";
 import { Link } from "@tanstack/react-router";
 import { blogs } from "@/data/blogs";
+import { FAQAccordion } from "@/components/FAQAccordion";
+import { faqs } from "@/data/faqs";
+
+const homeFaqPreview = [
+  faqs.find((f) => f.q === "Can we book a luxury bus for wedding guest transportation?")!,
+  faqs.find((f) => f.q === "Do you provide monthly staff or factory contract services?")!,
+  faqs.find((f) => f.q === "Do you offer rental vehicles for outstation trips like Srisailam or Yadagirigutta?")!,
+  faqs.find((f) => f.q === "How is pricing calculated?")!,
+].filter(Boolean);
 
 export const Route = createFileRoute("/")({
   head: () => ({
