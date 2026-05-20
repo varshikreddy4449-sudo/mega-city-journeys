@@ -328,7 +328,7 @@ function OutstationFamilyPage() {
           <div>
             <img
               src={heroImg}
-              alt="Family outstation travel from Hyderabad"
+              alt="Megacity Tours Urbania luxury van — outstation family travel from Hyderabad"
               width={1000}
               height={700}
               loading="eager"
