@@ -15,6 +15,17 @@ import {
   MapPin,
 } from "lucide-react";
 
+import heroImg from "@/assets/trip-family.webp";
+import imgTempo from "@/assets/tempo-exterior-front.webp";
+import imgMiniBus from "@/assets/bus-22-main.png";
+import imgStandardBus from "@/assets/vehicle-bus-40.webp";
+import imgUrbania from "@/assets/vehicle-urbania.webp";
+// Route destination images (only those present in /assets/routes are used; others fall back to icon-only)
+import routeTirupati from "@/assets/routes/tirupati.png";
+import routePondicherry from "@/assets/routes/pondicherry.png";
+import routeVijayawada from "@/assets/routes/vijayawada.png";
+// TODO: No project assets exist for Goa, Kerala, Coorg — keep these as icon-only cards.
+
 const WA_URL =
   "https://wa.me/918919900181?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20an%20outstation%20family%20trip%20from%20Hyderabad";
 const TEL_URL = "tel:9949949993";
@@ -71,10 +82,6 @@ export const Route = createFileRoute("/outstation-family")({
     ],
     links: [
       { rel: "canonical", href: "https://megacitytravells.in/outstation-family/" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap",
-      },
     ],
     scripts: [
       {
@@ -86,44 +93,57 @@ export const Route = createFileRoute("/outstation-family")({
   component: OutstationFamilyPage,
 });
 
-const vehicles = [
+type VehicleCard = {
+  name: string;
+  capacity: string;
+  tags: string[];
+  use: string;
+  img: string;
+};
+
+const vehicles: VehicleCard[] = [
   {
     name: "Tempo Traveller",
     capacity: "12 & 16 Seater",
     tags: ["AC", "Push-back seats", "Luggage space"],
     use: "Best for families of 8–14",
-    img: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=70",
+    img: imgTempo,
   },
   {
     name: "Mini Bus",
     capacity: "22 Seater",
     tags: ["AC", "Comfortable", "Group friendly"],
     use: "Best for joint family trips",
-    img: "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?auto=format&fit=crop&w=800&q=70",
+    img: imgMiniBus,
   },
   {
     name: "Standard Bus",
     capacity: "28 / 40 / 50 Seater",
     tags: ["AC", "Large luggage", "Multi-row"],
     use: "Best for weddings & large groups",
-    img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=70",
+    img: imgStandardBus,
   },
   {
     name: "Urbania Luxury Van",
     capacity: "12 Seater",
     tags: ["Premium", "Captain seats", "Plush interior"],
     use: "Best for premium family travel",
-    img: "https://images.unsplash.com/photo-1485463611174-f302f6a5c1c9?auto=format&fit=crop&w=800&q=70",
+    img: imgUrbania,
   },
 ];
 
-const routes = [
+type RouteCard = { from: string; to: string; note: string; img?: string };
+
+const routes: RouteCard[] = [
+  // TODO: no Goa image in project assets — icon-only
   { from: "Hyderabad", to: "Goa", note: "Beach holidays, 10–12 hr drive" },
-  { from: "Hyderabad", to: "Tirupati", note: "Pilgrimage trips, 6–8 hr drive" },
+  { from: "Hyderabad", to: "Tirupati", note: "Pilgrimage trips, 6–8 hr drive", img: routeTirupati },
+  // TODO: no Kerala image in project assets — icon-only
   { from: "Hyderabad", to: "Kerala", note: "Backwater family holidays" },
+  // TODO: no Coorg image in project assets — icon-only
   { from: "Hyderabad", to: "Coorg", note: "Hill station family getaway" },
-  { from: "Hyderabad", to: "Pondicherry", note: "Beach & heritage tours" },
-  { from: "Hyderabad", to: "Vijayawada", note: "Short trips & day visits" },
+  { from: "Hyderabad", to: "Pondicherry", note: "Beach & heritage tours", img: routePondicherry },
+  { from: "Hyderabad", to: "Vijayawada", note: "Short trips & day visits", img: routeVijayawada },
 ];
 
 const whyUs = [
@@ -220,12 +240,8 @@ const faqs = [
   },
 ];
 
-const fontStack = {
-  fontFamily: "'Inter', system-ui, sans-serif",
-} as const;
-const serif = {
-  fontFamily: "'Playfair Display', Georgia, serif",
-} as const;
+// WhatsApp brand green — kept verbatim per requirements for CTA recognition.
+const WHATSAPP_GREEN = "#25D366";
 
 function WhatsAppBtn({
   className = "",
@@ -265,35 +281,21 @@ function OutstationFamilyPage() {
   const [openFaq, setOpenFaq] = useState<number>(0);
 
   return (
-    <div
-      style={{ ...fontStack, backgroundColor: "#FAF7F2", color: "#1F2937" }}
-      className="min-h-screen pb-24 md:pb-0"
-    >
+    <div className="min-h-screen bg-background text-foreground pb-24 md:pb-0 font-sans">
       {/* Top bar */}
-      <header
-        className="sticky top-0 z-40 border-b"
-        style={{ backgroundColor: "#FAF7F2", borderColor: "rgba(15,61,92,0.1)" }}
-      >
+      <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
-            <div
-              className="flex h-9 w-9 items-center justify-center rounded-md font-bold text-white"
-              style={{ backgroundColor: "#0F3D5C" }}
-            >
+            <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary font-bold text-primary-foreground">
               M
             </div>
-            <span
-              style={{ ...serif, color: "#0F3D5C" }}
-              className="text-base font-bold sm:text-lg"
-            >
+            <span className="font-display text-base font-bold text-primary sm:text-lg">
               Megacity Tours & Travels
             </span>
           </div>
-          <PhoneBtn
-            className="hidden items-center gap-2 text-sm font-semibold sm:flex"
-          >
-            <Phone className="h-4 w-4" style={{ color: "#0F3D5C" }} />
-            <span style={{ color: "#0F3D5C" }}>99499 49993</span>
+          <PhoneBtn className="hidden items-center gap-2 text-sm font-semibold text-primary sm:flex">
+            <Phone className="h-4 w-4" />
+            <span>99499 49993</span>
           </PhoneBtn>
         </div>
       </header>
@@ -302,28 +304,22 @@ function OutstationFamilyPage() {
       <section className="mx-auto max-w-6xl px-4 py-10 md:py-16">
         <div className="grid items-center gap-8 md:grid-cols-2">
           <div>
-            <h1
-              style={{ ...serif, color: "#0F3D5C" }}
-              className="text-3xl font-bold leading-tight md:text-5xl"
-            >
+            <h1 className="font-display text-3xl font-bold leading-tight text-primary md:text-5xl text-balance">
               Family Outstation Trips from Hyderabad
             </h1>
-            <p className="mt-4 text-base leading-relaxed md:text-lg" style={{ color: "#1F2937" }}>
+            <p className="mt-4 text-base leading-relaxed text-foreground md:text-lg">
               Goa, Kerala, Tirupati, Coorg & more. AC Tempo Travellers, Mini Buses and Luxury Vans
               for 12 to 50 passengers. 20+ years of trusted family travel from Hyderabad.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <WhatsAppBtn
-                className="inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3.5 text-base font-semibold text-white shadow-sm transition hover:opacity-95"
-                {...{ style: { backgroundColor: "#F4A623" } as any }}
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-base font-semibold text-white shadow-glow transition hover:opacity-95"
+                {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
               >
-                <MessageCircle className="h-5 w-5" style={{ color: "#25D366" }} fill="#25D366" />
+                <MessageCircle className="h-5 w-5" />
                 WhatsApp for Free Quote
               </WhatsAppBtn>
-              <PhoneBtn
-                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 px-5 py-3.5 text-base font-semibold transition hover:bg-white"
-                {...{ style: { borderColor: "#0F3D5C", color: "#0F3D5C" } as any }}
-              >
+              <PhoneBtn className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary px-5 py-3.5 text-base font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground">
                 <Phone className="h-5 w-5" />
                 Call 99499 49993
               </PhoneBtn>
@@ -331,12 +327,12 @@ function OutstationFamilyPage() {
           </div>
           <div>
             <img
-              src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1000&q=70"
+              src={heroImg}
               alt="Family outstation travel from Hyderabad"
               width={1000}
               height={700}
               loading="eager"
-              className="h-64 w-full rounded-xl object-cover shadow-md md:h-96"
+              className="h-64 w-full rounded-xl object-cover shadow-soft md:h-96"
             />
           </div>
         </div>
@@ -352,8 +348,8 @@ function OutstationFamilyPage() {
             { icon: FileText, label: "GST Billing Available" },
           ].map((t) => (
             <div key={t.label} className="flex items-center gap-3">
-              <t.icon className="h-7 w-7 shrink-0" style={{ color: "#F4A623" }} />
-              <span className="text-sm font-semibold md:text-base" style={{ color: "#0F3D5C" }}>
+              <t.icon className="h-7 w-7 shrink-0 text-accent" />
+              <span className="text-sm font-semibold text-primary md:text-base">
                 {t.label}
               </span>
             </div>
@@ -363,20 +359,17 @@ function OutstationFamilyPage() {
 
       {/* Vehicles */}
       <section id="vehicles" className="mx-auto max-w-6xl px-4 py-12 md:py-20">
-        <h2
-          style={{ ...serif, color: "#0F3D5C" }}
-          className="text-center text-3xl font-bold md:text-4xl"
-        >
+        <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
           Choose the Right Vehicle for Your Family
         </h2>
-        <p className="mt-3 text-center" style={{ color: "#6B7280" }}>
+        <p className="mt-3 text-center text-muted-foreground">
           From compact 12-seater Tempo Travellers to spacious 50-seater buses.
         </p>
         <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-4">
           {vehicles.map((v) => (
             <div
               key={v.name}
-              className="overflow-hidden rounded-xl bg-white shadow-sm transition hover:shadow-md"
+              className="overflow-hidden rounded-xl border border-border bg-card shadow-card transition hover:shadow-soft"
             >
               <img
                 src={v.img}
@@ -387,24 +380,23 @@ function OutstationFamilyPage() {
                 className="h-36 w-full object-cover md:h-44"
               />
               <div className="p-4">
-                <h3 className="font-semibold" style={{ color: "#0F3D5C" }}>
+                <h3 className="font-display font-semibold text-primary">
                   {v.name}
                 </h3>
-                <p className="mt-1 text-sm font-medium" style={{ color: "#F4A623" }}>
+                <p className="mt-1 text-sm font-medium text-accent">
                   {v.capacity}
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1">
                   {v.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full px-2 py-0.5 text-[11px]"
-                      style={{ backgroundColor: "#FAF7F2", color: "#6B7280" }}
+                      className="rounded-full bg-muted px-2 py-0.5 text-[11px] text-muted-foreground"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <p className="mt-3 text-xs" style={{ color: "#6B7280" }}>
+                <p className="mt-3 text-xs text-muted-foreground">
                   {v.use}
                 </p>
               </div>
@@ -413,55 +405,63 @@ function OutstationFamilyPage() {
         </div>
         <div className="mt-10 text-center">
           <WhatsAppBtn
-            className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold text-white shadow-sm"
-            {...{ style: { backgroundColor: "#F4A623" } as any }}
+            className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white shadow-glow"
+            {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
           >
-            <MessageCircle className="h-5 w-5" style={{ color: "#25D366" }} fill="#25D366" />
+            <MessageCircle className="h-5 w-5" />
             Get Quote on WhatsApp
           </WhatsAppBtn>
         </div>
       </section>
 
       {/* Routes */}
-      <section id="routes" className="px-4 py-12 md:py-20" style={{ backgroundColor: "#FFFFFF" }}>
+      <section id="routes" className="bg-card px-4 py-12 md:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2
-            style={{ ...serif, color: "#0F3D5C" }}
-            className="text-center text-3xl font-bold md:text-4xl"
-          >
+          <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
             Popular Outstation Routes from Hyderabad
           </h2>
-          <p className="mt-3 text-center" style={{ color: "#6B7280" }}>
+          <p className="mt-3 text-center text-muted-foreground">
             We cover all major South Indian destinations and beyond.
           </p>
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
             {routes.map((r) => (
               <div
                 key={r.to}
-                className="rounded-xl p-5 transition hover:shadow-md"
-                style={{ backgroundColor: "#FAF7F2" }}
+                className="overflow-hidden rounded-xl border border-border bg-background shadow-card transition hover:shadow-soft"
               >
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" style={{ color: "#F4A623" }} />
-                  <span className="text-sm font-semibold" style={{ color: "#0F3D5C" }}>
-                    {r.from} → {r.to}
-                  </span>
+                {r.img && (
+                  <img
+                    src={r.img}
+                    alt={`${r.to} outstation route from Hyderabad`}
+                    width={400}
+                    height={220}
+                    loading="lazy"
+                    className="h-28 w-full object-cover md:h-36"
+                  />
+                )}
+                <div className="p-5">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-accent" />
+                    <span className="text-sm font-semibold text-primary">
+                      {r.from} → {r.to}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-xs text-muted-foreground md:text-sm">
+                    {r.note}
+                  </p>
                 </div>
-                <p className="mt-2 text-xs md:text-sm" style={{ color: "#6B7280" }}>
-                  {r.note}
-                </p>
               </div>
             ))}
           </div>
           <div className="mt-10 text-center">
-            <p className="mb-4 text-sm" style={{ color: "#6B7280" }}>
+            <p className="mb-4 text-sm text-muted-foreground">
               Don't see your destination? We cover most South Indian routes — message us.
             </p>
             <WhatsAppBtn
-              className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold text-white"
-              {...{ style: { backgroundColor: "#F4A623" } as any }}
+              className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white shadow-glow"
+              {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
             >
-              <MessageCircle className="h-5 w-5" style={{ color: "#25D366" }} fill="#25D366" />
+              <MessageCircle className="h-5 w-5" />
               WhatsApp Us
             </WhatsAppBtn>
           </div>
@@ -470,10 +470,7 @@ function OutstationFamilyPage() {
 
       {/* How it works */}
       <section id="how" className="mx-auto max-w-6xl px-4 py-12 md:py-20">
-        <h2
-          style={{ ...serif, color: "#0F3D5C" }}
-          className="text-center text-3xl font-bold md:text-4xl"
-        >
+        <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
           Booking Your Trip is Simple
         </h2>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
@@ -493,18 +490,15 @@ function OutstationFamilyPage() {
           ].map((s, i) => (
             <div
               key={s.title}
-              className="rounded-xl bg-white p-6 text-center shadow-sm"
+              className="rounded-xl border border-border bg-card p-6 text-center shadow-card"
             >
-              <div
-                className="mx-auto flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold text-white"
-                style={{ backgroundColor: "#F4A623" }}
-              >
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent text-lg font-bold text-accent-foreground">
                 {i + 1}
               </div>
-              <h3 className="mt-4 font-semibold" style={{ color: "#0F3D5C" }}>
+              <h3 className="font-display mt-4 font-semibold text-primary">
                 {s.title}
               </h3>
-              <p className="mt-2 text-sm" style={{ color: "#6B7280" }}>
+              <p className="mt-2 text-sm text-muted-foreground">
                 {s.body}
               </p>
             </div>
@@ -513,26 +507,22 @@ function OutstationFamilyPage() {
       </section>
 
       {/* Why us */}
-      <section className="px-4 py-12 md:py-20" style={{ backgroundColor: "#FFFFFF" }}>
+      <section className="bg-card px-4 py-12 md:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2
-            style={{ ...serif, color: "#0F3D5C" }}
-            className="text-center text-3xl font-bold md:text-4xl"
-          >
+          <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
             Why Hyderabad Families Trust Megacity
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {whyUs.map((w) => (
               <div
                 key={w.title}
-                className="rounded-xl p-6"
-                style={{ backgroundColor: "#FAF7F2" }}
+                className="rounded-xl border border-border bg-background p-6 shadow-card"
               >
-                <w.icon className="h-7 w-7" style={{ color: "#F4A623" }} />
-                <h3 className="mt-3 font-semibold" style={{ color: "#0F3D5C" }}>
+                <w.icon className="h-7 w-7 text-accent" />
+                <h3 className="font-display mt-3 font-semibold text-primary">
                   {w.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed" style={{ color: "#6B7280" }}>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {w.body}
                 </p>
               </div>
@@ -543,13 +533,10 @@ function OutstationFamilyPage() {
 
       {/* Testimonials */}
       <section className="mx-auto max-w-6xl px-4 py-12 md:py-20">
-        <h2
-          style={{ ...serif, color: "#0F3D5C" }}
-          className="text-center text-3xl font-bold md:text-4xl"
-        >
+        <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
           What Our Customers Say
         </h2>
-        <p className="mt-3 text-center text-sm" style={{ color: "#6B7280" }}>
+        <p className="mt-3 text-center text-sm text-muted-foreground">
           Reviews are being collected from our recent customers. Check our Google Business Profile
           for live reviews.
         </p>
@@ -557,20 +544,20 @@ function OutstationFamilyPage() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="min-w-[80%] shrink-0 rounded-xl bg-white p-6 shadow-sm md:min-w-0"
+              className="min-w-[80%] shrink-0 rounded-xl border border-border bg-card p-6 shadow-card md:min-w-0"
             >
-              <div className="flex gap-1">
+              <div className="flex gap-1 text-accent">
                 {Array.from({ length: 5 }).map((_, k) => (
-                  <Star key={k} className="h-4 w-4" fill="#F4A623" stroke="#F4A623" />
+                  <Star key={k} className="h-4 w-4 fill-current" />
                 ))}
               </div>
-              <p className="mt-3 text-sm italic" style={{ color: "#1F2937" }}>
+              <p className="mt-3 text-sm italic text-foreground">
                 "{t.quote}"
               </p>
-              <p className="mt-4 text-sm font-semibold" style={{ color: "#0F3D5C" }}>
+              <p className="mt-4 text-sm font-semibold text-primary">
                 {t.name}
               </p>
-              <p className="text-xs" style={{ color: "#6B7280" }}>
+              <p className="text-xs text-muted-foreground">
                 {t.trip}
               </p>
             </div>
@@ -579,12 +566,9 @@ function OutstationFamilyPage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="px-4 py-12 md:py-20" style={{ backgroundColor: "#FFFFFF" }}>
+      <section id="faq" className="bg-card px-4 py-12 md:py-20">
         <div className="mx-auto max-w-3xl">
-          <h2
-            style={{ ...serif, color: "#0F3D5C" }}
-            className="text-center text-3xl font-bold md:text-4xl"
-          >
+          <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
             Frequently Asked Questions
           </h2>
           <div className="mt-10 space-y-3">
@@ -593,8 +577,7 @@ function OutstationFamilyPage() {
               return (
                 <div
                   key={f.q}
-                  className="rounded-xl border"
-                  style={{ borderColor: "rgba(15,61,92,0.1)", backgroundColor: "#FAF7F2" }}
+                  className="rounded-xl border border-border bg-background shadow-card"
                 >
                   <button
                     type="button"
@@ -602,16 +585,15 @@ function OutstationFamilyPage() {
                     aria-expanded={open}
                     className="flex w-full items-center justify-between gap-3 p-4 text-left"
                   >
-                    <span className="text-sm font-semibold md:text-base" style={{ color: "#0F3D5C" }}>
+                    <span className="font-display text-sm font-semibold text-primary md:text-base">
                       {f.q}
                     </span>
                     <ChevronDown
-                      className={`h-5 w-5 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
-                      style={{ color: "#F4A623" }}
+                      className={`h-5 w-5 shrink-0 text-accent transition-transform ${open ? "rotate-180" : ""}`}
                     />
                   </button>
                   {open && (
-                    <div className="px-4 pb-4 text-sm leading-relaxed" style={{ color: "#1F2937" }}>
+                    <div className="px-4 pb-4 text-sm leading-relaxed text-foreground">
                       {f.a}
                     </div>
                   )}
@@ -623,23 +605,24 @@ function OutstationFamilyPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="px-4 py-14 md:py-20" style={{ backgroundColor: "#F4A623" }}>
+      <section className="bg-warm-gradient px-4 py-14 md:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 style={serif} className="text-3xl font-bold text-white md:text-4xl">
+          <h2 className="font-display text-3xl font-bold text-primary-foreground md:text-4xl">
             Ready to Plan Your Family Trip?
           </h2>
-          <p className="mt-3 text-white/95">
+          <p className="mt-3 text-primary-foreground/90">
             WhatsApp us now for a free quote. We typically respond within 10 minutes between 6 AM
             and 9 PM.
           </p>
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <WhatsAppBtn className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3.5 text-base font-semibold shadow-sm"
-              {...{ style: { color: "#F4A623" } as any }}
+            <WhatsAppBtn
+              className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold text-white shadow-glow"
+              {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
             >
-              <MessageCircle className="h-5 w-5" style={{ color: "#25D366" }} fill="#25D366" />
+              <MessageCircle className="h-5 w-5" />
               WhatsApp Us
             </WhatsAppBtn>
-            <PhoneBtn className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-3.5 text-base font-semibold text-white">
+            <PhoneBtn className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary-foreground px-6 py-3.5 text-base font-semibold text-primary-foreground transition hover:bg-primary-foreground hover:text-primary">
               <Phone className="h-5 w-5" />
               Call 99499 49993
             </PhoneBtn>
@@ -648,19 +631,19 @@ function OutstationFamilyPage() {
       </section>
 
       {/* Footer */}
-      <footer style={{ backgroundColor: "#0F3D5C" }} className="px-4 py-12 text-white">
+      <footer className="bg-primary px-4 py-12 text-primary-foreground">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
           <div>
-            <h3 style={serif} className="text-lg font-bold">
+            <h3 className="font-display text-lg font-bold text-primary-foreground">
               Megacity Tours & Travels
             </h3>
-            <p className="mt-2 text-sm text-white/80">
+            <p className="mt-2 text-sm text-primary-foreground/80">
               Trusted family outstation travel from Hyderabad.
             </p>
-            <p className="mt-2 text-sm text-white/80">Open 6 AM – 9 PM, all days</p>
+            <p className="mt-2 text-sm text-primary-foreground/80">Open 6 AM – 9 PM, all days</p>
           </div>
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-white/70">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">
               Contact
             </h4>
             <ul className="mt-3 space-y-2 text-sm">
@@ -680,41 +663,25 @@ function OutstationFamilyPage() {
                   💬 +91 89199 00181
                 </a>
               </li>
-              <li className="text-white/80">
+              <li className="text-primary-foreground/80">
                 Sri Sai Residency, Shop No 3, Beside Sri Chaitanya High School, Boduppal Main Road,
                 Hyderabad
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-white/70">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">
               Quick Links
             </h4>
             <ul className="mt-3 space-y-2 text-sm">
-              <li>
-                <a href="#vehicles" className="hover:underline">
-                  Our Vehicles
-                </a>
-              </li>
-              <li>
-                <a href="#routes" className="hover:underline">
-                  Popular Routes
-                </a>
-              </li>
-              <li>
-                <a href="#how" className="hover:underline">
-                  How It Works
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:underline">
-                  FAQ
-                </a>
-              </li>
+              <li><a href="#vehicles" className="hover:underline">Our Vehicles</a></li>
+              <li><a href="#routes" className="hover:underline">Popular Routes</a></li>
+              <li><a href="#how" className="hover:underline">How It Works</a></li>
+              <li><a href="#faq" className="hover:underline">FAQ</a></li>
             </ul>
           </div>
         </div>
-        <div className="mx-auto mt-10 max-w-6xl border-t border-white/15 pt-6 text-center text-xs text-white/70">
+        <div className="mx-auto mt-10 max-w-6xl border-t border-primary-foreground/15 pt-6 text-center text-xs text-primary-foreground/70">
           <p>© 2026 Megacity Tours & Travels · GSTIN: 36AAYFM6402CIZ7</p>
           <p className="mt-2">
             By messaging or calling us, you consent to our team contacting you about your travel
@@ -727,15 +694,12 @@ function OutstationFamilyPage() {
       <div className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 md:hidden">
         <WhatsAppBtn
           className="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white"
-          {...{ style: { backgroundColor: "#25D366" } as any }}
+          {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
         >
           <MessageCircle className="h-5 w-5" />
           WhatsApp
         </WhatsAppBtn>
-        <PhoneBtn
-          className="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white"
-          {...{ style: { backgroundColor: "#F4A623" } as any }}
-        >
+        <PhoneBtn className="flex items-center justify-center gap-2 bg-primary py-3.5 text-sm font-semibold text-primary-foreground">
           <Phone className="h-5 w-5" />
           Call
         </PhoneBtn>
