@@ -313,7 +313,7 @@ function OutstationFamilyPage() {
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <WhatsAppBtn
-                className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-base font-semibold text-white shadow-glow transition hover:opacity-95"
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-base font-semibold text-white transition hover:opacity-95"
                 {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
               >
                 <MessageCircle className="h-5 w-5" />
@@ -405,7 +405,7 @@ function OutstationFamilyPage() {
         </div>
         <div className="mt-10 text-center">
           <WhatsAppBtn
-            className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white shadow-glow"
+            className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white"
             {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
           >
             <MessageCircle className="h-5 w-5" />
@@ -458,7 +458,7 @@ function OutstationFamilyPage() {
               Don't see your destination? We cover most South Indian routes — message us.
             </p>
             <WhatsAppBtn
-              className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white shadow-glow"
+              className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white"
               {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
             >
               <MessageCircle className="h-5 w-5" />
@@ -616,7 +616,7 @@ function OutstationFamilyPage() {
           </p>
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <WhatsAppBtn
-              className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold text-white shadow-glow"
+              className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold text-white"
               {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
             >
               <MessageCircle className="h-5 w-5" />
