@@ -245,9 +245,11 @@ const WHATSAPP_GREEN = "#25D366";
 
 function WhatsAppBtn({
   className = "",
+  style,
   children,
 }: {
   className?: string;
+  style?: React.CSSProperties;
   children: React.ReactNode;
 }) {
   return (
@@ -257,6 +259,7 @@ function WhatsAppBtn({
       rel="noopener noreferrer"
       data-cta="whatsapp"
       className={className}
+      style={{ backgroundColor: WHATSAPP_GREEN, ...style }}
     >
       {children}
     </a>
