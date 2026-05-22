@@ -347,6 +347,8 @@ function OutstationFamilyPage() {
               width={1000}
               height={700}
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-64 w-full rounded-xl object-cover shadow-soft md:h-96"
             />
           </div>
