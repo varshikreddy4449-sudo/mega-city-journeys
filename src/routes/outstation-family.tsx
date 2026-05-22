@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Phone,
-  MessageCircle,
   Bus,
   ShieldCheck,
   FileText,
@@ -10,10 +9,10 @@ import {
   Snowflake,
   Clock,
   UserCheck,
-  
   ChevronDown,
   MapPin,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 import heroImg from "@/assets/vehicle-urbania.webp";
 import imgTempo from "@/assets/tempo-exterior-front.webp";
@@ -302,7 +301,7 @@ function OutstationFamilyPage() {
                 className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-base font-semibold text-white transition hover:opacity-95"
                 {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
               >
-                <MessageCircle className="h-5 w-5" />
+                <FaWhatsapp className="h-5 w-5" />
                 WhatsApp for Free Quote
               </WhatsAppBtn>
               <PhoneBtn className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary px-5 py-3.5 text-base font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground">
@@ -394,7 +393,7 @@ function OutstationFamilyPage() {
             className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white"
             {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
           >
-            <MessageCircle className="h-5 w-5" />
+            <FaWhatsapp className="h-5 w-5" />
             Get Quote on WhatsApp
           </WhatsAppBtn>
         </div>
@@ -447,7 +446,7 @@ function OutstationFamilyPage() {
               className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-semibold text-white"
               {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
             >
-              <MessageCircle className="h-5 w-5" />
+              <FaWhatsapp className="h-5 w-5" />
               WhatsApp Us
             </WhatsAppBtn>
           </div>
@@ -591,7 +590,7 @@ function OutstationFamilyPage() {
               className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold text-white"
               {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
             >
-              <MessageCircle className="h-5 w-5" />
+              <FaWhatsapp className="h-5 w-5" />
               WhatsApp Us
             </WhatsAppBtn>
             <PhoneBtn className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary-foreground px-6 py-3.5 text-base font-semibold text-primary-foreground transition hover:bg-primary-foreground hover:text-primary">
@@ -669,7 +668,7 @@ function OutstationFamilyPage() {
           className="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white"
           {...{ style: { backgroundColor: WHATSAPP_GREEN } as React.CSSProperties }}
         >
-          <MessageCircle className="h-5 w-5" />
+          <FaWhatsapp className="h-5 w-5" />
           WhatsApp
         </WhatsAppBtn>
         <PhoneBtn className="flex items-center justify-center gap-2 bg-primary py-3.5 text-sm font-semibold text-primary-foreground">
