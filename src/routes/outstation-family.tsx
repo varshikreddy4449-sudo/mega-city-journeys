@@ -322,6 +322,16 @@ function OutstationFamilyPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground pb-24 md:pb-0 font-sans">
+      {/* Google Tag Manager (noscript) — TODO: replace GTM-XXXXXXX with real container ID */}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+          height={0}
+          width={0}
+          style={{ display: "none", visibility: "hidden" }}
+        />
+      </noscript>
+
       {/* Top bar */}
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
