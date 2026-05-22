@@ -150,27 +150,27 @@ const routes: RouteCard[] = [
   {
     from: "Hyderabad",
     to: "Kerala",
-    note: "Backwater family holidays, TODO hr drive",
+    note: "Backwater family holidays.",
     // Free-stock destination photo (Unsplash) — Kerala backwaters / houseboat
     img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=70",
   },
   {
     from: "Hyderabad",
     to: "Coorg",
-    note: "Hill station family getaway, TODO hr drive",
-    // Free-stock destination photo (Unsplash) — Coorg hills / coffee estate
-    img: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=800&q=70",
+    note: "Hill station family getaway.",
+    // Free-stock destination photo (Unsplash) — misty Western Ghats hills
+    img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=70",
   },
   {
     from: "Hyderabad",
     to: "Pondicherry",
-    note: "Beach & heritage tours, TODO hr drive",
+    note: "Beach & heritage tours.",
     img: routePondicherry,
   },
   {
     from: "Hyderabad",
     to: "Vijayawada",
-    note: "Short trips & day visits, TODO hr drive",
+    note: "Short trips & day visits.",
     img: routeVijayawada,
   },
 ];
