@@ -134,15 +134,45 @@ const vehicles: VehicleCard[] = [
 type RouteCard = { from: string; to: string; note: string; img?: string };
 
 const routes: RouteCard[] = [
-  // TODO: no Goa image in project assets — icon-only
-  { from: "Hyderabad", to: "Goa", note: "Beach holidays, 10–12 hr drive" },
-  { from: "Hyderabad", to: "Tirupati", note: "Pilgrimage trips, 6–8 hr drive", img: routeTirupati },
-  // TODO: no Kerala image in project assets — icon-only
-  { from: "Hyderabad", to: "Kerala", note: "Backwater family holidays" },
-  // TODO: no Coorg image in project assets — icon-only
-  { from: "Hyderabad", to: "Coorg", note: "Hill station family getaway" },
-  { from: "Hyderabad", to: "Pondicherry", note: "Beach & heritage tours", img: routePondicherry },
-  { from: "Hyderabad", to: "Vijayawada", note: "Short trips & day visits", img: routeVijayawada },
+  {
+    from: "Hyderabad",
+    to: "Goa",
+    note: "Beach holidays, 10–12 hr drive",
+    // Free-stock destination photo (Unsplash) — Goa beach
+    img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=70",
+  },
+  {
+    from: "Hyderabad",
+    to: "Tirupati",
+    note: "Pilgrimage trips, 6–8 hr drive",
+    img: routeTirupati,
+  },
+  {
+    from: "Hyderabad",
+    to: "Kerala",
+    note: "Backwater family holidays, TODO hr drive",
+    // Free-stock destination photo (Unsplash) — Kerala backwaters / houseboat
+    img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=70",
+  },
+  {
+    from: "Hyderabad",
+    to: "Coorg",
+    note: "Hill station family getaway, TODO hr drive",
+    // Free-stock destination photo (Unsplash) — Coorg hills / coffee estate
+    img: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=800&q=70",
+  },
+  {
+    from: "Hyderabad",
+    to: "Pondicherry",
+    note: "Beach & heritage tours, TODO hr drive",
+    img: routePondicherry,
+  },
+  {
+    from: "Hyderabad",
+    to: "Vijayawada",
+    note: "Short trips & day visits, TODO hr drive",
+    img: routeVijayawada,
+  },
 ];
 
 const whyUs = [
@@ -408,23 +438,25 @@ function OutstationFamilyPage() {
           <p className="mt-3 text-center text-muted-foreground">
             We cover all major South Indian destinations and beyond.
           </p>
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
             {routes.map((r) => (
               <div
                 key={r.to}
-                className="overflow-hidden rounded-xl border border-border bg-background shadow-card transition hover:shadow-soft"
+                className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-background shadow-card transition hover:shadow-soft"
               >
-                {r.img && (
-                  <img
-                    src={r.img}
-                    alt={`${r.to} outstation route from Hyderabad`}
-                    width={400}
-                    height={220}
-                    loading="lazy"
-                    className="h-28 w-full object-cover md:h-36"
-                  />
-                )}
-                <div className="p-5">
+                <div className="aspect-[16/10] w-full overflow-hidden bg-secondary/40">
+                  {r.img && (
+                    <img
+                      src={r.img}
+                      alt={`${r.to} outstation destination from Hyderabad`}
+                      width={400}
+                      height={250}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  )}
+                </div>
+                <div className="flex flex-1 flex-col p-5">
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-accent" />
                     <span className="text-sm font-semibold text-primary">
