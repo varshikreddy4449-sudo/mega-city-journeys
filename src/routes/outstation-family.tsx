@@ -350,6 +350,8 @@ function OutstationFamilyPage() {
           </a>
           <a
             href={TEL_URL}
+            onClick={() => pushDL("phone_click")}
+
             data-cta="phone"
             aria-label="Call 99499 49993"
             className="inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 sm:px-4"
