@@ -314,14 +314,16 @@ function OutstationFamilyPage() {
               Megacity Tours & Travels
             </span>
           </a>
-          <PhoneBtn
+          <a
+            href={TEL_URL}
+            data-cta="phone"
             aria-label="Call 99499 49993"
             className="inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 sm:px-4"
-            style={{ backgroundColor: "#D4A843" } as React.CSSProperties}
+            style={{ backgroundColor: "#D4A843" }}
           >
             <Phone className="h-4 w-4" />
             <span className="hidden sm:inline">99499 49993</span>
-          </PhoneBtn>
+          </a>
         </div>
       </header>
 
