@@ -15,6 +15,7 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 
 import heroImg from "@/assets/vehicle-urbania.webp";
+import logoImg from "@/assets/logo.webp";
 import imgTempo from "@/assets/tempo-exterior-front.webp";
 import imgMiniBus from "@/assets/bus-22-main.png";
 import imgStandardBus from "@/assets/vehicle-bus-40.webp";
@@ -300,18 +301,29 @@ function OutstationFamilyPage() {
       {/* Top bar */}
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary font-bold text-primary-foreground">
-              M
-            </div>
+          <a href="/" className="flex items-center gap-2">
+            <img
+              src={logoImg}
+              alt="Megacity Tours & Travels logo"
+              width={36}
+              height={36}
+              decoding="async"
+              className="h-9 w-9 object-contain"
+            />
             <span className="font-display text-base font-bold text-primary sm:text-lg">
               Megacity Tours & Travels
             </span>
-          </div>
-          <PhoneBtn className="hidden items-center gap-2 text-sm font-semibold text-primary sm:flex">
+          </a>
+          <a
+            href={TEL_URL}
+            data-cta="phone"
+            aria-label="Call 99499 49993"
+            className="inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 sm:px-4"
+            style={{ backgroundColor: "#D4A843" }}
+          >
             <Phone className="h-4 w-4" />
-            <span>99499 49993</span>
-          </PhoneBtn>
+            <span className="hidden sm:inline">99499 49993</span>
+          </a>
         </div>
       </header>
 
