@@ -139,7 +139,7 @@ const routes: RouteCard[] = [
     to: "Goa",
     note: "Beach holidays, 10–12 hr drive",
     // Free-stock destination photo (Unsplash) — Goa beach
-    img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=70",
+    img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=70&fm=webp&auto=format&fit=crop",
   },
   {
     from: "Hyderabad",
@@ -152,14 +152,14 @@ const routes: RouteCard[] = [
     to: "Kerala",
     note: "Backwater family holidays.",
     // Free-stock destination photo (Unsplash) — Kerala backwaters / houseboat
-    img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=70",
+    img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=70&fm=webp&auto=format&fit=crop",
   },
   {
     from: "Hyderabad",
     to: "Coorg",
     note: "Hill station family getaway.",
     // Free-stock destination photo (Unsplash) — misty Western Ghats hills
-    img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=70",
+    img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=70&fm=webp&auto=format&fit=crop",
   },
   {
     from: "Hyderabad",
