@@ -263,6 +263,16 @@ const faqs = [
 // WhatsApp brand green — kept verbatim per requirements for CTA recognition.
 const WHATSAPP_GREEN = "#25D366";
 
+// Synchronously push a GTM dataLayer event before the browser navigates away.
+// We never call preventDefault — the underlying <a href> still navigates normally.
+function pushDL(event: "whatsapp_click" | "phone_click") {
+  if (typeof window !== "undefined") {
+    const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+    w.dataLayer = w.dataLayer || [];
+    w.dataLayer.push({ event });
+  }
+}
+
 function WhatsAppBtn({
   className = "",
   style,
@@ -278,6 +288,7 @@ function WhatsAppBtn({
       target="_blank"
       rel="noopener noreferrer"
       data-cta="whatsapp"
+      onClick={() => pushDL("whatsapp_click")}
       className={className}
       style={{ backgroundColor: WHATSAPP_GREEN, ...style }}
     >
@@ -294,11 +305,17 @@ function PhoneBtn({
   children: React.ReactNode;
 }) {
   return (
-    <a href={TEL_URL} data-cta="phone" className={className}>
+    <a
+      href={TEL_URL}
+      data-cta="phone"
+      onClick={() => pushDL("phone_click")}
+      className={className}
+    >
       {children}
     </a>
   );
 }
+
 
 function OutstationFamilyPage() {
   const [openFaq, setOpenFaq] = useState<number>(0);
