@@ -15,6 +15,7 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 
 import heroImg from "@/assets/vehicle-urbania.webp";
+import logoImg from "@/assets/logo.webp";
 import imgTempo from "@/assets/tempo-exterior-front.webp";
 import imgMiniBus from "@/assets/bus-22-main.png";
 import imgStandardBus from "@/assets/vehicle-bus-40.webp";
