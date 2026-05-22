@@ -139,7 +139,7 @@ const routes: RouteCard[] = [
     to: "Goa",
     note: "Beach holidays, 10–12 hr drive",
     // Free-stock destination photo (Unsplash) — Goa beach
-    img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=70",
+    img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=70&fm=webp&auto=format&fit=crop",
   },
   {
     from: "Hyderabad",
@@ -152,14 +152,14 @@ const routes: RouteCard[] = [
     to: "Kerala",
     note: "Backwater family holidays.",
     // Free-stock destination photo (Unsplash) — Kerala backwaters / houseboat
-    img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=70",
+    img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=70&fm=webp&auto=format&fit=crop",
   },
   {
     from: "Hyderabad",
     to: "Coorg",
     note: "Hill station family getaway.",
     // Free-stock destination photo (Unsplash) — misty Western Ghats hills
-    img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=70",
+    img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=70&fm=webp&auto=format&fit=crop",
   },
   {
     from: "Hyderabad",
@@ -347,6 +347,8 @@ function OutstationFamilyPage() {
               width={1000}
               height={700}
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-64 w-full rounded-xl object-cover shadow-soft md:h-96"
             />
           </div>
@@ -392,6 +394,7 @@ function OutstationFamilyPage() {
                 width={400}
                 height={250}
                 loading="lazy"
+                decoding="async"
                 className="h-36 w-full object-cover md:h-44"
               />
               <div className="p-4">
@@ -452,6 +455,7 @@ function OutstationFamilyPage() {
                       width={400}
                       height={250}
                       loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover"
                     />
                   )}
