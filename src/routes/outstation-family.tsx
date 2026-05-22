@@ -394,6 +394,7 @@ function OutstationFamilyPage() {
                 width={400}
                 height={250}
                 loading="lazy"
+                decoding="async"
                 className="h-36 w-full object-cover md:h-44"
               />
               <div className="p-4">
