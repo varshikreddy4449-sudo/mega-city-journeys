@@ -455,6 +455,7 @@ function OutstationFamilyPage() {
                       width={400}
                       height={250}
                       loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover"
                     />
                   )}
