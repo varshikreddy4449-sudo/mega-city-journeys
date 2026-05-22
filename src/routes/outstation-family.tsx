@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Phone,
-  MessageCircle,
   Bus,
   ShieldCheck,
   FileText,
@@ -10,10 +9,10 @@ import {
   Snowflake,
   Clock,
   UserCheck,
-  
   ChevronDown,
   MapPin,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 import heroImg from "@/assets/vehicle-urbania.webp";
 import imgTempo from "@/assets/tempo-exterior-front.webp";
