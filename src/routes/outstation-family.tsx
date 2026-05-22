@@ -10,7 +10,7 @@ import {
   Snowflake,
   Clock,
   UserCheck,
-  Star,
+  
   ChevronDown,
   MapPin,
 } from "lucide-react";
@@ -179,23 +179,6 @@ const whyUs = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: "Testimonial coming soon — we're collecting recent customer reviews.",
-    name: "— Verified Customer, Hyderabad",
-    trip: "Family trip · 2026",
-  },
-  {
-    quote: "Testimonial coming soon — we're collecting recent customer reviews.",
-    name: "— Verified Customer, Hyderabad",
-    trip: "Family trip · 2026",
-  },
-  {
-    quote: "Testimonial coming soon — we're collecting recent customer reviews.",
-    name: "— Verified Customer, Hyderabad",
-    trip: "Family trip · 2026",
-  },
-];
 
 const faqs = [
   {
@@ -304,7 +287,7 @@ function OutstationFamilyPage() {
       </header>
 
       {/* Hero */}
-      <section className="mx-auto max-w-6xl px-4 py-10 md:py-16">
+      <section className="bg-background mx-auto max-w-6xl px-4 py-10 md:py-16">
         <div className="grid items-center gap-8 md:grid-cols-2">
           <div>
             <h1 className="font-display text-3xl font-bold leading-tight text-primary md:text-5xl text-balance">
@@ -342,7 +325,7 @@ function OutstationFamilyPage() {
       </section>
 
       {/* Trust strip */}
-      <section className="mx-auto max-w-6xl px-4 pb-10">
+      <section className="bg-background mx-auto max-w-6xl px-4 pb-10">
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {[
             { icon: RouteIcon, label: "20+ Years in Business" },
@@ -361,7 +344,7 @@ function OutstationFamilyPage() {
       </section>
 
       {/* Vehicles */}
-      <section id="vehicles" className="mx-auto max-w-6xl px-4 py-12 md:py-20">
+      <section id="vehicles" className="bg-background mx-auto max-w-6xl px-4 py-12 md:py-20">
         <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
           Choose the Right Vehicle for Your Family
         </h2>
@@ -418,7 +401,7 @@ function OutstationFamilyPage() {
       </section>
 
       {/* Routes */}
-      <section id="routes" className="bg-card px-4 py-12 md:py-20">
+      <section id="routes" className="bg-secondary/40 px-4 py-12 md:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
             Popular Outstation Routes from Hyderabad
@@ -472,7 +455,7 @@ function OutstationFamilyPage() {
       </section>
 
       {/* How it works */}
-      <section id="how" className="mx-auto max-w-6xl px-4 py-12 md:py-20">
+      <section id="how" className="bg-background mx-auto max-w-6xl px-4 py-12 md:py-20">
         <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
           Booking Your Trip is Simple
         </h2>
@@ -510,7 +493,7 @@ function OutstationFamilyPage() {
       </section>
 
       {/* Why us */}
-      <section className="bg-card px-4 py-12 md:py-20">
+      <section className="bg-secondary/40 px-4 py-12 md:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
             Why Hyderabad Families Trust Megacity
@@ -535,41 +518,27 @@ function OutstationFamilyPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="mx-auto max-w-6xl px-4 py-12 md:py-20">
+      <section className="bg-background mx-auto max-w-6xl px-4 py-12 md:py-20">
         <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
           What Our Customers Say
         </h2>
-        <p className="mt-3 text-center text-sm text-muted-foreground">
-          Reviews are being collected from our recent customers. Check our Google Business Profile
-          for live reviews.
-        </p>
-        <div className="mt-10 flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className="min-w-[80%] shrink-0 rounded-xl border border-border bg-card p-6 shadow-card md:min-w-0"
+        <div className="mt-10 max-w-xl mx-auto rounded-xl border border-border bg-card p-6 shadow-card text-center">
+          <p className="text-sm text-foreground">
+            Reviews are being collected — see live reviews on our{" "}
+            <a
+              href="#" // TODO: Replace with Google Business Profile URL when available
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-accent hover:underline"
             >
-              <div className="flex gap-1 text-accent">
-                {Array.from({ length: 5 }).map((_, k) => (
-                  <Star key={k} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <p className="mt-3 text-sm italic text-foreground">
-                "{t.quote}"
-              </p>
-              <p className="mt-4 text-sm font-semibold text-primary">
-                {t.name}
-              </p>
-              <p className="text-xs text-muted-foreground">
-                {t.trip}
-              </p>
-            </div>
-          ))}
+              Google Business Profile
+            </a>
+          </p>
         </div>
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="bg-card px-4 py-12 md:py-20">
+      <section id="faq" className="bg-secondary/40 px-4 py-12 md:py-20">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-display text-center text-3xl font-bold text-primary md:text-4xl">
             Frequently Asked Questions
@@ -681,6 +650,7 @@ function OutstationFamilyPage() {
               <li><a href="#routes" className="hover:underline">Popular Routes</a></li>
               <li><a href="#how" className="hover:underline">How It Works</a></li>
               <li><a href="#faq" className="hover:underline">FAQ</a></li>
+              <li><a href="/privacy" className="hover:underline">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
