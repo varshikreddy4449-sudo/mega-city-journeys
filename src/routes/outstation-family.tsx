@@ -88,12 +88,6 @@ export const Route = createFileRoute("/outstation-family")({
         type: "application/ld+json",
         children: JSON.stringify(ldJson),
       },
-      // Google Tag Manager — TODO: replace GTM-XXXXXXX with the real container ID
-      // used on the main website (no GTM container is currently present in the codebase).
-      {
-        children:
-          "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');",
-      },
     ],
 
   }),
@@ -263,13 +257,17 @@ const faqs = [
 // WhatsApp brand green — kept verbatim per requirements for CTA recognition.
 const WHATSAPP_GREEN = "#25D366";
 
-// Synchronously push a GTM dataLayer event before the browser navigates away.
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
+// Fire a GA4 conversion event synchronously before the browser navigates away.
 // We never call preventDefault — the underlying <a href> still navigates normally.
-function pushDL(event: "whatsapp_click" | "phone_click") {
-  if (typeof window !== "undefined") {
-    const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
-    w.dataLayer = w.dataLayer || [];
-    w.dataLayer.push({ event });
+function pushGA(event: "whatsapp_click" | "phone_click") {
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", event);
   }
 }
 
@@ -288,7 +286,7 @@ function WhatsAppBtn({
       target="_blank"
       rel="noopener noreferrer"
       data-cta="whatsapp"
-      onClick={() => pushDL("whatsapp_click")}
+      onClick={() => pushGA("whatsapp_click")}
       className={className}
       style={{ backgroundColor: WHATSAPP_GREEN, ...style }}
     >
@@ -308,7 +306,7 @@ function PhoneBtn({
     <a
       href={TEL_URL}
       data-cta="phone"
-      onClick={() => pushDL("phone_click")}
+      onClick={() => pushGA("phone_click")}
       className={className}
     >
       {children}
@@ -322,16 +320,6 @@ function OutstationFamilyPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground pb-24 md:pb-0 font-sans">
-      {/* Google Tag Manager (noscript) — TODO: replace GTM-XXXXXXX with real container ID */}
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-          height={0}
-          width={0}
-          style={{ display: "none", visibility: "hidden" }}
-        />
-      </noscript>
-
       {/* Top bar */}
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -350,8 +338,7 @@ function OutstationFamilyPage() {
           </a>
           <a
             href={TEL_URL}
-            onClick={() => pushDL("phone_click")}
-
+            onClick={() => pushGA("phone_click")}
             data-cta="phone"
             aria-label="Call 99499 49993"
             className="inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 sm:px-4"
