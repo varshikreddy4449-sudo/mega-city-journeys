@@ -81,7 +81,7 @@ export const Route = createFileRoute("/outstation-family")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "canonical", href: "https://megacitytravells.in/outstation-family/" },
+      { rel: "canonical", href: "https://megacitytoursandtravels.com/outstation-family/" },
     ],
     scripts: [
       {
