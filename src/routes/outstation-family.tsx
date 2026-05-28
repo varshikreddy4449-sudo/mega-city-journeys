@@ -47,7 +47,7 @@ const ldJson = {
   },
   geo: { "@type": "GeoCoordinates", latitude: 17.4126, longitude: 78.5614 },
   openingHours: "Mo-Su 06:00-21:00",
-  url: "https://megacitytravells.in/outstation-family/",
+  url: "https://megacitytoursandtravels.com/outstation-family/",
 };
 
 export const Route = createFileRoute("/outstation-family")({
@@ -81,7 +81,7 @@ export const Route = createFileRoute("/outstation-family")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "canonical", href: "https://megacitytravells.in/outstation-family/" },
+      { rel: "canonical", href: "https://megacitytoursandtravels.com/outstation-family/" },
     ],
     scripts: [
       {
